@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	line-height: 1.2em;
+	color: #333333;
+	background-color: #898989;
+}
+
+ul{
+	list-style: none;
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 0;
+}
+
+#wrap{
+	min-height: 780px;
+	width: 1200px;
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #ffffff;
+}
+
+/*------------- header -------------*/
+header{
+	height: 130px;
+}
+
+nav{
+	width: 600px;
+	margin: 50px 0 0 40px;
+	float: left;
+}
+
+nav ul{
+	font-size: 20px;
+	font-weight: 100;
+}
+
+nav li{
+	float: left;
+	margin: 0 10px;
+}
+
+nav a{
+	display: block;
+	height: 30px;
+	padding: 10px;
+	text-decoration: none;
+	color: #333333;
+}
+
+nav a:hover{
+	text-decoration: underline;
+}
+
+#logo{
+	float: left;
+	margin: 60px 0 0 40px;
+}
+
+#login-menu{
+	width: 300px;
+	margin: 50px 40px 0 0;
+	float: right;
+}
+
+
+
+/*------------- main -------------*/
+article{
+	height: 700px;
+}
+
+#lock{
+	height 20px;
+	width: 160px;
+}
+
+#left-main{
+	float: left;
+	height: 700px;
+	width: 350px;
+	background-color: cyan;
+}
+
+#left-main ul li a, #left-main div div a{
+	text-align: center;
+	display: inline-block;
+	margin: 10px 10px;
+}
+
+
+#left-main ul{
+	font-size: 15px;
+	font-weight: 100;
+	overflow: auto;
+}
+
+#left-main li{
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#left-main a{
+	display: block;
+	height: 20px;
+	width: 60px;
+	padding: 5px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #898989;
+}
+
+#right-main{
+	float: right;
+	height: 700px;
+	width: 850px;
+	background-color: green;
+}
+
+
+/*------------- footer -------------*/
+footer{
+	height: 200px;
+}
