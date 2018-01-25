@@ -3,60 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <title>story main page</title>
-<link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
+<link type="text/css" href="../../../CSS/story-write.css" rel="stylesheet">
 </head>
 <body>
 	<div id="wrap">
 		<header>
-			<div>
-				<a id="logo" href="#"><img alt="로고" src=""></a>
-			</div>
+			<a id="logo" href="#"><img alt="로고" src="#"></a>
 			<nav>
-				<ul>
+				<ul class="main-menu">
 					<li><a href="#">계획하기</a></li>
 					<li><a href="#">기록하기</a></li>
 					<li><a href="#">여행기</a></li>
 					<li><a href="#">커뮤니티</a></li>
 				</ul>
-			</nav>
-			<nav id="login-menu">
-				<ul>
+				<ul class="login-menu">
 					<li><a href="#">로그인</a></li>
 					<li><a href="#">회원가입</a></li>
 				</ul>
 			</nav>
 		</header>
-		<article>
-			<div id="left-main">
-				<div style="background-color: red;">
-					<div>
-						<ul>
-							<li id="lock"><a href="#"><img alt="락/오픈" src=""></a></li>
-							<li style="float:right"><a href="#">동행자<br>추가</a></li>
-						</ul>
+		<main>
+			<section class="left-main">
+				<div class="btn-container">
+					<div class="lock-add-btn">
+						<a id="lock" href="#"><img alt="락/오픈" src=""></a>
+						<a class="large-btn" href="#">동행자<br>추가</a>
 					</div>
-					<div>
-						<ul>
-							<li><a href="#">임시저장</a></li>
-							<li><a href="#">작성완료</a></li>
-							<li><a href="#">취소</a></li>
-						</ul>
+					<ul class="console-btn">
+						<li><a href="#">임시저장</a></li>
+						<li><a href="#">작성완료</a></li>
+						<li><a href="#">취소</a></li>
+					</ul>
+				</div>
+				<div class="spending-box">
+					<span>지출내역</span>
+					<span>KRW</span>
+					<span>300,000</span>
+				</div>
+				<div class="day-btn-container">
+					<a href="#"><img alt="좌측화살표" src=""></a>
+					<ul class="day-btn">
+						<li><a href="#">DAY1</a></li>
+						<li><a href="#">DAY2</a></li>
+						<li><a href="#">DAY3</a></li>
+					</ul>
+					<a href="#"><img alt="우측화살표" src=""></a>
+				</div>
+				<div class="place-container">
+					<div class="place-frame">
+						<img alt="장소이미지" src="">
+						<p>인천공항</p>
+						<a href="#">편집</a>
+					</div>
+					<div class="place-add">
+						<img alt="플러스" src="">
+						<a href="#">게시물<br>추가</a>
 					</div>
 				</div>
-				<div>
-				
+			</section>
+			<section class="right-main">
+				<div class="tour-detail-info">
+        			<form class="tour-intro">
+          				<input type="text" id="tourMessage" class="form-control tour-brief" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
+         				<textarea class="form-control" id="tourDetailMessage" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
+          				<div class="tour-edit-info">
+            				<div class="day-step-theme">
+              					<div class="days">
+                					<h6>여행시작일 </h6>
+                					 <input id="tourStartDay" type="text" class="form-control date-start-picker hasDatepicker" value="2016-02-04" style="width:90px; cursor: pointer;background-color: white;" readonly="true">
+              					</div>
+              					<div class="days">
+                					<h6>일</h6>
+              						<input type="number" min="1" max="60" class="form-control" id="maxDay" style="width:50px;">
+              					</div>
+              					<div class="days">
+                					<h6>명</h6>
+                					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
+              					</div>
+            				</div>
+            				<div class="day-step-theme nations">
+              					<h6>여행도시</h6>
+           						<select>
+           							<option>한국</option>
+           							<option>일본</option>
+           							<option>중국</option>
+           						</select>
+              				</div>
+	    					<div class="day-step-theme themes">
+              					<h6>여행테마</h6>
+								<span class="selected" data-theme="0">나홀로 여행</span>
+								<span class="" data-theme="1">친구와 함께</span>								
+								<span class="" data-theme="2">가족과 함께</span>
+								<span class="selected" data-theme="3">단체여행</span>
+								<span class="selected" data-theme="4">패키지 여행</span>
+								<span class="selected" data-theme="5">커플</span>
+            				</div>
+          				</div>
+        			</form>
+      			</div>
+				<div class="view-container">
+					<div class="view-frame-box">
+						<p>인천공항 (Incheon International Airport, ICN)</p>
+						<div class="view-frame">
+							<p>인천공항은 역시 넓어요!</p>
+							<img alt="게시물사진" src="">
+							<div class="view-info">
+								<span><img alt="위치" src=""></span>
+								<span><p>인천공항</p></span>
+							</div>
+							<div class="view-info">
+								<span><img alt="원화" src=""></span>
+								<span><p>KRW 190,000</p></span>
+							</div>
+							<div class="view-info">
+								<span><img alt="태그" src=""></span>
+								<span><p>인천공항,공항,인천</p></span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div>
-				
-				</div>
-				<div>
-				
-				</div>
-			</div>
-			<div id="right-main">
-			
-			</div>
-		</article>
+			</section>
+		</main>
 		<footer>
 		
 		</footer>
