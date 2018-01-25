@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/*----- reset ----------------------------------*/
+
+h1{
+	margin : 0px;
+}
+
+ul{
+	padding : 0px;
+	margin : 0px;
+}
+
+li{
+	display : block;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+body{
+	margin:0px;
+}
+
+
+/* ------------------------------------------------- */
+
+#header{
+	height:70px;
+	background:red;
+}
+
+#img-sec{
+	height:300px;
+	background:white;
+}
+
+/* ------------------------------------------------- */
+
+
+#main{
+	min-height:700px;
+	background:blue;
+}
+
+
+#main #best-conf{
+	display : block;
+}
+
+
+#main .root-cont{
+	display: block;
+}
+
+#main .sec-cont{
+	height : 500px;
+}
+
+#main .travel-log{
+	height: 300px;
+	width: 450px;
+	background: yellow;
+	margin:50px;
+}
+
+#main .travel-cont {
+	display: flex;
+}
+
+
+#main #best-cont{
+	width: 1500px;
+	height: 300px;
+	background : white;
+}
+
+
+
+/* ------------------------------------------------- */
+
+#footer{
+	height:100px;
+	background:green;
+}
+
+
+/* ------------------------------------------------- */
