@@ -1,131 +1,337 @@
 @charset "UTF-8";
-
-body{
-	margin: 0;
-	padding: 0;
-	font-size: 0.75em;
-	line-height: 1.2em;
-	color: #333333;
-	background-color: #898989;
+/*----------------------- reset ------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
-ul{
-	list-style: none;
-	font-family: Verdana, Geneva, sans-serif;
-	margin: 0;
+body {
+    line-height:1;
 }
 
-#wrap{
-	min-height: 780px;
-	width: 1200px;
-	text-align: left;
-	margin: 0;
-	margin-right: auto;
-	margin-left: auto;
-	background-color: #ffffff;
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
 }
 
-/*------------- header -------------*/
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+.clear-fix:after{
+	content: '';
+	width: 0;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+/*----------------------- header ------------------------*/
 header{
-	height: 130px;
+	height: 100px;
 }
 
-nav{
-	width: 600px;
-	margin: 50px 0 0 40px;
-	float: left;
-}
-
-nav ul{
-	font-size: 20px;
-	font-weight: 100;
-}
-
-nav li{
-	float: left;
-	margin: 0 10px;
-}
-
-nav a{
-	display: block;
+header a{
 	height: 30px;
+	margin: 45px 0 0 30px;
 	padding: 10px;
-	text-decoration: none;
-	color: #333333;
+	float: left;
 }
 
-nav a:hover{
-	text-decoration: underline;
+header nav{
+	
+}
+
+.root-container{
+	width: 1200px;
+	height: inherit;
+	margin: 0 auto;
+}
+
+.main-menu{
+	width: 600px;
+	float: left;
+}
+
+.login-menu{
+	width: 250px;
+	float: right;
 }
 
 #logo{
-	float: left;
-	margin: 60px 0 0 40px;
-}
-
-#login-menu{
-	width: 300px;
-	margin: 50px 40px 0 0;
-	float: right;
+	
 }
 
 
-
-/*------------- main -------------*/
-article{
+/*----------------------- left-main ------------------------*/
+main{
 	height: 700px;
+	border-top: 3px solid #cccccc;
+}
+
+.left-main{
+	width: 300px;
+	height: 700px;
+	float: left;
+	background-color: #555555;
+}
+
+.btn-container{
+	height: 100px;
+}
+
+.lock-add-btn{
+	margin: 0 15px;
 }
 
 #lock{
-	height 20px;
-	width: 160px;
-}
-
-#left-main{
 	float: left;
-	height: 700px;
-	width: 350px;
-	background-color: cyan;
+	width: 150px;
+	height: 40px;
+	margin: 5px;
+	background-color: #cccccc;
 }
 
-#left-main ul li a, #left-main div div a{
-	text-align: center;
-	display: inline-block;
-	margin: 10px 10px;
-}
-
-
-#left-main ul{
-	font-size: 15px;
-	font-weight: 100;
-	overflow: auto;
-}
-
-#left-main li{
-	float: left;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#left-main a{
-	display: block;
-	height: 20px;
-	width: 60px;
-	padding: 5px;
-	text-decoration: none;
-	color: #333333;
-	background-color: #898989;
-}
-
-#right-main{
+.large-btn{
 	float: right;
+	width: 100px;
+	height: 40px;
+	margin: 5px;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.console-btn{
+	margin: 0 15px;
+}
+
+.console-btn li{
+	display: inline;
+}
+
+.console-btn a{
+	float: left;
+	width: 80px;
+	height: 40px;
+	margin: 5px;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.spending-container{
+	height: 50px;
+}
+
+#spending-txt{
+	display: inline-block;
+	float: left;
+	height: 40px;
+	margin: 5px 0 5px 20px;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.spending-box{
+	display: inline-block;
+	float: right;
+	height: 40px;
+	margin: 5px 20px 5px 0;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.day-btn-container{
+	height: 50px;
+}
+
+#left-arrow{
+	float: left;
+	width: 25px;
+	height: 40px;
+	margin: 5px 5px 5px 20px;
+	background-color: #cccccc;
+}
+
+#right-arrow{
+	float: right;
+	width: 25px;
+	height: 40px;
+	margin: 5px 20px 5px 5px;
+	background-color: #cccccc;
+}
+
+.day-btn{
+	float: left;
+}
+
+.day-btn li{
+	display: inline-block;
+}
+
+.day-btn a{
+	float: left;
+	width: 62px;
+	height: 40px;
+	margin: 5px 0;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.place-container{
+	height: 500px;
+}
+
+.card-frame{
+	width: 260px;
+	margin: 10px auto;
+	background-color: #cccccc;
+}
+
+.image-frame{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin: 5px 5px 5px 15px;
+	float: left;
+}
+
+.image-frame img{
+	margin: 5px;
+}
+
+.place-frame{
+	display: inline-block;
+	width: 160px;
+	height: 60px;
+	margin: 5px 15px 5px 5px;
+	float:right;
+}
+
+.place-frame p{
+	display: block;
+	height: 30px;
+	margin: 5px;
+	text-align: center;
+}
+
+.place-frame a{
+	display: inline-block;
+	float: right;
+	height: 20px;
+	margin-right: 10px;
+}
+
+
+.place-add{
+	display: inline-block;
+	width: 140px;
+	margin: 5px 60px;
+}
+
+.place-add img{
+	float: left;
+	width: 60px;
+}
+
+.place-add a{
+	float: right;
+	width: 60px;
+}
+
+
+/*----------------------- right-main ------------------------*/
+.right-main{
+	width: 900px;
 	height: 700px;
-	width: 850px;
-	background-color: green;
+	float: right;
+	overflow: scroll;
 }
 
-
-/*------------- footer -------------*/
+/*----------------------- footer ------------------------*/
 footer{
-	height: 200px;
+	border-top: 3px solid #cccccc;
+	height: 150px;
 }
+
+
+
+
+
