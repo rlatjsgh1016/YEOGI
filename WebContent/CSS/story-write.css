@@ -50,6 +50,8 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
+    color: #333333;
 }
 
 /* change colours to suit your needs */
@@ -97,8 +99,7 @@ input, select {
 
 .clear-fix:after{
 	content: '';
-	width: 0;
-	height: 0;
+	font-size: 0;
 	clear: both;
 	overflow: hidden;
 	visibility: hidden;
@@ -106,14 +107,19 @@ input, select {
 
 /*----------------------- header ------------------------*/
 header{
-	height: 100px;
+	height: 70px;
 }
 
 header a{
-	height: 30px;
-	margin: 45px 0 0 30px;
+	height: 20px;
+	margin: 25px 0 5px 30px;
 	padding: 10px;
+	font-weight: bold;
 	float: left;
+}
+
+header a:hover{
+	text-decoration: underline;
 }
 
 header nav{
@@ -137,7 +143,10 @@ header nav{
 }
 
 #logo{
-	
+	width:117px;
+	height: 60px;
+	margin: 5px 0;
+	padding: 0;
 }
 
 
@@ -145,21 +154,22 @@ header nav{
 main{
 	height: 700px;
 	border-top: 3px solid #cccccc;
+	background-color: #dddddd;
 }
 
 .left-main{
 	width: 300px;
 	height: 700px;
 	float: left;
-	background-color: #555555;
+	background-color: #ffffff;
 }
 
 .btn-container{
-	height: 100px;
+	height: 110px;
 }
 
 .lock-add-btn{
-	margin: 0 15px;
+	margin: 5px 15px;
 }
 
 #lock{
@@ -167,15 +177,17 @@ main{
 	width: 150px;
 	height: 40px;
 	margin: 5px;
-	background-color: #cccccc;
+	background-color: orange;
 }
 
 .large-btn{
 	float: right;
 	width: 100px;
-	height: 40px;
+	padding: 4px 0;
 	margin: 5px;
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 	background-color: #cccccc;
 }
 
@@ -190,9 +202,11 @@ main{
 .console-btn a{
 	float: left;
 	width: 80px;
-	height: 40px;
+	padding: 12px 0;
 	margin: 5px;
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 	background-color: #cccccc;
 }
 
@@ -203,18 +217,22 @@ main{
 #spending-txt{
 	display: inline-block;
 	float: left;
-	height: 40px;
+	padding: 12px 5px;
 	margin: 5px 0 5px 20px;
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 	background-color: #cccccc;
 }
 
 .spending-box{
 	display: inline-block;
 	float: right;
-	height: 40px;
+	padding: 12px 5px;
 	margin: 5px 20px 5px 0;
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 	background-color: #cccccc;
 }
 
@@ -249,20 +267,23 @@ main{
 .day-btn a{
 	float: left;
 	width: 62px;
-	height: 40px;
+	padding: 12px 0;
 	margin: 5px 0;
 	text-align: center;
-	background-color: #cccccc;
+	font-size: 16px;
+	font-weight: bold;
+	color: #cccccc;
+	background-color: #222222;
 }
 
 .place-container{
-	height: 500px;
+	height: 490px;
 }
 
 .card-frame{
 	width: 260px;
-	margin: 10px auto;
-	background-color: #cccccc;
+	margin: 8px auto;
+	border: 1px solid gray;
 }
 
 .image-frame{
@@ -271,6 +292,7 @@ main{
 	height: 60px;
 	margin: 5px 5px 5px 15px;
 	float: left;
+	background-color: orange;
 }
 
 .image-frame img{
@@ -283,12 +305,15 @@ main{
 	height: 60px;
 	margin: 5px 15px 5px 5px;
 	float:right;
+	background-color: orange;
 }
 
 .place-frame p{
 	display: block;
-	height: 30px;
 	margin: 5px;
+	padding: 7px 0;
+	font-size: 16px;
+	font-weight: bold;
 	text-align: center;
 }
 
@@ -296,33 +321,102 @@ main{
 	display: inline-block;
 	float: right;
 	height: 20px;
+	font-weight: bold;
 	margin-right: 10px;
+	background-color: #cccccc;
 }
 
 
 .place-add{
 	display: inline-block;
 	width: 140px;
-	margin: 5px 60px;
+	margin: 5px 60px
 }
 
 .place-add img{
 	float: left;
 	width: 60px;
+	background-color: orange;
 }
 
 .place-add a{
 	float: right;
 	width: 60px;
+	text-align: center;
+	font-weight: bold;
+	background-color: #cccccc;
 }
 
 
 /*----------------------- right-main ------------------------*/
 .right-main{
-	width: 900px;
-	height: 700px;
+	width: 857px;
+	height: 660px;
 	float: right;
+	background-color: #ffffff;
+	border-left: 3px solid #cccccc;
+	padding: 20px;
 	overflow: scroll;
+}
+
+.tour-detail-info{
+	
+}
+
+.tour-intro{
+	
+}
+
+.form-control{
+	
+}
+
+.tour-brief{
+	
+}
+
+.tour-edit-info{
+	
+}
+
+.day-step-theme{
+	
+}
+
+.days{
+	
+}
+
+.date-start-picker{
+	
+}
+
+.hasDatepicker{
+	
+}
+
+.nations{
+	
+}
+
+.themes{
+	
+}
+
+.view-container{
+	
+}
+
+.view-frame-box{
+	
+}
+
+.view-frame{
+	
+}
+
+.view-info{
+	
 }
 
 /*----------------------- footer ------------------------*/
