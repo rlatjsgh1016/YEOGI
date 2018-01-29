@@ -19,6 +19,7 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    color: #333333;
 }
 
 body {
@@ -88,7 +89,7 @@ hr {
     display:block;
     height:1px;
     border:0;   
-    border-top:1px solid #cccccc;
+    border-top:1px solid #D8D8D8;
     margin:1em 0;
     padding:0;
 }
@@ -97,7 +98,7 @@ input, select {
     vertical-align:middle;
 }
 
-.clear-fix:after{
+.clear-fix::after{
 	content: '';
 	font-size: 0;
 	clear: both;
@@ -122,12 +123,8 @@ header a:hover{
 	text-decoration: underline;
 }
 
-header nav{
-	
-}
-
 .root-container{
-	width: 1200px;
+	width: 1320px;
 	height: inherit;
 	margin: 0 auto;
 }
@@ -135,11 +132,13 @@ header nav{
 .main-menu{
 	width: 600px;
 	float: left;
+	overflow: hidden;
 }
 
 .login-menu{
 	width: 250px;
 	float: right;
+	overflow: hidden;
 }
 
 #logo{
@@ -154,14 +153,15 @@ header nav{
 main{
 	height: 700px;
 	border-top: 3px solid #cccccc;
-	background-color: #dddddd;
+	background-color: #FFFFFF;
+	overflow: auto;
 }
 
 .left-main{
 	width: 300px;
 	height: 700px;
 	float: left;
-	background-color: #ffffff;
+	background-color: #D8D8D8;
 }
 
 .btn-container{
@@ -170,44 +170,47 @@ main{
 
 .lock-add-btn{
 	margin: 5px 15px;
+	display: flex;
+	overflow: hidden;
 }
 
 #lock{
-	float: left;
 	width: 150px;
 	height: 40px;
 	margin: 5px;
-	background-color: orange;
+	background-color: #E64C3C;
 }
 
 .large-btn{
-	float: right;
 	width: 100px;
 	padding: 4px 0;
 	margin: 5px;
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #E64C3C;
 }
 
 .console-btn{
 	margin: 0 15px;
-}
-
-.console-btn li{
-	display: inline;
+	list-style: none;
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
 }
 
 .console-btn a{
-	float: left;
+	display: block;
 	width: 80px;
 	padding: 12px 0;
 	margin: 5px;
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #E64C3C;
 }
 
 .spending-container{
@@ -222,7 +225,8 @@ main{
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #212121;
 }
 
 .spending-box{
@@ -233,47 +237,54 @@ main{
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #212121;
 }
+
+.spending-box span{
+	color: #D8D8D8;
+}
+
 
 .day-btn-container{
 	height: 50px;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	
 }
 
 #left-arrow{
-	float: left;
 	width: 25px;
 	height: 40px;
-	margin: 5px 5px 5px 20px;
-	background-color: #cccccc;
+	margin: 5px 0 5px 20px;
+	background-color: #D8D8D8;
 }
 
 #right-arrow{
-	float: right;
 	width: 25px;
 	height: 40px;
 	margin: 5px 20px 5px 5px;
-	background-color: #cccccc;
+	background-color: #D8D8D8;
 }
 
 .day-btn{
-	float: left;
+	list-style: none;
+	display: flex;
+	justify-content: center;
 }
 
-.day-btn li{
-	display: inline-block;
-}
 
 .day-btn a{
-	float: left;
+	display: inline-block;
 	width: 62px;
 	padding: 12px 0;
-	margin: 5px 0;
+	margin: 5px 0 5px 5px;
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	color: #cccccc;
-	background-color: #222222;
+	color: #D8D8D8;
+	background-color: #212121;
 }
 
 .place-container{
@@ -284,7 +295,10 @@ main{
 	width: 260px;
 	margin: 8px auto;
 	border: 1px solid gray;
+	background: #ffffff;
+	overflow: auto;
 }
+
 
 .image-frame{
 	display: inline-block;
@@ -292,7 +306,7 @@ main{
 	height: 60px;
 	margin: 5px 5px 5px 15px;
 	float: left;
-	background-color: orange;
+	background-color: #E64C3C;
 }
 
 .image-frame img{
@@ -305,7 +319,7 @@ main{
 	height: 60px;
 	margin: 5px 15px 5px 5px;
 	float:right;
-	background-color: orange;
+	background-color: #E64C3C;
 }
 
 .place-frame p{
@@ -314,6 +328,7 @@ main{
 	padding: 7px 0;
 	font-size: 16px;
 	font-weight: bold;
+	color: #D8D8D8;
 	text-align: center;
 }
 
@@ -323,20 +338,21 @@ main{
 	height: 20px;
 	font-weight: bold;
 	margin-right: 10px;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #212121;
 }
 
 
 .place-add{
 	display: inline-block;
 	width: 140px;
-	margin: 5px 60px
+	margin: 5px 80px
 }
 
 .place-add img{
 	float: left;
 	width: 60px;
-	background-color: orange;
+	background-color: #E64C3C;
 }
 
 .place-add a{
@@ -344,47 +360,62 @@ main{
 	width: 60px;
 	text-align: center;
 	font-weight: bold;
-	background-color: #cccccc;
+	color: #D8D8D8;
+	background-color: #212121;
 }
 
 
 /*----------------------- right-main ------------------------*/
 .right-main{
-	width: 857px;
+	width: 977px;
 	height: 660px;
 	float: right;
-	background-color: #ffffff;
-	border-left: 3px solid #cccccc;
+	background-color: #AFAFAF;
+	border-left: 3px solid #D8D8D8;
 	padding: 20px;
-	overflow: scroll;
-}
-
-.tour-detail-info{
-	
 }
 
 .tour-intro{
-	
+	width: 977px;
 }
 
 .form-control{
-	
+	width: inherit;
+	margin: 0 5px;
+	overflow: auto;
+}
+
+textarea.form-control{
+	min-width: 975px;
+	max-width: 975px;
+	min-height: 8em;
 }
 
 .tour-brief{
 	
 }
 
+.tour-edit-info h6{
+	padding: 5px 5px;
+	overflow: hidden;
+}
+
 .tour-edit-info{
-	
+	background: #ffffff;
+	margin: 0 5px;
+	width: 979px;
+	overflow: hidden;
 }
 
 .day-step-theme{
-	
+	height: 90px;
+	float: left;
 }
 
 .days{
-	
+	margin: 10px 10px 10px 0;
+	float: left;
+	overflow: hidden;
 }
 
 .date-start-picker{
@@ -396,15 +427,40 @@ main{
 }
 
 .nations{
-	
+	margin: 10px 10px 10px 0;
+	float: left;
+	overflow: hidden;
 }
 
 .themes{
-	
+	margin: 10px 0;
+	float: left;
+	overflow: hidden;
+}
+
+.themes h6{
+	display: block;
+	clear: both;	
+}
+
+.themes span{
+	display:block;
+	float:left;
+	border: 2px solid #AFAFAF;
+	margin: 0 2px;
+	padding: 9px 3px;
+	color: #AFAFAF;
+}
+
+.themes .selected{
+	border: 2px solid orange;
+	margin: 0 2px;
+	padding: 9px 3px;
+	color: orange;
 }
 
 .view-container{
-	
+	margin-top: 20px;
 }
 
 .view-frame-box{
@@ -418,6 +474,10 @@ main{
 .view-info{
 	
 }
+
+/*----------------------- form ------------------------*/
+
+
 
 /*----------------------- footer ------------------------*/
 footer{
