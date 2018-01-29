@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/*----reset---------------------*/
+body{
+	margin : 0px;
+}
+
+h1{
+	margin : 0px;
+}
+
+ul{
+	padding : 0px;
+	margin : 0px;
+}
+
+li{
+	display : block;
+	border: 1px solid black;
+}
+
+a{
+	text-decoration: none;
+	color : inherit;
+}
+
+
+#header{
+	background: white;
+	height : 70px;
+}
+
+#body{
+	background: red;
+	width : 1920px;
+}
+
+/*----submain---------------------------------*/
+
+#sub-main{
+	background: green;
+	float:left;
+	width: 420px;
+	height: 1010px;
+}
+
+#tab{
+	background: orange;
+	float: left;
+	width: 90px;
+	height: 650px;
+}
+
+#search{
+	background: navy;
+	float: left;
+	width: 330px;
+	min-height: 880px;
+}
+
+	#search-content{
+		background: #00ffff;
+		padding: 30px 15px;
+		width:330px;
+		min-height: 800px;
+		box-sizing: border-box;
+		
+	}
+
+/*----main---------------------------------*/
+#main{
+	background: blue;
+	height: 1010px;
+	width : 1490px;
+	float: left;
+	
+}
+
+#map{
+	background: brown;
+	height: 670px;
+}
+
+#table{
+	background: #00ff00;
+	height: 340px;
+}
+
+
+
+
+
+/* .clear-fix::after{
+	content: "안녕하세용!";
+	display : block;
+	clear : both;
+	height : 0px;
+	overflow : hidden;
+} */
