@@ -35,13 +35,13 @@ body{
 
 .title{
 	background: url("../resources/main_bar.png") no-repeat 13px center;	
-	max-width: fit-content;
+	max-width: none;
 	padding-left : 25px;
-	margin : 50px auto 30px auto;
+	margin : 50px 0px 30px 0px;
 	font-family: 맑은 고딕, 고딕, 돋움, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: bold;	
-	height : 50px;
+
 
 }
 
@@ -54,6 +54,14 @@ body{
 	color: #E64C3C;
 }
 
+.back-v-import{
+	background: #B5342A;
+	color : #FFFFFF;
+}
+.back-import{
+	background: #E64C3C;
+	color : #FFFFFF;
+}
 
 
 /*----- component style -------------------------*/
@@ -94,7 +102,7 @@ body{
 .btn-more{
 	min-width : 15px !important;
 	background: #AFAFAF;
-	margin-left: 15px;
+	margin-left: 86%;
 	color: #ffffff;
 	padding : 3px 4px !important;
 	font-size: 13px;
@@ -134,24 +142,6 @@ body{
 	background : #000000;	
 }
 
-/*----- hover ------------------------------*/
-
-.paris-hover:hover{
-	background:url("../resources/500300/paris.jpg") no-repeat center;
-}
-
-.london-hover:hover{
-	background:url("../resources/500300/uk.jpg") no-repeat center;
-}
-.boracay-hover:hover{
-	background:url("../resources/500300/boracay.jpg") no-repeat center;
-}
-.buda-hover:hover{
-	background:url("../resources/500300/buda.png") no-repeat center;
-}
-.barcel-hover:hover{
-	background:url("../resources/500300/barcel.jpg") no-repeat center;
-}
 /*----- menu style ------------------------------*/
 
 .hor-menu{
@@ -179,6 +169,34 @@ body{
 	background : none;
 }
 
+
+.ver-menu{	
+	width : 210px;
+	margin:50px 20px;
+	background : #ffffff;
+	text-align: center;
+	font-weight: bold;
+	position : fixed;
+}
+
+.ver-menu h1{
+	height : 35px;
+	padding-top: 10px;
+}
+.ver-menu ul{
+	
+}
+
+.ver-menu li{
+	font-weight: bold;
+	height : 30px;
+	padding-top : 10px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.ver-menu li:hover{
+	background : #AFAFAF;
+}
 /*----- header ----------------------------------*/
 
 #header{
@@ -208,6 +226,10 @@ body{
 	background-size: 1px;	
 }
 
+.number-change{
+	margin-left:43%;
+	margin-top: 15px;
+}
 /*----- member-menu ----------------------------------*/
 
 
@@ -224,12 +246,12 @@ body{
 	background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	
 }
 
-
 /*----- visual ----------------------------------*/
+
 #visual{
 	min-width :1320px;
-	height : 450px;
-	background: #1C1C1C url("../resources/main_img.png") no-repeat center; 
+	height : 350px;
+	background: #1C1C1C url("../resources/small_visual.jpg") no-repeat center; 
 	border-top : 5px solid #E64C3C;
 }
 
@@ -289,8 +311,9 @@ body{
 #aside{
 	background: url("../images/bg-aside-title.png") no-repeat left top;
 	min-height: inherit;
-	min-width: 205px;
+	min-width: 250px;
 	/* float: left; */
+	background-color: #E6E6E6;
 }
 
 
@@ -304,15 +327,11 @@ body{
 /* ----------------------------------------------- */
 
 #main{
-	padding : 0px 0px 75px 0px;
+	padding : 0px 0px 75px 40px;
 	box-sizing: border-box;'
 	min-height: inherit;
-	min-width: 1320px;
+	min-width: 1070px;
 	/*background : BLUE;*/	
-}
-
-#main .sec-cont{
-	height : 500px;
 }
 
 #main .travel-log{
@@ -348,8 +367,14 @@ body{
 	background: url("../resources/500300/germany.jpg");
 }
 
+.map{
+	background: url("../resources/map.jpg");
+	background-size: 300px;
+}
+
 #main .travel-cont {
 	display: flex;
+	margin-top : 25px;
 }
 
 .travel-cont .travel-info{
@@ -359,6 +384,12 @@ body{
 	color : #FFFFFF;
 	font-weight: normal !important;
 	padding-left : 10px;
+}
+
+.travel-cont .travel-plan{
+	width : 264px;
+	height: 300px;
+	margin-left : 10px;
 }
 
 .travel-name{
