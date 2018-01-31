@@ -176,7 +176,7 @@ body{
 	background : #ffffff;
 	text-align: center;
 	font-weight: bold;
-	position : fixed;
+	/*position : fixed;*/
 }
 
 .ver-menu h1{
@@ -196,6 +196,11 @@ body{
 
 .ver-menu li:hover{
 	background : #AFAFAF;
+}
+
+.clicked{
+	background : #AFAFAF 
+	color :#FFFFFF;
 }
 /*----- header ----------------------------------*/
 

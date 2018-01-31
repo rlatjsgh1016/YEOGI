@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href = "../CSS/style.css" type ="text/css" rel ="stylesheet" />
+<link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
 </head>
 
 <body>
  	<!-- 제목 목록 표 문장 폼 -->
 		<header id = "header">
 			<div class="root-container">
-			<h1 id="logo"><img src ="../resources/logo.png" height="65px" alt ="여기" /> </h1>
+			<a href= "../../../../main/main.html"><h1 id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
 	
 			<section>
 				<h1 class="hidden">헤더</h1>
@@ -20,7 +20,7 @@
 					<ul>
 						<li><a href="">계획하기</a></li>
 						<li><a href="">기록하기</a></li>
-						<li><a href="public-board/travel-log/log-main/log-main.html">여행기</a></li>
+						<li><a href="">여행기</a></li>
 						<li><a href="">커뮤니티</a></li>
 					</ul>
 				</nav>
@@ -33,71 +33,50 @@
 						<li>회원가입</li>
 					</ul>
 				</nav>	
-			
+				
+
 			</section> 
-			
 		</div>
-		
 	</header>
 	
 	<!-- Visual 부분 시작 -->
 	<div id = "visual">
 		<div class="root-container">
-			<a class="btn btn-plan">계획하기</a>
-			<a class="btn btn-log">기록하기</a>	
+			<div class ="pro-pic">
+			</div>
 		</div>
 	</div>
 	
 	<div id = "body">
 		<div class="root-container" > <!-- 따옴표 안에 clear-fix --> 
-			
+			<!-- aside 시작------------------------------------------------------------------------------------------------------------- --> 			
+	
+			<aside id="aside">
+					<h1 class="hidden">여행기</h1>
+					<nav class="ver-menu">
+						<h1 = class ="back-import" >마이페이지</h1>
+						<ul>
+							<li><a href="">내 지도</a></li>
+							<li><a href="">내 계획</a></li>
+							<li><a href="">내 기록</a></li>
+							<li><a href="">내 친구</a></li>
+							<li><a href="">스크랩</a></li>
+							<li><a href="">개인정보수정</a></li>
+						</ul>
+					</nav>
+
+			</aside>
 			<!-- main 시작-------------------------------------------------------------------------------------------------------------- --> 
 		
 				<section id ="main">
 
 				<section>
-						<section class = "title">
-							여기 BEST 여행지!
-						</section>
-						
-						<div class = "best-cont">
-							<div class ="country country_best">
-								여기<br> <span class="font-import">BEST</span><br>여행지
-							</div>
-							
-							<div class ="country paris-hover">
-								파리<br>
-								<span class = "more">more</span>
-							</div>
-							
-							<div class ="country london-hover">
-								런던<br>
-								<span class = "more">more</span>
-							</div>
-							
-							<div class ="country boracay-hover">
-								보라카이<br>
-								<span class = "more">more</span>
-							</div>
-							
-							<div class ="country buda-hover">
-								부다페스트<br>
-								<span class = "more">more</span>
-							</div>
-							
-							<div class ="country barcel-hover">
-								바르셀로나<br>
-								<span class = "more">more</span>
-							</div>
-						</div>
 						
 						<section class = "title">
-							다른 사람들의 여행을 확인해보세요!
-							베스트 여행기 <a href="public-board/travel-log/log-main/log-main.html" class="btn btn-more">더보기</a>
+							내 기록보기
 						</section>
 						
 						<section class = "travel-cont">
-						
 							<div class = "travel-log barcel">
 								<div class = "travel-info">
 									<div class="travel-name">내 첫 유럽여행!</div>
@@ -114,14 +93,6 @@
 								</div>
 							</div>
 							
-							<div class = "travel-log moscbar">
-								<div class = "travel-info">
-									<div class="travel-name">푸틴의 흔적을 찾아서</div>
-									<div class= "loca"><div class="small-loca"></div>모스크바, 러시아</div>
-									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 05 (3개월간)</div>
-								</div>
-							</div>
-							
 						</section>
 						
 						<section class = "travel-cont">
@@ -133,24 +104,45 @@
 									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 05 (3개월간)</div>
 								</div>
 							</div>
-				
-							<div class = "travel-log uk">
-								<div class = "travel-info">
-									<div class="travel-name">신사의 도시! 분위기 짱!</div>
-									<div class= "loca"><div class="small-loca"></div>런던, 영국</div>
-									<div class ="date"><div class="small-cal"></div>2017.08 ~ 2017. 08 (1개월간)</div>
-								</div>
-							</div>
-							
+			
 							<div class = "travel-log german">
 								<div class = "travel-info">
-									<div class="travel-name">디즈니 성의 원조를 찾아서</div>
+									<div class="travel-name">디스니 성의 원조를 찾아서</div>
 									<div class= "loca"><div class="small-loca"></div>뮌헨, 독일</div>
 									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 04 (2개월간)</div>
 								</div>
 							</div>
 							
 						</section>
+						
+						<section class = "travel-cont">
+							<div class = "travel-log barcel">
+								<div class = "travel-info">
+									<div class="travel-name">내 첫 유럽여행!</div>
+									<div class= "loca"><div class="small-loca"></div>바르셀로나, 스페인</div>
+									<div class ="date"><div class="small-cal"></div>2017.02 ~ 2017. 02 (1개월간)</div>
+								</div>
+							</div>
+				
+							<div class = "travel-log  paris">
+								<div class = "travel-info">
+									<div class="travel-name">프랑스 맛집 투어!</div>
+									<div class= "loca"><div class="small-loca"></div>파리, 프랑스</div>
+									<div class ="date"><div class="small-cal"></div>2016.08 ~ 2016. 12 (4개월간)</div>
+								</div>
+							</div>
+							
+						</section>
+						
+						<nav class="number-change hor-menu main-menu first-pad-none">
+							<ul>
+								<li><a href=""  class ="font-import">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+							</ul>
+						</nav>
 					
 				</section>
 				
@@ -167,12 +159,11 @@
 		<div class="root-container">
 				
 				<div id = "footer_logo">
-				
 					<div id = "footer_bar">
 				
 					</div>
-					
 				</div>
+							
 
 				회사정보
 				서울특별시 마포구 월드컵북로 21 풍성빌딩 2, 3, 4층 쌍용강북교육센터 <br>
