@@ -9,7 +9,26 @@
 
 <body>
 	<header id="header">
-		header
+		<h1 id="logo">
+			<img src="../../../../images/logo.png" alt="여기"/>
+		</h1>
+		<nav class ="hor-menu main-menu first-pad-none">
+			<ul>
+				<li><a href="">계획하기</a></li>
+				<li><a href="">기록하기</a></li>
+				<li><a href="">여행기</a></li>
+				<li><a href="">커뮤니티</a></li>
+			</ul>
+		</nav>
+			
+		<nav class ="hor-menu member-menu first-pad-none">
+			<ul>
+				<li><a href="">로그인</a></li>
+				<li><a href="">회원가입</a></li>
+				<li><a href="">마이페이지</a></li>
+			</ul>
+			
+		</nav>
 	</header>
 
 	<div id="body">
@@ -19,11 +38,11 @@
 					<h1>탭
 					<section>
 					<ul>
-						<li>검색</li>
-						<li>장바구니</li>
-						<li>비용</li>
-						<li>일정</li>
-						<li>저장</li>
+						<li><a href="">검색</a></li>
+						<li><a href="">장바구니</a></li>
+						<li><a href="">비용</a></li>
+						<li><a href="">일정</a></li>
+						<li><a href="">저장</a></li>
 					</ul>
 					</section>
 					</h1>
@@ -31,18 +50,266 @@
 				
 				<div id="search">
 					search
-					<div id="search-content">
-						search-content
+					<div id="travel-dayname">
+						여행기간 / 여행이름
+					</div>
+					<div id="search-box">
+						search-box
+						<!-- 검색창  -->
+						<div id="search-form">
+							<form>
+							<label>지역검색</label>
+							<input type="text" />
+							<input class = "" type = "submit" value = "검색" type="submit" value="검색" />
+							</form>
+							
+							<form>
+							<label>명소검색</label>
+							<input type="text" />
+							<input class = "" type = "submit" value = "검색" type="submit" value="검색" />
+							</form>
+						</div>
+						
+						<!-- 정렬 버튼 -->
+						<div id="sort">
+							<ul>
+								<li><a href="">전체</a></li>
+								<li><a href="">명소</a></li>
+								<li><a href="">맛집</a></li>
+								<li><a href="">숙박</a></li>
+							</ul>
+						</div>
+						
+						
+						<div id="searched-content">
+							검색결과
+							<div class="searched-result">
+							 	
+							 	<div class="searched-pic">
+							 	 	사진
+							 	</div>
+							 	
+							 	<div class="searched-info">
+							 	 	정보
+							 	 	<div class="searched-name">
+							 	 		이름
+							 	 	</div>
+							 	 	<div class="searched-wish">
+							 	 		장바구니
+							 	 	</div>
+							 	 	<div class="searched-put">
+							 	 		일정담기
+							 	 	</div>
+							 	</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div id="main">
-				 <div id = "map">
+				 <div id="map">
 				 	map
+				 	<p id="map-layer">
+				 		레이어
+				 	</p>
+				 	
+				 	<p id="map-friendadd">
+				 		친구추가
+				 	</p>
+				 	
+				 	<p id="map-frienddisplay">
+				 		친구목록
+				 	</p>
 				 </div>
-				 <div id = "table">
-				 	table
+				 <div id="table">
+				 	<div id="table-control">
+				 	 	
+				 	 	<p id="control-date">
+				 	 		날짜
+				 	 	</p>
+				 	 	
+				 	 	<p id="control-day">
+				 	 		Day1
+				 	 	</p>
+				 	 	
+				 	 	<p id="control-btn">
+				 	 		<a href="">버튼</a>
+				 	 	</p>
+				 	 	
+				 	 	<p id="control-dayadd">
+				 	 		Day추가
+				 	 	</p>
+				 	</div>
+				 	
+				 	<div id="table-timeline">
+				 		<div id="timeline-img">
+				 			이미지
+				 		</div>
+				 		<div id="timeline-plan">
+				 			<p class="timeline-divide">
+				 				계획1
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획2
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획3
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획4
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획5
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획6
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획7
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획8
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획9
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획10
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획11
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획12
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획13
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획14
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획15
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획16
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획17
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획18
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획19
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획20
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획21
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획22
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획23
+				 			</p>
+				 			<p class="timeline-divide">
+				 				계획24
+				 			</p>
+				 		
+				 		</div>
+				 	</div>
+				 	
+				 	<div id="table-memo">
+				 		<p class="memo-divide">
+			 				메모1
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모2
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모3
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모4
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모5
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모6
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모7
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모8
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모9
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모10
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모11
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모12
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모13
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모14
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모15
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모16
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모17
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모18
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모19
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모20
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모21
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모22
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모23
+			 			</p>
+			 			<p class="memo-divide">
+			 				메모24
+			 			</p>
+				 	</div>
+				 	
+				 	<div id="table-info">
+				 		info
+				 		<p id="info-weather">
+				 			<a href="">날씨</a>
+				 		</p>
+				 		
+				 		<p id="info-emergency">
+				 			경보
+				 		</p>
+				 	</div>
+				 	
+				 	
 				 </div> 
 			</div>
 			
