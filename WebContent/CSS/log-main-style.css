@@ -63,6 +63,12 @@ body{
 	color : #FFFFFF;
 }
 
+.line{
+	width : 1000px;
+	height: 1px;
+	padding-bottom:30px;
+	border-bottom: 1px dashed #AFAFAF;
+}
 
 /*----- component style -------------------------*/
 
@@ -142,6 +148,15 @@ body{
 	background : #000000;	
 }
 
+.btn-mypage{
+	background : #000000;
+	width: 70px;
+	margin-bottom: 5px !important;
+	height: 17px;
+	padding-top: 2px;
+}
+
+
 /*----- menu style ------------------------------*/
 
 .hor-menu{
@@ -154,7 +169,7 @@ body{
 }
 
 .hor-menu > ul{
-	overflow : auto;
+	
 	
 }
 
@@ -223,6 +238,7 @@ body{
 	font-size : 20px;
 	font-weight : bold;
 	color : #333333;
+	padding-bottom: 20px;
 }
 
 .main-menu > ul > li{
@@ -243,7 +259,7 @@ body{
 	font-size : 13px;
 	font-weight : bold;
 	color : #6E6E6E;
-	margin-left: 45%;
+	margin-left: 40%;
 }
 
 .member-menu > ul > li{

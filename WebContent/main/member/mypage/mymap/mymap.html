@@ -3,8 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
 </head>
-<body>
 
+<body>
+ 	<!-- 제목 목록 표 문장 폼 -->
+		<header id = "header">
+			<div class="root-container">
+			<a href= "../../../../main/main.html"><h1 id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
+	
+			<section>
+				<h1 class="hidden">헤더</h1>
+				
+				<nav class="hor-menu main-menu first-pad-none">
+					<h1>메인메뉴</h1>
+					<ul>
+						<li><a href="">계획하기</a></li>
+						<li><a href="">기록하기</a></li>
+						<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
+						<li><a href="">커뮤니티</a></li>
+					</ul>
+				</nav>
+				
+
+				<nav class ="hor-menu member-menu first-pad-none"  style ="margin-bottom:15px">
+					<h1>회원 메뉴</h1>
+					<ul>
+						<li>로그인</li> 
+						<li>회원가입</li>
+						<li><a href ="../mypage.html" class ="btn btn-mypage">마이페이지</a></li>
+					</ul>
+				</nav>	
+				
+
+			</section> 
+		</div>
+	</header>
+	
+	<!-- Visual 부분 시작 -->
+	<div id = "visual">
+		<div class="root-container">
+			<div class ="pro-pic">
+			</div>
+		</div>
+	</div>
+	
+	<div id = "body">
+		<div class="root-container" > <!-- 따옴표 안에 clear-fix --> 
+			<!-- aside 시작------------------------------------------------------------------------------------------------------------- --> 			
+	
+			<aside id="aside">
+					<h1 class="hidden">여행기</h1>
+					
+					<nav class="my-info">
+						<div class="small-pro-pic"></div>
+						<div class="follower">팔로잉</div>
+						<div class="my-info-write">
+							<div class="small-loca"></div>내 계획 수: 3개<br>
+							<div class="small-loca"></div>내 기록 수: 5개<br>
+							<div class="small-loca"></div>게시글 수 : 2개
+							
+						</div>
+					</nav>
+					
+					
+					<nav class="ver-menu">
+						<h1 = class ="back-import" >마이페이지</h1>
+						<ul>
+							<li><a href="../mymap/mymap.html">내 지도</a></li>
+							<li><a href="../myplan/myplan.html">내 계획</a></li>
+							<li><a href="../mystory/mystory.html">내 기록</a></li>
+							<li><a href="../friends/friends.html">내 친구</a></li>
+							<li><a href="../scrap/scrap-main.html">스크랩</a></li>
+							<li><a href="../my-info-edit/my-info-edit.html">개인정보수정</a></li>
+						</ul>
+					</nav>
+
+			</aside>
+			<!-- main 시작-------------------------------------------------------------------------------------------------------------- --> 
+		
+				<section id ="main">
+
+				<section>
+						<section class = "title">
+							내 지도보기
+						</section>
+						
+						
+						<nav id="map">
+							<img src="../../../../resources/filled-map.png" width="1000px"  alt="Visited Countries">
+						</nav>
+						
+
+					         
+						<nav class="center-info">
+							<div class ="small-loca"></div><span class="yeogi-box">여행 빈도</span> 연 12회
+							<span class="yeogi-box space-20px">방문율</span> 50.04%
+						</nav>
+					
+				</section>
+				
+	 		</section> 
+
+		</div>
+		
+	</div>
+	
+	<!-- footer 시작------------------------------------------------------------------------------------------------------------ --> 
+	
+	<footer id = "footer">
+	
+		<div class="root-container">
+				
+				<div id = "footer_logo">
+					<div id = "footer_bar">
+				
+					</div>
+				</div>
+							
+
+				회사정보
+				서울특별시 마포구 월드컵북로 21 풍성빌딩 2, 3, 4층 쌍용강북교육센터 <br>
+				Tel 02)000-0000 | Fax 02)000-0000<br>
+				사업자번호 : 000-00-00000 | 제작 : 여행자들 | 개인정보처리관리책임자 : 김땡땡
+				<br><br>
+				Copyright (C) 2018 Travelers , ALL Right Reserved 
+
+		</div>
+		
+	</footer>
+	
 </body>
 </html>

@@ -10,7 +10,7 @@
  	<!-- 제목 목록 표 문장 폼 -->
 		<header id = "header">
 			<div class="root-container">
-			<a href= "../../../../main/main.html"><h1 id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
+			<a href= "../../../main/main.html"><h1 id="logo"><img src ="../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
 	
 			<section>
 				<h1 class="hidden">헤더</h1>
@@ -20,17 +20,18 @@
 					<ul>
 						<li><a href="">계획하기</a></li>
 						<li><a href="">기록하기</a></li>
-						<li><a href="">여행기</a></li>
+						<li><a href="../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
 						<li><a href="">커뮤니티</a></li>
 					</ul>
 				</nav>
 				
 
-				<nav class ="hor-menu member-menu first-pad-none">
+				<nav class ="hor-menu member-menu first-pad-none"  style ="margin-bottom:15px">
 					<h1>회원 메뉴</h1>
 					<ul>
 						<li>로그인</li> 
 						<li>회원가입</li>
+						<li><a href ="mypage.html" class ="btn btn-mypage">마이페이지</a></li>
 					</ul>
 				</nav>	
 				
@@ -42,7 +43,8 @@
 	<!-- Visual 부분 시작 -->
 	<div id = "visual">
 		<div class="root-container">
-
+			<div class ="pro-pic">
+			</div>
 		</div>
 	</div>
 	
@@ -52,17 +54,32 @@
 	
 			<aside id="aside">
 					<h1 class="hidden">여행기</h1>
+					
+					<nav class="my-info">
+						<div class="small-pro-pic"></div>
+						<div class="follower">팔로잉</div>
+						<div class="my-info-write">
+							<div class="small-loca"></div>내 계획 수: 3개<br>
+							<div class="small-loca"></div>내 기록 수: 5개<br>
+							<div class="small-loca"></div>게시글 수 : 2개
+							
+						</div>
+					</nav>
+					
+					
+					<div class="virtual">
 					<nav class="ver-menu">
 						<h1 = class ="back-import" >마이페이지</h1>
 						<ul>
-							<li><a href="">내 지도</a></li>
-							<li><a href="">내 계획</a></li>
-							<li><a href="">내 기록</a></li>
-							<li><a href="">내 친구</a></li>
-							<li><a href="">스크랩</a></li>
-							<li><a href="">개인정보수정</a></li>
+							<li><a href="mymap/mymap.html">내 지도</a></li>
+							<li><a href="myplan/myplan.html">내 계획</a></li>
+							<li><a href="mystory/mystory.html">내 기록</a></li>
+							<li><a href="friends/friends.html">내 친구</a></li>
+							<li><a href="scrap/scrap-main.html">스크랩</a></li>
+							<li><a href="my-info-edit/my-info-edit.html">개인정보수정</a></li>
 						</ul>
 					</nav>
+					</div>
 
 			</aside>
 			<!-- main 시작-------------------------------------------------------------------------------------------------------------- --> 
@@ -70,8 +87,27 @@
 				<section id ="main">
 
 				<section>
+				
 						<section class = "title">
-							계획보기<a class="btn btn-more" href="../log-plan/log-plan.html">더보기</a>
+							내 지도보기
+						</section>
+						
+						
+						<nav id="map">
+							<img src="../../../resources/filled-map.png" width="1000px"  alt="Visited Countries">
+						</nav>
+						
+					
+						<nav class="center-info">
+							<div class ="small-loca"></div><span class="yeogi-box">여행 빈도</span> 연 12회
+							<span class="yeogi-box space-20px">방문율</span> 50.04%
+						</nav>
+						
+						<div class="line"></div>
+					         
+				
+						<section class = "title">
+							내 계획<a class="btn btn-more" href="../log-plan/log-plan.html">더보기</a>
 						</section>
 						
 						<section class = "travel-cont">
@@ -110,7 +146,7 @@
 						</section>
 						
 						<section class = "title">
-							기록보기<a class="btn btn-more" href="../log-story/log-story.html">더보기</a>
+							내 기록<a class="btn btn-more" href="../log-story/log-story.html">더보기</a>
 						</section>
 						
 						<section class = "travel-cont">
@@ -132,25 +168,6 @@
 							
 						</section>
 						
-						<section class = "travel-cont">
-			
-							<div class = "travel-log statt">
-								<div class = "travel-info">
-									<div class="travel-name">동화 마을에서 즐기는 힐링!</div>
-									<div class= "loca"><div class="small-loca"></div>할슈타트, 오스트리아</div>
-									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 05 (3개월간)</div>
-								</div>
-							</div>
-			
-							<div class = "travel-log german">
-								<div class = "travel-info">
-									<div class="travel-name">디스니 성의 원조를 찾아서</div>
-									<div class= "loca"><div class="small-loca"></div>뮌헨, 독일</div>
-									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 04 (2개월간)</div>
-								</div>
-							</div>
-							
-						</section>
 					
 				</section>
 				

@@ -67,6 +67,32 @@ body{
 	color :#FFFFFF;
 }
 
+.center-info{
+	margin-left:37%;
+	margin-top: 15px;
+}
+
+.yeogi-box{
+	background: #E64C3C;
+	border-radius: 4px;
+	display: box;
+	color:white;
+	min-width : 50px;
+	padding: 4px 6px;
+	text-align: center;
+}
+
+
+.space-20px{
+	margin-left : 20px;
+}
+
+.line{
+	width : 1000px;
+	height: 1px;
+	padding-bottom:30px;
+	border-bottom: 1px dashed #AFAFAF;
+}
 /*----- component style -------------------------*/
 
 .btn,
@@ -98,7 +124,7 @@ body{
 
 .btn-default,
 .default-button{
-	background : #759d2a;
+	background : #E64C3C;
 	
 }
 
@@ -145,6 +171,15 @@ body{
 	background : #000000;	
 }
 
+.btn-mypage{
+	background : #000000;
+	width: 70px;
+	margin-bottom: 5px !important;
+	height: 17px;
+	padding-top: 2px;
+}
+
+
 /*----- menu style ------------------------------*/
 
 .hor-menu{
@@ -157,8 +192,7 @@ body{
 }
 
 .hor-menu > ul{
-	overflow : auto;
-	
+
 }
 
 .hor-menu > ul > li{
@@ -200,6 +234,50 @@ body{
 .ver-menu li:hover{
 	background : #AFAFAF;
 }
+
+.my-info{
+	width : 210px;
+	height: 300px;
+	background: #FFFFFF;
+	margin:50px 20px;
+	margin-bottom: 0px !important;
+	padding-top: 20px;
+}
+
+.my-info .my-info-write{
+	margin: auto;
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 180px;
+	height: 100px;
+	border-top: 1px solid #D8D8D8;
+	padding-left: 30px;
+}
+
+.follower{
+	width: 120px;
+	height: 30px;
+	border-radius: 4px;
+	background: #AFAFAF;
+	margin-left:45px;
+	margin-top: 10px;
+	text-align: center;
+	color:#ffffff;
+	padding-top:6px;
+}
+
+.virtual > .ver-menu{
+	margin-top: 7px;
+}
+
+/*----- map -------------------------------------*/
+
+ #map {
+        height: auto;
+        width: 300px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+ 
 /*----- header ----------------------------------*/
 
 #header{
@@ -221,6 +299,7 @@ body{
 	font-size : 20px;
 	font-weight : bold;
 	color : #333333;
+	padding-bottom: 20px;
 }
 
 .main-menu > ul > li{
@@ -241,7 +320,7 @@ body{
 	font-size : 13px;
 	font-weight : bold;
 	color : #6E6E6E;
-	margin-left: 45%;
+	margin-left: 40%;
 }
 
 .member-menu > ul > li{
@@ -259,12 +338,21 @@ body{
 }
 
 .pro-pic {
-  width:230px;
-  height:230px;
-  background-color:#D8D8D8;
-  border-radius: 50%;
-  margin-left : 40%;
-  margin-top : 50px;
+	width:230px;
+  	height:230px;
+  	background-color:#D8D8D8;
+  	border-radius: 50%;
+  	margin-left : 40%;
+  	margin-top : 50px;
+}
+
+.small-pro-pic {
+	width:150px;
+  	height:150px;
+  	background-color:#D8D8D8;
+  	border-radius: 50%;
+  	margin: auto;
+  	display:flex;
 }
 
 #body{
@@ -273,8 +361,7 @@ body{
 	margin-top : 1px;
 }
 
-#body .root-container
-{
+#body .root-container{
 	background:url("../images/bg-body.png") repeat-y center;
 }
 
@@ -343,7 +430,7 @@ body{
 	box-sizing: border-box;'
 	min-height: inherit;
 	min-width: 1070px;
-	/*background : BLUE;*/	
+	/* background : BLUE;*/
 }
 
 #main .travel-log{
