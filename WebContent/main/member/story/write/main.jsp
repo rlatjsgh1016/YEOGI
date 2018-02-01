@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,12 +73,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href="#"><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800px height:500px status:0 toolbar:0 location:0 menubar:0 scrollbars:0 resizable:0');"><img alt="편집" src="../../../../images/edit.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500'); return false)" onfocus='this.blur()'>게시물<br>추가</a>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
@@ -87,13 +90,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href="#"><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/edit.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500'); return false)" onfocus='this.blur()'>게시물<br>추가</a>
-					</div>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>					</div>
 					<div class="card-frame">
 						<div class="image-frame">
 							<img alt="장소이미지" src="../../../../images/1.jpg">
@@ -104,13 +106,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href="#"><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/edit.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500'); return false)" onfocus='this.blur()'>게시물<br>추가</a>
-					</div>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>					</div>
 				</div>
 			</section>
 			<section class="right-main">
