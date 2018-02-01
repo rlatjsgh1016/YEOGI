@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div class="root-container">
-			<a href="../../../main.html"><img id="logo" alt="로고" src="../../../../images/logo.png"></a>
+			<a id="logo" href="../../../main.html"><img alt="로고" src="../../../../images/logo.png" height="60px;"></a>
 			<nav>
 				<ul class="main-menu">
 					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
@@ -29,7 +29,7 @@
 	<div id="visual">
 		<div class="root-container">
 			<input class="title-box" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)">
-			<button id="btn-cover">커버바꾸기</button>
+			<a id="btn-cover" href="#">커버교체</a>
 		</div>
 	</div>
 	<main>
@@ -65,53 +65,55 @@
 				<div class="place-container">
 					<div class="card-frame">
 						<div class="image-frame">
-							<img alt="장소이미지" src="../../../../images/1.jpg">
+							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
 						
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800px height:500px status:0 toolbar:0 location:0 menubar:0 scrollbars:0 resizable:0');"><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800px height:500px status:0 toolbar:0 location:0 menubar:0 scrollbars:0 resizable:0');"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
-						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>
+						<div class="large-loca"></div>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
-							<img alt="장소이미지" src="../../../../images/1.jpg">
+							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
 						
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
-						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>					</div>
+						<div class="large-loca"></div>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+					</div>
 					<div class="card-frame">
 						<div class="image-frame">
-							<img alt="장소이미지" src="../../../../images/1.jpg">
+							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
 						
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/cancel.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/edit.png"></a>
+							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
-						<img alt="플러스" src="../../../../images/addition-sign.png">
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>게시물<br>추가</a>					</div>
+						<div class="large-loca"></div>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+					</div>
 				</div>
 			</section>
 			<section class="right-main">
@@ -149,6 +151,7 @@
 							<span class="selected" data-theme="3">단체여행</span>
 							<span class="selected" data-theme="4">패키지 여행</span>
 							<span class="selected" data-theme="5">커플</span>
+           				</div>           				<div class="line">
            				</div>
        				</div>
    				</div>
@@ -156,9 +159,10 @@
 					<div class="view-frame-box">
 						<p>인천공항 (Incheon International Airport, ICN)</p>
 						<div class="view-frame">
-							<p>이름은 들어봤겠지? 대표적인 라면 맛집 이치란! 사실 킨류 vs 이치란 vs 잇푸도 중 고민하다가 선택한 곳이었다. 한국인의 입맛에 정말 딱인듯! 일본라멘 특유의 구수~한(?) 냄새가 싫다면, 맛은 담백, 마늘 1쪽, 비법소스를 3~4배쯤 첨가하길! 본인의 취향껏 주문서를 작성할 수 있어 더 좋다! 해장용으로도 으뜸! Tip. 도톤보리 다리 밑 매장은 늘 줄이 기니 거기서 20m가량 떨어진 분점으로 가면 웨이팅 없이 먹을 수 있다.</p>
+							<p>기내식은 언제 제공하나?</p>
+							<p>승무원들은 비행기에 탑승하자마자 기내식을 준비한다. 승객들이 잠들기 전에 식사를 제공하기 위해서다. 보통 비행시간이 8시간 이상의 경우 두 끼, 그 이하는 한 끼를 제공한다. 아침, 점심, 저녁을 기본으로 늦은 아침(Brunch), 늦은 점심(Heavey Snack), 늦은 저녁(Supper) 등으로 나뉜다. 아침이나 늦은 저녁의 경우엔 위에 부담이 적고 소화가 잘되는 메뉴로 구성하고 그 외는 밥과 면류가 포함된 다양한 음식이 나온다.</p>
 							<div class="view-frame-photo">
-								<img alt="게시물사진" src="../../../../images/2.jpg">
+								<img alt="게시물사진" src="../../../../resources/small_visual.jpg">
 							</div>
 							<div class="view-info">
 								<ul>

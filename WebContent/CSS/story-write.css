@@ -106,6 +106,10 @@ input, select {
 	visibility: hidden;
 }
 
+
+/*----------------------- abstract style ------------------------*/
+
+
 /*----------------------- header ------------------------*/
 header{
 	height: 70px;
@@ -117,12 +121,11 @@ header{
 	margin: 0 auto;
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 }
 
 #logo{
-	width: 130px;
-	height: 60px;
-	margin: 5px 0;
+	width: 200px;
 }
 
 header nav{
@@ -135,7 +138,7 @@ header nav{
 .login-menu{
 	display: flex;
 	justify-content: flex-start;
-	align-items: flex-end;
+	align-items: center;
 }
 
 .main-menu li:first-child,
@@ -147,9 +150,8 @@ header nav{
 .login-menu li{
 	font-size: 20px;
 	font-weight: bold;
-	margin-bottom: 10px;
-	padding-left: 40px;
-	background: url("../images/header_bar.png") no-repeat 20px center;
+	padding-left: 24px;
+	background: url("../images/header_bar.png") no-repeat 13px center;
 }
 
 .main-menu a:hover,
@@ -207,9 +209,9 @@ header>nav>a:hover{
 
 #visual{
 	width: 100%;
-	height: 150px;
-	background: url("../images/main_img2.png") no-repeat center;
-	background-size: 100%;
+	height: 145px;
+	background: #1C1C1C url(../resources/small_visual.jpg) no-repeat center;
+    border-top: 5px solid #E64C3C;
 }
 
 #visual .root-container{
@@ -220,42 +222,43 @@ header>nav>a:hover{
 }
 
 .title-box{
-	width:100%;
+	width:1300px;
+	margin:8px;
+	
 	font-size: 33px;
 	font-family: 맑은 고딕, HY견고딕, sans-serif;
 }
 
 #btn-cover{
-	padding: 12px;
+	padding: 10px;
 	text-align: center;
-	font-size: 16px;
 	font-weight: bold;
-	color: #D8D8D8;
-	background-color: #212121;
-	border-radius: 10px;
+	color: #FFFFFF;
+	background-color: #E64C3C;
+	border-radius: 5px;
 	align-self: flex-start;
 	position: relative;
-	top: 15px;
+	left: 10px;
 }
 
 /*----------------------- left-main ------------------------*/
 main{
-	height: 700px;
+	height: 689px;
 	background-color: #FFFFFF;
 	overflow: auto;
+	border-top: 10px solid #848484;
+    margin-top: 1px;
 }
 
 main>.root-container{
-	height: 695px;
-	margin-top: 5px;
+	height: 689px;
 }
 
 .left-main{
 	width: 300px;
-	height: 695px;
-	border-radius: 10px;
+	height: 689px;
 	float: left;
-	background-color: #D8D8D8;
+	background-color: #E6E6E6;
 	
 }
 
@@ -284,31 +287,37 @@ main>.root-container{
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	color: #D8D8D8;
-	background-color: #212121;
+	color: #FFFFFF;
+	background-color: #848484;
 	border-radius: 5px;
+	box-shadow: 2px 2px 1px #545454;
+}
+
+.large-btn:hover{
+	background : #E64C3C;
 }
 
 .console-btn{
-	margin: 0 15px;
+	margin: 0 20px;
 	list-style: none;
 	display: flex;
-	overflow: hidden;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .console-btn a{
 	display: block;
-	width: 80px;
-	padding: 12px 0;
-	margin: 5px;
+	padding: 10px;
 	text-align: center;
-	font-size: 16px;
 	font-weight: bold;
-	color: #D8D8D8;
-	background-color: #212121;
+	color: #FFFFFF;
+	background : #848484;
 	border-radius: 5px;
+	box-shadow: 2px 2px 1px #545454;
+}
+
+.console-btn a:hover{
+	background : #E64C3C;
 }
 
 .spending-container{
@@ -386,6 +395,10 @@ main>.root-container{
 	background-color: #212121;
 }
 
+.day-btn a:hover{
+	color: #E64C3C;
+}
+
 .place-container{
 	overflow: auto;
 }
@@ -393,8 +406,8 @@ main>.root-container{
 .card-frame{
 	width: 260px;
 	margin: 8px auto;
-	background: #ffffff;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	background-color: rgba(33,33,33,0.8);
+	box-shadow: 3px 3px 3px #111111;
 	display: flex;
 	justify-content: left;
 }
@@ -404,7 +417,7 @@ main>.root-container{
 	display: inline-block;
 	width: 70px;
 	height: 70px;
-	border-left: 2px solid #E64C3C;
+	border-left: 3px solid #E64C3C;
 }
 
 .image-frame img{
@@ -415,15 +428,14 @@ main>.root-container{
 .place-frame{
 	display: inline-block;
 	width: 160px;
-	height: 60px;
-	margin: 5px;
+	height: 70px;
 }
 
 .place-frame p{
 	display: inline-block;
-	font-size: 16px;
-	font-weight: bold;
-	color: #212121;
+	font-size: 20px;
+	margin: 5px 0 0 5px;
+	color: #FFFFFF;
 	text-align: left;
 }
 
@@ -431,13 +443,14 @@ main>.root-container{
 	heidht: 70px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .place-add{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 10px 0;
 }
 
 .place-add img{
@@ -447,22 +460,53 @@ main>.root-container{
 }
 
 .place-add a{
-	padding: 5px;
+	padding: 10px;
 	text-align: center;
 	font-weight: bold;
-	color: #D8D8D8;
-	background-color: #212121;
-	border-radius: 5px;
+	color: #FFFFFF;
+	background-color: #848484;
+	border-radius: 5px;	
+	box-shadow: 2px 2px 1px #545454;
+}
+
+.place-add a:hover{
+	background : #E64C3C;
+}
+
+.small-loca{
+	background: url("../resources/location.png") no-repeat left ;
+	background-size: 20px;
+	width:20px;
+	height:20px;
+	float : left;
+	margin-right: 5px;
+}
+
+.small-cal{
+	background: url("../resources/cal.png") no-repeat left ;
+	background-size: 20px;
+	width:20px;
+	height:20px;
+	float : left;
+	margin-right: 5px;
+}
+
+.large-loca{
+	background: url("../resources/location.png") no-repeat left ;
+	background-size: 30px;
+	width:30px;
+	height:30px;
+	float : left;
+	margin-right: 5px;
 }
 
 
 /*----------------------- right-main ------------------------*/
 .right-main{
 	width: 977px;
-	height: 655px;
+	height: 649px;
 	float: right;
-	background-color: #AFAFAF;
-	border-radius: 10px;
+	background-color: #FFFFFF;
 	padding: 20px;
 	overflow: hidden;
 }
@@ -570,9 +614,11 @@ textarea.form-control{
 
 .view-frame-box>p{
 	width: inherit;
-	padding: 5px;
+	padding-left: 25px;
+	margin: 5px 0;
 	font-size: 20px;
 	font-weight: bold;
+	background: url(../resources/main_bar.png) no-repeat 10px center;
 }
 
 .view-frame{
