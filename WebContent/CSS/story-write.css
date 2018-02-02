@@ -55,14 +55,14 @@ a {
     color: #333333;
 }
 
-/* change colours to suit your needs */
+change colours to suit your needs
 ins {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
 
-/* change colours to suit your needs */
+change colours to suit your needs
 mark {
     background-color:#ff9;
     color:#000; 
@@ -84,7 +84,7 @@ table {
     border-spacing:0;
 }
 
-/* change border colour to suit your needs */
+change border colour to suit your needs
 hr {
     display:block;
     height:1px;
@@ -264,6 +264,7 @@ main>.root-container{
 
 .btn-container{
 	height: 110px;
+	background: #323232;
 }
 
 .lock-add-btn{
@@ -287,8 +288,8 @@ main>.root-container{
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #848484;
+	color: #333333;
+	background : #ffffff;
 	border-radius: 5px;
 	box-shadow: 2px 2px 1px #545454;
 }
@@ -310,10 +311,9 @@ main>.root-container{
 	padding: 10px;
 	text-align: center;
 	font-weight: bold;
-	color: #FFFFFF;
-	background : #848484;
+	color: #333333;
+	background : #ffffff;
 	border-radius: 5px;
-	box-shadow: 2px 2px 1px #545454;
 }
 
 .console-btn a:hover{
@@ -673,6 +673,52 @@ textarea.form-control{
 
 /*----------------------- form ------------------------*/
 
+.detail-post-box{
+	width: 780px;
+	height: 480px;
+	padding: 10px;
+}
+
+.detail-title-box{
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+}
+
+.detail-title-box>:first-child{
+	display:block;
+	align-self: stretch;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.detail-title-box>:last-child{
+	align-self: flex-end;
+}
+
+.detail-title-box>button{
+	width: 20px;
+	height: 20px;
+}
+
+.detail-textarea{
+	width: 774px;
+	height: 274px;
+	resize: none;
+	overflow: auto;
+}
+
+.detail-position-box{
+	
+}
+
+	detail-position-box img{
+		
+	}
+	
+	
 
 
 /*----------------------- footer ------------------------*/

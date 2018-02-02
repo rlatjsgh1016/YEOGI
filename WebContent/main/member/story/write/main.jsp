@@ -73,12 +73,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800px height:500px status:0 toolbar:0 location:0 menubar:0 scrollbars:0 resizable:0');"><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800 height:500 status:no toolbar:no location:no menubar:no scrollbars:no resizable:no');"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>
+						<a href=# onclick="window.open('detail.html','게시물입력폼','fullscreen');" onfocus='this.blur()'>장소추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
