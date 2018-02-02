@@ -1,4 +1,4 @@
-<!-- 자호 -->
+<!-- 자호 --><!-- 자호 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,38 +35,38 @@
 
 			<div id="sub-main">
 				<div id="tab">
-					<h1>탭
 					<section>
 					<ul>
 						<li><a href="">검색</a></li>
 						<li><a href="">장바구니</a></li>
 						<li><a href="">비용</a></li>
 						<li><a href="">일정</a></li>
+						
+					</ul>
+					
+					<ul id="save">
 						<li><a href="">저장</a></li>
 					</ul>
 					</section>
-					</h1>
+					
 				</div>
 				
 				<div id="search">
-					search
 					<div id="travel-dayname">
-						여행기간 / 여행이름
+						<p id="travelName">여행이름</p>
+						<p id="travelDay">여행기간</p>
 					</div>
 					<div id="search-box">
-						search-box
 						<!-- 검색창  -->
 						<div id="search-form">
 							<form>
-							<label>지역검색</label>
-							<input type="text" />
-							<input class = "" type = "submit" value = "검색" type="submit" value="검색" />
+							<input type="text" placeholder="지역검색(ex 프랑스, 파리)"/>
+							<input class = "button" type = "submit" value = "검색" type="submit" value="검색" />
 							</form>
 							
 							<form>
-							<label>명소검색</label>
-							<input type="text" />
-							<input class = "" type = "submit" value = "검색" type="submit" value="검색" />
+							<input type="text" placeholder="명소검색(ex 에펠탑, 자유의 여신상)"/>
+							<input class = "button" type = "submit" value = "검색" type="submit" value="검색" />
 							</form>
 						</div>
 						
@@ -132,13 +132,17 @@
 				 	 	<p id="control-day">
 				 	 		Day1
 				 	 	</p>
-				 	 	
-				 	 	<p id="control-btn">
-				 	 		<a href="">버튼</a>
-				 	 	</p>
-				 	 	
+				 	 	<div id="button">
+					 	 	<p id="control-leftbtn">
+					 	 		<a href="">버튼</a>
+					 	 	</p>
+					 	 	
+					 	 	<p id="control-rightbtn">
+					 	 		<a href="">버튼</a>
+					 	 	</p>
+				 	 	</div>
 				 	 	<p id="control-dayadd">
-				 	 		Day추가
+				 	 		<a href="">Day추가</a>
 				 	 	</p>
 				 	</div>
 				 	
@@ -299,7 +303,6 @@
 				 	</div>
 				 	
 				 	<div id="table-info">
-				 		info
 				 		<p id="info-weather">
 				 			<a href="">날씨</a>
 				 		</p>
@@ -312,9 +315,6 @@
 				 	
 				 </div> 
 			</div>
-			
 	</div>
-
-
 </body>
 </html>
