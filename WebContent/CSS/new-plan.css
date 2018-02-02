@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/*----reset---------------------*/
+body{
+	margin : 0 auto;
+	display: flex;
+	justify-content: center;
+	
+}
+
+h1{
+	margin : 0px;
+	font-family: 맑은 고딕(Bold), HY견고딕, Arial, sans-serif;
+	color: #212121;
+	font-size: 20px;
+}
+
+ul{
+	padding : 0px;
+	margin : 0px;
+}
+
+li{
+	display : block;
+}
+
+a{
+	text-decoration: none;
+	color : inherit;
+}
+
+p{
+	margin: 0px;
+	
+}
+
+label{
+	margin: 0px;
+	padding: 0px;
+	font-family: 맑은 고딕(Bold), HY견고딕, Arial, sans-serif;
+	font-size: 12px;
+}
+
+input{
+	margin:0px;
+	padding:0px;
+	background: #ffffff;
+	
+}
+/*-----------------*/
+
+form{
+	width: 500px;
+	height: 500px;
+	
+	
+}
+
+#newForm{
+	width: 500px;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	margin-top: 150px;
+	background: #D8D8D8;
+	border-radius: 4px;
+}	
+
+	#newForm > form > h1{
+		margin-top: 40px;
+		height: 60px;
+		text-align: center;
+		box-sizing: border-box;
+		
+	}
+/*-----여행이름------------*/	
+#travelName{
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	box-sizing: border-box;
+}
+	#travelName > input{
+		width: 400px;
+	}
+
+/*-----출발일 도착일------------*/	
+#date{
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	height: 70px;
+	box-sizing: border-box;
+	margin-top: 25px;
+}
+
+	#date > p{
+		float: left;
+		box-sizing: border-box;
+	}
+	
+	#date > p > input{
+		height: 60px;
+		width: 180px;
+	}
+	
+	#right-date{
+		padding-left: 40px;
+	}
+
+
+/*-----나홀로 / 몇명------------*/	
+#with{
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+	height: 70px;
+}
+
+	#with > p{
+		float: left;
+		box-sizing: border-box;
+	}
+	
+	#with > p > select{
+		height: 60px;
+		width: 184px;
+	}
+	
+	#right-select{
+		padding-left: 40px;
+	}
+	
+#newbutton{
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+
+	#newbutton p{
+		height: 55px;
+		width: 250px;
+		text-align: center;
+		background: #E64C3C;
+		border-radius: 4px;
+	}

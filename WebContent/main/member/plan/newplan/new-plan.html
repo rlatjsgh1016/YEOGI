@@ -4,27 +4,58 @@
 <head>
 <meta charset="UTF-8">
 <title>new plan</title>
+<link href = "../../../../CSS/new-plan.css"  type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
-	<header id="header">
-		<div class="root-container">
-		
-		</div>
-	</header>
-	
-	<main id="main">
-			
-	</main>
 
 
 
+	<div id="newForm">
+		<form>
+				<h1>새 일정</h1>
 
+			<div id="travelName">
+				<input type="text" placeholder="여행제목" />
+			</div>
 
-	<footer id="footer">
-		<div class="root-container">
-			
-		</div>
-	</footer>
+			<div id="date">
+				<p>
+					<input type="date" placeholder="출발일" />
+				</p>
+				<p id="right-date">
+					<input type="date" placeholder="귀국일" />
+				</p>
+			</div>
+
+			<div id="with">
+				<p>
+					<select>
+							<option>나홀로 여행</option>
+							<option>친구와 함께</option>
+							<option>가족과 함께</option>
+							<option>단체여행</option>
+							<option>패키지 여행</option>
+							<option>커플</option>
+					</select>
+				</p>
+
+				<p id="right-select">
+					<select>
+							<option>1명</option>
+							<option>2명</option>
+							<option>3명</option>
+							<option>4명</option>
+							<option>5명</option>
+							<option>6명</option>
+							<option>6명 이상</option>
+					</select>
+				</p>
+			</div>
+
+			<div id="newbutton"><a href=""><p>등록</p></a></div>
+
+		</form>
+	</div>
 </body>
 </html>
