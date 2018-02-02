@@ -431,7 +431,7 @@ body{
 	box-sizing: border-box;'
 	min-height: inherit;
 	min-width: 1070px;
-	/* background : BLUE;*/
+	/*background : BLUE;*/
 }
 
 #main .travel-log{
@@ -448,23 +448,23 @@ body{
 }
 
 .paris{
-	background: url("../resources/500300/paris.jpg");
+	background: url("../resources/500300/paris.jpg") center;
 }
 
 .moscbar{
-	background: url("../resources/500300/russia.jpg");
+	background: url("../resources/500300/russia.jpg") center;
 }
 
 .statt{
-	background: url("../resources/500300/statt.jpg");
+	background: url("../resources/500300/statt.jpg") center;
 }
 
 .uk{
-	background: url("../resources/500300/uk.jpg");
+	background: url("../resources/500300/uk.jpg") center;
 }
 
 .german{
-	background: url("../resources/500300/germany.jpg");
+	background: url("../resources/500300/germany.jpg") center;
 }
 
 .map{
@@ -533,7 +533,6 @@ body{
 	margin : auto;
 }
 
-
 .country{
 	width : 264px;
 	height: 300px;
@@ -552,4 +551,50 @@ body{
 	background: url("../resources/location.png") #2E2E2E no-repeat center 35px;
 	background-size: 50px;
 	text-align: center;
+}
+
+/* ------------------------------------------------- */
+
+.friends-list{
+	width: 170px;
+	height: 250px;
+	margin-left: 35px;
+}
+
+.friends-list:first-child{
+	margin-left: 0px;
+}
+
+.friends-list-info{
+	margin-top:5px;
+	padding: 3px 0px 3px 0px;
+	width:170px;
+	height: 50px;
+	text-align: center;
+	border-radius: 5px;
+	background: #D8D8D8;
+	padding-top:5px;
+}
+.friends-req{
+	margin-top:0px;
+	padding: 3px 0px 3px 0px;
+	width:170px;
+	height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	background: #E64C3C;
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
+	
+}
+
+.friends-answer{
+	width: 10px;
+	height: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	color: #000000;
+	padding: 1px 5px;
+
 }

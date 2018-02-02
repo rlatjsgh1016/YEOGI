@@ -95,6 +95,13 @@ body{
 	
 }
 
+
+.btn-important,
+.important-button{
+	background : #B5342A;
+	
+}
+
 .btn-more{
 	min-width : 15px !important;
 	background: #AFAFAF;
@@ -272,7 +279,7 @@ body{
 	
 }
 
-#footer #footer_logo{
+#footer_logo{
 	background:url("../resources/footer_logo.png") no-repeat center;
 	background-size : 150px;
 	width : 250px;
@@ -280,7 +287,7 @@ body{
 	float :left;
 }
 
-#footer #footer_logo #footer_bar{
+#footer_logo #footer_bar{
 	width :  450px;
 	height : 100px;
 	background :url("../resources/footer_bar.png") repeat-y center ;
@@ -325,7 +332,7 @@ body{
 	box-sizing: border-box;'
 	min-height: inherit;
 	min-width: 1320px;
-	/*background : BLUE;*/	
+/*	background : BLUE;	*/
 }
 
 #main .sec-cont{
@@ -438,4 +445,31 @@ body{
 	background: url("../resources/location.png") #2E2E2E no-repeat center 35px;
 	background-size: 50px;
 	text-align: center;
+}
+
+.login{
+	width: 700px;
+	height: 300px;
+	/*background: green;*/
+	margin-left:auto;
+	margin-right: auto;
+	padding-top: 10px;
+
+}
+
+
+fieldset{
+	margin-top: 20px;
+	font-family: 굴림 !important;
+	border : 2px solid #E64C3C;
+	display : table-cell;
+	vertical-align: middle;
+	padding-left: 50px;
+	color : #313131;
+	height: 150px;
+	padding-top: 80px;
+}
+
+input{
+	border: 1px solid #AFAFAF;
 }
