@@ -35,12 +35,13 @@ body{
 
 .title{
 	background: url("../resources/main_bar.png") no-repeat 13px center;	
-	max-width: fit-content;
+	max-width: none;
 	padding-left : 25px;
-	margin : 50px auto 30px auto;
+	margin : 50px 0px 30px 0px;
 	font-family: 맑은 고딕, 고딕, 돋움, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: bold;	
+
 
 }
 
@@ -53,13 +54,45 @@ body{
 	color: #E64C3C;
 }
 
+.back-v-import{
+	background: #B5342A;
+	color : #FFFFFF;
+}
+.back-import{
+	background: #E64C3C;
+	color : #FFFFFF;
+}
+.clicked{
+	background : #AFAFAF;
+	color :#FFFFFF;
+}
+
+.center-info{
+	margin-left:37%;
+	margin-top: 15px;
+}
+
+.yeogi-box{
+	background: #E64C3C;
+	border-radius: 4px;
+	display: box;
+	color:white;
+	min-width : 50px;
+	padding: 4px 6px;
+	text-align: center;
+}
+
+
+.space-20px{
+	margin-left : 20px;
+}
+
 .line{
-	width : 1320px;
+	width : 1000px;
 	height: 1px;
 	padding-bottom:30px;
 	border-bottom: 1px dashed #AFAFAF;
 }
-
 /*----- component style -------------------------*/
 
 .btn,
@@ -91,21 +124,14 @@ body{
 
 .btn-default,
 .default-button{
-	background : #759d2a;
-	
-}
-
-
-.btn-important,
-.important-button{
-	background : #B5342A;
+	background : #E64C3C;
 	
 }
 
 .btn-more{
 	min-width : 15px !important;
 	background: #AFAFAF;
-	margin-left: 15px;
+	margin-left: 86%;
 	color: #ffffff;
 	padding : 3px 4px !important;
 	font-size: 13px;
@@ -116,7 +142,7 @@ body{
 .plan-button{
 	background : #E64C3C;
 	height : 30px;
-	margin : 250px 0px 0px 37%;
+	margin : 250px 0px 0px 40%;
 	font-weight: bold;
 	font-size: 15px;
 	min-width: 150px;
@@ -154,25 +180,6 @@ body{
 }
 
 
-
-/*----- hover ------------------------------*/
-
-.paris-hover:hover{
-	background:url("../resources/500300/paris.jpg") no-repeat center;
-}
-
-.london-hover:hover{
-	background:url("../resources/500300/uk.jpg") no-repeat center;
-}
-.boracay-hover:hover{
-	background:url("../resources/500300/boracay.jpg") no-repeat center;
-}
-.buda-hover:hover{
-	background:url("../resources/500300/buda.png") no-repeat center;
-}
-.barcel-hover:hover{
-	background:url("../resources/500300/barcel.jpg") no-repeat center;
-}
 /*----- menu style ------------------------------*/
 
 .hor-menu{
@@ -185,11 +192,12 @@ body{
 }
 
 .hor-menu > ul{
-	
+
 }
 
 .hor-menu > ul > li{
 	float : left;
+
 }
 
 .hor-menu.first-pad-none > ul > li:first-child
@@ -199,8 +207,78 @@ body{
 }
 
 
+.ver-menu{	
+	width : 210px;
+	margin:50px 20px;
+	background : #ffffff;
+	text-align: center;
+	font-weight: bold;
+	/*position : fixed;*/
+}
 
+.ver-menu h1{
+	height : 35px;
+	padding-top: 10px;
+}
+.ver-menu ul{
+	
+}
 
+.ver-menu li{
+	font-weight: bold;
+	height : 30px;
+	padding-top : 10px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.ver-menu li:hover{
+	background : #AFAFAF;
+}
+
+.my-info{
+	width : 210px;
+	height: 300px;
+	background: #FFFFFF;
+	margin:50px 20px;
+	margin-bottom: 0px !important;
+	padding-top: 20px;
+	padding-top: 20px;
+}
+
+.my-info .my-info-write{
+	margin: auto;
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 180px;
+	height: 100px;
+	border-top: 1px solid #D8D8D8;
+	padding-left: 30px;
+}
+
+.follower{
+	width: 120px;
+	height: 30px;
+	border-radius: 4px;
+	background: #AFAFAF;
+	margin-left:45px;
+	margin-top: 10px;
+	text-align: center;
+	color:#ffffff;
+	padding-top:6px;
+}
+
+.virtual > .ver-menu{
+	margin-top: 7px;
+}
+
+/*----- map -------------------------------------*/
+
+ #map {
+        height: auto;
+        width: 300px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+ 
 /*----- header ----------------------------------*/
 
 #header{
@@ -229,9 +307,12 @@ body{
 	padding-left : 24px;
 	background: url("../resources/header_bar.png") no-repeat 13px center;
 	background-size: 1px;	
-	
 }
 
+.number-change{
+	margin-left:43%;
+	margin-top: 15px;
+}
 /*----- member-menu ----------------------------------*/
 
 
@@ -248,13 +329,31 @@ body{
 	background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	
 }
 
-
 /*----- visual ----------------------------------*/
+
 #visual{
 	min-width :1320px;
-	height : 450px;
-	background: #1C1C1C url("../resources/main_img.png") no-repeat center; 
+	height : 350px;
+	background: #212121; 
 	border-top : 5px solid #E64C3C;
+}
+
+.pro-pic {
+	width:230px;
+  	height:230px;
+  	background-color:#D8D8D8;
+  	border-radius: 50%;
+  	margin-left : 40%;
+  	margin-top : 50px;
+}
+
+.small-pro-pic {
+	width:150px;
+  	height:150px;
+  	background-color:#D8D8D8;
+  	border-radius: 50%;
+  	margin: auto;
+  	display:flex;
 }
 
 #body{
@@ -263,8 +362,7 @@ body{
 	margin-top : 1px;
 }
 
-#body .root-container
-{
+#body .root-container{
 	background:url("../images/bg-body.png") repeat-y center;
 }
 
@@ -279,7 +377,7 @@ body{
 	
 }
 
-#footer_logo{
+#footer #footer_logo{
 	background:url("../resources/footer_logo.png") no-repeat center;
 	background-size : 150px;
 	width : 250px;
@@ -287,7 +385,7 @@ body{
 	float :left;
 }
 
-#footer_logo #footer_bar{
+#footer #footer_logo #footer_bar{
 	width :  450px;
 	height : 100px;
 	background :url("../resources/footer_bar.png") repeat-y center ;
@@ -313,8 +411,9 @@ body{
 #aside{
 	background: url("../images/bg-aside-title.png") no-repeat left top;
 	min-height: inherit;
-	min-width: 205px;
+	min-width: 250px;
 	/* float: left; */
+	background-color: #E6E6E6;
 }
 
 
@@ -328,15 +427,11 @@ body{
 /* ----------------------------------------------- */
 
 #main{
-	padding : 0px 0px 75px 0px;
+	padding : 0px 0px 75px 40px;
 	box-sizing: border-box;'
 	min-height: inherit;
-	min-width: 1320px;
-/*	background : BLUE;	*/
-}
-
-#main .sec-cont{
-	height : 500px;
+	min-width: 1070px;
+	/*background : BLUE;*/
 }
 
 #main .travel-log{
@@ -353,27 +448,33 @@ body{
 }
 
 .paris{
-	background: url("../resources/500300/paris.jpg");
+	background: url("../resources/500300/paris.jpg") center;
 }
 
 .moscbar{
-	background: url("../resources/500300/russia.jpg");
+	background: url("../resources/500300/russia.jpg") center;
 }
 
 .statt{
-	background: url("../resources/500300/statt.jpg");
+	background: url("../resources/500300/statt.jpg") center;
 }
 
 .uk{
-	background: url("../resources/500300/uk.jpg");
+	background: url("../resources/500300/uk.jpg") center;
 }
 
 .german{
-	background: url("../resources/500300/germany.jpg");
+	background: url("../resources/500300/germany.jpg") center;
+}
+
+.map{
+	background: url("../resources/map.jpg");
+	background-size: 300px;
 }
 
 #main .travel-cont {
 	display: flex;
+	margin-top : 25px;
 }
 
 .travel-cont .travel-info{
@@ -383,6 +484,12 @@ body{
 	color : #FFFFFF;
 	font-weight: normal !important;
 	padding-left : 10px;
+}
+
+.travel-cont .travel-plan{
+	width : 264px;
+	height: 300px;
+	margin-left : 10px;
 }
 
 .travel-name{
@@ -426,7 +533,6 @@ body{
 	margin : auto;
 }
 
-
 .country{
 	width : 264px;
 	height: 300px;
@@ -447,29 +553,48 @@ body{
 	text-align: center;
 }
 
-.login{
-	width: 700px;
-	height: 300px;
-	/*background: green;*/
-	margin-left:auto;
-	margin-right: auto;
-	padding-top: 10px;
+/* ------------------------------------------------- */
 
+.friends-list{
+	width: 170px;
+	height: 250px;
+	margin-left: 35px;
 }
 
+.friends-list:first-child{
+	margin-left: 0px;
+}
 
-fieldset{
-	margin-top: 20px;
-	font-family: 굴림 !important;
-	border : 2px solid #E64C3C;
-	display : table-cell;
+.friends-list-info{
+	margin-top:5px;
+	padding: 3px 0px 3px 0px;
+	width:170px;
+	height: 50px;
+	text-align: center;
+	border-radius: 5px;
+	background: #D8D8D8;
+	padding-top:5px;
+}
+.friends-req{
+	margin-top:0px;
+	padding: 3px 0px 3px 0px;
+	width:170px;
+	height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	background: #E64C3C;
+	color: white;
+	display: table-cell;
 	vertical-align: middle;
-	padding-left: 50px;
-	color : #313131;
-	height: 150px;
-	padding-top: 80px;
+	
 }
 
-input{
-	border: 1px solid #AFAFAF;
+.friends-answer{
+	width: 10px;
+	height: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	color: #000000;
+	padding: 1px 5px;
+
 }
