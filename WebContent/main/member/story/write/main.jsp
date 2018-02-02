@@ -101,7 +101,7 @@
 						<div class="image-frame">
 							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
-						
+						<!-- 몰라 -->
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
