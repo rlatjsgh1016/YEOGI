@@ -13,13 +13,15 @@
 		<div class="root-container">
 			<a id="logo" href="../../../main.html"><img alt="로고" src="../../../../images/logo.png" height="60px;"></a>
 			<nav>
-				<ul class="main-menu">
+				<h1 class="hidden">메인메뉴</h1>
+				<ul class="menu-hor menu-main">
 					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
 					<li><a href="main.html">기록하기</a></li>
 					<li><a href="#">여행기</a></li>
 					<li><a href="#">커뮤니티</a></li>
 				</ul>
-				<ul class="login-menu">
+				<h1 class="hidden">로그인메뉴</h1>
+				<ul class="menu-hor menu-login">
 					<li><a href="#">로그인</a></li>
 					<li><a href="#">회원가입</a></li>
 				</ul>
@@ -72,13 +74,18 @@
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
+							<script type="text/javascript">
+							function doPopupopen() {
+							   window. open("detail.html","게시물입력폼","resizable=no scrollbars=no menubar=no toolbar=no location=no directories=no status=no width=800 height=500");
+							}
+							</script>
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800 height:500 status:no toolbar:no location:no menubar:no scrollbars:no resizable:no');"><img alt="편집" src="../../../../images/write.png"></a>
+							<a href="#" onclick="doPopupopen()"  onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','fullscreen');" onfocus='this.blur()'>장소추가</a>
+						<a href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
@@ -90,29 +97,28 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+						<a href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
 							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
-						<!-- 몰라 -->
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+						<a href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
 					</div>
 				</div>
 			</section>

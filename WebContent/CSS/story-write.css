@@ -98,16 +98,41 @@ input, select {
     vertical-align:middle;
 }
 
-.clear-fix::after{
-	content: '';
-	font-size: 0;
-	clear: both;
-	overflow: hidden;
-	visibility: hidden;
+/*----------------------- abstract style ------------------------*/
+
+.root-container{
+	width: 1320px;
+	height: inherit;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
+.hidden{
+	display: none;
+}
 
-/*----------------------- abstract style ------------------------*/
+.clear-fix::after{
+	content: "";
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+
+.menu-hor{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.menu-ver{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/*----------------------- component style ------------------------*/
 
 
 /*----------------------- header ------------------------*/
@@ -115,95 +140,32 @@ header{
 	height: 70px;
 }
 
-.root-container{
-	width: 1320px;
-	height: inherit;
-	margin: 0 auto;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-#logo{
-	width: 200px;
-}
-
 header nav{
-	width: inherit;
 	display: flex;
 	justify-content: space-between;
 }
 
-.main-menu,
-.login-menu{
-	display: flex;
-	justify-content: flex-start;
+.menu-main,
+.menu-login{
 	align-items: center;
 }
 
-.main-menu li:first-child,
-.login-menu li:first-child{
-	background: none;
-}
-
-.main-menu li,
-.login-menu li{
+.menu-main > li,
+.menu-login > li{
 	font-size: 20px;
 	font-weight: bold;
 	padding-left: 24px;
 	background: url("../images/header_bar.png") no-repeat 13px center;
 }
 
-.main-menu a:hover,
-.login-menu a:hover{
-	text-decoration: underline;
-}
-
-
-/* 
-header nav>ul>li>a{
-	height: 20px;
-	margin: 25px 0 5px 30px;
-	padding: 10px;
-	font-weight: bold;
-	float: left;
-}
-
-nav>ul>li{
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	padding-left: 20px;
-}
-
-header>nav>a:hover{
-	text-decoration: underline;
-}
-
-.root-container{
-	width: 1320px;
-	height: inherit;
-	margin: 0 auto;
-}
-
-.main-menu{
-	width: 600px;
-	float: left;
-	overflow: hidden;
-}
-
-.login-menu{
-	width: 250px;
-	float: right;
-	overflow: hidden;
+.menu-main > li:first-child,
+.menu-login > li:first-child{
+	background: none;
 }
 
 #logo{
-	width:117px;
-	height: 60px;
-	margin: 5px 0;
-	padding: 0;
-} */
+	width: 200px;
+}
 
 /*----------------------- visual ------------------------*/
 
@@ -224,7 +186,6 @@ header>nav>a:hover{
 .title-box{
 	width:1300px;
 	margin:8px;
-	
 	font-size: 33px;
 	font-family: 맑은 고딕, HY견고딕, sans-serif;
 }
