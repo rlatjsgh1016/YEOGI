@@ -132,15 +132,83 @@ input, select {
 	justify-content: flex-start;
 }
 
+.text-focus{
+	color: #E64C3C;
+}
+
+.text-indent{
+	text-indent: 10px;
+}
+
 /*----------------------- component style ------------------------*/
 
+.btn{
+	display : inline-block;
+	min-width : 64px;
+	text-align: center;
+	font-weight: bold;
+	padding : 8px;
+	border-radius: 5px;
+	overflow : hidden;
+	/* overriding for input button*/
+	border: 0px; /* 원래 버튼 초기화 */
+}
 
+.btn-default{
+	color: #ffffff;
+	background: #333333;
+}
+
+.btn-default:hover{
+	background: #E64C3C;
+}
+
+.btn-img{
+	
+}
+
+.btn-focus{
+	color: #ffffff;
+	background: #E64C3C;
+}
+
+.btn-cancel{
+	
+}
+
+.small-loca{
+	background: url("../resources/location.png") no-repeat left ;
+	background-size: 20px;
+	width:20px;
+	height:20px;
+	float : left;
+	margin-right: 5px;
+}
+
+.small-cal{
+	background: url("../resources/cal.png") no-repeat left ;
+	background-size: 20px;
+	width:20px;
+	height:20px;
+	float : left;
+	margin-right: 5px;
+}
+
+.large-loca{
+	background: url("../resources/location.png") no-repeat left ;
+	background-size: 26px;
+	width:26px;
+	height:26px;
+	float : left;
+	margin-right: 5px;
+}
 /*----------------------- header ------------------------*/
 header{
 	height: 70px;
 }
 
 header nav{
+	width: inherit;
 	display: flex;
 	justify-content: space-between;
 }
@@ -158,6 +226,16 @@ header nav{
 	background: url("../images/header_bar.png") no-repeat 13px center;
 }
 
+.menu-main > li:hover,
+.menu-login > li:hover{
+	text-decoration: underline;	
+}
+
+.menu-main > li:active,
+.menu-login > li:active{
+	color: #E64C3C;
+}
+
 .menu-main > li:first-child,
 .menu-login > li:first-child{
 	background: none;
@@ -170,7 +248,6 @@ header nav{
 /*----------------------- visual ------------------------*/
 
 #visual{
-	width: 100%;
 	height: 145px;
 	background: #1C1C1C url(../resources/small_visual.jpg) no-repeat center;
     border-top: 5px solid #E64C3C;
@@ -224,61 +301,29 @@ main>.root-container{
 }
 
 .btn-container{
-	height: 110px;
-	background: #323232;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 10px;
+	padding: 10px;
+	background: #ffffff;
+	border-radius: 5px;
 }
 
-.lock-add-btn{
-	margin: 5px 15px;
+.first-line-btn{
+	display:flex;
+	justify-content: space-between;
+}
+
+.second-line-btn{
 	display: flex;
-	overflow: hidden;
+	justify-content: space-between;
+	padding-top: 20px;
 }
 
 #lock{
-	width: 150px;
-	padding: 17px 0 17px 24px;
-	font-size: 16px;
-	text-align: center;
-	background: url("../images/lock.png") no-repeat 13px center;
-}
-
-.large-btn{
-	width: 100px;
-	padding: 4px 0;
-	margin: 5px;
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	color: #333333;
-	background : #ffffff;
-	border-radius: 5px;
-	box-shadow: 2px 2px 1px #545454;
-}
-
-.large-btn:hover{
-	background : #E64C3C;
-}
-
-.console-btn{
-	margin: 0 20px;
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.console-btn a{
-	display: block;
-	padding: 10px;
-	text-align: center;
-	font-weight: bold;
-	color: #333333;
-	background : #ffffff;
-	border-radius: 5px;
-}
-
-.console-btn a:hover{
-	background : #E64C3C;
+	background: url("../images/lock.png") no-repeat 20px center;
 }
 
 .spending-container{
@@ -414,52 +459,6 @@ main>.root-container{
 	padding: 10px 0;
 }
 
-.place-add img{
-	width: 32px;
-	height: 32px;
-	padding: 5px;
-}
-
-.place-add a{
-	padding: 10px;
-	text-align: center;
-	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #848484;
-	border-radius: 5px;	
-	box-shadow: 2px 2px 1px #545454;
-}
-
-.place-add a:hover{
-	background : #E64C3C;
-}
-
-.small-loca{
-	background: url("../resources/location.png") no-repeat left ;
-	background-size: 20px;
-	width:20px;
-	height:20px;
-	float : left;
-	margin-right: 5px;
-}
-
-.small-cal{
-	background: url("../resources/cal.png") no-repeat left ;
-	background-size: 20px;
-	width:20px;
-	height:20px;
-	float : left;
-	margin-right: 5px;
-}
-
-.large-loca{
-	background: url("../resources/location.png") no-repeat left ;
-	background-size: 30px;
-	width:30px;
-	height:30px;
-	float : left;
-	margin-right: 5px;
-}
 
 
 /*----------------------- right-main ------------------------*/
@@ -638,12 +637,11 @@ textarea.form-control{
 	width: 780px;
 	height: 480px;
 	padding: 10px;
+	background: #E6E6E6;
 }
 
 .detail-title-box{
-	display: flex;
-	flex-direction: column-reverse;
-	align-items: flex-start;
+	text-align: center;
 }
 
 .detail-title-box>:first-child{
@@ -675,11 +673,14 @@ textarea.form-control{
 	
 }
 
-	detail-position-box img{
-		
-	}
+detail-position-box img{
 	
+}
 	
+#map{
+	width: 1000px;
+	height: 700px;
+}
 
 
 /*----------------------- footer ------------------------*/
