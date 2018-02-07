@@ -32,19 +32,19 @@ p{
 	padding: 0;
 }
 
+/*-----------root-container-----------*/	
+.root-container{
+		width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+	}
 /*-----------header-----------*/
 #header{
 	background: white;
 	height : 70px;
 	padding-top:10px;
 }
-	
-	.root-container{
-		width: 1320px;
-		margin-left: auto;
-		margin-right: auto;
-	
-	}
 
 	#logo{
 		height:65px;
@@ -74,6 +74,7 @@ p{
 	
 	.member-menu{
 		margin-top: 35px;
+		margin-left: 400px;
 		float: right;
 	}
 	
@@ -112,7 +113,131 @@ p{
 			padding-left : 0px !important;
 			background : none !important;
 		}
+/*----visual----------*/
+#visual{
+	height: 280px;
+	background: black;
+	
+}
 
+.title-box{
+	height: 280px;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+}
+	
+		.title-name{
+			min-height: 130px;
+			width: 1320px;
+			margin-top: -20px;
+			box-sizing: content-box;
+		}
+		
+		 .title-name a{
+		 	position: absolute;
+		    width: 1320px;
+		    line-height: 35px;
+		    overflow: hidden;
+		    display: block;
+		    padding-top: 70px;
+		    font-family: 맑은고딕,HY고딕,sans-serif;
+		    font-size: 33px;
+		    font-weight: bold;
+		    color: #ffffff;
+		    text-align: center;
+		    word-wrap: break-word;
+		 }
+		 
+		 
+		.title-info{
+			width: 1320px;
+			background: white;
+			text-align: center;
+		}
+		
+			.title-info span{
+				padding-left: 15px;	
+			}
+		
+		.title-hit{
+			width: 1320px;
+			background: white;
+			text-align: center;
+		}
+			.title-hit span{
+				padding-left: 15px;	
+			}
+	
+		
+/*----body----------*/
+#body{
+	min-height: 500px;
+	overflow: auto;
+	
+}
 
+/*----aside----------*/
+#aside{
+	min-height: 600px;
+	width: 300px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: black;
+}
 
+	.user-box{
+		width:255px;
+		height: 295px;
+		margin-top: 10px;
+		background: green;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+		.user-box .user-img{
+			width: 150px;
+			height: 150px;
+			margin-top: 15px;
+		}
+		
+		.user-box .user-name{
+			margin-top: 10px;
+			height: 30px;
+			text-align: center;
+			margin-top: 15px;
+		}
+		
+		.user-box .user-collection{
+			text-align: center;
+			margin-top: 15px;
+		}
+		
+		.user-box .user-scrap{
+			height: 40px;
+			text-align: center;
+			margin-top: 15px;
+		}
+	
+	.summary-box{
+		margin-top: 5px;
+		width: 255px;
+		background: orange;
+		border-radius: 10px;
+	}
+	
+		.summary-box li{
+			height: 50px;
+		}
+/*----main----------*/
+#main{
+	min-height: inherit;
+	width: 1020px;
+	float: left;
+	background: grey;
+}
 
