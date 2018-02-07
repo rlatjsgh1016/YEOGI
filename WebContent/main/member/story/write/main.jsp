@@ -13,20 +13,23 @@
 		<div class="root-container">
 			<a id="logo" href="../../../main.html"><img alt="로고" src="../../../../images/logo.png" height="60px;"></a>
 			<nav>
-				<ul class="main-menu">
+				<h1 class="hidden">메인메뉴</h1>
+				<ul class="menu-hor menu-main">
 					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
-					<li><a href="main.html">기록하기</a></li>
-					<li><a href="#">여행기</a></li>
-					<li><a href="#">커뮤니티</a></li>
+					<li><a class="text-focus" href="main.jsp">기록하기</a></li>
+					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
+					<li><a href="../../../public-board/community/writing.html">커뮤니티</a></li>
 				</ul>
-				<ul class="login-menu">
-					<li><a href="#">로그인</a></li>
+				<h1 class="hidden">로그인메뉴</h1>
+				<ul class="menu-hor menu-login">
+					<li><a href="../../../log-in.html">로그인</a></li>
 					<li><a href="#">회원가입</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<div id="visual">
+		<h1 class="hidden">타이틀 입력 필드</h1>
 		<div class="root-container">
 			<input class="title-box" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)">
 			<a id="btn-cover" href="#">커버교체</a>
@@ -36,15 +39,16 @@
 		<div class="root-container">
 			<section class="left-main">
 				<div class="btn-container">
-					<div class="lock-add-btn">
-						<a id="lock" href="#">비공개▶공개</a>
-						<a class="large-btn clear-fix" href="#">동행자<br>추가</a>
+					<div class="first-line-btn">
+						<img alt="잠금" src="../../../../images/lock.png" style="width:40px; height: 40px">
+						<a class="btn btn-default" href="#">비공개▶공개</a>
+						<a class="btn btn-default" href="#">동행자<br>추가</a>
 					</div>
-					<ul class="console-btn">
-						<li><a href="#">임시저장</a></li>
-						<li><a href="#">작성완료</a></li>
-						<li><a href="#">취소</a></li>
-					</ul>
+					<div class="second-line-btn">
+						<a class="btn btn-default" href="#">임시저장</a>
+						<a class="btn btn-default" href="#">작성완료</a>
+						<a class="btn btn-default" href="#">취소</a>
+					</div>
 				</div>
 				<div class="spending-container">
 					<span id="spending-txt">지출내역</span>
@@ -72,13 +76,18 @@
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
+							<script type="text/javascript">
+							function doPopupopen() {
+							   window. open("detail.jsp","게시물입력폼","resizable=no scrollbars=no menubar=no toolbar=no location=no directories=no status=no width=800 height=500");
+							}
+							</script>
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','width:800 height:500 status:no toolbar:no location:no menubar:no scrollbars:no resizable:no');"><img alt="편집" src="../../../../images/write.png"></a>
+							<a href="#" onclick="doPopupopen()"  onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','fullscreen');" onfocus='this.blur()'>장소추가</a>
+						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
@@ -90,29 +99,28 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
 							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
 						</div>
-						<!-- 몰라 -->
 						<div class="place-frame">
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a href=# onclick="window.open('detail.html','게시물입력폼','resizable=no scrollbars=no width=800 height=500');" onfocus='this.blur()'>장소추가</a>					
+						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
 					</div>
 				</div>
 			</section>
@@ -151,7 +159,6 @@
 							<span class="selected" data-theme="3">단체여행</span>
 							<span class="selected" data-theme="4">패키지 여행</span>
 							<span class="selected" data-theme="5">커플</span>
-           				</div>           				<div class="line">
            				</div>
        				</div>
    				</div>
