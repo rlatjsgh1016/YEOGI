@@ -36,24 +36,29 @@ p{
 #header{
 	background: white;
 	height : 70px;
-	width: 1680px;
-	padding-left:40px;
+	padding-top:10px;
 }
+	
+	.root-container{
+		width: 1680px;
+		margin-left: auto;
+		margin-right: auto;
+	
+	}
 
 	#logo{
-		width: 117px;
-		height:60px;
+		height:65px;
 		float: left;
 		box-sizing: border-box;
 	}
 	
 	#logo > img{
-		margin-top:9px;
+		height:65px;
 	}
 	.main-menu{
 		font-size: 20px;
 		margin-top: 25px;
-		margin-left: 180px;
+		margin-left: 150px;
 	}
 	
 	.main-menu > ul{
@@ -68,7 +73,8 @@ p{
 	}
 	
 	.member-menu{
-		margin-left: 700px;
+		margin-top: 35px;
+		float: right;
 	}
 	
 	.member-menu > ul{
@@ -78,11 +84,15 @@ p{
 	}
 	
 	.member-menu > ul > li{
-		float: right;
+		
 		padding-left: 10px;
 		font-family: 맑은 고딕, HY견고딕, Arial, sans-serif;
 		font-size:13px;
 			
+	}
+	
+	.mypageBtn{
+		
 	}
 
 /*-----------body-----------*/
