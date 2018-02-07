@@ -598,3 +598,12 @@ body{
 	padding: 1px 5px;
 
 }
+
+.title-box{
+	width:300px;
+	margin-top:15px;
+	margin-bottom:0px;
+	font-size: 20px;
+	font-family: 맑은 고딕, HY견고딕, sans-serif;
+	border-radius: 5px;
+}
