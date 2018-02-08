@@ -23,7 +23,7 @@
 							<select id="vehicle" name="vehicle">
 								<option>비행기</option>
 								<option>기차</option>
-								<option>지하철</option>
+								<option>지하철</option>	
 								<option>버스</option>
 								<option>도보</option>
 								<option>택시</option>
