@@ -1,330 +1,495 @@
 @charset "UTF-8";
 
 /*--------------------------- reset ----------------------------------*/
-
-
-h1{
-	margin : 0px;
+h1 {
+	margin: 0px;
 }
 
-ul{
-	padding : 0px;
-	margin : 0px;
+ul {
+	padding: 0px;
+	margin: 0px;
 }
 
-li{
-	display : block;
+li {
+	display: block;
 }
 
-a{
+a {
 	text-decoration: none;
 	color: inherit;
 }
 
-body{
-	margin:0px;
+body {
+	margin: 0px;
 }
 
-table{
+table {
 	text-align: center;
 	border-spacing: 0px;
-	table-layout: fixed;  /* 테이블 와따가따 거리는거 고정 */
+	table-layout: fixed; /* 테이블 와따가따 거리는거 고정 */
 }
 
-h1,h2,h3,h4,h5,h6{width:0px; height:0px; font-size:0px; line-height:0px; position:absolute;}
+h1, h2, h3, h4, h5, h6 {
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	position: absolute;
+}
 
 /*------------------------메뉴 스탙-------------------------------------*/
-.hor-menu{
-	display : inline-block;
-	padding-top : 15px; /* 메뉴 글씨 패딩*/
+.hor-menu {
+	display: inline-block;
+	padding-top: 15px; /* 메뉴 글씨 패딩*/
 }
 
-.hor-menu > h1{
-	display : none;
+.hor-menu>h1 {
+	display: none;
 }
 
-.hor-menu > ul > li{
-	float : left;
+.hor-menu>ul>li {
+	float: left;
 }
-.hor-menu.first-pad-none > ul > li:first-child
-{
+
+.hor-menu.first-pad-none>ul>li:first-child {
 	padding-left: 0px;
-	background : none;
+	background: none;
 }
 /*------------------------멤버메뉴-------------------------------------*/
-.member-menu{
-
-	font-family : "맑은 고딕","고딕","sans-serif";
-
-	font-size : 13px;
-
-	font-weight : bold;
-
-	color : #6E6E6E;
-
-    float:right;
-
+.member-menu {
+	font-family: "맑은 고딕", "고딕", "sans-serif";
+	font-size: 13px;
+	font-weight: bold;
+	color: #6E6E6E;
+	float: right;
 }
 
- 
-
-.member-menu > ul > li{
-
-	padding-left : 9px;
-
-	background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	
-
+.member-menu>ul>li {
+	padding-left: 9px;
 }
 /*------------------------btn-------------------------------------*/
-.btn,
-
-.button{
-	display : inline-block; /*display가 inline이 아니면 너비를 설정할 수 없음*/
-	min-width : 71px;
-	color : #ffffff;
+.btn, .button {
+	display: inline-block; /*display가 inline이 아니면 너비를 설정할 수 없음*/
+	min-width: 71px;
+	color: #ffffff;
 	text-align: center;
-	padding : 3px 8px;
-	border-radius: 5px;	
-	overflow : hidden;
+	padding: 3px 8px;
+	border-radius: 5px;
+	overflow: hidden;
 	/* overriding for input button*/
 	border: 0px; /* 원래 버튼 초기화 */
 }
 
- 
-
- 
-
- 
-
- 
-
-.btn-mypage{
-	background : #000000;
+.btn-mypage {
+	background: #000000;
 	width: 70px;
 	margin-bottom: 5px !important;
 	height: 17px;
 	padding-top: 2px;
 }
 
-
 /* -------------------------------- 헤더 ----------------------------- */
-#header{
-    padding-top: 10px;
-	height : 70px;
-    
+#header {
+	padding-top: 10px;
+	height: 70px;
 }
-#logo{
-	width : 200px;
-	float : left;
-}
-    
-.root-container{
 
+#logo {
+	width: 200px;
+	float: left;
+}
+
+.root-container {
 	height: 100%;
-
 	width: 1680px;
-
 	min-height: inherit;
-
 	margin-left: auto;
-
 	margin-right: auto;
 }
 /* ------------------------------------------------------------------ */
-.main-menu{
-	font-family : "맑은 고딕","고딕","sans-serif";
-	font-size : 20px;
-	font-weight : bold;
-	color : #333333;
+.main-menu {
+	font-family: "맑은 고딕", "고딕", "sans-serif";
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
 	padding-bottom: 20px;
 }
 
-.main-menu > ul > li{
-	padding-left : 24px;
-	background: url("../../../../resources/header_bar.png") no-repeat 13px center;
-	background-size: 1px;	
-	
+.main-menu>ul>li {
+	padding-left: 24px;
+	background: url("../resources/header_bar.png") no-repeat 13px center;
+	background-size: 2px;
 }
 
-
 /* --------------------------------- 바디 ----------------------------- */
-#fullscreen{
-	border-top:5px solid #ff5959;
-    margin:0 auto;
-    width: 1680px;
-    height: 880px;
-    box-sizing: border-box;
+#fullscreen {
+	border-top: 5px solid #ff5959;
+	margin: 0 auto;
+	width: 1680px;
+	height: 880px;
+	box-sizing: border-box;
 }
 
 /* --------------------------------- 메뉴 플레이트 ----------------------------- */
-#menu-plate{
+#menu-plate {
 	background: #cacaca;
 	width: 330px;
-	height:inherit;
+	height: inherit;
 	float: left;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+	
 }
 
-	#tab{
-		background: #cacaca;
-		width: 90px;
-		height: 790px;
-        float: left;
-        border: 1px solid black;
-        border-right: 1px solid white;
-  		box-sizing: border-box;
-	}
-        #save-trip{
-        background:url("../images/save.png") no-repeat , black;
-		background-size:50%;
-		width: 90px;
-		height: 90px;
-        float: left;
-        border-left: 1px solid black;
-        border-right: 1px solid white;
-        border-bottom: 1px solid black;
-  		box-sizing: border-box;
-  		color: white;
-  		text-align: center;
-  		background-position:22px 10px; 
-  		padding-top: 60px;
-		
-	}
+#tab {
+	background: #cacaca;
+	width: 90px;
+	height: 790px;
+	float: left;
+	border: 1px solid black;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+}
 
-	#trip-name{
-		background: #98b8fa;
-		width: 240px;
-		height: 80px;
-        float: left;
-	} 
+#save-trip {
+	background: url("../images/save.png") no-repeat, black;
+	background-size: 50%;
+	width: 90px;
+	height: 90px;
+	float: left;
+	border-left: 1px solid black;
+	border-right: 1px solid white;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+	color: white;
+	text-align: center;
+	background-position: 22px 10px;
+	padding-top: 60px;
+}
 
-    #cost-option{
-        background: #efefef;
-        width: 240px;
-		height: 710px;
-        float:left;
-        border-bottom: 1px solid black;
-  		box-sizing: border-box;
-    }
+#trip-name {
+	background: #cacaca;
+	width: 240px;
+	height: 80px;
+	float: left;
+}
+
+#cost-option {
+	background: #efefef;
+	width: 240px;
+	height: 710px;
+	float: left;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
 
 /* --------------------------------- 메인 ----------------------------- */
-#main{
+#main {
 	background: #b9b9dd;
 	height: 880px;
-    width:1350px;
-    float: left;
+	width: 1350px;
+	float: left;
 }
 
-	#map{
-		background:url("../images/google-map.png") no-repeat center;
-		background-size:cover;
-		height: 650px;
-		border: 1px solid black;
-  		box-sizing: border-box;
-  		display: flex;
-  		flex-flow: column wrap-reverse;
-  		
-	}
+#map {
+	background: url("../images/google-map.png") no-repeat center;
+	background-size: cover;
+	height: 650px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column wrap-reverse;
+}
 
-		#add-friend{
-			background: url("../images/add-friends.png") no-repeat center;
-			background-size:cover;
-			height: 80px;
-			width: 80px;
-			margin-top: 10px;
-			margin-right: 10px;
-			
-		}
-		
-		#check-map{
-		
-		opacity:.2;
+#add-friend {
+	background: url("../images/add-friends.png") no-repeat center;
+	background-size:contain;
+	background-position:right;
+	height: 80px;
+	width: 80px;
+	margin-top: 10px;
+	margin-right: 10px;
+	float: right;
+	transition-duration:1s;
+}
+
+#add-friend:hover {
+		width: 300px;
 		border:1px solid black;
-		background:#ababab;
-		height:150px;
-		width: 80px;
-		margin:180px 10px 0px 0px;
-		border-radius: 80px;
-		}
-
-		#check-map:hover{ 
-		opacity: 1;
-		font-size: x-large;
-		}
 		
-	#time-table{
-		background: #ffffa4;
-		height: 230px;
-        width: 1350px;;
-        border-bottom: 1px solid black;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-  		box-sizing: border-box;
-  		float: left;
-	}
+}
+	
+	
 
-		#add-day{
-			background: #7c7c7c;
-			width: 200px;
-			height: 230px;
-			float:left;
-		}
 
-		#schedule{
-			background: #fafafa;
-			width: 800px;
-			height: 230px;
-			float:left;
-            overflow-y: scroll;
-		}
+#check-map {
+	opacity: .2;
+	border: 1px solid black;
+	background: #ababab;
+	height: 150px;
+	width: 80px;
+	margin: 180px 10px 0px 0px;
+	border-radius: 80px;
+}
 
-		
 
-		#weather{
-			background: #ffffc6;
+#check-map:hover {
+	opacity: 1;
+	font-size: x-large;
+}
+
+#time-table {
+	background: #ffffa4;
+	height: 230px;
+	width: 1350px;;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	box-sizing: border-box;
+	float: left;
+}
+
+#add-day {
+	background: #7c7c7c;
+	width: 200px;
+	height: 230px;
+	float: left;
+}
+
+#schedule {
+	background: #fafafa;
+	width: 800px;
+	height: 230px;
+	float: left;
+	overflow-y: scroll;
+}
+#weather{
+ background: #ffffff;
 			width: 348px;
 			height: 230px;
 			float:left;
-		}
+			overflow-y: scroll;
+}
 
 /* ----------속메뉴------------------------------- */
-
-#ul{
-    display: flex;
-    box-sizing: border-box;
-    
-}
-#tab>nav>ul>li{
-    width: 90px;
-    height:35px;
-    background: yellowgreen;
-    flex-direction:column;
-}
-#name{
-    height: 50px;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    box-sizing: border-box;
+#name {
+	height: 50px;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	box-sizing: border-box;
 }
 
-#period{
-    height: 30px;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
+#period {
+	height: 30px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
 }
 
-#cost-option>nav>ul>.a{
-    margin: 10px;
-    width: 220px;
-    height: 90px;
-    background: yellowgreen;
-    flex-direction:column;
-    border: 3px solid black;
-    box-sizing: border-box;
+.total-cost{
+	margin: 10px;
+	width: 215px;
+	height: 90px;
+	background: white;
+	border: 5px solid #ff7b7b;
+	box-sizing: border-box;
+	padding: 5px;
+	position: fixed;
 }
+
+.total-cost p{
+	font-size: small;	
+	text-align: center;
+	font-weight: bold;
+}
+
+.total-day .b1{
+	margin-top:120px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	width: 70px;
+	height: 40px;
+	background: white;
+	border: 5px solid gray;
+	box-sizing: border-box;
+	padding: 5px;
+}
+/* -------------------------------------------------flex---------------------------------------- */
+/* .total-day .b2{
+	margin: 10px;
+	width: 220px;
+	height: 140px;
+	background: white;
+	border: 5px solid gray;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+.b2 div{
+	float:left;
+	font-size: medium;
+	font-weight: bold;
+}
+
+.when{
+	float:left;
+	width: 50px;
+	height: 30px;
+	border: 2px solid #ceceff;
+	box-sizing: border-box;
+	border-radius: 8px;
+	background: #7575ff;
+	color: white;
+
+}
+
+.where{
+	float:right;
+	width: auto;
+	height: 30px;
+	color:#8a8aff;	
+}
+
+.why{
+	width: 200px;
+	height: 85px;
+	border: 2px solid #400080;
+	box-sizing: border-box;
+	margin-bottom: 50px;	
+} */
+
+/* ------------------------------------------------------float--------------------------------- */
+
+.total-day .b2{
+ 	
+ 	margin-left:10px;
+ 	margin-bottom:30px;
+	width: 215px;
+	height: 155px;
+	background: white;
+	border: 5px solid gray;
+	box-sizing: border-box;
+	padding: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: medium;
+	font-weight: bold;
+	text-align: center;
+	
+}
+
+.when{
+	width: 50px;
+	height: 30px;
+	border: 2px solid #ceceff;
+	box-sizing: border-box;
+	border-radius: 8px;
+	background: #7575ff;
+	color: white;
+
+}
+
+.where{
+	width: 140px;
+	height: 20px;
+	color:#8a8aff;	
+}
+
+.why{
+	width: 250px;
+	height: 90px;
+	border: 2px solid #400080;
+	box-sizing: border-box;
+}  
+
+
 /* -------------------------add-day---------- */
-#add-day>ul>.a{
+.left-direct {
+	background: url("../images/left-arrow.png") no-repeat center;
+	background-size: cover;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.now {
+	background: #f9f9f9;
+	width: 120px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	box-sizing: border-box;
+	font-size: x-large;
+}
+
+.right-direct {
+	background: url("../images/right-arrow.png") no-repeat center;
+	background-size: cover;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.year {
+	text-align: center;
+	line-height: 30px;
+	background: white;
+	border: 5px solid #ff7b7b;
+	box-sizing: border-box;
+	font-stretch: wider;
+	width: 200px;
+	height: 40px;
+	clear: both;
+	float: left;
+}
+
+.plus {
+	margin-left: 20px;
+	border-radius: 20px;
+	margin-bottom: 5px;
+	color: white;
+	background: #e64c3c;
+	margin-top: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	width: 160px;
+	height: 40px;
+	float: left;
+	padding-top: 7px;
+}
+
+.minus {
+	margin-left: 20px;
+	border-radius: 20px;
+	margin-bottom: 5px;
+	color: white;
+	background: black;
+	padding-top: 7px;
+	box-sizing: border-box;
+	text-align: center;
+	width: 160px;
+	height: 40px;
+	float: left;
+}
+
+.all-minus {
+	margin-left: 20px;
+	border-radius: 20px;
+	color: white;
+	background: black;
+	padding-top: 7px;
+	box-sizing: border-box;
+	text-align: center;
+	width: 160px;
+	height: 40px;
+	float: left;
+}
+/*#add-day>ul>.a{
 	background: url("../images/left-arrow.png") no-repeat center;
 	background-size: cover;
 	width: 40px;
@@ -400,54 +565,98 @@ h1,h2,h3,h4,h5,h6{width:0px; height:0px; font-size:0px; line-height:0px; positio
     width: 160px;
     height: 40px;
     float: left;
-}
+}*/
 
 /* ---------------------------------------타임테이블 & 메모 ---------------------------- */
-
-
-
-.memo-pad{
+.memo-pad {
 	background: url("../images/memo-pad.png") no-repeat center;
-	background-size:contain;
+	background-size: contain;
 }
 
-#schedule td{
-	height:40px;
+#schedule td {
+	height: 40px;
 	text-align: center;
 }
 
 /* ------------------------------------------맵---------------------------------------- */
-.up{
-	width:inherit;
-	min-height:50px;
+.up {
+	width: inherit;
+	min-height: 50px;
 	background: url("../images/direction-up.png") no-repeat center;
-	background-size:50%;
-	opacity:0.5;
+	background-size: 50%;
+	opacity: 0.5;
 }
 
-
 .center {
-	
-   width: 80px;
-   height: 50px;
-   line-height: 40px;
-   display: block;
-   text-align: center;
-   background: #ffdd00;
+	width: 80px;
+	height: 50px;
+	line-height: 40px;
+	display: block;
+	text-align: center;
+	background: #ffdd00;
 	/* width:inherit;
 	height:50px;
 	line-height: 100px; */
 }
 
-.down{
-	width:inherit;
-	min-height:50px;
+.down {
+	width: inherit;
+	min-height: 50px;
 	background: url("../images/direction-down.png") no-repeat center;
-	background-size:50%;
-	opacity:0.5;
+	background-size: 50%;
+	opacity: 0.5;
 }
 
 /* ------------------------------ 메뉴판 ------------------------------------- */
+.search {
+	width: 90px;
+	height: 90px;
+	background: url("../images/search.png") no-repeat center;
+	background-size: 60%;
+	text-align: center;
+	line-height: 160px;
+	background-position: 22px 10px;
+	margin-bottom: 10px;
+}
+
+.basket {
+	width: 90px;
+	height: 90px;
+	background: url("../images/shopping.png") no-repeat center;
+	background-size: 60%;
+	text-align: center;
+	background-position: 22px 10px;
+	line-height: 160px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.cost {
+	width: 90px;
+	height: 90px;
+	background: url("../images/korea-won.png") no-repeat center,#efefef;
+	background-size: 60%;
+	text-align: center;
+	background-position: 22px 10px;
+	line-height: 140px;
+	display: block;
+	margin-bottom: 10px;
+	border-top:1px soild black;
+	border-bottom:1px soild black;
+}
+
+.calendar {
+	width: 90px;
+	height: 90px;
+	background: url("../images/calendar.png") no-repeat center;
+	background-size: 60%;
+	text-align: center;
+	background-position: 22px 10px;
+	line-height: 160px;
+	display: block;
+}
+/*
+
 #tab>nav>ul>.a1{
 	background: url("../images/search.png") no-repeat center;
 	background-size:50%;
@@ -469,7 +678,7 @@ h1,h2,h3,h4,h5,h6{width:0px; height:0px; font-size:0px; line-height:0px; positio
 	text-align: center;
   	background-position:22px 10px; 
   	padding-top: 60px;
-  	border: 1px solid black;
+  	border: 1px solid white;
   	border-right: hidden;
   	border-left: hidden;
 }
@@ -480,21 +689,107 @@ h1,h2,h3,h4,h5,h6{width:0px; height:0px; font-size:0px; line-height:0px; positio
   	background-position:22px 10px; 
   	padding-top: 60px;
 }
-
-
-
+*/
 
 /* -------------------------- 버튼 ------------------------- */
 /* ---------------------------스크롤바-------------------------------------------- */
-::-webkit-scrollbar {width: 12px; height: 12px;  }
-::-webkit-scrollbar-button:start:decrement, 
-::-webkit-scrollbar-button:end:increment {display: block; width: 12px;height: 12px; background: url() rgba(0,0,0,.05);}
-::-webkit-scrollbar-track {     background: rgba(0,0,0,.05); }
-::-webkit-scrollbar-thumb {  background: rgba(0,0,0,.1);  }
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
 
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment
+	{
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: url() rgba(0, 0, 0, .05);
+}
 
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, .05);
+}
 
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, .1);
+}
 
+/* -------------------------- weather / alert ------------------------- */
+#weather .box1 {
+	border: 5px solid #ff7b7b;
+	box-sizing: border-box;
+	background: white;
+	width: 335px;
+	height: 50px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+	position: fixed;
+}
 
+#weather .box2 {
+	margin-top:50px;
+	background: url("../images/weather.png") no-repeat center;
+	background-size: 70%;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	line-height: 160px;
+	background-position: 15px 10px;
+	float: left;
+	border-bottom: 5px solid #ff7b7b;
+}
 
+#weather .box3 {
+	margin-top:50px;
+	width: 240px;
+	height: 90px;
+	float: right;
+	text-align: center;
+	line-height: 40px;
+	border-bottom: 5px solid #ff7b7b;
+}
 
+#weather .box4 {
+	margin-top: 15px;
+	float: right;
+	background: url("../images/clothes.png") no-repeat center;
+	background-size: 70%;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	line-height: 160px;
+	background-position: 15px 10px;
+	clear: both;
+	border-bottom: 5px solid #ff7b7b;
+}
+
+#weather .box5 {
+	width: auto;
+	height: auto;
+	line-height: 30px;
+	border-bottom: 5px solid #ff7b7b;
+	clear: both;
+}
+
+#weather .box6 {
+	margin-top: 15px;
+	float: left;
+	background: url("../images/alert.png") no-repeat center;
+	background-size: 70%;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	line-height: 160px;
+	background-position: 15px 10px;
+	clear: both;
+	border-bottom: 5px solid #ff7b7b;;
+}
+
+#weather .box7 {
+	width: auto;
+	height: auto;
+	line-height: 30px;
+	border-bottom: 5px solid #ff7b7b;
+	clear: both;
+}
