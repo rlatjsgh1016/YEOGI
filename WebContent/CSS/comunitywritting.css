@@ -1,0 +1,154 @@
+
+@charset "UTF-8";
+
+/*---------------reset----------------------------------------*/
+body
+{
+	margin: 0px;
+}
+
+ul
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+li
+{
+	display: block;
+}
+
+h1
+{
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*---header style--------------------------------------------------------------- */
+header{
+	font-family: 맑은고딕 HY견고딕 sans-serif; 
+	font-size: 30px;
+	font-weight: bold; 
+	color: #333333;
+	background:#D8D8D8;
+}
+
+header>.root-container {
+	width:1320px;
+	margin: 0 auto;
+}
+
+header>div>ul>li{
+	float: left;
+	margin: 20px;
+}
+
+.root-container{
+	height: 156px;
+}
+
+header>div>ul {
+	float: left;
+	overflow: hidden;
+	
+}
+
+header>div>img{
+	float:left;
+}
+
+.form-control{
+	display: inline-block;
+	margin-left: 500px;
+}
+
+.clear::after{
+	content: "";
+	display: block;
+	clear:both;
+	overflow: hidden;
+}
+/*---visual style--------------------------------------------------------------- */
+
+/*---main style--------------------------------------------------------------- */	 
+.leftmain{
+	background:#E64C3C;
+	width: 300px;
+	float:left;
+	font-family: HY견고딕;
+	font-size: 30px;
+	font-color: #333333;
+}
+.sidemenu:hover{
+	background:#AFAFAF;
+}
+
+.asidemenu{
+ 	
+}
+
+.rightmain {
+	background:#AFAFAF;
+	float:right;
+	width: 1020px;
+	font-family: HY견고딕;
+	font-size: 15px;
+	font-color: #333333;
+	display:inline-blockblock;
+}
+
+ 
+.rightmain>.p1{
+	display:inline;
+	float:left;
+	margin:10px 50px;
+}
+
+.rightmain>.p2 {
+	float:right;
+	margin:50px 55px;
+	font-size: 15px;
+	background:#E64C3C;
+}
+
+.input1{
+	width: 300px;
+	margin:0px 20px;
+}
+
+.text-area{
+	width: 300px;
+	height 1000px;
+	margin:0px 20px;
+}
+.allmain {
+	margin: 0 auto;
+	width:1320px;
+	font-color: #333333;
+}
+
+
+
+
+/*---footer style--------------------------------------------------------------- */
+footer{
+	background:#D8D8D8;
+	font-size:15px;
+	font-color:#333333;	
+	font-weight: bold; 
+}
+footer>.root-container>p{
+	float:left;
+}
+footer>.root-container>img{
+	float:left;	
+}
+footer>.root-container{
+	margin: 0 auto;
+	width:1320px;
+}
+
