@@ -385,6 +385,10 @@ main>.root-container{
 	cursor: pointer;
 }
 
+.spending-container:hover .spending-detail{
+	display: block;
+}
+
 .spending-detail{
 	position: absolute;
 	left: 290px;
