@@ -293,160 +293,8 @@ h1, h2, h3, h4, h5, h6 {
 	box-sizing: border-box;
 }
 
-.total-cost{
-	margin: 10px;
-	width: 215px;
-	height: 90px;
-	background: white;
-	border: 5px solid #ff7b7b;
-	box-sizing: border-box;
-	padding: 5px;
-	position: absolute;
-    box-shadow: 2px 2px 2px red;
-}
 
-.total-cost p{
-	font-size: small;	
-	text-align: center;
-	font-weight: bold;
-}
 
-.total-day .b1{
-	margin-top:50px;
-	margin-left:10px;
-	margin-right:10px;
-	margin-bottom:10px;
-	width: 70px;
-	height: 40px;
-	background: white;
-	border: 5px solid gray;
-	box-sizing: border-box;
-	padding: 5px;
-    box-shadow: 3px 3px 3px #111111;
-}
-.select-money{
-    margin: 120px 10px 10px 10px;
-    width: 215px;
-    background: url("../images/select-icon.png") no-repeat 100%;
-    background-size: 20px;
-    
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
-    border: 1px solid #efefef;
-    border-bottom: 2px solid #ff7b7b;
-}
-
-/* -------------------------------------------------flex---------------------------------------- */
-/* .total-day .b2{
-	margin: 10px;
-	width: 220px;
-	height: 140px;
-	background: white;
-	border: 5px solid gray;
-	box-sizing: border-box;
-	padding: 5px;
-}
-
-.b2 div{
-	float:left;
-	font-size: medium;
-	font-weight: bold;
-}
-
-.when{
-	float:left;
-	width: 50px;
-	height: 30px;
-	border: 2px solid #ceceff;
-	box-sizing: border-box;
-	border-radius: 8px;
-	background: #7575ff;
-	color: white;
-
-}
-
-.where{
-	float:right;
-	width: auto;
-	height: 30px;
-	color:#8a8aff;	
-}
-
-.why{
-	width: 200px;
-	height: 85px;
-	border: 2px solid #400080;
-	box-sizing: border-box;
-	margin-bottom: 50px;	
-} */
-
-/* ------------------------------------------------------float--------------------------------- */
-
-.total-day .b2{
- 	
- 	margin-left:10px;
- 	margin-bottom:30px;
-	width: 215px;
-	height: inherit;
-	background: white;
-	border: 5px solid gray;
-	box-sizing: border-box;
-	padding: 5px;
-	display: flex;
-	flex-wrap: wrap;
-	font-size: medium;
-	font-weight: bold;
-	text-align: center;
-    box-shadow: 3px 3px 3px #111111;
-    
-	
-}
-
-.when{
-	width: 50px;
-	height: 30px;
-	border: 2px solid #ceceff;
-	box-sizing: border-box;
-	border-radius: 8px;
-	background: #7575ff;
-	color: white;
-
-}
-
-.where{
-	width: 140px;
-	height: 30px;
-	color:#8a8aff;
-}
-
-.why{
-    margin-top: 8px;
-	width: auto;
-	height: 25px;
-	box-sizing: border-box;
-    line-height: 1;
-    color: dimgrey
-    
-} 
-.howmuch{
-    margin-top: 8px;
-    width: auto;
-	height: 25px;
-	box-sizing: border-box;
-    margin-left: auto;
-}
-.comment{
-    margin-top: 5px;
-    width: 250px;
-	height: auto;
-	border: 5px solid gray;
-	box-sizing: border-box;
-    border-radius: 10px;
-    border-style: outset;
-    font-weight:100;
-}
 
 
 /* -------------------------add-day---------- */
@@ -533,83 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 40px;
 	float: left;
 }
-/*#add-day>ul>.a{
-	background: url("../images/left-arrow.png") no-repeat center;
-	background-size: cover;
-	width: 40px;
-	height: 40px;
-	float:left;
-}
-#add-day>ul>.b{
-	background:#f9f9f9;
-    width: 120px;
-	height: 40px;
-	float:left;
-	text-align: center;
-	border-left: 1px solid black;
-	border-top: 1px solid black;
-	border-right: 1px solid black;
-	box-sizing: border-box;
-	font-size: x-large;
-}
-#add-day>ul>.c{
-    background: url("../images/right-arrow.png") no-repeat center;
-	background-size: cover;
-	width: 40px;
-	height: 40px;
-	float:left;
-}
-#add-day>ul>.d{
-	text-align:center;
-	line-height:30px;
-	background:white;
-    border: 5px solid #ff7b7b;
-    box-sizing: border-box;
-    font-stretch:wider;
-    width: 200px;
-    height: 40px;
-    clear: both;
-    float: left;
-}
-#add-day>ul>.e{
-	margin-left:20px;
-	border-radius:20px;
-	margin-bottom:5px;
-	color:white;
-	background: #e64c3c;
-	margin-top:10px;
-    box-sizing: border-box;
-    text-align: center;
-    width: 160px;
-    height: 40px;
-    float: left;
-	padding-top: 7px;    
-}
-#add-day>ul>.f{
-	margin-left:20px;
-	border-radius:20px;
-	margin-bottom:5px;
-	color:white;
-	background:black;
-	padding-top: 7px;    
-    box-sizing: border-box;
-    text-align: center;
-    width: 160px;
-    height: 40px;
-    float: left;
-}
-#add-day>ul>.g{
-	margin-left:20px;
-	border-radius:20px;
-	color:white;
-	background:black;
-    padding-top: 7px;    
-    box-sizing: border-box;
-    text-align: center;
-    width: 160px;
-    height: 40px;
-    float: left;
-}*/
+
 
 /* ---------------------------------------타임테이블 & 메모 ---------------------------- */
 .memo-pad {
@@ -693,7 +465,7 @@ table td:nth-child(2) a:hover{
 .cost {
 	width: 90px;
 	height: 90px;
-	background: url("../images/korea-won.png") no-repeat center,#efefef;
+	background: url("../images/korea-won.png") no-repeat center;
 	background-size: 60%;
 	text-align: center;
 	background-position: 22px 10px;
@@ -707,48 +479,16 @@ table td:nth-child(2) a:hover{
 .calendar {
 	width: 90px;
 	height: 90px;
-	background: url("../images/calendar.png") no-repeat center;
+	background: url("../images/calendar.png") no-repeat center,#efefef;
 	background-size: 60%;
 	text-align: center;
 	background-position: 22px 10px;
 	line-height: 160px;
 	display: block;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
-/*
 
-#tab>nav>ul>.a1{
-	background: url("../images/search.png") no-repeat center;
-	background-size:50%;
-	text-align: center;
-  	background-position:22px 10px; 
-  	padding-top: 60px;
-  	display:block; 
-}
-#tab>nav>ul>.b1{
-	background: url("../images/shopping.png") no-repeat center;
-	background-size:50%;
-	text-align: center;
-  	background-position:22px 10px; 
-  	padding-top: 60px;
-}
-#tab>nav>ul>.c1{
-	background: url("../images/korea-won.png") no-repeat center #efefef;
-	background-size:50%;
-	text-align: center;
-  	background-position:22px 10px; 
-  	padding-top: 60px;
-  	border: 1px solid white;
-  	border-right: hidden;
-  	border-left: hidden;
-}
-#tab>nav>ul>.d1{
-	background: url("../images/calendar.png") no-repeat center;
-	background-size:50%;
-	text-align: center;
-  	background-position:22px 10px; 
-  	padding-top: 60px;
-}
-*/
 
 /* -------------------------- 버튼 ------------------------- */
 /* ---------------------------스크롤바-------------------------------------------- */
@@ -851,4 +591,94 @@ table td:nth-child(2) a:hover{
 	line-height: 30px;
 	border-bottom: 5px solid #ff7b7b;
 	clear: both;
+}
+
+/*-----------------------------------------------------*/
+
+.total-day .b1{
+	margin:10px;
+	width: 70px;
+	height: 40px;
+	background: white;
+	border: 5px solid gray;
+	box-sizing: border-box;
+	padding: 5px;
+    box-shadow: 3px 3px 3px #111111;
+}
+
+.total-day .b2{
+ 	
+ 	margin-left:10px;
+ 	margin-bottom:30px;
+	width: 215px;
+	height: auto;
+	background: white;
+	border: 5px solid gray;
+	box-sizing: border-box;
+	padding: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: medium;
+	font-weight: bold;
+	text-align: center;
+    align-content:flex-start;
+    box-shadow: 3px 3px 3px #111111;
+	
+}
+
+.when{
+	width: 50px;
+	height: 30px;
+	border: 2px solid #ceceff;
+	box-sizing: border-box;
+	border-radius: 8px;
+	background: #7575ff;
+	color: white;
+}
+
+.where{
+	width: 125px;
+	height: 30px;
+	color:#8a8aff;	
+}
+
+.count-place{
+    width: 10px;
+    height: 0px;
+    border: 10px solid #ceceff;
+    border-radius: 0 0 0 200px; 
+    line-height: 0;
+    
+}
+
+.picture{
+    background-size:180px 100px;
+    background-position: center;
+	width: 190px;
+	height: 110px;
+	border: 2px solid #8a8aff;
+    margin:2px 0px 0px 5px;
+    line-height: 1;
+}
+
+.picture img{
+	width: 190px;
+	height: 110px;
+}
+.write{
+    width: 190px;
+	height: auto;
+    border: 2px solid gray;
+	box-sizing: border-box;
+    margin:5px auto;
+    padding: 3px;
+    font-size: 12px;
+    text-align: left;
+    text-indent: 6px;
+    font-weight: 100;
+    overflow: 
+}
+
+.write img{
+    margin-right: 5px;
 }
