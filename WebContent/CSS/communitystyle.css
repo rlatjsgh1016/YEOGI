@@ -1,0 +1,114 @@
+
+@charset "UTF-8";
+
+/*---------------reset----------------------------------------*/
+body
+{
+	margin: 0px;
+}
+
+ul
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+li
+{
+	display: block;
+}
+
+h1
+{
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*---header style--------------------------------------------------------------- */
+header{
+	font-family: 맑은고딕 HY견고딕 sans-serif; 
+	font-size: 30px;
+	font-weight: bold; 
+	color: #333333;
+	background:#AFAFAF;
+}
+
+header>.root-container {
+	width:1320px;
+	margin: 0 auto;
+}
+
+header>div>ul>li{
+	float: left;
+	margin: 20px;
+}
+
+.root-container{
+	height: 156px;
+}
+
+header>div>ul {
+	float: left;
+	margin: 58px 58px 58px 500px;
+	overflow: hidden;
+	
+}
+
+header>div>img{
+	float:left;
+}
+
+.clear::after{
+	content: "";
+	display: block;
+	clear:both;
+	overflow: hidden;
+}
+	 
+.leftmain{
+	background:#B5342A;
+	width: 300px;
+	float:left;
+	font-family: HY견고딕;
+	font-size: 30px;
+	font-color: #333333;
+}
+
+.asidemenu{
+ 	
+}
+
+.rightmain {
+	background:#AFAFAF;
+	float:right;
+	width: 1020px;
+	height: 800px;
+	font-family: HY견고딕;
+	font-size: 15px;
+	font-color: #333333;
+}
+
+ 
+.rightmain>.p1{
+	display:inline;
+	float:left;
+	margin:10px 50px;
+}
+
+.rightmain>.p2 {
+	float:right;
+	margin:50px 55px;
+	font-size: 15px;
+	background:#E64C3C;
+}
+
+.allmain {
+	margin: 0 auto;
+	width:1320px;
+	font-color: #333333;
+}
+

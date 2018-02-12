@@ -3,13 +3,16 @@
 <HEAD>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../../../../CSS/plan-cost.css" type=text/css rel="stylesheet" />
+<link href="../../../../CSS/plan-cost.css" type=text/css
+	rel="stylesheet" />
 </HEAD>
 
 <body>
-	<header id = "header">
-			<div class="root-container">
-			<a href= "main.html"><div id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </div></a>
+	<header id="header">
+		<div class="root-container">
+			<a href="main.html"><div id="logo">
+					<img src="../../../../resources/logo.png" height="65px" alt="여기" />
+				</div></a>
 			<section>
 				<h1>헤더</h1>
 				<nav class="hor-menu main-menu first-pad-none">
@@ -22,15 +25,16 @@
 					</ul>
 				</nav>
 
-				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
+				<nav class="hor-menu member-menu first-pad-none"
+					style="margin-bottom: 15px">
 					<h1>회원 메뉴</h1>
 					<ul>
-						<li><a href= "log-in.html">로그인</a></li> 
+						<li><a href="log-in.html">로그인</a></li>
 						<li>회원가입</li>
-						<li><a href ="" class ="btn btn-mypage">마이페이지</a></li>
+						<li><a href="" class="btn btn-mypage">마이페이지</a></li>
 					</ul>
-				</nav>	
-			</section> 
+				</nav>
+			</section>
 		</div>
 	</header>
 
@@ -40,12 +44,7 @@
 			<div id="tab">
 				<nav>
 					<h1>선택옵션</h1>
-					<ul>
-						<li class="a1">Search</li>
-						<li class="b1">Basket</li>
-						<a href ="" ><li class="c1"></a>Cost</li>
-						<li class="d1">Calendar</li>
-					</ul>
+					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href=""><div class="cost">Cost</div></a> <a href=""><div class="calendar">Calendar</div></a>
 				</nav>
 			</div>
 
@@ -60,34 +59,80 @@
 			</div>
 
 			<div id="cost-option">
-				<nav>
 					<h1>상세선택옵션</h1>
-					<ul>
-						<li class="a">당신의 2박 3일간의 여행의 예상금액은 17,120,000원 입니다.</li>
-						<li>DAY1</li>
-					</ul>
+						<div class="total-cost">
+							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">1,556,000원</span><br>입니다. :)  즐거운 여행되세요!</p>
+						</div>
+				<nav>
+						
+						<div class="total-day">
+							<div class="b1"><b>DAY 1</b></div>
+							
+							<div class="b2">
+								<div class ="when">06:00</div>
+								<div class = "where">맥도날드</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							<div class="b2">
+								<div class ="when">08:00</div>
+								<div class = "where">제주항공</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							<div class="b2">
+								<div class ="when">12:00</div>
+								<div class = "where">면세점</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							<div class="b2">
+								<div class ="when">06:00</div>
+								<div class = "where">KFC</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							<div class="b2">
+								<div class ="when">08:00</div>
+								<div class = "where">맘스터치</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							<div class="b2">
+								<div class ="when">12:00</div>
+								<div class = "where">우리집</div>
+								<div class = "why"></div>
+								<div class = "write"></div>
+							</div>
+							
+							<div class="plus-cost">
+								<a href=""><img src="../../../../images/plus.png" height="50px" width="50px" style="margin-left: auto; margin-right: auto; display: block;" alt="예산 추가" /></a>
+							</div>
+							<div class="b1"><b>DAY 2</b></div>
+						</div>
 				</nav>
 			</div>
 
-			<div id="save-trip"><b>Save</b></div>
+			<a href=""><div id="save-trip">
+					<b>Save</b>
+				</div></a>
 		</div>
 
 		<div id="main">
-		
+
 			<div id="map">
-				<div id="add-friend">
-					<h1>친구추가</h1>
-					<a href="" class="button"></a>
-				</div>
-				
-				<div id="check-map">
-					<div class="up">
-						<a href="" class="btn"></a>
+				<a href="">
+					<div id="add-friend">
+						<h1>친구추가</h1>
 					</div>
+				</a>
+
+				<div id="check-map">
+					<a href=""><div class="up"></div></a>
 					<div class="center">
 						<b>day 1</b>
 					</div>
-					<div class="down"></div>
+					<a href=""><div class="down"></div></a>
 				</div>
 			</div>
 
@@ -95,15 +140,18 @@
 			<div id="time-table">
 				<div id="add-day">
 					<h1>DAY추가</h1>
-					<ul>
-						<li class="a"></li>
-						<li class="b"><b>day 1</b></li>
-						<li class="c"></li>
-						<li class="d"><b>2018년 3월 14일</b></li>
-						<li class="e">일정 추가하기</li>
-						<li class="f">해당일정 삭제하기</li>
-						<li class="g">전체일정 삭제하기</li>
-					</ul>
+					<a href=""><div class="left-direct"></div></a>
+					<div class="now">
+						<b>day 1</b>
+					</div>
+					<a href=""><div class="right-direct"></div></a>
+					<div class="year">
+						<b>2018년 3월 14일</b>
+					</div>
+					<a href=""><div class="plus">일정 추가하기</div></a> <a href=""><div
+							class="minus">해당일정 삭제하기</div></a> <a href=""><div
+							class="all-minus">전체일정 삭제하기</div></a>
+					
 				</div>
 
 
@@ -255,15 +303,33 @@
 
 
 
+
+
 				<div id="weather">
 					<nav>
 						<h1>지역 날씨 및 여행경보</h1>
-						<ul>
-							<li>날씨</li>
-							<li>경보</li>
-						</ul>
+
+						<div class="box1">
+							3월 몰디브에 대하여 <span style="color: red">여기</span>가 드리는 팁! :)
+						</div>
+						<div class="box2">기상정보</div>
+						<div class="box3">
+							평균기온 : 5.1°/11.8°<br> 평균강수량 : 48.5mm/10일
+						</div>
+						<div class="box4">옷차림</div>
+						<div class="box5">옷차림 정보 : 쌀쌀한 기온이므로 가벼운 겉옷과 긴소매 옷을 가져가시면
+							되겠습니다. 비의 양이 많지는 않으나 한 달 중 열흘정도 비가 오는 기간이므로 우산을 준비하시길 바랍니다.</div>
+						<div class="box6">경보</div>
+						<div class="box7">몰디브 비상사태 선포 관련 신변안전 유의 안내 ○ 몰디브 정부는 몰디브의
+							국가 안보와 공공 안전을 위해 2.5(월)부터 향후 15일동안 국가 비상사태를 선포한다고 발표했습니다. ※ 비상사태
+							선포로 사전영장 없이 수색, 압수, 체포, 구금이 가능하고 공항에서 수하물 검색이 강화 ○ 이와 관련, 몰디브에
+							거주하거나 체류 예정인 우리 국민들께서는 수도 말레섬으로 방문을 자제해 주시고, 불가피하게 방문해야 할 경우에는
+							정치적 언행, 현지인들의 데모 및 집회 장소 방문 등을 삼가하여 주시기 바랍니다.</div>
 					</nav>
 				</div>
+
+
+
 			</div>
 		</div>
 	</div>

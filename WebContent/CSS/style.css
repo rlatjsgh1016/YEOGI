@@ -27,6 +27,16 @@ body{
 	color : #333333;
 }
 
+.yeogi-box{
+	background: #E64C3C;
+	border-radius: 4px;
+	display: box;
+	color:white;
+	min-width : 50px;
+	padding: 4px 6px;
+	text-align: center;
+}
+
 /*----- abstract style --------------------------*/
 
 .hidden{
@@ -153,6 +163,9 @@ body{
 	padding-top: 2px;
 }
 
+.join-btn{
+	margin-left:220px;
+}
 
 
 /*----- hover ------------------------------*/
@@ -245,8 +258,12 @@ body{
 
 .member-menu > ul > li{
 	padding-left : 9px;
-	background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	
+	/*background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	*/
 }
+
+
+/* ----------------------------------------------*/
+
 
 
 /*----- visual ----------------------------------*/
@@ -265,7 +282,7 @@ body{
 
 #body .root-container
 {
-	background:url("../images/bg-body.png") repeat-y center;
+	/*background:url("../images/bg-body.png") repeat-y center;*/
 }
 
 #footer{
@@ -311,7 +328,7 @@ body{
 }
 
 #aside{
-	background: url("../images/bg-aside-title.png") no-repeat left top;
+	/*background: url("../images/bg-aside-title.png") no-repeat left top;*/
 	min-height: inherit;
 	min-width: 205px;
 	/* float: left; */
@@ -447,16 +464,29 @@ body{
 	text-align: center;
 }
 
+.join,
 .login{
-	width: 700px;
-	height: 300px;
+	width: 680px;
+	height: 350px;
 	/*background: green;*/
 	margin-left:auto;
 	margin-right: auto;
-	padding-top: 10px;
+	padding-top: 20px;
+	margin-bottom: 50px;
 
 }
 
+.join-img{
+	width:200px;
+	height:inherit;
+}
+
+.join-label{
+	width: 500px;
+	height:300px;
+	float: left;
+	padding-left: 150px;
+}
 
 fieldset{
 	margin-top: 20px;

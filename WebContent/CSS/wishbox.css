@@ -97,10 +97,10 @@ p{
 
 /*-----------body-----------*/
 #body{
-	background: red;
 	margin: 0 auto;
 	width : 1680px;
 	height: 880px;
+	border-top: 5px solid #ff5959;
 	
 }
 
@@ -127,7 +127,7 @@ p{
 /*----submain---------------------------------*/
 
 #sub-main{
-	background: green;
+	background: #cacaca;
 	float:left;
 	width: 330px;
 	height: 880px;
@@ -139,6 +139,7 @@ p{
 	float: left;
 	width: 90px;
 	height: 650px;
+	background: #cacaca;
 	
 }
 
@@ -146,15 +147,41 @@ p{
 		width:90px;
 		height: 90px;
 		margin-bottom: 20px;
-		border: 1px solid black;
 	}
 	
+	#search-btn{
+			background: url("../images/search.png") no-repeat center;
+			background-size:50%;
+			text-align: center;
+		}
+		
+		#wishbox-btn{
+			background: url("../images/shopping.png") no-repeat center  #efefef;
+			background-size:50%;
+			text-align: center;
+		}
+		
+		#cost-btn{
+			background: url("../images/korea-won.png") no-repeat center;
+			background-size:50%;
+			text-align: center;
+		}
+		
+		#review-btn{
+			background: url("../images/calendar.png") no-repeat center;
+			background-size:50%;
+			text-align: center;
+		}
+	
 	#save li{
-		margin-top:360px;	
+		margin-top:370px;	
+		background:url("../images/save.png") no-repeat center, black;
+		background-size:50%;
+		text-align: center;
+		color: white;
 	}
 /*----search정보창---------------------------------*/
 #search{
-	background: navy;
 	float: left;
 	width: 240px;
 	min-height: 880px;
@@ -163,40 +190,48 @@ p{
 #travel-dayname{
 	background: #c0c0c0;
 	width: 240px;
-	height: 80px;
+	height: 90px;
 }
 	#travelName{
 		height: 50px;
 	}
 	
 	#travelDay{
-		height: 30px;
+		height: 40px;
 	}
 	/*----검색창+필터+정보---------------------------------*/
 #search-box{
 	/* border: 1px solid black; */
-	background: #808040;
+	background: #efefef;
 	padding: 15px 15px;
 	width:240px;
-	min-height: 800px;
+	height: 700px;
 	box-sizing: border-box;
 }
 
 	#button-box{
-		background: #ffffff;
-		margin: 30px 0px 0px 0px;
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-around;
+	}
+	#button-box::after{
+		content="";
+		display: block;
+		clear: both;
+		overflow: hidden;
 	}
 	
 			.btn{
-			width: 100px;
+			width: 80px;
 			height: 40px;
 			float: left;
 			text-align: center;
+			border: 1px solid black;
 
 		}
 		
 	#searched-content{
-		margin-top:150px;
+		margin-top:30px;
 		background: #f1f1f1;
 		width:210px;
 		min-height : 400px;
@@ -231,8 +266,6 @@ p{
 
 /*----main-----------------------------------------------------------------------*/
 #main{
-	background: blue;
-	height: 1010px;
 	width : 1350px;
 	float: left;
 	
@@ -240,9 +273,10 @@ p{
 
 /*------map---------*/
 #map{
-	background: brown;
 	height: 650px;
 	/* overflow: auto; */
+	background:url("../images/google-map.png") no-repeat center;
+	background-size:cover;
 }
 
 	#map-layer{
@@ -251,26 +285,81 @@ p{
 		width: 120px;
 		min-height: 70px;
 	}
-	
-	#map-friendadd{
-		background: #636363;
-		float: right;
-		width: 90px;
-		height: 45px;
-	}
-	
+
 	#map-frienddisplay{
 		background: #636363;
 		float: right;
 		width: 50px;
 		height: 50px;
 	}
+	
+	#map-friendadd{
+		float: right;
+		background: url("../images/add-friends.png") no-repeat center;
+		background-size:cover;
+		height: 80px;
+		width: 80px;
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+	
+	#map-right{
+		width: 90px;
+		height: 200px;
+		margin-left: 1250px;
+	}
+	
+	#check-map{
+		float: right;
+		opacity:.2;
+		border:1px solid black;
+		background:#ababab;
+		height:150px;
+		width: 80px;
+		border-radius: 80px;
+		margin-left: 30px;
+		margin-top: 180px;
+		}
+
+	#check-map:hover{ 
+			opacity: 1;
+			font-size: x-large;
+		}
+		
+	.up{
+			width:inherit;
+			min-height:50px;
+			background: url("../images/direction-up.png") no-repeat center;
+			background-size:50%;
+			opacity:0.5;
+		}
+		
+		
+	.center {
+		   width: 80px;
+		   height: 50px;
+		   line-height: 40px;
+		   display: block;
+		   text-align: center;
+		   background: #ffdd00;
+			/* width:inherit;
+			height:50px;
+			line-height: 100px; */
+		}
+
+	.down{
+		width:inherit;
+		min-height:50px;
+		background: url("../images/direction-down.png") no-repeat center;
+		background-size:50%;
+		opacity:0.5;
+	}
 
 /*----table---------------------------------*/
 #table{
 	background: #c0c0c0;
-	min-height: 340px;
-	overflow: auto;
+	height: 230px;
+	overflow: hidden;
 }
 
 /*------table control---------*/
@@ -281,78 +370,130 @@ p{
 	height: 230px;
 	display: inline-block;
 	overflow: auto;
+	background: #7c7c7c;
 }
 	#control-date{
 		/* border: 1px solid black; */
-		height: 50px;
+		text-align: center;
+	    line-height: 30px;
+	    box-sizing: border-box;
+	    width: 200px;
+	    height: 40px;
+	    clear: both;
+	    float: left;
+	    background: white;
+	    border-width: 5px;
+	    border-style: solid;
+	    border-color: #ff7b7b;
+	    border-image: initial;
 	}
 	
 	#control-day{
 		/* border: 1px solid black; */
-		height: 50px;
+		width: 120px;
+	    height: 40px;
+	    float: left;
+	    text-align: center;
+	    box-sizing: border-box;
+	    font-size: x-large;
+	    background: rgb(249, 249, 249);
+	    border-left: 1px solid black;
+	    border-top: 1px solid black;
+	    border-right: 1px solid black;
 	}
 	#button{
-		overflow: auto;
+		display: flex;
 	}
 	#control-leftbtn{
 		/* border: 1px solid black; */
-		height: 50px;
-		width:	80px;
-		float: left;
+		background: url("../images/left-arrow.png") no-repeat center;
+		background-size: cover;
+		width: 40px;
+		height: 40px;
 	}
 	
 	#control-rightbtn{
-		height: 50px;
-		width:	80px;
-		float: right;
+		background: url("../images/right-arrow.png") no-repeat center;
+		background-size: cover;
+		width: 40px;
+		height: 40px;
 	}
 	
 	#control-dayadd{
 		/* border: 1px solid black; */
-		height: 50px;
+		margin-left: 20px;
+	    margin-bottom: 5px;
+	    color: white;
+	    margin-top: 10px;
+	    box-sizing: border-box;
+	    text-align: center;
+	    width: 160px;
+	    height: 40px;
+	    float: left;
+	    padding-top: 7px;
+	    border-radius: 20px;
+	    background: rgb(230, 76, 60);
+	}
+	
+	#control-daydelete{
+		margin-left: 20px;
+	    margin-bottom: 5px;
+	    color: white;
+	    padding-top: 7px;
+	    box-sizing: border-box;
+	    text-align: center;
+	    width: 160px;
+	    height: 40px;
+	    float: left;
+	    border-radius: 20px;
+	    background: black;
+	}
+	
+	#control-alldelete{
+		margin-left: 20px;
+	    color: white;
+	    padding-top: 7px;
+	    box-sizing: border-box;
+	    text-align: center;
+	    width: 160px;
+	    height: 40px;
+	    float: left;
+	    border-radius: 20px;
+	    background: black;
 	}
 	
 /*------table timeline---------*/
-#table-timeline{
-	border: 1px solid black;
-	float: left;
-	width: 500px;
-	min-height: 230px;
-	display: inline-block;
-}
-
-	#timeline-img{
-		border: 1px solid black;
-		float: left;
-		width: 90px;
-		min-height: 230px;
-		
+.table-planFrame{
+		height: 230px;
+		width: 800px;
+		float: left;	
+		overflow-y: scroll;
 	}
 	
-	#timeline-plan{
-		/* border: 1px solid black; */
-		float: right;
-		width: 400px;
-		min-height: 230px;
-	}
-		#timeline-plan > .timeline-divide{
-			border: 1px solid black;
-			height: 50px;
-		}
+			.table{
+				border-spacing: 0;
+				text-align: center;		
+			}
+		
+			.table-planFrame td{
+				height: 50px;
+				border: 1px solid black;
+			}
+			
+			.table-planFrame .table-time{
+				width: 80px;
+			}
+			
+			.table-planFrame .table-spot{
+				width: 380px;
+			}
+			.table-planFrame .memo-pad{
+				width: 360px;
+			}
+		
+		
+	
 
-/*------table memo---------*/
-#table-memo{
-	border: 1px solid black;
-	float: left;
-	width: 300px;
-	min-height: 230px;
-	display: inline-block;
-}
-
-	#table-memo > .memo-divide{
-		border: 1px solid black;
-		height: 50px;
-	}
 
 /*------table info---------*/
 #table-info{
