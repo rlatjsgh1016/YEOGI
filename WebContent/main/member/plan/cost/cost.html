@@ -10,7 +10,7 @@
 <body>
 	<header id="header">
 		<div class="root-container">
-			<a href="main.html"><div id="logo">
+			<a href="../../../main.html"><div id="logo">
 					<img src="../../../../resources/logo.png" height="65px" alt="여기" />
 				</div></a>
 			<section>
@@ -20,8 +20,8 @@
 					<ul>
 						<li><a href="">계획하기</a></li>
 						<li><a href="">기록하기</a></li>
-						<li><a href="">여행기</a></li>
-						<li><a href="">커뮤니티</a></li>
+						<li><a href="../../story/read/main.html">여행기</a></li>
+						<li><a href="../../../public-board/community/community.html">커뮤니티</a></li>
 					</ul>
 				</nav>
 
@@ -29,9 +29,9 @@
 					style="margin-bottom: 15px">
 					<h1>회원 메뉴</h1>
 					<ul>
-						<li><a href="log-in.html">로그인</a></li>
-						<li>회원가입</li>
-						<li><a href="" class="btn btn-mypage">마이페이지</a></li>
+						<li><a href="../../../log-in.html">로그인</a></li>
+						<li><a href="../../../join.html">회원가입</a></li>
+						<li><a href="../../mypage/mypage.html" class="btn btn-mypage">마이페이지</a></li>
 					</ul>
 				</nav>
 			</section>
@@ -44,7 +44,7 @@
 			<div id="tab">
 				<nav>
 					<h1>선택옵션</h1>
-					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href=""><div class="cost">Cost</div></a> <a href=""><div class="calendar">Calendar</div></a>
+					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost.html"><div class="cost">Cost</div></a> <a href="../schedule/schedule.html"><div class="calendar">Calendar</div></a>
 				</nav>
 			</div>
 
@@ -63,6 +63,13 @@
 						<div class="total-cost">
 							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">1,556,000원</span><br>입니다. :)  즐거운 여행되세요!</p>
 						</div>
+						<select class="select-money">
+                            <option value="서버로 넘길 값"> 대한민국 원(KRW) </option>
+                            <option value="서버로 넘길 값"> 미국 달러(USD) </option>
+                            <option value="서버로 넘길 값"> 중국 위안(CNY) </option>
+                            <option value="서버로 넘길 값"> 유로(EUR) </option>
+                            <option value="서버로 넘길 값"> 일본 엔(JPY) </option>
+                        </select>
 				<nav>
 						
 						<div class="total-day">
@@ -71,38 +78,49 @@
 							<div class="b2">
 								<div class ="when">06:00</div>
 								<div class = "where">맥도날드</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
 							</div>
-							<div class="b2">
-								<div class ="when">08:00</div>
-								<div class = "where">제주항공</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
-							</div>
-							<div class="b2">
-								<div class ="when">12:00</div>
-								<div class = "where">면세점</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
-							</div>
+							
 							<div class="b2">
 								<div class ="when">06:00</div>
-								<div class = "where">KFC</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
+								<div class = "where">맥도날드</div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment"></div>
 							</div>
+							
 							<div class="b2">
-								<div class ="when">08:00</div>
-								<div class = "where">맘스터치</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
+								<div class ="when">06:00</div>
+								<div class = "where">맥도날드</div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
 							</div>
+							
 							<div class="b2">
-								<div class ="when">12:00</div>
-								<div class = "where">우리집</div>
-								<div class = "why"></div>
-								<div class = "write"></div>
+								<div class ="when">06:00</div>
+								<div class = "where">맥도날드</div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
+							</div>
+							
+							<div class="b2">
+								<div class ="when">06:00</div>
+								<div class = "where">맥도날드</div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
+							</div>
+							
+							<div class="b2">
+								<div class ="when">06:00</div>
+								<div class = "where">맥도날드</div>
+								<div class = "why">식사비</div>
+								<div class = "howmuch">25000원</div>
+								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
 							</div>
 							
 							<div class="plus-cost">
@@ -121,11 +139,15 @@
 		<div id="main">
 
 			<div id="map">
-				<a href="">
-					<div id="add-friend">
+					<a href="" id="add-friend"><!--<div id="add-friend">-->
 						<h1>친구추가</h1>
-					</div>
-				</a>
+						   <!-- <ul>
+						        <li><img src="../../../../images/now-friends.png" height="40px"/>
+						        <img src="../../../../images/now-friends.png" height="40px"/><img src="../../../../images/now-friends.png" height="40px"/><img src="../../../../images/now-friends.png" height="40px"/><img src="../../../../images/now-friends.png" height="40px"/></li>
+						        
+						    </ul>-->
+					<!--</div>--></a>
+				
 
 				<div id="check-map">
 					<a href=""><div class="up"></div></a>
@@ -163,7 +185,7 @@
 
 								<td width="100px">[AM]06:00</td>
 								<td width="300px">김포공항</td>
-								<td class="memo-pad" width="100px"></td>
+								<td class="memo-pad" width="100px"><a href=""></a></td>
 								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
 
 							</tr>
@@ -172,127 +194,162 @@
 						<tbody>
 							<tr>
 								<td>07:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+                                <td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>08:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>09:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>10:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>11:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>12:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>[PM]01:00</td>
-								<td></td>
-								<td class="memo-pad"></td>
+								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>02:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>03:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>04:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>05:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>06:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>07:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>08:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>09:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>10:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
 								<td>11:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
 							<tr>
-								<td>12:00</td>
+								<td>[AM]12:00</td>
 								<td></td>
-								<td class="memo-pad"></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>1:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>2:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>3:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>4:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>5:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
 							</tr>
