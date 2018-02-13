@@ -274,6 +274,12 @@ body{
 	border-top : 5px solid #E64C3C;
 }
 
+#visual2{
+	min-width :1320px;
+	height : 430px;
+	background: #1C1C1C url("../resources/main_img2.png") no-repeat center; 
+	border-top : 5px solid #E64C3C;
+}
 #body{
 	min-height : 300px;
 	border-top: 10px solid #848484;
@@ -422,6 +428,16 @@ body{
 	height:20px;
 	float : left;
 	margin-right: 5px;
+}
+
+.big-loca{
+	background: url("../resources/location.png") no-repeat center ;
+	background-size: 100px;
+	width:100px;
+	height:100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 130px;
 }
 
 .small-cal{
