@@ -40,21 +40,66 @@
 			<section class="left-main">
 				<div class="btn-container">
 					<div class="first-line-btn">
-						<img alt="잠금" src="../../../../images/lock.png" style="width:40px; height: 40px">
-						<a class="btn btn-default" href="#">비공개▶공개</a>
+						<p id="lock">현재상태<br>비공개</p>
+						<a class="btn btn-default" href="#">▶공개모드<br>전환</a>
 						<a class="btn btn-default" href="#">동행자<br>추가</a>
 					</div>
 					<div class="second-line-btn">
-						<a class="btn btn-default" href="#">임시저장</a>
-						<a class="btn btn-default" href="#">작성완료</a>
-						<a class="btn btn-default" href="#">취소</a>
+						<a class="btn btn-lg" href="#">저장</a>
+						<a class="btn btn-lg" href="#">취소</a>
 					</div>
 				</div>
-				<div class="spending-container">
+				<div class="spending-container" onmouseover="" onclick="">
 					<span id="spending-txt">지출내역</span>
 					<div class="spending-box">
 						<span>KRW</span>
 						<span>300,000</span>
+					</div>
+					<div class="spending-detail">
+						<div class="table">
+							<div class="tr">
+								<div class="td width-sm">명소</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td width-sm">맛집</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td width-sm">숙소</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td width-sm">교통</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td width-sm">쇼핑</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td width-sm">기타</div>
+								<div class="td width-md">
+									<span>KRW</span>
+									<span>1000</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="day-btn-container clear-fix">
@@ -76,18 +121,13 @@
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
-							<script type="text/javascript">
-							function doPopupopen() {
-							   window. open("detail.jsp","게시물입력폼","resizable=no scrollbars=no menubar=no toolbar=no location=no directories=no status=no width=800 height=500");
-							}
-							</script>
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href="#" onclick="doPopupopen()"  onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href="#" onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>
+						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
@@ -99,12 +139,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
+						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>					
 					</div>
 					<div class="card-frame">
 						<div class="image-frame">
@@ -115,12 +155,12 @@
 						</div>
 						<div class="place-btn-container">
 							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="doPopupopen()" onfocus='this.blur()'><img alt="편집" src="../../../../images/write.png"></a>
+							<a href=# onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doPopupopen()" onfocus='this.blur()'>장소추가</a>					
+						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>					
 					</div>
 				</div>
 			</section>
@@ -143,7 +183,7 @@
 	               					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
             					</div>
            				</div>
-           				<div class="day-step theme nations">
+           				<div class="day-step-theme nations">
             					<h6>여행도시</h6>
          						<select  style="width:70px; height: 38px;">
          							<option>한국</option>
@@ -181,8 +221,84 @@
 						</div>
 					</div>
 				</div>
+				<div class="detail-post-box">
+					<div class="detail-title-box">
+						<p>포스트작성</p>
+						<button onclick="doClose()"><img alt="닫기" src=""></button>
+					</div>
+					<div class="detail-form-box">
+						<form action="main.jsp">
+							<fieldset>
+								<textarea class="detail-textarea" name="review" rows="" cols=""></textarea>
+								<div class="detail-position-box">
+									<img alt="위치" src="">
+									<input type="text" name="location" value="" placeholder="장소를 등록해주세요 :)">
+									<label for="vehicle" >이동수단</label>
+									<select id="vehicle" name="vehicle">
+										<option>비행기</option>
+										<option>기차</option>
+										<option>지하철</option>	
+										<option>버스</option>
+										<option>도보</option>
+										<option>택시</option>
+										<option>배</option>
+										<option>자가용</option>
+									</select>
+								</div>
+								<div class="detail-spend">
+									<img alt="화폐" src="">
+									<select >
+										<option>입장료</option>
+										<option>식비</option>
+										<option>숙박비</option>
+										<option>교통비</option>
+										<option>기타</option>
+									</select>
+									<input type="text">
+									<select>
+										<option>KRW(한국)</option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+									</select>
+									<input type="number">
+									<button><img alt="행추가" src=""></button>
+									<button><img alt="행삭제" src=""></button>
+								</div>
+								<div>
+									<img alt="태그" src="">
+									<input type="text">
+								</div>
+								<div>
+									<button><img alt="사진추가" src=""></button>
+									<button type="submit">저장</button>
+								</div>
+								<div id="map"></div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
 			</section>
 		</div>
 	</main>
+	<script>
+		function doClose(){
+			var div = document.getElementsByClassName('detail-post-box');
+			for(var i=0; div.length; i++){
+				div[i].style.visibility = 'hidden';
+			}
+		}
+		
+		function doDetailOpen(){
+			var div = document.getElementsByClassName('detail-post-box');
+			for(var i=0; div.length; i++){
+				div[i].style.visibility = 'visible'
+			}
+		}
+	</script>
 </body>
 </html>

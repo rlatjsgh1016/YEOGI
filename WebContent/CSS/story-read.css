@@ -157,21 +157,41 @@ a{
     color: #ffffff;
 }
 
-#title .post-info{
+#title .post-cnt{
 	position: relative;
 	width : 1320px;
+	height: 30px;
 	margin: 30px auto;
 	text-align: center;
-	display: block;
+}
+.post-info ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.post-info li{
+	width: 100px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+#title .post-info .hit-cnt{
+	background: url("../images/hit.png")no-repeat left;
+}
+#title .post-info .scrap-cnt{
+	background: url("../images/scrap-cnt.png")no-repeat left;
+}
+#title .post-info .comment-cnt{
+	background: url("../images/comment.png")no-repeat left;
 }
 
-#title .post-info>span{
-	padding-left: 15px;
+#title .post-cnt span{
+	padding-left: 30px;
 	text-align: center;
 	display: inline;
 	
 	font-family:"맑은고딕","고딕",sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #ffffff;
 }
@@ -411,21 +431,112 @@ a{
 }
 #main .spot-couse{
 	width: 795px;
+	/* display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap; */
 }
-#main .spot-couse li{
-	width:131px;s
-	height: 30px;
+
+#main .spot-couse div{
+	width:113px;
+	height: 80px;
+	text-align: center;
 }
-#main .spot-couse .couse-s{
-	background: url("../images/couse-s.png") no-repeat left bottom;
-	padding-bottom: 20px;
+#main .spot-couse .couse-start{
+	height: 70px;
+	background: url("../images/couse-s.png") no-repeat;
+	float: left;
 }
+#main .spot-couse .couse-left{
+	height: 70px;
+	background: url("../images/couse-c.png") no-repeat;
+	float: left;
+}
+#main .spot-couse .couse-left-p{
+	height: 70px;
+	background: url("../images/couse-p.png") no-repeat;
+	float: left;
+	
+}
+#main .spot-couse .couse-left-d{
+	height: 70px;
+	background: url("../images/couse-d.png") no-repeat right;
+	float: left;
+	
+}
+#main .spot-couse .couse-right{
+	height: 70px;
+	background: url("../images/couse-c.png") no-repeat;
+	float: right;
+}
+#main .spot-couse .couse-right-b{
+	height: 70px;
+	background: url("../images/couse-b.png") no-repeat left;
+	float: right;
+	padding-right: 4px;
+	
+}
+#main .spot-couse .couse-right-q{
+	height: 70px;
+	background: url("../images/couse-q.png") no-repeat;
+	float: right;
+	
+}
+#main .spot-couse .couse-end{
+	height: 70px;
+	background: url("../images/couse-e.png") no-repeat left;
+	float: left;
+	/* padding-right: 4px; */
+	
+}
+#main>.day-spot-box .couse-spot{
+	background: #ffffff;
+	font-family:"맑은고딕","고딕",sans-serif;
+    font-size: 12px;
+    width: 100px;
+    display: inline-block;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+	overflow: hidden;
+}
+.spot-box{
+	width: 945px;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 5px;
+}
+.spot-bar{
+	width : 20px;
+	height : 27px;
+	background :url("../resources/main_bar.png") repeat-y left;
+}
+.spot{
+	width: 915px;
+}
+.spot-name{
+	font-family: 맑은고딕,HY고딕,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.spot-post-box{
+	margin-left: 20px;
+	margin-top: 15px;
+	width: 925px;
+}
+.spot-post{
+	font-family: 맑은고딕,HY고딕,sans-serif;
+    font-size: 15px;
+}
+.spot-post-box #post-img{
+	width: 100%;
+}
+
 
 /* -----footer--------------------------------------------------------- */
 #footer{
-	height : 150px;
+	height : 100px;
 	background: #212121;
 	color : #D8D8D8;
+	font-size: 12px;
 }
 #footer>.root-container{
 	display: flex;
@@ -436,12 +547,12 @@ a{
 #footer #footer_logo{
 	background: url("../resources/footer_logo.png") no-repeat center;
 	background-size : 150px;
-	width : 250px;
-	height : 100px;
+	width : 249px;
+	height : 90px;
 }
 #footer #footer_bar{
 	width :  100px;
-	height : 100px;
+	height : 80px;
 	background :url("../resources/footer_bar.png") repeat-y center ;
 	
 }
