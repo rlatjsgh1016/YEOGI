@@ -68,4 +68,15 @@ public interface SH {
 			//log 동일
 			
 			//plan 동일
+			
+		//info-edit
+			Member setPw(String id, String pw);
+			Member setMail(String id, String mail);
+			Member setNickname(String id, String nickname);
+			Member setPhone(String id, String phone);
+			Member setBrith(String id, String birth);
+			
+	// join page
+			
+		Member addMember(String id, String pw, String mail, String nickname, String phone, String birth);
 }
