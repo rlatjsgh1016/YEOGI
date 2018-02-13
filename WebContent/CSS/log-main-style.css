@@ -282,10 +282,6 @@ body{
 	margin-top : 1px;
 }
 
-#body .root-container
-{
-	background:url("../images/bg-body.png") repeat-y center;
-}
 
 #footer{
 	height : 150px;
