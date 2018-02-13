@@ -161,6 +161,12 @@ body{
 	padding-top: 10px;
 }
 
+.btn-important,
+.important-button{
+	background : #B5342A;
+	
+}
+
 .btn-warning,
 .warning-button{
 	background : #000000;	
@@ -597,4 +603,56 @@ body{
 	color: #000000;
 	padding: 1px 5px;
 
+}
+
+.title-box{
+	width:300px;
+	margin-top:15px;
+	margin-bottom:0px;
+	font-size: 20px;
+	font-family: 맑은 고딕, HY견고딕, sans-serif;
+	border-radius: 5px;
+}
+
+.join,
+.login{
+	width: 680px;
+	height: 350px;
+	/*background: green;*/
+	margin-top:0px;
+	padding-top: 20px;
+	margin-bottom: 50px;
+
+}
+
+.join-img{
+	width:200px;
+	height:inherit;
+}
+
+.join-label{
+	width: 500px;
+	height:300px;
+	float: left;
+	padding-left: 150px;
+}
+
+.join-btn{
+	margin-left:220px;
+}
+
+fieldset{
+	margin-top: 20px;
+	font-family: 굴림 !important;
+	border : 2px solid #E64C3C;
+	display : table-cell;
+	vertical-align: middle;
+	padding-left: 50px;
+	color : #313131;
+	height: 150px;
+	padding-top: 80px;
+}
+
+input{
+	border: 1px solid #AFAFAF;
 }

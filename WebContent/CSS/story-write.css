@@ -140,6 +140,42 @@ input, select {
 	text-indent: 10px;
 }
 
+.table{
+	display: table;
+	line-height: 2em;
+	text-align: center;
+}
+
+.table .tr{
+	display: table-row;
+	background-color: #E6E6E6;
+	font-weight: bold;
+}
+
+.table .tr .td{
+	display: table-cell;
+	border: 2px solid #AFAFAF;
+	border-bottom: none;
+	border-right: none;
+}
+
+.table .tr .td:last-child{
+	border-right: 2px solid #AFAFAF;
+}
+
+.table .tr:last-child .td{
+	border-bottom: 2px solid #AFAFAF;
+}
+
+.table .width-sm{
+	width: 60px;
+	min-width: 60px;
+}
+
+.table .width-md{
+	min-width: 200px;
+}
+
 /*----------------------- component style ------------------------*/
 
 .btn{
@@ -159,7 +195,14 @@ input, select {
 	background: #333333;
 }
 
-.btn-default:hover{
+.btn-lg{
+	color: #ffffff;
+	background: #333333;
+	width: 90px;
+}
+
+.btn-default:hover,
+.btn-lg:hover{
 	background: #E64C3C;
 }
 
@@ -303,7 +346,7 @@ main>.root-container{
 .btn-container{
 	display:flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: stretch;
 	margin: 10px;
 	padding: 10px;
@@ -313,27 +356,44 @@ main>.root-container{
 
 .first-line-btn{
 	display:flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .second-line-btn{
 	display: flex;
-	justify-content: space-between;
-	padding-top: 20px;
+	justify-content: space-around;
+	margin-top: 10px;
 }
 
 #lock{
-	background: url("../images/lock.png") no-repeat 20px center;
+	padding-top: 24px;
+	background: url("../images/lock.png") no-repeat top;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ff0000;
+	text-align: center;
 }
 
 .spending-container{
 	height: 50px;
 	margin: 3px 18px 3px 18px;
 	border: 2px solid #AFAFAF;
+	position: relative;
 }
 
 .spending-container:hover{
 	cursor: pointer;
+}
+
+.spending-container:hover .spending-detail{
+	display: block;
+}
+
+.spending-detail{
+	position: absolute;
+	left: 290px;
+	background: #ffffff;
+	display: none;
 }
 
 #spending-txt{
@@ -478,20 +538,25 @@ main>.root-container{
 
 .tour-intro{
 	width: inherit;
-	padding: 2px;
 }
 
 
-.form-control{
-	width: 971px;
+input.form-control{
+	width: 970px;
+	padding: 1px;
+	border: 0.5px solid #AFAFAF;
 	overflow: auto;
 }
 
 textarea.form-control{
-	min-width: 969px;
-	max-width: 969px;
+	min-width: 970px;
+	max-width: 970px;
 	min-height: 8em;
+	padding: 1px;
+	margin-top: 5px;
+	border: 0.5px solid #AFAFAF;
 	overflow: auto;
+	line-height: 1.25em;
 }
 
 .tour-brief{
@@ -638,10 +703,19 @@ textarea.form-control{
 	height: 480px;
 	padding: 10px;
 	background: #E6E6E6;
+	border: 1px solid #000000;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -240px 0 0 -390px;
+	visibility: hidden;
 }
 
 .detail-title-box{
 	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .detail-title-box>:first-child{

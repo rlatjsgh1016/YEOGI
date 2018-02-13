@@ -1,0 +1,466 @@
+@charset "UTF-8";
+
+/*----reset---------------------*/
+body{
+	margin : 0px;
+	font-family: 맑은 고딕, HY견고딕, Arial, sans-serif;
+	color: #333333;
+	font-weight: bold;
+}
+
+h1{
+	margin : 0px;
+}
+
+ul{
+	padding : 0px;
+	margin : 0px;
+}
+
+li{
+	display : block;
+	/* border: 1px solid black; */
+}
+
+a{
+	text-decoration: none;
+	color : inherit;
+	padding: 0;
+}
+
+p{
+	margin:0;
+	padding: 0;
+}
+
+td{
+	margin:0;
+	padding: 0;	
+}
+/*-----------root-container-----------*/	
+.root-container{
+		width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+	}
+/*-----------header-----------*/
+#header{
+	background: white;
+	height : 70px;
+	padding-top:10px;
+}
+
+	#logo{
+		height:65px;
+		float: left;
+		box-sizing: border-box;
+	}
+	
+	#logo > img{
+		height:65px;
+	}
+	.main-menu{
+		font-size: 20px;
+		margin-top: 25px;
+		margin-left: 150px;
+	}
+	
+	.main-menu > ul{
+		overflow: auto;
+		display: inline-block;
+		
+	}
+	.main-menu > ul > li{
+		float: left;
+		padding-left: 24px;
+		background: url("../images/bg-main-menu-vsp.png") no-repeat 13px center;
+	}
+	
+	.member-menu{
+		margin-top: 35px;
+		margin-left: 400px;
+		float: right;
+	}
+	
+	.member-menu > ul{
+		overflow: auto;
+		display: inline-block;
+		
+	}
+	
+	.member-menu > ul > li{
+		
+		padding-left: 10px;
+		font-family: 맑은 고딕, HY견고딕, Arial, sans-serif;
+		font-size:13px;
+			
+	}
+	
+	.mypageBtn{
+		
+	}
+/*----horizonal Menu----------*/
+.hor-menu{
+	display: inline-block;
+}
+
+		.hor-menu > ul{
+			overflow : auto;
+			display : inline-block;
+		}
+		
+		.hor-menu > ul > li{
+			float : left;
+		}
+		
+		.hor-menu.first-pad-none > ul > li:first-child{
+			padding-left : 0px !important;
+			background : none !important;
+		}
+/*----visual----------*/
+#visual{
+	height: 280px;
+	border-top: 5px solid #E64C3C;
+	
+}
+#title-img{
+    z-index: 1;
+}
+
+#visual > #title-img > #img{
+	height: 280px;
+	width: 100%;
+	position: absolute;
+	
+}
+.title-box{
+	height: 280px;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+}
+	
+		.title-name{
+			position: relative;
+			min-height: 130px;
+			width: 1320px;
+			margin-top: -20px;
+			box-sizing: content-box;
+		}
+		
+		 .title-name a{
+		 	position: absolute;
+		    width: 1320px;
+		    line-height: 35px;
+		    overflow: hidden;
+		    display: block;
+		    padding-top: 70px;
+		    font-family: 맑은고딕,HY고딕,sans-serif;
+		    font-size: 33px;
+		    font-weight: bold;
+		    color: #ffffff;
+		    text-align: center;
+		    word-wrap: break-word;
+		 }
+		 
+		 
+		.title-info{
+			position: relative;
+			width: 1320px;
+			background: white;
+			text-align: center;
+		}
+		
+			.title-info span{
+				padding-left: 15px;	
+			}
+		
+		.title-hit{
+			position: relative;
+			width: 1320px;
+			background: white;
+			text-align: center;
+		}
+			.title-hit span{
+				padding-left: 15px;	
+			}
+	
+		
+/*----body----------*/
+#body{
+	min-height: 500px;
+	overflow: auto;
+	margin-top: 1px;
+	border-top: 10px solid #848484;
+	
+}
+
+/*----aside----------*/
+#aside{
+	min-height: 600px;
+	width: 300px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #E6E6E6;
+}
+
+	.user-box{
+		width:255px;
+		height: 295px;
+		margin-top: 10px;
+		background: #ffffff;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+		.user-box .user-imgbox{
+			width: 150px;
+			height: 150px;
+			margin-top: 15px;
+		}
+			
+			.user-box > .user-imgbox > #user-img{
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+				object-position: top;
+				border-radius: 50%;
+			}
+		
+		.user-box .user-name{
+			margin-top: 10px;
+			height: 30px;
+			text-align: center;
+			margin-top: 15px;
+		}
+		
+		.user-box .user-collection{
+			text-align: center;
+			margin-top: 10px;
+			height: 30px;
+		}
+		
+			.user-collection > span{
+				font-family: "맑은고딕","고딕",sans-serif;
+			    font-size: 13px;
+			    padding-left: 1px;
+			}
+			
+			.user-collection > .post-count{
+				font-family: "맑은고딕","고딕",sans-serif;
+			    font-size: 13px;
+			    color: #E64C3C;
+			}
+		
+		.user-box .user-scrap{
+			height: 40px;
+			text-align: center;
+			display: flex;
+		}
+		
+			.user-scrap{
+				height: 40px;
+			    padding-top: 8px;
+			    font-family: "맑은고딕","고딕",sans-serif;
+			    font-size: 15px;
+			    color: #AFAFAF;
+			    text-align: center;
+			}
+			
+			.user-scrap > span{
+				padding-top: 8px;
+			}
+			
+				#btn-scrap{
+					padding: 5px;
+				}
+	
+	.summary-box{
+		margin-top: 5px;
+		width: 255px;
+		background: orange;
+		border-radius: 10px;
+	}
+		.summary-btn{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 50px;
+			width: 250px;
+			margin-left: 5px;
+		}
+	
+		.summary-box ul{
+			background: #ffffff;
+			border-radius: 10px;
+		}
+		.summary-box li{
+			height: 50px;
+		    border-bottom: 1px solid #E6E6E6;
+		    font-size: 15px;
+			color: #AFAFAF;
+		}
+		
+		.summary-list{
+			padding-left: 20px;
+			width: 81px;
+		}
+		
+		.summary-info{
+			padding: 0px 15px 0px 0px;
+			margin: 0px 1px 0px 0px;
+		}
+		
+		.theme-img{
+			background: url("../images/trv-theme2.png") no-repeat left, 
+	 		url("../images/btn-info-more.png") no-repeat right;
+		}
+		
+		.theme-img:hover{
+			background: url("../images/trv-theme-hovor.png") no-repeat left,
+	 		url("../images/btn-info-more.png") no-repeat right;
+	 		color: #E64C3C;
+		}
+		
+		.totalplace-img{
+			background: url("../images/trv-spot.png") no-repeat left,
+	 		url("../images/btn-info-more.png") no-repeat right;
+		}
+		
+		.totalplace-img:hover{
+			background: url("../images/trv-spot-hover.png") no-repeat left,
+			 url("../images/btn.info-more-hover.png") no-repeat right;
+			color: #E64C3C;
+		}
+		
+		.pay-img{
+			background: url("../images/trv-budget.png") no-repeat left,
+			 url("../images/btn-info-more.png") no-repeat right;			
+		}
+		
+		.pay-img:hover{
+			background: url("../images/trv-budget-hover.png") no-repeat left,
+			url("../images/btn-info-more.png") no-repeat right;		
+			color: #E64C3C;	
+		}
+		
+		
+/*----main----------*/
+#main{
+	min-height: inherit;
+	width: 1020px;
+	float: left;
+	background: #E6E6E6;
+}
+
+	.main-plan{
+		width: 990px;
+		height: 900px;
+		margin: 15px;
+	}
+	
+	.map{
+		height: 500px;
+		background:url("../images/google-map.png") no-repeat center;
+		background-size:cover;
+	}
+	
+	.plan-table{
+		height: 300px;
+		background: #f1f1f1;
+		display: flex;
+	}
+		.table-info{
+			width: 110px;
+			display: flex;
+			flex-direction: column;
+		}
+			.table-date{
+				height: 50px;
+				display: flex;
+				justify-content: center;
+				margin-top: 10px;
+				text-align: center;
+			    line-height: 30px;
+			    background: white;
+			    border: 4px solid #B5342A;
+			    box-sizing: border-box;
+			}
+			
+				.table-date > span{
+					align-self: center;
+				}
+				
+			.table-day{
+				display: flex;
+				justify-content: center;
+				height: 40px;
+				margin-top: 10px;
+				line-height: 30px;
+			    background: white;
+			    border: 3px solid #E64C3C;
+			    box-sizing: border-box;
+				
+			}
+			
+				.table-day > span{
+					align-self: center;
+				}
+			
+			.table-btn{
+				height: 50px;
+				display: flex;
+				justify-content: space-around;
+				margin-top: 5px;
+			}
+			
+				.table-btn > .table-leftbtn{
+					display: block;
+					width: 40px;
+					height: 40px;
+					background: url("../images/left-arrow.png") no-repeat center;
+					background-size: cover;
+					
+				}
+				
+				.table-btn > .table-rightbtn{
+					display: block;
+					width: 40px;
+					height: 40px;
+					background: url("../images/right-arrow.png") no-repeat center;
+					background-size: cover;
+				}
+			
+			
+		
+		.table-planFrame{
+			width: 880px;
+			overflow: scroll;	
+		}
+		
+			.table{
+				border-spacing: 0;
+				text-align: center;		
+			}
+		
+			.table-planFrame td{
+				height: 50px;
+				border: 1px solid black;
+			}
+			
+			.table-planFrame .table-time{
+				width: 100px;
+			}
+			
+			.table-planFrame .table-spot{
+				width: 400px;
+			}
+			.table-planFrame .memo-pad{
+				width: 380px;
+			}
+

@@ -9,26 +9,27 @@
 
 <body>
 	<header id="header">
-		<h1 id="logo">
-			<img src="../../../../images/logo.png" alt="여기"/>
-		</h1>
-		<nav class ="hor-menu main-menu first-pad-none">
-			<ul>
-				<li><a href="">계획하기</a></li>
-				<li><a href="">기록하기</a></li>
-				<li><a href="">여행기</a></li>
-				<li><a href="">커뮤니티</a></li>
-			</ul>
-		</nav>
-			
-		<nav class ="hor-menu member-menu first-pad-none">
-			<ul>
-				<li><a href="">로그인</a></li>
-				<li><a href="">회원가입</a></li>
-				<li><a href="">마이페이지</a></li>
-			</ul>
-			
-		</nav>
+		<div class="root-container">
+			<h1 id="logo">
+				<img src="../../../../images/logo.png" alt="여기" />
+			</h1>
+			<nav class="hor-menu main-menu first-pad-none">
+				<ul>
+					<li><a href="">계획하기</a></li>
+					<li><a href="">기록하기</a></li>
+					<li><a href="">여행기</a></li>
+					<li><a href="">커뮤니티</a></li>
+				</ul>
+			</nav>
+
+			<nav class="hor-menu member-menu first-pad-none">
+				<ul>
+					<li><a href="">로그인</a></li>
+					<li><a href="">회원가입</a></li>
+					<li><a href="" class="mypageBtn">마이페이지</a></li>
+				</ul>
+			</nav>
+		</div>	
 	</header>
 
 	<div id="body">
@@ -37,15 +38,15 @@
 				<div id="tab">
 					<section>
 					<ul>
-						<li><a href="">검색</a></li>
-						<li><a href="">장바구니</a></li>
-						<li><a href="">비용</a></li>
-						<li><a href="">일정</a></li>
+						<li id="search-btn"><a href="">Search</a></li>
+						<li id="wishbox-btn"><a href="">Wishbox</a></li>
+						<li id="cost-btn"><a href="">Cost</a></li>
+						<li id="review-btn"><a href="">Plan</a></li>
 						
 					</ul>
 					
 					<ul id="save">
-						<li><a href="">저장</a></li>
+						<li><a href="">Save</a></li>
 					</ul>
 					</section>
 					
@@ -109,198 +110,93 @@
 			
 			<div id="main">
 				 <div id="map">
-				 	map
-				 	<p id="map-layer">
-				 		레이어
-				 	</p>
-				 	
-				 	<p id="map-friendadd">
-				 		친구추가
-				 	</p>
-				 	
-				 	<p id="map-frienddisplay">
-				 		친구목록
-				 	</p>
+				 	<div id="map-right">				 	
+					 	<p id="map-friendadd">
+					 	</p>
+					 	
+					 	<div id="check-map">
+							<div class="up">
+								<a href="" class="btn"></a>
+							</div>
+							<div class="center">
+								<b>day 1</b>
+							</div>
+							<div class="down"></div>
+						</div>
+					</div>
+				
 				 </div>
+				 
+				 
+				
+				
 				 <div id="table">
 				 	<div id="table-control">
-				 	 	
-				 	 	<p id="control-date">
-				 	 		날짜
-				 	 	</p>
-				 	 	
-				 	 	<p id="control-day">
-				 	 		Day1
-				 	 	</p>
+				 	
 				 	 	<div id="button">
 					 	 	<p id="control-leftbtn">
-					 	 		<a href="">버튼</a>
+					 	 		<a href=""></a>
 					 	 	</p>
 					 	 	
+					 	 	<p id="control-day">
+				 	 			Day1
+				 	 		</p>
 					 	 	<p id="control-rightbtn">
-					 	 		<a href="">버튼</a>
+					 	 		<a href=""></a>
 					 	 	</p>
 				 	 	</div>
+				 	 	
+				 	 	<p id="control-date">
+				 	 		2018년 1월 5일
+				 	 	</p>
+				 	 	
+				 	 	
+				 	 	
 				 	 	<p id="control-dayadd">
 				 	 		<a href="">Day추가</a>
 				 	 	</p>
+				 	 	
+				 	 	<p id="control-daydelete">
+				 	 		<a href="">해당일정 삭제하기</a>
+				 	 	</p>
+				 	 	
+				 	 	<p id="control-alldelete">
+				 	 		<a href="">전체일정 삭제하기</a>
+				 	 	</p>
 				 	</div>
 				 	
-				 	<div id="table-timeline">
-				 		<div id="timeline-img">
-				 			이미지
-				 		</div>
-				 		<div id="timeline-plan">
-				 			<p class="timeline-divide">
-				 				계획1
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획2
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획3
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획4
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획5
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획6
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획7
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획8
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획9
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획10
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획11
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획12
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획13
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획14
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획15
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획16
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획17
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획18
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획19
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획20
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획21
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획22
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획23
-				 			</p>
-				 			<p class="timeline-divide">
-				 				계획24
-				 			</p>
-				 		
-				 		</div>
-				 	</div>
-				 	
-				 	<div id="table-memo">
-				 		<p class="memo-divide">
-			 				메모1
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모2
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모3
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모4
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모5
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모6
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모7
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모8
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모9
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모10
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모11
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모12
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모13
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모14
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모15
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모16
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모17
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모18
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모19
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모20
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모21
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모22
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모23
-			 			</p>
-			 			<p class="memo-divide">
-			 				메모24
-			 			</p>
-				 	</div>
+				 	<div class="table-planFrame">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="table-time">07:00</td>
+										<td class="table-spot">몽마르뜨</td>
+										<td class="memo-pad">챙겨라!</td>		
+									</tr>
+									<tr>
+										<td class="table-time">08:00</td>
+										<td class="table-spot">개선문</td>
+										<td class="memo-pad"></td>		
+									</tr>
+									<tr>
+										<td class="table-time">09:00</td>
+										<td class="table-spot">샹제리제거리</td>
+										<td class="memo-pad"></td>		
+									</tr>
+									<tr>
+										<td class="table-time">10:00</td>
+										<td class="table-spot">르브루</td>
+										<td class="memo-pad"></td>		
+									</tr>
+									
+									<tr>
+										<td class="table-time">11:00</td>
+										<td class="table-spot">공항</td>
+										<td class="memo-pad"></td>		
+									</tr>
+								</tbody>
+							</table>
+						</div>
 				 	
 				 	<div id="table-info">
 				 		<p id="info-weather">
