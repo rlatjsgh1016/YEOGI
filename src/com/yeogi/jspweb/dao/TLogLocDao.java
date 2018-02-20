@@ -2,13 +2,16 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.TLogLoc;
+import com.yeogi.jspweb.entity.TourLog;
+
 public interface TLogLocDao {
 
-	List<TLogLocList> getList(TourLog tourLog);
+	List<TLogLoc> getList(TourLog tourLog);
 
-	int insert(TLocLocList tlll);
+	int insert(TLogLoc tll);
 
-	int update(TLocLocList tlll);
+	int update(TLogLoc tll);
 
 	int delete(String id);
 

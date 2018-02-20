@@ -2,13 +2,16 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.TLogModAuth;
+import com.yeogi.jspweb.entity.TourLog;
+
 public interface TLogModAuthDao {
 
-	List<TLogModAuthList> getList(TourLog tourLog);
+	List<TLogModAuth> getList(TourLog tourLog);
 
-	int insert(TLogModAuthList tlmal);
+	int insert(TLogModAuth tlma);
 
-	int update(TLogModAuthList tlmal);
+	int update(TLogModAuth tlma);
 
 	int delete(String id);
 

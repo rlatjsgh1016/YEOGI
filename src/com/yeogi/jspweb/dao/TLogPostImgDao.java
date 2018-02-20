@@ -2,13 +2,15 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.TLogPostImg;
+
 public interface TLogPostImgDao {
 
-	List<TLogPostImgList> getList(String tLogPostId);
+	List<TLogPostImg> getList(String tLogPostId);
 
-	int insert(TLogPostImgList tlpil);
+	int insert(TLogPostImg tlpi);
 
-	int update(TLogPostImgList tlpil);
+	int update(TLogPostImg tlpi);
 
 	int delete(String id);
 

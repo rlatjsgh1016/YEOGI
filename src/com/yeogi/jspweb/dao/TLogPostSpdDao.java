@@ -2,11 +2,13 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.TLogPostSpd;
+
 public interface TLogPostSpdDao {
 
-	List<TLogPostSpdList> getList(String tLogPostId);
-	int insert(TLogPostSpdList tlpsl);
-	int update(TLogPostSpdList tlpsl);
+	List<TLogPostSpd> getList(String tLogPostId);
+	int insert(TLogPostSpd tlps);
+	int update(TLogPostSpd tlps);
 	int delete(String id);
 	
 }

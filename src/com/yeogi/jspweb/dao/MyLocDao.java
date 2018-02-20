@@ -2,12 +2,13 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.MyLoc;
+
 public interface MyLocDao {
 
 	List<MyLoc> getList();
-	int insert(MyLoc mLoc);
-	int update(MyLoc mLoc);
-	int delete(String id);
+	int insert(MyLoc myLoc);
+	int update(MyLoc myLoc);
 	int delete(String id);
 	
 }
