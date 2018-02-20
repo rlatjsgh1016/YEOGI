@@ -2,7 +2,7 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
-public interface TLogPostSpdListDao {
+public interface TLogPostSpdDao {
 
 	List<TLogPostSpdList> getList(String tLogPostId);
 	int insert(TLogPostSpdList tlpsl);

@@ -2,7 +2,7 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
-public interface TLogPostImgListDao {
+public interface TLogPostImgDao {
 
 	List<TLogPostImgList> getList(String tLogPostId);
 

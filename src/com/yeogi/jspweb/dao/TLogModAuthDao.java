@@ -2,7 +2,7 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
-public interface TLogModAuthListDao {
+public interface TLogModAuthDao {
 
 	List<TLogModAuthList> getList(TourLog tourLog);
 

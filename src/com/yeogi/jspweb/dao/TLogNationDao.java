@@ -2,7 +2,7 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
-public interface TLogNationListDao {
+public interface TLogNationDao {
 
 	List<TLogNationList> getList(TourLog tourLog);
 
