@@ -1,13 +1,14 @@
-package com.yeogi.jspweb.dao;
+package com.yeogi.jspweb.dao.jdbc;
 
 import java.util.List;
 
-import com.yeogi.jspweb.entity.Day;
+import com.yeogi.jspweb.dao.NationDao;
+import com.yeogi.jspweb.entity.Nation;
 
-public class JdbcDayDao implements DayDao {
+public class JdbcNationDao implements NationDao {
 
 	@Override
-	public List<Day> getList() {
+	public List<Nation> getList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
