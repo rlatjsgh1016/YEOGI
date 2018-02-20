@@ -1,3 +1,5 @@
+package com.yeogi.jspweb.dao;
+
 import java.util.Date;
 
 public interface PlanDao {
