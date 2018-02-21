@@ -1,32 +1,51 @@
 package com.yeogi.jspweb.entity;
 
 public class MTPlanScrap {
-	private String MId;
-	private String TPlanId;
-	private char ScrapDate;
+	private String mId;
+	private String tPlanId;
+	private char scrapDate;	
+	
+	
+	public MTPlanScrap() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	public MTPlanScrap(String mId, String tPlanId, char scrapDate) {
 		super();
-		MId = mId;
-		TPlanId = tPlanId;
-		ScrapDate = scrapDate;
+		this.mId = mId;
+		this.tPlanId = tPlanId;
+		this.scrapDate = scrapDate;
 	}
-	public String getMId() {
-		return MId;
+
+
+	public String getmId() {
+		return mId;
 	}
-	public void setMId(String mId) {
-		MId = mId;
+
+
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
-	public String getTPlanId() {
-		return TPlanId;
+
+
+	public String gettPlanId() {
+		return tPlanId;
 	}
-	public void setTPlanId(String tPlanId) {
-		TPlanId = tPlanId;
+
+
+	public void settPlanId(String tPlanId) {
+		this.tPlanId = tPlanId;
 	}
+
+
 	public char getScrapDate() {
-		return ScrapDate;
+		return scrapDate;
 	}
+
+
 	public void setScrapDate(char scrapDate) {
-		ScrapDate = scrapDate;
+		this.scrapDate = scrapDate;
 	}
 	
 	

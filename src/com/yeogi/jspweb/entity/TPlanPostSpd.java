@@ -8,6 +8,10 @@ public class TPlanPostSpd {
 	private String Content;
 	private String Unit;
 	private String Amount;
+	
+	public TPlanPostSpd() {
+		// TODO Auto-generated constructor stub
+	}
 	public TPlanPostSpd(String id, String tPlanLocId, String tPlanId, String type, String content, String unit,
 			String amount) {
 		super();

@@ -3,14 +3,18 @@ package com.yeogi.jspweb.entity;
 public class TPlanPost {
 	private String TPlanId;
 	private String TPlanLocId;
-	private String TourDate;
+	private String TourDateTime;
 	private String MemoTitle;
 	private String MemoContent;
-	public TPlanPost(String tPlanId, String tPlanLocId, String tourDate, String memoTitle, String memoContent) {
+	
+	public TPlanPost() {
+		// TODO Auto-generated constructor stub
+	}
+	public TPlanPost(String tPlanId, String tPlanLocId, String tourDateTime, String memoTitle, String memoContent) {
 		super();
 		TPlanId = tPlanId;
 		TPlanLocId = tPlanLocId;
-		TourDate = tourDate;
+		TourDateTime = tourDateTime;
 		MemoTitle = memoTitle;
 		MemoContent = memoContent;
 	}
@@ -26,11 +30,11 @@ public class TPlanPost {
 	public void setTPlanLocId(String tPlanLocId) {
 		TPlanLocId = tPlanLocId;
 	}
-	public String getTourDate() {
-		return TourDate;
+	public String getTourDateTime() {
+		return TourDateTime;
 	}
-	public void setTourDate(String tourDate) {
-		TourDate = tourDate;
+	public void setTourDateTime(String tourDateTime) {
+		TourDateTime = tourDateTime;
 	}
 	public String getMemoTitle() {
 		return MemoTitle;
@@ -44,6 +48,10 @@ public class TPlanPost {
 	public void setMemoContent(String memoContent) {
 		MemoContent = memoContent;
 	}
+	
+	
+	
+	
 	
 	
 }

@@ -203,11 +203,12 @@ p{
 #search-box{
 	/* border: 1px solid black; */
 	background: #efefef;
-	padding: 15px 15px;
+	padding: 5px 5px;
 	width:240px;
 	height: 700px;
 	box-sizing: border-box;
 }
+
 
 	#button-box{
 		margin-top: 30px;
@@ -231,38 +232,56 @@ p{
 		}
 		
 	#searched-content{
-		margin-top:30px;
 		background: #f1f1f1;
-		width:210px;
+		width:230px;
 		min-height : 400px;
+		margin-top: 20px;
 	}
 	
 		.searched-result{
 			background: #cfcfcf;
 			margin: 0px;
-			width: 210px;
+			width: 230px;
 			height: 150px;
 			/* border: 1px solid black; */
-			overflow: auto;
+			overflow: hidden;
 		}
 		
 		.searched-pic{
-			border:1px solid black;
+			/* border:1px solid black; */
 			float:left;
-			width:90px;
-			height:100px;			
-			margin-top:20px;
-			margin-left: 10px;
+			width:120px;
+			height:150px;			
+			/* margin-top:20px;
+			margin-left: 10px; */
+			background: url("../images/eiffel-tower.png") no-repeat center;
+			/*--점심전*/
+			background-size: 120px 150px;
+			/*--점심전*/
+			/* box-sizing: content-box; */
+		}
+		
+		.searched-name{
+			margin-top: 5px;
+			/* border:1px solid black; */
 		}
 		
 		.searched-info{
-			border:1px solid black;
+			/* border:1px solid black; */
 			float:right;
-			width:90px;
-			height:100px;	
-			margin-right: 10px;
+			width:100px;
+			/* margin-right: 10px; */
 			margin-top: 20px;		
 		}
+		
+		.wishput-btn{
+			margin-top: 10px;		
+		}
+		
+			.wishput-btn > .searched-put{
+				height: 40px;
+				margin-top: 10px;
+			}
 
 /*----main-----------------------------------------------------------------------*/
 #main{
