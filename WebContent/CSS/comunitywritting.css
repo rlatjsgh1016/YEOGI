@@ -92,7 +92,7 @@ header>div>img{
 }
 
 .rightmain {
-	background:#AFAFAF;
+	background:#D8D8D8;
 	float:right;
 	width: 1020px;
 	font-family: HY견고딕;
@@ -115,15 +115,19 @@ header>div>img{
 	background:#E64C3C;
 }
 
+.fieldset{
+	float:left;
+	margin:100px 0px;
+}
 .input1{
 	width: 300px;
-	margin:0px 20px;
+	margin:0px 25px;
 }
 
 .text-area{
 	width: 300px;
 	height 1000px;
-	margin:0px 20px;
+	margin:0px 80px;
 }
 .allmain {
 	margin: 0 auto;
@@ -138,7 +142,7 @@ header>div>img{
 footer{
 	background:#D8D8D8;
 	font-size:15px;
-	font-color:#333333;	
+	font-color:#B5342A;	
 	font-weight: bold; 
 }
 footer>.root-container>p{
