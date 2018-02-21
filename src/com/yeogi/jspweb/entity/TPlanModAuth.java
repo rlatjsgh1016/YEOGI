@@ -3,42 +3,65 @@ package com.yeogi.jspweb.entity;
 import java.util.Date;
 
 public class TPlanModAuth {
-	private String TPlanId;
-	private String FriendId;
+	private String tPlanId;
+	private String friendId;
 	private char acceptYN;
-	private Date reqDate;
-	public TPlanModAuth(String tPlanId, String friendId, char acceptYN, Date reqDate) {
+	private Date regDate;
+	
+	
+	public TPlanModAuth() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public TPlanModAuth(String tPlanId, String friendId, char acceptYN, Date regDate) {
 		super();
-		TPlanId = tPlanId;
-		FriendId = friendId;
+		this.tPlanId = tPlanId;
+		this.friendId = friendId;
 		this.acceptYN = acceptYN;
-		this.reqDate = reqDate;
+		this.regDate = regDate;
 	}
-	public String getTPlanId() {
-		return TPlanId;
+
+
+	public String gettPlanId() {
+		return tPlanId;
 	}
-	public void setTPlanId(String tPlanId) {
-		TPlanId = tPlanId;
+
+
+	public void settPlanId(String tPlanId) {
+		this.tPlanId = tPlanId;
 	}
+
+
 	public String getFriendId() {
-		return FriendId;
+		return friendId;
 	}
+
+
 	public void setFriendId(String friendId) {
-		FriendId = friendId;
+		this.friendId = friendId;
 	}
+
+
 	public char getAcceptYN() {
 		return acceptYN;
 	}
+
+
 	public void setAcceptYN(char acceptYN) {
 		this.acceptYN = acceptYN;
 	}
-	public Date getReqDate() {
-		return reqDate;
-	}
-	public void setReqDate(Date reqDate) {
-		this.reqDate = reqDate;
-	}
-	
-	
 
+
+	public Date getRegDate() {
+		return regDate;
+	}
+
+
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	
+	
+	
 }

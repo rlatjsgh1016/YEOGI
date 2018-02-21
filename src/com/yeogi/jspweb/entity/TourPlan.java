@@ -3,112 +3,115 @@ package com.yeogi.jspweb.entity;
 import java.util.Date;
 
 public class TourPlan {
-	private String Id;
-	private String Title;
-	private Date StartDate;
-	private Date EndDate;
-	private int Companion;
-	private int Period;
-	private Date RegDate;
-	private String LastModDate;
-	private String MId;
-	private String TTheme;
+	private String id;
+	private String title;
+	private Date startDate;
+	private Date endDate;
+	private int companion; 
+	private int period;
+	private Date regDate;
+	private String lastModDate;
+	private String mId;
+	private String tTheme;
+	
+	public TourPlan() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public TourPlan(String id, String title, Date startDate, Date endDate, int companion, int period, Date regDate,
 			String lastModDate, String mId, String tTheme) {
 		super();
-		Id = id;
-		Title = title;
-		StartDate = startDate;
-		EndDate = endDate;
-		Companion = companion;
-		Period = period;
-		RegDate = regDate;
-		LastModDate = lastModDate;
-		MId = mId;
-		TTheme = tTheme;
+		this.id = id;
+		this.title = title;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.companion = companion;
+		this.period = period;
+		this.regDate = regDate;
+		this.lastModDate = lastModDate;
+		this.mId = mId;
+		this.tTheme = tTheme;
 	}
 
 	public String getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 
 	public Date getStartDate() {
-		return StartDate;
+		return startDate;
 	}
 
 	public void setStartDate(Date startDate) {
-		StartDate = startDate;
+		this.startDate = startDate;
 	}
 
 	public Date getEndDate() {
-		return EndDate;
+		return endDate;
 	}
 
 	public void setEndDate(Date endDate) {
-		EndDate = endDate;
+		this.endDate = endDate;
 	}
 
 	public int getCompanion() {
-		return Companion;
+		return companion;
 	}
 
 	public void setCompanion(int companion) {
-		Companion = companion;
+		this.companion = companion;
 	}
 
 	public int getPeriod() {
-		return Period;
+		return period;
 	}
 
 	public void setPeriod(int period) {
-		Period = period;
+		this.period = period;
 	}
 
 	public Date getRegDate() {
-		return RegDate;
+		return regDate;
 	}
 
 	public void setRegDate(Date regDate) {
-		RegDate = regDate;
+		this.regDate = regDate;
 	}
 
 	public String getLastModDate() {
-		return LastModDate;
+		return lastModDate;
 	}
 
 	public void setLastModDate(String lastModDate) {
-		LastModDate = lastModDate;
+		this.lastModDate = lastModDate;
 	}
 
-	public String getMId() {
-		return MId;
+	public String getmId() {
+		return mId;
 	}
 
-	public void setMId(String mId) {
-		MId = mId;
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
 
-	public String getTTheme() {
-		return TTheme;
+	public String gettTheme() {
+		return tTheme;
 	}
 
-	public void setTTheme(String tTheme) {
-		TTheme = tTheme;
+	public void settTheme(String tTheme) {
+		this.tTheme = tTheme;
 	}
-	
 	
 	
 	
