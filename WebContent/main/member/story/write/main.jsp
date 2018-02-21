@@ -1,5 +1,13 @@
+<%@page import="com.yeogi.jspweb.entity.Day"%>
+<%@page import="java.util.List"%>
+<%@page import="com.yeogi.jspweb.dao.JdbcDayDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	JdbcDayDao dayDao = new JdbcDayDao();
+	List<Day> dayList = dayDao.getList();
+%>
 
 <!DOCTYPE html>
 <html>
@@ -45,7 +53,7 @@
 						<a class="btn btn-default" href="#">동행자<br>추가</a>
 					</div>
 					<div class="second-line-btn">
-						<a class="btn btn-lg" href="#">저장</a>
+						<a class="btn btn-lg" href="#" >저장</a>
 						<a class="btn btn-lg" href="#">취소</a>
 					</div>
 				</div>
@@ -166,41 +174,43 @@
 			</section>
 			<section class="right-main">
        			<div class="tour-intro">
-        			<input type="text" id="tourMessage" class="form-control tour-brief" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
-       				<textarea class="form-control" id="tourDetailMessage" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
-       				<div class="tour-edit-info">
-           				<div class="day-step-theme">
-            					<div class="days">
-	               					<h6>여행시작일 </h6>
-	               					<input id="tourStartDay" type="date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
-            					</div>
-            					<div class="days">
-              						<h6>일</h6>
-            						<input type="number" min="1" max="60" class="form-control" id="maxDay" style="width:50px;">
-            					</div>
-            					<div class="days">
-	               					<h6>명</h6>
-	               					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
-            					</div>
-           				</div>
-           				<div class="day-step-theme nations">
-            					<h6>여행도시</h6>
-         						<select  style="width:70px; height: 38px;">
-         							<option>한국</option>
-         							<option>일본</option>
-         							<option>중국</option>
-         						</select>
-             			</div>
-    					<div class="day-step-theme themes">
-             				<h6>여행테마</h6>
-							<span class="selected" data-theme="0">나홀로 여행</span>
-							<span class="" data-theme="1">친구와 함께</span>								
-							<span class="" data-theme="2">가족과 함께</span>
-							<span class="selected" data-theme="3">단체여행</span>
-							<span class="selected" data-theme="4">패키지 여행</span>
-							<span class="selected" data-theme="5">커플</span>
-           				</div>
-       				</div>
+	       			<form action="main.jsp">
+	        			<input type="text" id="tourMessage" class="form-control tour-brief" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
+	       				<textarea class="form-control" id="tourDetailMessage" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
+	       				<div class="tour-edit-info">
+	           				<div class="day-step-theme">
+	            					<div class="days">
+		               					<h6>여행시작일 </h6>
+		               					<input id="tourStartDay" type="date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
+	            					</div>
+	            					<div class="days">
+	              						<h6>일</h6>
+	            						<input type="number" min="1" max="60" class="form-control" id="maxDay" style="width:50px;">
+	            					</div>
+	            					<div class="days">
+		               					<h6>명</h6>
+		               					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
+	            					</div>
+	           				</div>
+	           				<div class="day-step-theme nations">
+	            					<h6>여행도시</h6>
+	         						<select  style="width:70px; height: 38px;">
+	         							<%	for(Day d : dayList){ %>
+	         							<option><%=d.getDay() %></option>
+	         							<%} %>
+	         						</select>
+	             			</div>
+	    					<div class="day-step-theme themes">
+	             				<h6>여행테마</h6>
+								<span class="selected" data-theme="0">나홀로 여행</span>
+								<span class="" data-theme="1">친구와 함께</span>								
+								<span class="" data-theme="2">가족과 함께</span>
+								<span class="selected" data-theme="3">단체여행</span>
+								<span class="selected" data-theme="4">패키지 여행</span>
+								<span class="selected" data-theme="5">커플</span>
+	           				</div>
+	       				</div>
+       				</form>
    				</div>
 				<div class="view-container">
 					<div class="view-frame-box">

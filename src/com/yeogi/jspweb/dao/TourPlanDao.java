@@ -2,9 +2,9 @@ package com.yeogi.jspweb.dao;
 
 import java.util.Date;
 
-public interface PlanDao {
+public interface TourPlanDao {
 
-	void insert(String travelTitle, Date startDate, Date endDate, String theme, int companion)
+	void insert(String travelTitle, Date startDate, Date endDate, String theme, int companion);
 	
 	
 
