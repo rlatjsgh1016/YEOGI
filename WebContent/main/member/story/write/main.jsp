@@ -15,6 +15,21 @@
 <meta charset="UTF-8">
 <title>story main page</title>
 <link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
+<script>
+		function doClose(){
+			var div = document.getElementsByClassName('detail-post-box');
+			for(var i=0; div.length; i++){
+				div[i].style.visibility = 'hidden';
+			}
+		}
+		
+		function doDetailOpen(){
+			var div = document.getElementsByClassName('detail-post-box');
+			for(var i=0; div.length; i++){
+				div[i].style.visibility = 'visible'
+			}
+		}
+</script>
 </head>
 <body>
 	<header>
@@ -173,12 +188,12 @@
 				</div>
 			</section>
 			<section class="right-main">
-       			<div class="tour-intro">
+       			<div class="form-container">
 	       			<form action="main.jsp">
-	        			<input type="text" id="tourMessage" class="form-control tour-brief" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
-	       				<textarea class="form-control" id="tourDetailMessage" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
-	       				<div class="tour-edit-info">
-	           				<div class="day-step-theme">
+	        			<input type="text" class="form-control" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
+	       				<textarea class="form-control" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
+	       				<div class="tour-log-info">
+	           				<div class="tour-log-info-bottom">
 	            					<div class="days">
 		               					<h6>여행시작일 </h6>
 		               					<input id="tourStartDay" type="date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
@@ -192,22 +207,22 @@
 		               					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
 	            					</div>
 	           				</div>
-	           				<div class="day-step-theme nations">
+	           				<div class="tour-log-info-bottom nations">
 	            					<h6>여행도시</h6>
 	         						<select  style="width:70px; height: 38px;">
-	         							<%	for(Day d : dayList){ %>
+	         							<%for(Day d : dayList){ %>
 	         							<option><%=d.getDay() %></option>
 	         							<%} %>
 	         						</select>
 	             			</div>
-	    					<div class="day-step-theme themes">
+	    					<div class="tour-log-info-bottom themes">
 	             				<h6>여행테마</h6>
 								<span class="selected" data-theme="0">나홀로 여행</span>
 								<span class="" data-theme="1">친구와 함께</span>								
 								<span class="" data-theme="2">가족과 함께</span>
-								<span class="selected" data-theme="3">단체여행</span>
-								<span class="selected" data-theme="4">패키지 여행</span>
-								<span class="selected" data-theme="5">커플</span>
+								<span class="" data-theme="3">단체여행</span>
+								<span class="" data-theme="4">패키지 여행</span>
+								<span class="" data-theme="5">커플</span>
 	           				</div>
 	       				</div>
        				</form>
@@ -295,20 +310,5 @@
 			</section>
 		</div>
 	</main>
-	<script>
-		function doClose(){
-			var div = document.getElementsByClassName('detail-post-box');
-			for(var i=0; div.length; i++){
-				div[i].style.visibility = 'hidden';
-			}
-		}
-		
-		function doDetailOpen(){
-			var div = document.getElementsByClassName('detail-post-box');
-			for(var i=0; div.length; i++){
-				div[i].style.visibility = 'visible'
-			}
-		}
-	</script>
 </body>
 </html>

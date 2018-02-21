@@ -9,6 +9,7 @@ import com.yeogi.jspweb.entity.TourLog;
 public interface TLogPostDao {
 
 	List<TLogPost> getList(TourLog tourLog, TLogLoc tLogLoc);
+	
 	int insert(TLogPost tlp);
 	int update(TLogPost tlp);
 	int delete(String id);
