@@ -7,15 +7,19 @@ public class TPlanLoc {
 	private String MyLocId;
 	private String TPlanId;
 	private String LocId;
-	private Date ReqDate;
+	private Date RegDate;
 	public TPlanLoc(String id, String myLocId, String tPlanId, String locId, Date reqDate) {
 		super();
 		Id = id;
 		MyLocId = myLocId;
 		TPlanId = tPlanId;
 		LocId = locId;
-		ReqDate = reqDate;
+		RegDate = reqDate;
 	}
+	
+	public TPlanLoc() {
+	}
+	
 	public String getId() {
 		return Id;
 	}
@@ -41,10 +45,10 @@ public class TPlanLoc {
 		LocId = locId;
 	}
 	public Date getReqDate() {
-		return ReqDate;
+		return RegDate;
 	}
-	public void setReqDate(Date reqDate) {
-		ReqDate = reqDate;
+	public void setReqDate(Date regDate) {
+		RegDate = regDate;
 	}
 	
 	
