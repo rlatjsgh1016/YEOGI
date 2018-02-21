@@ -5,7 +5,7 @@ import java.util.Date;
 public class TPlanModAuth {
 	private String tPlanId;
 	private String friendId;
-	private char acceptYN;
+	private String acceptYN;
 	private Date regDate;
 	
 	
@@ -14,7 +14,7 @@ public class TPlanModAuth {
 	}
 	
 
-	public TPlanModAuth(String tPlanId, String friendId, char acceptYN, Date regDate) {
+	public TPlanModAuth(String tPlanId, String friendId, String acceptYN, Date regDate) {
 		super();
 		this.tPlanId = tPlanId;
 		this.friendId = friendId;
@@ -43,12 +43,12 @@ public class TPlanModAuth {
 	}
 
 
-	public char getAcceptYN() {
+	public String getAcceptYN() {
 		return acceptYN;
 	}
 
 
-	public void setAcceptYN(char acceptYN) {
+	public void setAcceptYN(String acceptYN) {
 		this.acceptYN = acceptYN;
 	}
 

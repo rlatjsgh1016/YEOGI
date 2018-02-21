@@ -1,17 +1,18 @@
 package com.yeogi.jspweb.entity;
 
+import java.util.Date;
+
 public class MTPlanScrap {
 	private String mId;
 	private String tPlanId;
-	private char scrapDate;	
-	
+	private Date scrapDate;	
 	
 	public MTPlanScrap() {
 		// TODO Auto-generated constructor stub
 	}
 
 	
-	public MTPlanScrap(String mId, String tPlanId, char scrapDate) {
+	public MTPlanScrap(String mId, String tPlanId, Date scrapDate) {
 		super();
 		this.mId = mId;
 		this.tPlanId = tPlanId;
@@ -39,15 +40,14 @@ public class MTPlanScrap {
 	}
 
 
-	public char getScrapDate() {
+	public Date getScrapDate() {
 		return scrapDate;
 	}
 
 
-	public void setScrapDate(char scrapDate) {
+	public void setScrapDate(Date scrapDate) {
 		this.scrapDate = scrapDate;
 	}
-	
 	
 
 }
