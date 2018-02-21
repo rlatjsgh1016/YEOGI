@@ -6,13 +6,24 @@ public class TLogPost {
 	private String tLogLocId;
 	private String trans;
 	private String id;
+	public TLogPost() {
+
+	}
 	public TLogPost(String content, String tLogId, String tLogLocId, String trans, String id) {
-		super();
+		
 		this.content = content;
 		this.tLogId = tLogId;
 		this.tLogLocId = tLogLocId;
 		this.trans = trans;
 		this.id = id;
+	}
+	
+	public TLogPost(String content, String tLogId, String tLogLocId, String trans) {
+		
+		this.content = content;
+		this.tLogId = tLogId;
+		this.tLogLocId = tLogLocId;
+		this.trans = trans;
 	}
 	public String getContent() {
 		return content;

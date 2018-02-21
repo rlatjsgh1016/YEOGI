@@ -4,10 +4,18 @@ public class TLogPostImg {
 	private String img;
 	private String id;
 	private String tLogPostId;
+	public TLogPostImg() {
+
+	}
 	public TLogPostImg(String img, String id, String tLogPostId) {
-		super();
+		
 		this.img = img;
 		this.id = id;
+		this.tLogPostId = tLogPostId;
+	}
+	public TLogPostImg(String img, String tLogPostId) {
+		
+		this.img = img;
 		this.tLogPostId = tLogPostId;
 	}
 	public String getImg() {

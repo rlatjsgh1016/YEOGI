@@ -1,6 +1,6 @@
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcDayDao"%>
 <%@page import="com.yeogi.jspweb.entity.Day"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yeogi.jspweb.dao.JdbcDayDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -53,7 +53,7 @@
 						<a class="btn btn-default" href="#">동행자<br>추가</a>
 					</div>
 					<div class="second-line-btn">
-						<a class="btn btn-lg" href="#" >저장</a>
+						<input class="btn btn-lg" type="submit" formaction="main.jsp" value="저장">
 						<a class="btn btn-lg" href="#">취소</a>
 					</div>
 				</div>

@@ -4,9 +4,17 @@ public class MyLoc {
 	private String id;
 	private String address;
 	private String name;
+	public MyLoc() {
+
+	}
 	public MyLoc(String id, String address, String name) {
-		super();
+		
 		this.id = id;
+		this.address = address;
+		this.name = name;
+	}
+	public MyLoc(String address, String name) {
+		
 		this.address = address;
 		this.name = name;
 	}

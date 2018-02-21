@@ -10,8 +10,11 @@ public class Member {
 	private String phone;
 	private Date birthday;
 	private char adminYN;
+	public Member() {
+
+	}
 	public Member(String id, String name, String email, String pwd, String phone, Date birthday, char adminYN) {
-		super();
+		
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -19,6 +22,15 @@ public class Member {
 		this.phone = phone;
 		this.birthday = birthday;
 		this.adminYN = adminYN;
+	}
+	
+	public Member(String name, String email, String pwd, String phone, Date birthday) {
+		
+		this.name = name;
+		this.email = email;
+		this.pwd = pwd;
+		this.phone = phone;
+		this.birthday = birthday;
 	}
 	public String getId() {
 		return id;

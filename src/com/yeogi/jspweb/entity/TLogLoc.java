@@ -9,12 +9,22 @@ public class TLogLoc {
 	private Date regDate;
 	private String myLocId;
 	private int order;
+	public TLogLoc() {
+
+	}
 	public TLogLoc(String locId, String id, String tLogId, Date regDate, String myLocId, int order) {
-		super();
+		
 		this.locId = locId;
 		this.id = id;
 		this.tLogId = tLogId;
 		this.regDate = regDate;
+		this.myLocId = myLocId;
+		this.order = order;
+	}
+	public TLogLoc(String locId, String tLogId, String myLocId, int order) {
+		
+		this.locId = locId;
+		this.tLogId = tLogId;
 		this.myLocId = myLocId;
 		this.order = order;
 	}
