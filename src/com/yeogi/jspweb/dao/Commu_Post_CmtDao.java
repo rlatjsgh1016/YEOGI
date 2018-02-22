@@ -9,8 +9,8 @@ import com.yeogi.jspweb.entity.Commu_Post_Cmt;
 		
 		List<Commu_Post_Cmt> getList();
 
-		int delete(String id );
-		int insert(Commu_Post_Cmt cpc);
-		int update(Commu_Post_Cmt cpc);
+		public int delete(String id );
+		public int insert(Commu_Post_Cmt cpc);
+		public int update(Commu_Post_Cmt cpc);
 		
 }

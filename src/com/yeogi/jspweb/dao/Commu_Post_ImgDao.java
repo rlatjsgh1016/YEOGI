@@ -9,8 +9,8 @@ import com.yeogi.jspweb.entity.Commu_Post_Img;
 		
 		List<Commu_Post_Img> getList();
 
-		int delete(String id );
-		int insert(Commu_Post_Img cpi);
-		int update(Commu_Post_Img cpi);
+		public int delete(String id );
+		public int insert(Commu_Post_Img cpi);
+		public int update(Commu_Post_Img cpi);
 		
 }
