@@ -55,7 +55,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		}
 	    
 	    catch (ClassNotFoundException e) {
-	       // TODO Auto-generated catch block
+
 	       e.printStackTrace();
 	    } 
 	    
