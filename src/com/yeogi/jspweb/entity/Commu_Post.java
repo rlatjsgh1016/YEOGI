@@ -22,6 +22,18 @@ public class Commu_Post {
 		Commu_Post = commu_Post;
 
 	}
+	
+	
+	public Commu_Post(String title, String content, String hit, String post_Type, String commu_Post) {
+		super();
+		Title = title;
+		Content = content;
+		Hit = hit;
+		Post_Type = post_Type;
+		Commu_Post = commu_Post;
+	}
+
+
 	public String getTitle() {
 		return Title;
 	}

@@ -2,13 +2,13 @@ package com.yeogi.jspweb.dao.jdbc;
 
 import java.util.List;
 
-import com.yeogi.jspweb.dao.Commu_Post_CmtDao;
-import com.yeogi.jspweb.entity.Commu_Post_Cmt;
+import com.yeogi.jspweb.dao.Commu_Post_ImgDao;
+import com.yeogi.jspweb.entity.Commu_Post_Img;
 
-public class JdbcCommuPostCmt implements Commu_Post_CmtDao {
+public class JdbcCommuPostImgDao implements Commu_Post_ImgDao {
 
 	@Override
-	public List<Commu_Post_Cmt> getList() {
+	public List<Commu_Post_Img> getList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -20,13 +20,13 @@ public class JdbcCommuPostCmt implements Commu_Post_CmtDao {
 	}
 
 	@Override
-	public int insert(Commu_Post_Cmt cpc) {
+	public int insert(Commu_Post_Img cpi) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(Commu_Post_Cmt cpc) {
+	public int update(Commu_Post_Img cpi) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
