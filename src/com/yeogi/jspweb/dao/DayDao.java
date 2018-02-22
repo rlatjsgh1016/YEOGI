@@ -8,6 +8,4 @@ public interface DayDao {
 
 	List<Day> getList();
 
-	int delete(String id);
-
 }

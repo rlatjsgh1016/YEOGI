@@ -2,24 +2,25 @@ package com.yeogi.jspweb.dao.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yeogi.jspweb.dao.NationDao;
-import com.yeogi.jspweb.entity.Day;
-import com.yeogi.jspweb.entity.Nation;
+import com.yeogi.jspweb.dao.TransportDao;
+import com.yeogi.jspweb.entity.TLogPostSpd;
+import com.yeogi.jspweb.entity.Transport;
 
-public class JdbcNationDao implements NationDao {
+public class JdbcTransportDao implements TransportDao {
 
 	@Override
-	public List<Nation> getList() {
+	public List<Transport> getList() {
 		
-		String sql = "SELECT * FROM NATION";
+		String sql = "SELECT * FROM TRANSPORT";
 
-		List<Nation> list = new ArrayList<>();
+		List<Transport> list = new ArrayList<>();
 
 		try {
 
@@ -31,9 +32,11 @@ public class JdbcNationDao implements NationDao {
 
 			while (rs.next()) {
 
-				Nation nation = new Nation(rs.getString("NATION"));
+				Transport transport = new Transport(		
+						
+						rs.getString("TRANSPORT"));
 				
-				list.add(nation);
+				list.add(transport);
 			}
 
 			rs.close();
@@ -53,5 +56,6 @@ public class JdbcNationDao implements NationDao {
 		}
 		return list;
 	}
+
 
 }

@@ -17,24 +17,22 @@ public class JdbcDayDao implements DayDao {
 	@Override
 	public List<Day> getList(){
 		
-		String sql = "select * from day";
+		String sql = "SELECT * FROM DAY";
+		
+		List<Day> list = new ArrayList<>();
+		
 		try {
-			// 드라이버 로드
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);	//	쿼리실행(select) / 업데이트실행(반환되는 값이 없는 쿼리는 이걸로실행(update,delete,insert)
+			ResultSet rs = st.executeQuery(sql);
 			
-			int iDay;
-			
-			List<Day> list = new ArrayList<>();
 			
 			while(rs.next()) {
-				
-				iDay = rs.getInt("day");
-								
-				Day day = new Day(iDay);
+						
+				Day day = new Day(rs.getInt("DAY"));
 				list.add(day);
 			}
 			
@@ -42,7 +40,6 @@ public class JdbcDayDao implements DayDao {
 			st.close();
 			con.close();
 			
-			return list;
 		}
 	    
 	    catch (ClassNotFoundException e) {
@@ -55,39 +52,8 @@ public class JdbcDayDao implements DayDao {
 	       e.printStackTrace();
 	    }
 	    
-	    return null;
+		return list;
 	}
 
-	@Override
-	public int delete(String id) {
-
-		String sql = "delete from day where id=?";
-		try {
-			// 드라이버 로드
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			PreparedStatement sst = con.prepareStatement(sql);
-			sst.setString(1, id);
-			sst.executeUpdate();
-			
-			sst.close();
-			con.close();
-			
-			return 1;
-		}
-	    
-	    catch (ClassNotFoundException e) {
-	       // TODO Auto-generated catch block
-	       e.printStackTrace();
-	    } 
-	    
-	    catch (SQLException e) {
-	       // TODO Auto-generated catch block
-	       e.printStackTrace();
-	    }
-
-		return 0;
-	}
 
 }

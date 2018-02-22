@@ -8,6 +8,4 @@ public interface NationDao {
 
 	List<Nation> getList();
 
-	int delete(String id);
-
 }

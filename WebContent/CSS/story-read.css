@@ -526,13 +526,14 @@ a{
 	margin-top: 15px;
 	width: 925px;
 }
-.spot-post{
+.spot-post-content{
 	font-family: 맑은고딕,HY고딕,sans-serif;
     font-size: 15px;
 }
 .spot-post-box #post-img{
 	width: 100%;
 }
+
 
 .st-comment-box{
 	width: 960px;
@@ -554,6 +555,7 @@ a{
 }
 .st-comment-box>.comment-cnt-box>span{
 	/* text-align: center; */
+	font-family: 맑은고딕,HY고딕,sans-serif;
 	color: #848484;
 	font-size: 15px;
 	display:block;
@@ -572,23 +574,53 @@ a{
 }
 .st-comment-write-box>.comment-write-box{
 	width: 930px;
-	height: 50px;
+	height: 55px;
 	border-top: 1px solid #AFAFAF;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 }
 .st-comment-write-box>.comment-write-box>.new-comment{
 	display: block;
 	width: 750px;
     resize: vertical;
-    height: 40px;
+    min-height: 25px;
     border: 1px solid #eee;
     background: #f6f6f6;
     border-radius: 3px;
     overflow: auto;
     margin: 10px 5px;
-    
-	
+    padding-top : 10px;
+    font-family: 맑은고딕,HY고딕,sans-serif;
+	font-size: 13px;
+}
+.st-comment-write-box>.comment-write-box>#comment-write-user-img{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	object-position: top;
+	border-radius: 50%;
+	margin-top: 10px;
+}
+.st-comment-write-box>.comment-write-box>.comment-reg{
+	width: 58px;
+	height:28px;
+	font-family: 맑은고딕,HY고딕,sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	/* background:#E64C3C; */
+	color: #E64C3C;
+	border-radius: 5px;
+	border: 1px solid #E64C3C;
+	text-align: center; 
+	margin: 10px 0px 10px 10px;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+.st-comment-write-box>.comment-write-box>.lock{
+	width: 40px;
+	height:40px;
+	background: url("../images/unlock24.png") no-repeat center;
+	margin: 10px 0px;
 }
 
 /* -----footer--------------------------------------------------------- */
