@@ -8,12 +8,18 @@ public class Friend {
 	private Date reqDate;
 	private char acceptYN;
 	private String friendId;
+	public Friend() {
+
+	}
 	public Friend(String id, String myId, Date reqDate, char acceptYN, String friendId) {
-		super();
 		this.id = id;
 		this.myId = myId;
 		this.reqDate = reqDate;
 		this.acceptYN = acceptYN;
+		this.friendId = friendId;
+	}
+	public Friend(String myId, String friendId) {
+		this.myId = myId;
 		this.friendId = friendId;
 	}
 	public String getId() {

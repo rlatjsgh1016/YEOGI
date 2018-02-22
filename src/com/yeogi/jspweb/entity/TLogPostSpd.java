@@ -7,13 +7,24 @@ public class TLogPostSpd {
 	private int amount;
 	private String id;
 	private String tLogPostId;
+	public TLogPostSpd() {
+
+	}
 	public TLogPostSpd(String type, String content, char unit, int amount, String id, String tLogPostId) {
-		super();
+		
 		this.type = type;
 		this.content = content;
 		this.unit = unit;
 		this.amount = amount;
 		this.id = id;
+		this.tLogPostId = tLogPostId;
+	}
+	public TLogPostSpd(String type, String content, char unit, int amount, String tLogPostId) {
+		
+		this.type = type;
+		this.content = content;
+		this.unit = unit;
+		this.amount = amount;
 		this.tLogPostId = tLogPostId;
 	}
 	public String getType() {

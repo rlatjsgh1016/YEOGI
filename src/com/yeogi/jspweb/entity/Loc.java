@@ -8,9 +8,21 @@ public class Loc {
 	private String detail;
 	private String address;
 	private String type;
+	public Loc() {
+
+	}
 	public Loc(String id, String name, String nation, String img, String detail, String address, String type) {
-		super();
+		
 		this.id = id;
+		this.name = name;
+		this.nation = nation;
+		this.img = img;
+		this.detail = detail;
+		this.address = address;
+		this.type = type;
+	}
+	public Loc(String name, String nation, String img, String detail, String address, String type) {
+		
 		this.name = name;
 		this.nation = nation;
 		this.img = img;

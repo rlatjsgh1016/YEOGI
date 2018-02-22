@@ -3,8 +3,11 @@ package com.yeogi.jspweb.entity;
 public class TLogNation {
 	private String tLogId;
 	private String nation;
+	public TLogNation() {
+
+	}
 	public TLogNation(String tLogId, String nation) {
-		super();
+		
 		this.tLogId = tLogId;
 		this.nation = nation;
 	}

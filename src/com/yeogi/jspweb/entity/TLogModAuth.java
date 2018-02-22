@@ -7,12 +7,22 @@ public class TLogModAuth {
 	private String tLogId;
 	private String friendId;
 	private Date reqDate;
+	public TLogModAuth() {
+
+	}
 	public TLogModAuth(char acceptYN, String tLogId, String friendId, Date reqDate) {
-		super();
+		
 		this.acceptYN = acceptYN;
 		this.tLogId = tLogId;
 		this.friendId = friendId;
 		this.reqDate = reqDate;
+	}
+	
+	public TLogModAuth(char acceptYN, String tLogId, String friendId) {
+		
+		this.acceptYN = acceptYN;
+		this.tLogId = tLogId;
+		this.friendId = friendId;
 	}
 	public char getAcceptYN() {
 		return acceptYN;

@@ -18,10 +18,13 @@ public class TourLog {
 	private int hit;
 	private String tTheme;
 	private Date endDate;
+	public TourLog() {
+
+	}
 	public TourLog(String id, String title, String memo, String subTitle, String coverImg, char lockYN, Date regDate,
 			int period, Date startDate, int companion, String mid, Date lastModDate, int hit, String tTheme,
 			Date endDate) {
-		super();
+		
 		this.id = id;
 		this.title = title;
 		this.memo = memo;
@@ -35,6 +38,21 @@ public class TourLog {
 		this.mid = mid;
 		this.lastModDate = lastModDate;
 		this.hit = hit;
+		this.tTheme = tTheme;
+		this.endDate = endDate;
+	}
+	public TourLog(String title, String memo, String subTitle, String coverImg, char lockYN, int period, Date startDate,
+			int companion, String mid, String tTheme, Date endDate) {
+		
+		this.title = title;
+		this.memo = memo;
+		this.subTitle = subTitle;
+		this.coverImg = coverImg;
+		this.lockYN = lockYN;
+		this.period = period;
+		this.startDate = startDate;
+		this.companion = companion;
+		this.mid = mid;
 		this.tTheme = tTheme;
 		this.endDate = endDate;
 	}
