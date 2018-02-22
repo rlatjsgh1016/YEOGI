@@ -1,6 +1,6 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Member {
 	private String id;
@@ -9,11 +9,11 @@ public class Member {
 	private String pwd;
 	private String phone;
 	private Date birthday;
-	private char adminYN;
+	private String adminYN;
 	public Member() {
 
 	}
-	public Member(String id, String name, String email, String pwd, String phone, Date birthday, char adminYN) {
+	public Member(String id, String name, String email, String pwd, String phone, Date birthday, String adminYN) {
 		
 		this.id = id;
 		this.name = name;
@@ -68,10 +68,10 @@ public class Member {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	public char getAdminYN() {
+	public String getAdminYN() {
 		return adminYN;
 	}
-	public void setAdminYN(char adminYN) {
+	public void setAdminYN(String adminYN) {
 		this.adminYN = adminYN;
 	}
 	

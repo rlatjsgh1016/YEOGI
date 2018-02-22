@@ -1,6 +1,6 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class TourLog {
 	private String id;
@@ -8,7 +8,7 @@ public class TourLog {
 	private String memo;
 	private String subTitle;
 	private String coverImg;
-	private char lockYN;
+	private String lockYN;
 	private Date regDate;
 	private int period;
 	private Date startDate;
@@ -21,7 +21,7 @@ public class TourLog {
 	public TourLog() {
 
 	}
-	public TourLog(String id, String title, String memo, String subTitle, String coverImg, char lockYN, Date regDate,
+	public TourLog(String id, String title, String memo, String subTitle, String coverImg, String lockYN, Date regDate,
 			int period, Date startDate, int companion, String mid, Date lastModDate, int hit, String tTheme,
 			Date endDate) {
 		
@@ -41,7 +41,7 @@ public class TourLog {
 		this.tTheme = tTheme;
 		this.endDate = endDate;
 	}
-	public TourLog(String title, String memo, String subTitle, String coverImg, char lockYN, int period, Date startDate,
+	public TourLog(String title, String memo, String subTitle, String coverImg, String lockYN, int period, Date startDate,
 			int companion, String mid, String tTheme, Date endDate) {
 		
 		this.title = title;
@@ -86,10 +86,10 @@ public class TourLog {
 	public void setCoverImg(String coverImg) {
 		this.coverImg = coverImg;
 	}
-	public char getLockYN() {
+	public String getLockYN() {
 		return lockYN;
 	}
-	public void setLockYN(char lockYN) {
+	public void setLockYN(String lockYN) {
 		this.lockYN = lockYN;
 	}
 	public Date getRegDate() {

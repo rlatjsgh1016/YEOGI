@@ -3,7 +3,7 @@ package com.yeogi.jspweb.entity;
 public class MTPlanScrap {
 	private String mId;
 	private String tPlanId;
-	private char scrapDate;	
+	private String scrapDate;	
 	
 	
 	public MTPlanScrap() {
@@ -11,7 +11,7 @@ public class MTPlanScrap {
 	}
 
 	
-	public MTPlanScrap(String mId, String tPlanId, char scrapDate) {
+	public MTPlanScrap(String mId, String tPlanId, String scrapDate) {
 		super();
 		this.mId = mId;
 		this.tPlanId = tPlanId;
@@ -39,12 +39,12 @@ public class MTPlanScrap {
 	}
 
 
-	public char getScrapDate() {
+	public String getScrapDate() {
 		return scrapDate;
 	}
 
 
-	public void setScrapDate(char scrapDate) {
+	public void setScrapDate(String scrapDate) {
 		this.scrapDate = scrapDate;
 	}
 	

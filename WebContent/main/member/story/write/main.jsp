@@ -16,19 +16,22 @@
 <title>story main page</title>
 <link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
 <script>
-		function doClose(){
-			var div = document.getElementsByClassName('detail-post-box');
-			for(var i=0; div.length; i++){
-				div[i].style.visibility = 'hidden';
+	window.onload = function init(){
+		var detailPostBox = document.getElementsByClassName('detail-post-box');
+		var placeAdd = document.getElementsByClassName('place-add');
+		for(var i=0; placeAdd.length(); i++){
+			placeAdd[i].children('a').onclick = function doClose(){
+			for(var i=0; detailPostBox.length; i++){
+				detailPostBox[i].style.visibility = 'hidden';
 			}
-		}
+		};
 		
 		function doDetailOpen(){
-			var div = document.getElementsByClassName('detail-post-box');
-			for(var i=0; div.length; i++){
-				div[i].style.visibility = 'visible'
+			for(var i=0; detailPostBox.length; i++){
+				detailPostBox[i].style.visibility = 'visible'
 			}
 		}
+	};
 </script>
 </head>
 <body>

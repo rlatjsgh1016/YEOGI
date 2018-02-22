@@ -1,6 +1,6 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MLocScrap {
 	private String locId;
