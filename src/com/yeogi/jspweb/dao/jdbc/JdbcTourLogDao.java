@@ -121,34 +121,36 @@ public class JdbcTourLogDao implements TourLogDao {
 	@Override
 	public int insert(TourLog tl) {
 		
-		String sql = "INSERT INTO tour_log (" + 
-					"    title," + 
-					"    memo," + 
-					"    lock_yn," + 
-					"    t_theme," + 
-					"    id," + 
-					"    start_date," + 
-					"    companion," + 
-					"    mid," + 
-					"    cover_img," + 
-					"    period," + 
-					"    sub_title," + 
-					"    end_date" + 
-					")" + 
-					"VALUES ("
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'),"
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "?,"
-					+ "?"
-					+ ")";
+		String sql = "INSERT INTO TOUR_LOG("
+				+ "ID,"
+				+ "TITLE,"
+				+ "MEMO,"
+				+ "SUB_TITLE,"
+				+ "COVER_IMG,"
+				+ "LOCK_YN,"
+				+ "PERIOD,"
+				+ "START_DATE,"
+				+ "COMPANION,"
+				+ "MID,"
+				+ "LAST_MOD_DATE,"
+				+ "T_THEME,"
+				+ "END_DATE"
+				+ ") "
+				+ "VALUES ("
+				+ "SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'),"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?"
+				+ ")";
 		
 		int result = 0;
 		
@@ -161,15 +163,15 @@ public class JdbcTourLogDao implements TourLogDao {
 			
 			st.setString(1, tl.getTitle());
 			st.setString(2, tl.getMemo());
-			st.setString(3, tl.getLockYN());
-			st.setString(4, tl.gettTheme());
-			st.setString(5, tl.getId());
-			st.setDate(6, tl.getStartDate());
-			st.setInt(7, tl.getCompanion());
-			st.setString(8, tl.getMid());
-			st.setString(9, tl.getCoverImg());
-			st.setInt(10, tl.getPeriod());
-			st.setString(11, tl.getSubTitle());
+			st.setString(3, tl.getSubTitle());
+			st.setString(4, tl.getCoverImg());
+			st.setString(5, tl.getLockYN());
+			st.setInt(6, tl.getPeriod());
+			st.setDate(7, tl.getStartDate());
+			st.setInt(8, tl.getCompanion());
+			st.setString(9, tl.getMid());
+			st.setDate(10, tl.getLastModDate());
+			st.setString(11, tl.gettTheme());
 			st.setDate(12, tl.getEndDate());
 			
 			result = st.executeUpdate();
@@ -194,23 +196,21 @@ public class JdbcTourLogDao implements TourLogDao {
 	@Override
 	public int update(TourLog tl) {
 
-		String sql = 
-				
-				TITLE
-				MEMO
-				SUB_TITLE
-				COVER_IMG
-				LOCK_YN
-				PERIOD
-				START_DATE
-				COMPANION
-				LAST_MOD_DATE
-				HIT
-				T_THEME
-				END_DATE
-				ID
+		String sql = "UPDATE TOUR_LOG SET " +
+				"TITLE=?, " + 
+				"MEMO=?, " + 
+				"SUB_TITLE=?, " + 
+				"COVER_IMG=?, " + 
+				"LOCK_YN=?, " + 
+				"PERIOD=?, " + 
+				"START_DATE=?, " + 
+				"COMPANION=?, " + 
+				"LAST_MOD_DATE=?, " + 
+				"HIT=?, " + 
+				"T_THEME=?, " + 
+				"END_DATE=? " +
+				"WHERE ID=?";
 		
-				SELECT NVL(MAX(TO_NUMBER(ID)),0)+1 ID FROM TOUR_LOG WHERE TO_CHAR(REG_DATE,'YYYYMMDD') = TO_CHAR(SYSDATE, 'YYYYMMDD')
 		int result = 0;
 		
 		try {
@@ -222,16 +222,17 @@ public class JdbcTourLogDao implements TourLogDao {
 			
 			st.setString(1, tl.getTitle());
 			st.setString(2, tl.getMemo());
-			st.setString(3, tl.getLockYN());
-			st.setString(4, tl.gettTheme());
-			st.setString(5, tl.getId());
-			st.setDate(6, tl.getStartDate());
-			st.setInt(7, tl.getCompanion());
-			st.setString(8, tl.getMid());
-			st.setString(9, tl.getCoverImg());
-			st.setInt(10, tl.getPeriod());
-			st.setString(11, tl.getSubTitle());
+			st.setString(3, tl.getSubTitle());
+			st.setString(4, tl.getCoverImg());
+			st.setString(5, tl.getLockYN());
+			st.setInt(6, tl.getPeriod());
+			st.setDate(7, tl.getStartDate());
+			st.setInt(8, tl.getCompanion());
+			st.setDate(9, tl.getLastModDate());
+			st.setInt(10, tl.getHit());
+			st.setString(11, tl.gettTheme());
 			st.setDate(12, tl.getEndDate());
+			st.setString(13, tl.getId());
 			
 			result = st.executeUpdate();
 						
@@ -254,8 +255,36 @@ public class JdbcTourLogDao implements TourLogDao {
 
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		String sql = "DELETE FROM TOUR_LOG WHERE ID=?";
+		
+		int result = 0;
+		
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, id);
+			
+			result = st.executeUpdate();
+						
+			st.close();
+			con.close();
+		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+		return result;
 	}
 
 }

@@ -1,3 +1,5 @@
+<%@page import="com.yeogi.jspweb.entity.TourLog"%>
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao"%>
 <%@page import="com.yeogi.jspweb.dao.jdbc.JdbcDayDao"%>
 <%@page import="com.yeogi.jspweb.entity.Day"%>
 <%@page import="java.util.List"%>
@@ -7,6 +9,9 @@
 <%
 	JdbcDayDao dayDao = new JdbcDayDao();
 	List<Day> dayList = dayDao.getList();
+	
+	JdbcTourLogDao tourLogDao = new JdbcTourLogDao();
+	List<TourLog> tourLogList = tourLogDao.getList();
 %>
 
 <!DOCTYPE html>
@@ -16,22 +21,37 @@
 <title>story main page</title>
 <link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
 <script>
-	window.onload = function init(){
-		var detailPostBox = document.getElementsByClassName('detail-post-box');
-		var placeAdd = document.getElementsByClassName('place-add');
-		for(var i=0; placeAdd.length(); i++){
-			placeAdd[i].children('a').onclick = function doClose(){
-			for(var i=0; detailPostBox.length; i++){
-				detailPostBox[i].style.visibility = 'hidden';
-			}
-		};
+	window.addEventListener("load", function(){
+		var btnPlaceAdd = document.getElementsByClassName("btn-place-add");
+		var btnPlaceEdit = document.getElementsByClassName("btn-place-edit");
+		var btnPlaceDelete = document.getElementsByClassName("btn-place-delete");
+		var btnDetailPostBoxClose = document.getElementsByClassName("btn-detail-post-box-close");
+		var detailPostBox = document.getElementsByClassName("detail-post-box");
 		
-		function doDetailOpen(){
-			for(var i=0; detailPostBox.length; i++){
-				detailPostBox[i].style.visibility = 'visible'
-			}
+		for(var i=0; i<btnPlaceAdd.length; i++){
+			btnPlaceAdd[i].onclick = function(){
+				for(var i=0; i<detailPostBox.length; i++){
+					detailPostBox[i].style.visibility = "visible";
+				}
+			};
 		}
-	};
+		
+		for(var i=0; i<btnPlaceEdit.length; i++){
+			btnPlaceEdit[i].onclick = function(){
+				for(var i=0; i<detailPostBox.length; i++){
+					detailPostBox[i].style.visibility = "visible";
+				}
+			};
+		}
+		
+		for(var i=0; i<btnDetailPostBoxClose.length; i++){
+			btnDetailPostBoxClose[i].onclick = function(){
+				for(var i=0; i<detailPostBox.length; i++){
+					detailPostBox[i].style.visibility = "hidden";
+				}
+			};
+		}
+	});
 </script>
 </head>
 <body>
@@ -147,46 +167,13 @@
 							<p>인천공항</p>
 						</div>
 						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href="#" onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
+							<a class="btn-place-delete" href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
+							<a class="btn-place-edit" href="#"><img alt="편집" src="../../../../images/write.png"></a>
 						</div>
 					</div>
 					<div class="place-add">
 						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>
-					</div>
-					<div class="card-frame">
-						<div class="image-frame">
-							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
-						</div>
-						
-						<div class="place-frame">
-							<p>인천공항</p>
-						</div>
-						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
-						</div>
-					</div>
-					<div class="place-add">
-						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>					
-					</div>
-					<div class="card-frame">
-						<div class="image-frame">
-							<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
-						</div>
-						<div class="place-frame">
-							<p>인천공항</p>
-						</div>
-						<div class="place-btn-container">
-							<a href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-							<a href=# onclick="doDetailOpen()"><img alt="편집" src="../../../../images/write.png"></a>
-						</div>
-					</div>
-					<div class="place-add">
-						<div class="large-loca"></div>
-						<a class="btn btn-focus" href=# onclick="doDetailOpen()">장소추가</a>					
+						<a class="btn btn-focus btn-place-add" href=#>장소추가</a>
 					</div>
 				</div>
 			</section>
@@ -252,7 +239,7 @@
 				<div class="detail-post-box">
 					<div class="detail-title-box">
 						<p>포스트작성</p>
-						<button onclick="doClose()"><img alt="닫기" src=""></button>
+						<button class="btn-detail-post-box-close"><img alt="닫기" src=""></button>
 					</div>
 					<div class="detail-form-box">
 						<form action="main.jsp">
