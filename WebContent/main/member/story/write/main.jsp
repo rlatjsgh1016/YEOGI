@@ -1,3 +1,7 @@
+<%@page import="com.yeogi.jspweb.entity.Nation"%>
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcNationDao"%>
+<%@page import="com.yeogi.jspweb.dao.NationDao"%>
+<%@page import="com.yeogi.jspweb.dao.DayDao"%>
 <%@page import="com.yeogi.jspweb.entity.TourLog"%>
 <%@page import="com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao"%>
 <%@page import="com.yeogi.jspweb.dao.jdbc.JdbcDayDao"%>
@@ -7,8 +11,11 @@
     pageEncoding="UTF-8"%>
     
 <%
-	JdbcDayDao dayDao = new JdbcDayDao();
+	DayDao dayDao = new JdbcDayDao();
 	List<Day> dayList = dayDao.getList();
+	
+	NationDao nationDao = new JdbcNationDao();
+	List<Nation> nationList = nationDao.getList();
 	
 	JdbcTourLogDao tourLogDao = new JdbcTourLogDao();
 	List<TourLog> tourLogList = tourLogDao.getList();
@@ -190,22 +197,26 @@
 	            					</div>
 	            					<div class="days">
 	              						<h6>일</h6>
-	            						<input type="number" min="1" max="60" class="form-control" id="maxDay" style="width:50px;">
+	              						<select id="id-select-day" name="select-day" style="width:50px; height: 38px;">
+	              						<%for(Day d : dayList){ %>
+	              							<option><%=d.getDay() %></option>
+	              						<%} %>
+	              						</select>
 	            					</div>
-	            					<div class="days">
+	            					<div class="people">
 		               					<h6>명</h6>
-		               					<input type="number" class="form-control" min="1" id="persons" style="width:50px;">
+		               					<input type="number" id="id-input-people" name="input-people" min="1" style="width:50px; height: 32px;">
 	            					</div>
 	           				</div>
-	           				<div class="tour-log-info-bottom nations">
+	           				<div class="nations">
 	            					<h6>여행도시</h6>
-	         						<select  style="width:70px; height: 38px;">
-	         							<%for(Day d : dayList){ %>
-	         							<option><%=d.getDay() %></option>
+	         						<select id="id-select-nation" name="select-nation" style="width:70px; height: 38px;">
+	         							<%for(Nation n : nationList){ %>
+	         							<option><%=n.getNation() %></option>
 	         							<%} %>
 	         						</select>
 	             			</div>
-	    					<div class="tour-log-info-bottom themes">
+	    					<div class="themes">
 	             				<h6>여행테마</h6>
 								<span class="selected" data-theme="0">나홀로 여행</span>
 								<span class="" data-theme="1">친구와 함께</span>								
@@ -239,7 +250,7 @@
 				<div class="detail-post-box">
 					<div class="detail-title-box">
 						<p>포스트작성</p>
-						<button class="btn-detail-post-box-close"><img alt="닫기" src=""></button>
+						<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="../../../../images/close-button.png"></a>
 					</div>
 					<div class="detail-form-box">
 						<form action="main.jsp">

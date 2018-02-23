@@ -1,21 +1,14 @@
 package com.yeogi.jspweb.dao.jdbc;
 
-import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import com.yeogi.jspweb.dao.MemberDao;
 import com.yeogi.jspweb.entity.Member;
@@ -45,11 +38,11 @@ public class JdbcMemberDao implements MemberDao  {
 	    st.setString(3, member.getEmail());
 	    st.setString(4, member.getPwd());
         st.setString(5, member.getPhone());
-        st.setString(6, member.getBirth());
-        st.setString(7, member.getAdminYn());
+        st.setDate(6, member.getBirthday());
+        st.setString(7, member.getAdminYN());
 		
 
-        System.out.printf("%s, %s, %s, %s, %s, %s, %s", member.getId(), member.getName(), member.getEmail(), member.getPhone(), member.getBirth(),member.getPwd(), member.getAdminYn());	
+        System.out.printf("%s, %s, %s, %s, %s, %s, %s", member.getId(), member.getName(), member.getEmail(), member.getPhone(), member.getBirthday(),member.getPwd(), member.getAdminYN());	
 		int result = st.executeUpdate();
 		
 		
@@ -81,7 +74,7 @@ public class JdbcMemberDao implements MemberDao  {
         st.setString(2, member.getEmail());
         st.setString(3, member.getPwd());
         st.setString(4, member.getPhone());
-        st.setString(5, member.getBirth());
+        st.setDate(5, member.getBirthday());
         st.setString(6, member.getId());
         	
 		int result = st.executeUpdate(sql);
@@ -142,7 +135,7 @@ public class JdbcMemberDao implements MemberDao  {
 		 		 String email;
 		 		 String pwd;
 		 		 String phone;
-		 		 String birth;
+		 		 Date birth;
 		 		 String adminYn;
 		         
 		         
@@ -152,7 +145,7 @@ public class JdbcMemberDao implements MemberDao  {
 		     		email = rs.getString("EMAIL");
 		     		pwd = rs.getString("PWD");
 		     		phone = rs.getString("PHONE");
-		     		birth = rs.getString("BIRTHDAY");
+		     		birth = rs.getDate("BIRTHDAY");
 		     		adminYn = rs.getString("ADMIN_YN");
 		            
 		            
@@ -197,7 +190,7 @@ public class JdbcMemberDao implements MemberDao  {
 		 		 String email;
 		 		 String pwd;
 		 		 String phone;
-		 		 String birth;
+		 		 Date birth;
 		 		 String adminYn;
 		         
 		      
@@ -208,7 +201,7 @@ public class JdbcMemberDao implements MemberDao  {
 		     		email = rs.getString("EMAIL");
 		     		pwd = rs.getString("PWD");
 		     		phone = rs.getString("PHONE");
-		     		birth = rs.getString("BIRTHDAY");
+		     		birth = rs.getDate("BIRTHDAY");
 		     		adminYn = rs.getString("ADMIN_YN");
 		            
 		            

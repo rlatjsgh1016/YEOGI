@@ -29,7 +29,7 @@ public class JdbcFriendDao implements FriendDao {
 		st.setString(1, friend.getId());
 		st.setString(2, friend.getMyId());
 	    st.setDate(3, friend.getReqDate());
-	    st.setString(4, friend.getAcceptYn());
+	    st.setString(4, friend.getAcceptYN());
         st.setString(5, friend.getFriendId());
 	       
 		
@@ -210,6 +210,12 @@ public class JdbcFriendDao implements FriendDao {
 		      }
 		      
 		      return list;
+	}
+
+	@Override
+	public List<Friend> getList(String mId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -29,8 +29,8 @@
 		mem.setEmail(request.getParameter("email"));
 		mem.setPwd(request.getParameter("pwd"));
 		mem.setPhone(request.getParameter("phone"));
-		mem.setBirth(request.getParameter("birth"));
-		mem.setAdminYn("N");
+		mem.setBirthday(request.getParameter("birth"));
+		mem.setAdminYN("N");
 		
 		//System.out.printf("%s, %s, %s, %s, %s, %s", mem.getId(), mem.getName(), mem.getEmail(), mem.getPhone(), mem.getPwd(), mem.getAdminYn());	
 		
