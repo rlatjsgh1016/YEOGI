@@ -9,8 +9,10 @@ public interface MyLocDao {
 
 	MyLoc get(String id);
 	List<MyLoc> getList();
-	int insert(MyLoc mLoc) throws ClassNotFoundException, SQLException;
-	int update(MyLoc mLoc) throws ClassNotFoundException, SQLException;
+
+	int insert(MyLoc myLoc);
+	int update(MyLoc myLoc);
+
 	int delete(String id);
 	
 }

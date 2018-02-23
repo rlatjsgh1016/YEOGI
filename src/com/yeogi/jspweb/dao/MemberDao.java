@@ -12,6 +12,8 @@ import java.util.List;
 import com.yeogi.jspweb.entity.Member;
 import com.yeogi.jspweb.dao.*;
 
+import com.yeogi.jspweb.entity.Member;
+
 public interface MemberDao {
 
 	public int insert(Member member) throws ClassNotFoundException, SQLException;

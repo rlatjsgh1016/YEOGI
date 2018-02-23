@@ -15,7 +15,7 @@ public interface StoryRead {
 	int getCommuCount(List<Commu> list, String field);
 	
 	/*---------Story-----------------------------------------*/
-	TLogLocList getLocList(String id,Number order);
+	TLogLoc getLocList(String id,Number order);
 	
 
 }

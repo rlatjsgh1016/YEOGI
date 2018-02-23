@@ -1,6 +1,7 @@
+
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Member {
 	private String id;
@@ -8,26 +9,30 @@ public class Member {
 	private String email;
 	private String pwd;
 	private String phone;
-	private String birth;
-	private String adminYn;
-
+	private Date birthday;
+	private String adminYN;
 	public Member() {
-		
+
 	}
-	
-	public Member(String id, String name, String email, String pwd, String phone, String birth, String admin) {
-		// TODO Auto-generated constructor stub
+	public Member(String id, String name, String email, String pwd, String phone, Date birthday, String adminYN) {
 		
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.pwd = pwd;
 		this.phone = phone;
-		this.birth = birth;
-		this.adminYn = admin;
-	
+		this.birthday = birthday;
+		this.adminYN = adminYN;
 	}
 	
+	public Member(String name, String email, String pwd, String phone, Date birthday) {
+		
+		this.name = name;
+		this.email = email;
+		this.pwd = pwd;
+		this.phone = phone;
+		this.birthday = birthday;
+	}
 	public String getId() {
 		return id;
 	}
@@ -58,17 +63,18 @@ public class Member {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getBirth() {
-		return birth;
+	public Date getBirthday() {
+		return birthday;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
-	public String getAdminYn() {
-		return adminYn;
+	public String getAdminYN() {
+		return adminYN;
 	}
-	public void setAdminYn(String adminYn) {
-		this.adminYn = adminYn;
+	public void setAdminYN(String adminYN) {
+		this.adminYN = adminYN;
 	}
+	
 	
 }

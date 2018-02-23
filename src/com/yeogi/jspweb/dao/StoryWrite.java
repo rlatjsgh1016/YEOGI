@@ -51,7 +51,7 @@ public interface StoryWrite {
 	int insert(TLogPostSpdList tlpsl);
 	int update(TLogPostSpdList tlpsl);
 	
-	List<Trans> getList();
+	List<Transport> getList();
 	List<TTheme> getList();
 	List<Day> getList();
 	List<Nation> getList();

@@ -2,30 +2,34 @@ package com.yeogi.jspweb.entity;
 
 public class MyLoc {
 	private String id;
-	private String addr;
+
+	private String address;
 	private String name;
-	
-	public MyLoc(){
-		
+	public MyLoc() {
+
 	}
-	
-	public MyLoc(String id, String addr, String name){
+	public MyLoc(String id, String address, String name) {
+		
 		this.id = id;
-		this.addr = addr;
+		this.address = address;
 		this.name = name;
 	}
-	
+	public MyLoc(String address, String name) {
+		
+		this.address = address;
+		this.name = name;
+	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAddress() {
+		return address;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getName() {
 		return name;

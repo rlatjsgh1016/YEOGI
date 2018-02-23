@@ -1,27 +1,28 @@
+
 package com.yeogi.jspweb.entity;
 
 import java.sql.Date;
 
 public class Friend {
-
 	private String id;
 	private String myId;
 	private Date reqDate;
-	private String acceptYn;
+	private String acceptYN;
 	private String friendId;
-	
-	public Friend(){
-		
+	public Friend() {
+
 	}
-	
-	public Friend(String id, String myId, Date reqDate, String acceptYn, String friendId){
-		this.id =id;
+	public Friend(String id, String myId, Date reqDate, String acceptYN, String friendId) {
+		this.id = id;
 		this.myId = myId;
 		this.reqDate = reqDate;
-		this.acceptYn = acceptYn;
+		this.acceptYN = acceptYN;
 		this.friendId = friendId;
 	}
-	
+	public Friend(String myId, String friendId) {
+		this.myId = myId;
+		this.friendId = friendId;
+	}
 	public String getId() {
 		return id;
 	}
@@ -40,11 +41,11 @@ public class Friend {
 	public void setReqDate(Date reqDate) {
 		this.reqDate = reqDate;
 	}
-	public String getAcceptYn() {
-		return acceptYn;
+	public String getAcceptYN() {
+		return acceptYN;
 	}
-	public void setAcceptYn(String acceptYn) {
-		this.acceptYn = acceptYn;
+	public void setAcceptYN(String acceptYN) {
+		this.acceptYN = acceptYN;
 	}
 	public String getFriendId() {
 		return friendId;
@@ -52,7 +53,4 @@ public class Friend {
 	public void setFriendId(String friendId) {
 		this.friendId = friendId;
 	}
-	
-	
-	
 }

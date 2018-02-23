@@ -140,7 +140,11 @@ form{
 	#newbutton p{
 		height: 55px;
 		width: 250px;
+		padding-top:10px;
 		text-align: center;
 		background: #E64C3C;
 		border-radius: 4px;
+		font-size : 18px;
+		box-sizing: border-box;
+		font-family: 맑은 고딕, HY견고딕, Arial, sans-serif;
 	}
