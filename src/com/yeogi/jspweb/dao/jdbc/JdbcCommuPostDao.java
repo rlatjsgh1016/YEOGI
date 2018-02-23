@@ -16,13 +16,13 @@ public class JdbcCommuPostDao implements Commu_PostDao {
 
 	@Override
 	public List<Commu_Post> getList() {
-<<<<<<< HEAD
-		String sql = "SELECT * FROM Commu_post ORDER BY REG_DATE DESC";
+
+		String sql = "SELECT * FROM Commu_Post ORDER BY REG_DATE DESC";
 		
 		List<Commu_Post> list = new ArrayList<>();
 		
 		try {
-			// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -30,25 +30,16 @@ public class JdbcCommuPostDao implements Commu_PostDao {
 			ResultSet rs = st.executeQuery();
 						
 			while(rs.next()) {
-				TourLog tourLog = new TourLog(
-						rs.getString("ID"),
-						rs.getString("TITLE"),
-						rs.getString("MEMO"),
-						rs.getString("SUB_TITLE"),
-						rs.getString("COVER_IMG"),
-						rs.getString("LOCK_YN"),
-						rs.getDate("REG_DATE"),
-						rs.getInt("PERIOD"),
-						rs.getDate("START_DATE"),
-						rs.getInt("COMPANION"),
-						rs.getString("MID"),
-						rs.getDate("LAST_MOD_DATE"),
-						rs.getInt("HIT"),
-						rs.getString("T_THEME"),
-						rs.getDate("END_DATE")						
+				Commu_Post commu_post = new Commu_Post(
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getString("hit"),
+						rs.getString("post_Type"),
+						rs.getString("commu_Post")
 						);
-				list.add(Commu);
-			}
+				list.add(commu_post);
+			}			
+			
 			
 			rs.close();
 			st.close();
@@ -64,48 +55,9 @@ public class JdbcCommuPostDao implements Commu_PostDao {
 	       // TODO Auto-generated catch block
 	       e.printStackTrace();
 	    }
-=======
-		String sql = "SELECT * FROM Commu_Post ORDER BY REG_DATE DESC;";
-		
-		List<Commu_Post> list = new ArrayList<>();
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			// µå¶óÀÌ¹ö ·Îµå
-			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-			Connection con = DriverManager.getConnection(url, "c##sist", "dclass");
-			PreparedStatement st = con.prepareStatement(sql);
-			ResultSet rs = st.executeQuery();
-			// Äõ¸®½ÇÇà(select) / ¾÷µ¥ÀÌÆ®½ÇÇà(¹ÝÈ¯µÇ´Â °ªÀÌ ¾ø´Â Äõ¸®´Â ÀÌ°É·Î½ÇÇà(update,delete,insert)
-			
-			
-			while(rs.next()) {
-				
-				Commu_Post commu_post = new Commu_Post(
-						rs.getString("title"),
-						rs.getString("content"),
-						rs.getString("hit"),
-						rs.getString("post_Type"),
-						rs.getString("commu_Post")
-						);
-				list.add(commu_post);
-			}
-
-			rs.close();
-			st.close();
-			con.close();
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
->>>>>>> refs/remotes/origin/master
-		return list;
+			return list;
 	}
-
+		
 	@Override
 	public int delete(String id) {
 		// TODO Auto-generated method stub
@@ -115,9 +67,20 @@ public class JdbcCommuPostDao implements Commu_PostDao {
 	@Override
 	public int insert(Commu_Post cp) {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql ="INSERT INTO commu_post (" + 
+				"    id," + 
+				"    title," + 
+				"    reg_date," + 
+				"    content," + 
+				"    hit," +
+ 				"    mid," +
+ 				"    post_type" +
+				") VALUES (?,?,?,?,?,?,?)"; 
+		
+		int result=0;
+		return result;	
 	}
-
+		
 	@Override
 	public int update(Commu_Post cp) {
 		// TODO Auto-generated method stub

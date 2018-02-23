@@ -16,6 +16,10 @@ public class Commu_Post_Img {
 		Img = img;
 		Commu_Post_Img = commu_Post_Img;
 	}
+	public Commu_Post_Img(String img) {
+		super();
+		Img = img;
+	}
 	public String getId() {
 		return id;
 	}

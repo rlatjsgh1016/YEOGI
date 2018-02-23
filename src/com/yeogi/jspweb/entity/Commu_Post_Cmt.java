@@ -20,6 +20,12 @@ public class Commu_Post_Cmt {
 		Pid = pid;
 		Commu_Post_Cmt = commu_Post_Cmt;
 	}
+	
+	public Commu_Post_Cmt(String content) {
+		super();
+		Content = content;
+	}
+
 	public String getId() {
 		return id;
 	}
