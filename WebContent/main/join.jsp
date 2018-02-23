@@ -1,13 +1,26 @@
-<!DOCTYPE html>
+<%@page import="com.yeogi.jspweb.entity.Member"%>
+<%@page import="com.yeogi.jspweb.dao.MemberDao"%>
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcMemberDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@page import="javax.servlet.http.HttpServlet" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href = "../CSS/style.css" type ="text/css" rel ="stylesheet" />
+
+<script type="text/javascript">
+</script>
+
 </head>
 
+
 <body>
- 	<!-- 제목 목록 표 문장 폼 -->
+<!-- 제목 목록 표 문장 폼 -->
 		<header id = "header">
 			<div class="root-container">
 			<a href= "../main/main.html"><h1 id="logo"><img src ="../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
@@ -24,7 +37,6 @@
 						<li><a href="">커뮤니티</a></li>
 					</ul>
 				</nav>
-				
 
 				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
 					<h1>회원 메뉴</h1>
@@ -56,6 +68,8 @@
 			
 			<!-- main 시작-------------------------------------------------------------------------------------------------------------- --> 
 		
+		
+
 				<section id ="main">
 
 				<section>
@@ -63,7 +77,7 @@
 							여기의 회원이 되어보세요!
 						</div>
 						
-						<div class="join">
+						<form class="join" name ="form" action ="join-proc.jsp">
 	
 							<fieldset class="join">
 							
@@ -72,40 +86,41 @@
 								<div class="join-label">
 								
 									<label>아이디</label>&ensp;&nbsp;
-									<input type ="text" name="id"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
-					
+									<input type ="text" name="id"/>&nbsp;<input class="btn btn-cancel" type ="submit"  name="btn" value ="중복확인" />
+									<% %>
 									<br>
 									<br>
 									<label>비밀번호</label>
-									<input type ="password" name="pwd"/><br><br>
+									<input type ="password"  name="pwd"/><br><br>
 									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder="비밀번호 확인"/> 
 									<br>
 									<br>
 									<label>이메일</label>&ensp;&nbsp;
-									<input type ="text" name="email"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
+									<input type ="text"  name="email"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>별명</label>&ensp;&ensp;&ensp;&nbsp;
-									<input type ="text" name="name"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
+									<input type ="text"  name="name"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>전화번호</label>
-									<input type ="number" style ="width:40px" name="phone"/>-<input type ="number" style ="width:60px"/>-<input type ="number" style ="width:40px"/>
+									<input type ="text"  name="phone"  />
 									<br>
 									<br>
 									<label>생년월일</label>
-									<input type ="date" name="birth"/><br><br>
+									<input type ="text" name="birth"/><br><br>
 									<br>
 									<br>
+								
 									
 								</div>
 									
-								<input class="btn btn-important join-btn" type ="submit" value ="회원가입"/>
+								<input class="btn btn-important join-btn" type ="submit"  name="btn" value ="회원가입" />
 								<input class="btn btn-cancel" type ="submit" value ="가입취소"/>
 
 							</fieldset>
 							
-						</div>
+						</form>
 					
 				</section>
 				
@@ -114,7 +129,7 @@
 		</div>
 		
 	</div>
-	
+
 	<!-- footer 시작------------------------------------------------------------------------------------------------------------ --> 
 	
 	<footer id = "footer">
@@ -128,7 +143,6 @@
 					</div>
 					
 				</div>
-
 				회사정보
 				서울특별시 마포구 월드컵북로 21 풍성빌딩 2, 3, 4층 쌍용강북교육센터 <br>
 				Tel 02)000-0000 | Fax 02)000-0000<br>
@@ -136,9 +150,15 @@
 				<br><br>
 				Copyright (C) 2018 Travelers , ALL Right Reserved 
 
+
 		</div>
 		
 	</footer>
-	
 </body>
+
+
 </html>
+
+<%
+
+%>

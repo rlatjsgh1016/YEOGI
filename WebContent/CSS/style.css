@@ -295,11 +295,13 @@ body{
 	height : 150px;
 	background: #212121;
 	color : #D8D8D8;
-	margin: auto;
 	padding-top : 15px;
-	padding-left : 450px;
 	font-weight: normal !important;
 	
+}
+
+#footer .root-container{
+		margin-left : 450px;
 }
 
 #footer_logo{

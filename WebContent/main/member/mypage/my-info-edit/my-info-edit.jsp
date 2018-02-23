@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
 </head>
 
 <body>
- 	<!-- 제목 목록 표 문장 폼 -->
+<!-- 제목 목록 표 문장 폼 -->
 		<header id = "header">
 			<div class="root-container">
 			<a href= "../../../../main/main.html"><h1 id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
@@ -90,7 +92,7 @@
 						</section>
 						
 						
-						<div class="join">
+						<form class="join" action ="my-info-edit-proc.jsp">
 	
 							<fieldset class="join">
 							
@@ -129,11 +131,11 @@
 								</div>
 									
 								<input class="btn btn-important join-btn" type ="submit" value ="정보수정"/>
-								<input class="btn btn-cancel" type ="submit" value ="수정취소"/>
+								<input class="btn btn-cancel" type ="submit" name= "btn" value ="회원탈퇴"/>
 
 							</fieldset>
 							
-						</div>					
+						</form>					
 				</section>
 				
 	 		</section> 
