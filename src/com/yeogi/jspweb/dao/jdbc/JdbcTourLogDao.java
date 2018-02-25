@@ -21,7 +21,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		List<TourLog> list = new ArrayList<>();
 		
 		try {
-			// µå¶óÀÌ¹ö ·Îµå
+			// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -74,7 +74,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		TourLog tourLog = null;
 		
 		try {
-			// µå¶óÀÌ¹ö ·Îµå
+			// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -137,7 +137,7 @@ public class JdbcTourLogDao implements TourLogDao {
 				+ "END_DATE"
 				+ ") "
 				+ "VALUES ("
-				+ "SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'),"
+				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),"
 				+ "?,"
 				+ "?,"
 				+ "?,"
@@ -155,7 +155,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		int result = 0;
 		
 		try {
-			// µå¶óÀÌ¹ö ·Îµå
+			// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -214,7 +214,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		int result = 0;
 		
 		try {
-			// µå¶óÀÌ¹ö ·Îµå
+			// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");

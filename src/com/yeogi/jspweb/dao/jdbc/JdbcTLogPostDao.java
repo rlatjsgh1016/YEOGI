@@ -69,7 +69,13 @@ public class JdbcTLogPostDao implements TLogPostDao {
 	@Override
 	public int insert(TLogPost tlp) {
 		
-		String sql = "INSERT INTO T_LOG_POST VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO T_LOG_POST VALUES("
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "?,"
+				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'))"
+				+ ")";
 
 		int result = 0;
 
@@ -83,7 +89,6 @@ public class JdbcTLogPostDao implements TLogPostDao {
 			st.setString(2, tlp.gettLogId());
 			st.setString(3, tlp.gettLogLocId());
 			st.setString(4, tlp.getTrans());
-			st.setString(5, tlp.getId());
 	
 			result = st.executeUpdate();
 
