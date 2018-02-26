@@ -44,8 +44,10 @@
 		</div>
 	</header>
 	<form id="form-select" action="select-proc.jsp">
+		<input id="mid" type="hidden" name="mid" value="dskim">
+		
 		<div id="visual">
-			<h1 class="hidden">타이틀 입력 필드</h1>
+			<h1 class="hidden">visual</h1>
 				<div class="root-container">
 				
 				</div>
@@ -78,7 +80,11 @@
 						</div>
 						<div>
 							<label for="select-start-date">여행시작일:&nbsp</label>
-           					<input id="select-start-date" type="date" name="select-start-date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
+           					<input id="select-start-date" type="date" name="select-start-date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">           					
+       					</div>
+       					<div>
+							<label for="select-end-date">여행종료일:&nbsp</label>
+           					<input id="select-end-date" type="date" name="select-end-date" value="2018-02-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
        					</div>
        					<div>
 							<label for="select-period">여행기간:&nbsp</label>
