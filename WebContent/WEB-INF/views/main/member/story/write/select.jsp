@@ -7,14 +7,7 @@
 <%@page import="com.yeogi.jspweb.dao.DayDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-	DayDao dayDao = new JdbcDayDao();
-	List<Day> dayList = dayDao.getList();
-	
-	NationDao nationDao = new JdbcNationDao();
-	List<Nation> nationList = nationDao.getList();
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,9 +36,8 @@
 			</nav>
 		</div>
 	</header>
-	<form id="form-select" action="select-proc.jsp">
-		<input id="mid" type="hidden" name="mid" value="dskim">
-		
+	<form id="form-select" action="main">
+		<input id="mid" type="hidden" name="mid" value="${sessionScope.mid.id }">
 		<div id="visual">
 			<h1 class="hidden">visual</h1>
 				<div class="root-container">
@@ -73,9 +65,12 @@
 						<div>
 							<label for="select-nation">여행도시:&nbsp</label>
 							<select id="select-nation"  name="select-nation" style="height: 28px;">
-								<%for(Nation n : nationList){ %>
-        						<option><%=n.getNation() %></option>
-        						<%} %>
+								<%-- <%for(Nation n : nationList){ %> --%>
+        						<option>
+        							<%-- <%=n.getNation() %> --%>
+        							${nationList[0].nation }
+        						</option>
+        						<%-- <%} %> --%>
 							</select>
 						</div>
 						<div>
@@ -89,9 +84,12 @@
        					<div>
 							<label for="select-period">여행기간:&nbsp</label>
     						<select id="select-period" name="select-period" style="height: 28px;">
-        					<%for(Day d : dayList){ %>
-        						<option><%=d.getDay() %></option>
-        					<%} %>
+        					<%-- <%for(Day d : dayList){ %> --%>
+        						<option>
+        							<%-- <%=d.getDay() %> --%>
+        							${dayList[0].day }
+        						</option>
+        					<%-- <%} %> --%>
         					</select>
         				</div>
 						<div>
