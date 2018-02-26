@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -205,9 +208,10 @@
 						src="../../../../resources/main_img.png">
 				</div>
 				<div class="post-info-box">
-					<div class="post-info post-spot"></div>
-					<div class="post-info post-expense"></div>
-					<div class="post-info post-tag"></div>
+						<div class="post-info post-spot"><span class="post-info-start">도쿄 나리타 국제 공항</span></div>
+						<div class="post-info post-expense"><span class="post-info-start expense-type">교통</span><span class="post-info-list">버스교통비</span><span class="post-info-list">KRW</span><span class="post-info-list">190,000</span></div>
+						<div class="post-info post-tag"><span class="post-info-start">공항</span></div>
+
 				</div>
 			</div>
 			<div class="st-comment-box">

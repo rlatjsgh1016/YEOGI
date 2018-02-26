@@ -506,7 +506,7 @@ a{
 	width: 945px;
 	display: flex;
 	justify-content: flex-start;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 .spot-bar{
 	width : 20px;
@@ -532,9 +532,51 @@ a{
 }
 .spot-post-box #post-img{
 	width: 100%;
+	margin-top: 5px;
 }
 
-
+.post-info-box{
+	width: 945px;
+	height: 70px;
+	display: flex;
+	/* align-items: center; */
+	flex-direction: column;
+	margin-top: 10px;	
+}
+.post-info-box>.post-info{
+	width: 925px;
+	height: 17px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+.post-info-box>.post-info>span{
+	/* background-size: 1px; */
+	float: left;
+	display: inline-block;
+	height: 17px;
+	padding: 0px 10px 0px 10px;
+	font-family: 맑은고딕,HY고딕,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #848484;
+}
+.post-info-box>.post-info>.post-info-list{
+	border-left: 1px solid #D8D8D8;
+}
+.post-info-box>.post-info>.post-info-start{
+	padding-left: 30px;
+}
+.post-info-box>.post-spot{
+	background :url("../images/spot16.png") no-repeat left;
+}
+.post-info-box>.post-expense{
+	background :url("../images/won16.png") no-repeat left;
+}
+.post-info-box>.post-tag{
+	background :url("../images/tag16.png") no-repeat left;
+}
 .st-comment-box{
 	width: 960px;
 	min-height: 50px;
