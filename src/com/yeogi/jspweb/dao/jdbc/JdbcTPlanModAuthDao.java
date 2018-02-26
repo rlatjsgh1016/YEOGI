@@ -17,28 +17,47 @@ public class JdbcTPlanModAuthDao implements TPlanModAuthDao {
 	
 	
 	@Override
-	public int insert(TPlanModAuthDao tourPlanModAuth) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(TPlanModAuth tourPlanModAuth) {
+		String sql = "INSERT INTO T_PLAN_MOD_AUTH "
+				+ "( ACCEPT_YN ) "
+				+ "VALUES (?)";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			/*1은 물음표 인덱스?*/
+			st.setString(1, tourPlanModAuth.getAcceptYN());
+			
+			result = st.executeUpdate();
+			
+			st.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
-	@Override
-	public int update(TPlanModAuthDao tourPlanModAuth) {
+	/*@Override
+	public int update(TPlanModAuth tourPlanModAuth) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
+	}*/
 
 	@Override
 	public int delete(String tPlanId, String friendId) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public TPlanModAuthDao get(String tPlanId, String friendId) {
-		String sql = "SELECT * FROM T_PLAN_MOD_AUTH WHERE T_PLAN_ID=? AND FRIEND_ID=?";
+		String sql = "DELETE T_PLAN_MOD_AUTH WHERE T_PLAN_ID=? AND FRIEND_ID=?";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
-		
+		int result = 0;
 		//드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -50,10 +69,37 @@ public class JdbcTPlanModAuthDao implements TPlanModAuthDao {
 			st.setString(1, tPlanId);
 			st.setString(2, friendId);
 			
+			/*result에는 삭제, 업데이트 된 개수 나옴*/	
+			result = st.executeUpdate();
+			st.close();
+			con.close();
 			
-			
-			TPlanModAuth tPlanModAuth = null;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 
+	@Override
+	public TPlanModAuth get(String tPlanId, String friendId) {
+		String sql = "SELECT * FROM T_PLAN_MOD_AUTH WHERE T_PLAN_ID=? AND FRIEND_ID=?";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		TPlanModAuth tPlanModAuth = null;
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			/*1은 물음표 인덱스?*/
+			st.setString(1, tPlanId);
+			st.setString(2, friendId);
+			
 			if(rs.next()){
 				tPlanModAuth = new TPlanModAuth(
 							rs.getString("T_PLAN_ID"),
@@ -73,29 +119,25 @@ public class JdbcTPlanModAuthDao implements TPlanModAuthDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return tPlanModAuth;
 	}
 
 	@Override
-	public List<TPlanModAuthDao> getList(String tPlanId) {
-		String sql = "SELECT * FROM T_PLAN_MOD_AUTH";
+	public List<TPlanModAuth> getList(String tPlanId) {
+		String sql = "SELECT * FROM T_PLAN_MOD_AUTH ORDER BY REG_DATE";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
-		
+		List<TPlanModAuth> list = new ArrayList<>();
 		//드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
 			
-			
-			
-			
-			List<TPlanModAuth> list = new ArrayList<>();
-
+			TPlanModAuth tPlanModAuth = null;
 			while(rs.next()){
-				TPlanModAuth tPlanModAuth = new TPlanModAuth(
+				tPlanModAuth = new TPlanModAuth(
 							rs.getString("T_PLAN_ID"),
 							rs.getString("FRIEND_ID"),
 							rs.getString("ACCEPT_YN"),
@@ -116,7 +158,7 @@ public class JdbcTPlanModAuthDao implements TPlanModAuthDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return list;
 	}
 
 }

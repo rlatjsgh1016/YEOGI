@@ -100,10 +100,22 @@
 			</aside>
 			
 			<div id="main">				 				 	
-				<div class="main-plan">
-					<div class="map">
-				
+				<!-- 지도 -->
+					<div id="map" style="height:500px">
+						<script>
+						      var map;
+						      function initMap() {
+						        map = new google.maps.Map(document.getElementById('map'), {
+						          center: {lat: 37.541, lng: 126.986},
+						          zoom: 8
+						        });
+						      }
+						   </script>
+						   
+						   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU&callback=initMap"
+		    async defer></script>
 					</div>
+					<div id="main-plan">
 					<div class="plan-table">
 						<div class="table-info">
 							<p class="table-date">2018-01-05</p>

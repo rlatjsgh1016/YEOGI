@@ -93,7 +93,20 @@
 			</div>
 			
 			<div id="main">
+			<!-- 지도 -->
 				  <div id="map">
+				   <script>
+				      var map;
+				      function initMap() {
+				        map = new google.maps.Map(document.getElementById('map'), {
+				          center: {lat: 37.541, lng: 126.986},
+				          zoom: 8
+				        });
+				      }
+				   </script>
+				   
+				   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU&callback=initMap"
+    async defer></script>
 				 	<div id="map-right">				 	
 					 	<p id="map-friendadd">
 					 	</p>

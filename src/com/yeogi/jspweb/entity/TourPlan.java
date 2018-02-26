@@ -1,7 +1,7 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
-
+/*import java.util.Date;*/
+import java.sql.Date;
 public class TourPlan {
 	private String id;
 	private String title;

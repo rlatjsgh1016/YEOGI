@@ -2,13 +2,15 @@ package com.yeogi.jspweb.dao;
 
 import java.util.List;
 
+import com.yeogi.jspweb.entity.TPlanModAuth;
+
 //자호
 public interface TPlanModAuthDao {
-	int insert(TPlanModAuthDao tourPlanModAuth);
-	int update(TPlanModAuthDao tourPlanModAuth);
+	int insert(TPlanModAuth tourPlanModAuth);
+	/*int update(TPlanModAuth tourPlanModAuth);*/
 	int delete(String tPlanId, String friendId);
 	
-	TPlanModAuthDao get(String tPlanId, String friendId);
+	TPlanModAuth get(String tPlanId, String friendId);
 	/*잘모름*/
-	List<TPlanModAuthDao> getList(String tPlanId);
+	List<TPlanModAuth> getList(String tPlanId);
 }

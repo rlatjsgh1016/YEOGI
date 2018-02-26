@@ -15,29 +15,71 @@ import com.yeogi.jspweb.entity.TourPlan;
 
 public class JdbcMTPlanScrapDao implements MTPlanScrapDao {
 
+	/*스크랩하면 사용자가 직접 입력하는게 없는데 어떻게 해야하나*/
 	@Override
-	public int insert(MTPlanScrapDao memTourPlanScrap) {
+	public int insert(MTPlanScrap memTourPlanScrap) {
+		String sql = "?";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);			
+			result = st.executeUpdate();
+			
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	/*사용자가 update할 수 없으니까?*/
+	/*@Override
+	public int update(MTPlanScrap memTourPlanScrap) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	@Override
-	public int update(MTPlanScrapDao memTourPlanScrap) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	}*/
 
 	@Override
 	public int delete(String mId, String tPlanId) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "DELETE M_T_PLAN_SCRAP WHERE MID=? AND T_PLAN_ID =?";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);			
+			result = st.executeUpdate();
+			
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	@Override
-	public MTPlanScrapDao get(String mId, String tPlanId) {
+	public MTPlanScrap get(String mId, String tPlanId) {
 		String sql = "SELECT * FROM M_T_PLAN_SCRAP WHERE MID=? AND T_PLAN_ID =?";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
-		
+		MTPlanScrap mTPlanScrap = null;
 		//드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -51,7 +93,7 @@ public class JdbcMTPlanScrapDao implements MTPlanScrapDao {
 			
 			ResultSet rs = st.executeQuery();
 			
-			MTPlanScrap mTPlanScrap = null;
+			
 
 			if(rs.next()){
 				mTPlanScrap = new MTPlanScrap(
@@ -71,26 +113,26 @@ public class JdbcMTPlanScrapDao implements MTPlanScrapDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return mTPlanScrap;
 	}
 
 	@Override
-	public List<MTPlanScrapDao> getList(String mId) {
-		String sql = "SELECT * FROM M_T_PLAN_SCRAP";
+	public List<MTPlanScrap> getList(String mId) {
+		String sql = "SELECT * FROM M_T_PLAN_SCRAP ORDER BY SCRAP_DATE";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
-		
+		List<MTPlanScrap> list = new ArrayList<>();
 		//드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
 			
-			List<MTPlanScrap> list = new ArrayList<>();
-
+			
+			MTPlanScrap mTPlanScrap = null;
 			while(rs.next()){
-				MTPlanScrap mTPlanScrap = new MTPlanScrap(
+				mTPlanScrap = new MTPlanScrap(
 							rs.getString("MID"),
 							rs.getString("T_PLAN_ID"),
 							rs.getDate("SCRAP_DATE")
@@ -109,7 +151,7 @@ public class JdbcMTPlanScrapDao implements MTPlanScrapDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return list;
 	}
 
 }

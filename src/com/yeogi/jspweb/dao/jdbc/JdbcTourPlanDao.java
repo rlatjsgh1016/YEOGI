@@ -16,26 +16,93 @@ public class JdbcTourPlanDao implements TourPlanDao {
 	
 	@Override
 	public int insert(TourPlan tourPlan) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "INSERT INTO TOUR_PLAN (" + 
+				"    ID," + 
+				"    TITLE," + 
+				"    START_DATE," + 
+				"    END_DATE," + 
+				"    COMPANION," + 
+				"    T_THEME" + 
+				") VALUES (SELECT NVL(MAX(TO_NUMBER(ID)),0)+1 ID FROM TOUR_PLAN,?,?,?,?,?);";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
+		
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			/*1은 물음표 개수?*/
+			st.setString(1, tourPlan.getId());
+			st.setString(2, tourPlan.getTitle());
+			st.setDate(3, tourPlan.getStartDate());
+			st.setDate(4, tourPlan.getEndDate());
+			st.setInt(5, tourPlan.getCompanion());
+			st.setString(6, tourPlan.gettTheme());
+				
+			result = st.executeUpdate();
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	@Override
 	public int update(TourPlan tourPlan) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "UPDATE TOUR_PLAN SET" + 
+				"    TITLE=?," + 
+				"    START_DATE=?," + 
+				"    END_DATE=?," + 
+				"    COMPANION=?," + 
+				"    T_THEME=?," + 
+				"	WHERE ID=?";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
+		
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			/*1은 물음표 개수?*/
+			st.setString(1, tourPlan.getId());
+			st.setString(2, tourPlan.gettTheme());
+			st.setInt(3, tourPlan.getCompanion());
+			st.setInt(4, tourPlan.getPeriod());
+			st.setDate(5, tourPlan.getStartDate());
+			st.setString(6, tourPlan.getTitle());
+			st.setDate(7, tourPlan.getEndDate());
+			
+			result = st.executeUpdate();
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public TourPlan get(String id) {
-		String sql = "SELECT * FROM TOUR_PLAN WHERE ID=?";
+		String sql = "DELETE TOUR_PLAN WHERE ID=?";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		int result = 0;
 		
 		//드라이버 로드
 		try {
@@ -47,9 +114,36 @@ public class JdbcTourPlanDao implements TourPlanDao {
 			/*1은 물음표 개수?*/
 			st.setString(1, id);
 			
-			ResultSet rs = st.executeQuery();
+			result = st.executeUpdate();
+			st.close();
+			con.close();
 			
-			TourPlan tourPlan = null;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public TourPlan get(String id) {
+		String sql = "SELECT * FROM TOUR_PLAN WHERE ID=?";
+		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
+		TourPlan tourPlan = null;
+		//드라이버 로드
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			/*1은 물음표 개수?*/
+			st.setString(1, id);
+			
+			ResultSet rs = st.executeQuery();
 
 			if(rs.next()){
 				tourPlan = new TourPlan(
@@ -60,8 +154,8 @@ public class JdbcTourPlanDao implements TourPlanDao {
 							rs.getInt("COMPANION"),
 							rs.getInt("PERIOD"),
 							rs.getDate("REG_DATE"),
-							rs.getString("MID"),
 							rs.getString("LAST_MOD_DATE"),
+							rs.getString("MID"),
 							rs.getString("T_THEME")
 						);
 			}
@@ -76,26 +170,25 @@ public class JdbcTourPlanDao implements TourPlanDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return tourPlan;
 	}
 
 	@Override
 	public List<TourPlan> getList(String id) {
-		String sql = "SELECT * FROM TOUR_PLAN";
+		String sql = "SELECT * FROM TOUR_PLAN ORDER BY REG_DATE";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
-		
+		List<TourPlan> list = new ArrayList<>();
 		//드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
 			
-			List<TourPlan> list = new ArrayList<>();
-			
+			TourPlan tourPlan = null;
 			while(rs.next()){
-				TourPlan tourPlan = new TourPlan(
+					tourPlan = new TourPlan(
 							rs.getString("ID"),
 							rs.getString("TITLE"),
 							rs.getDate("START_DATE"),
@@ -103,10 +196,11 @@ public class JdbcTourPlanDao implements TourPlanDao {
 							rs.getInt("COMPANION"),
 							rs.getInt("PERIOD"),
 							rs.getDate("REG_DATE"),
-							rs.getString("MID"),
 							rs.getString("LAST_MOD_DATE"),
+							rs.getString("MID"),
 							rs.getString("T_THEME")
 						);
+				
 				list.add(tourPlan);
 			}
 			
@@ -121,7 +215,7 @@ public class JdbcTourPlanDao implements TourPlanDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return list;
 	}
 
 }

@@ -321,7 +321,7 @@ p{
 #map{
 	height: 650px;
 	/* overflow: auto; */
-	background:url("../images/google-map.png") no-repeat center;
+	/* background:url("../images/google-map.png") no-repeat center; */
 	background-size:cover;
 }
 

@@ -358,16 +358,16 @@ td{
 	background: white;
 }
 
-	.main-plan{
+	#main-plan{
 		width: 990px;
 		height: 900px;
 		margin: 15px;
 	}
 	
-	.map{
+	#map{
 		height: 500px;
-		background:url("../images/google-map.png") no-repeat center;
-		background-size:cover;
+		/* background:url("../images/google-map.png") no-repeat center;
+		background-size:cover; */
 	}
 	
 	.plan-table{
