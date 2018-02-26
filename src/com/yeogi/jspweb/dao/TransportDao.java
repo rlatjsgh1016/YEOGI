@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.yeogi.jspweb.entity.Transport;
 
-public interface TransDao {
+public interface TransportDao {
 
 	List<Transport> getList();
-
-	int delete(String id);
 
 }

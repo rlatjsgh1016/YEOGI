@@ -1,16 +1,16 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class TLogModAuth {
-	private char acceptYN;
+	private String acceptYN;
 	private String tLogId;
 	private String friendId;
 	private Date reqDate;
 	public TLogModAuth() {
 
 	}
-	public TLogModAuth(char acceptYN, String tLogId, String friendId, Date reqDate) {
+	public TLogModAuth(String acceptYN, String tLogId, String friendId, Date reqDate) {
 		
 		this.acceptYN = acceptYN;
 		this.tLogId = tLogId;
@@ -18,16 +18,16 @@ public class TLogModAuth {
 		this.reqDate = reqDate;
 	}
 	
-	public TLogModAuth(char acceptYN, String tLogId, String friendId) {
+	public TLogModAuth(String acceptYN, String tLogId, String friendId) {
 		
 		this.acceptYN = acceptYN;
 		this.tLogId = tLogId;
 		this.friendId = friendId;
 	}
-	public char getAcceptYN() {
+	public String getAcceptYN() {
 		return acceptYN;
 	}
-	public void setAcceptYN(char acceptYN) {
+	public void setAcceptYN(String acceptYN) {
 		this.acceptYN = acceptYN;
 	}
 	public String gettLogId() {

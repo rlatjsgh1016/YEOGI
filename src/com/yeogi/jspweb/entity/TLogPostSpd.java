@@ -3,14 +3,14 @@ package com.yeogi.jspweb.entity;
 public class TLogPostSpd {
 	private String type;
 	private String content;
-	private char unit;
+	private String unit;
 	private int amount;
 	private String id;
 	private String tLogPostId;
 	public TLogPostSpd() {
 
 	}
-	public TLogPostSpd(String type, String content, char unit, int amount, String id, String tLogPostId) {
+	public TLogPostSpd(String type, String content, String unit, int amount, String id, String tLogPostId) {
 		
 		this.type = type;
 		this.content = content;
@@ -19,7 +19,7 @@ public class TLogPostSpd {
 		this.id = id;
 		this.tLogPostId = tLogPostId;
 	}
-	public TLogPostSpd(String type, String content, char unit, int amount, String tLogPostId) {
+	public TLogPostSpd(String type, String content, String unit, int amount, String tLogPostId) {
 		
 		this.type = type;
 		this.content = content;
@@ -39,10 +39,10 @@ public class TLogPostSpd {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public char getUnit() {
+	public String getUnit() {
 		return unit;
 	}
-	public void setUnit(char unit) {
+	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 	public int getAmount() {

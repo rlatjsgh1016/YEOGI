@@ -2,6 +2,7 @@ package com.yeogi.jspweb.entity;
 
 public class MyLoc {
 	private String id;
+
 	private String address;
 	private String name;
 	public MyLoc() {

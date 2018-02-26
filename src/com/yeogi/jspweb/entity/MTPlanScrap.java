@@ -5,14 +5,23 @@ import java.sql.Date;
 public class MTPlanScrap {
 	private String mId;
 	private String tPlanId;
+<<<<<<< HEAD
+	private String scrapDate;	
+	
+=======
 	private Date scrapDate;	
+>>>>>>> refs/remotes/origin/master
 	
 	public MTPlanScrap() {
 		// TODO Auto-generated constructor stub
 	}
 
 	
+<<<<<<< HEAD
+	public MTPlanScrap(String mId, String tPlanId, String scrapDate) {
+=======
 	public MTPlanScrap(String mId, String tPlanId, Date scrapDate) {
+>>>>>>> refs/remotes/origin/master
 		super();
 		this.mId = mId;
 		this.tPlanId = tPlanId;
@@ -40,12 +49,20 @@ public class MTPlanScrap {
 	}
 
 
+<<<<<<< HEAD
+	public String getScrapDate() {
+=======
 	public Date getScrapDate() {
+>>>>>>> refs/remotes/origin/master
 		return scrapDate;
 	}
 
 
+<<<<<<< HEAD
+	public void setScrapDate(String scrapDate) {
+=======
 	public void setScrapDate(Date scrapDate) {
+>>>>>>> refs/remotes/origin/master
 		this.scrapDate = scrapDate;
 	}
 	

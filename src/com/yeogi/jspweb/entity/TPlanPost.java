@@ -1,53 +1,65 @@
 package com.yeogi.jspweb.entity;
 
 public class TPlanPost {
-	private String TPlanId;
-	private String TPlanLocId;
-	private String TourDateTime;
-	private String MemoTitle;
-	private String MemoContent;
+	private String tPlanId;
+	private String tPlanLocId;
+	private String tourDateTime;
+	private String memoTitle;
+	private String memoContent;
 	
 	public TPlanPost() {
 		// TODO Auto-generated constructor stub
 	}
+
 	public TPlanPost(String tPlanId, String tPlanLocId, String tourDateTime, String memoTitle, String memoContent) {
 		super();
-		TPlanId = tPlanId;
-		TPlanLocId = tPlanLocId;
-		TourDateTime = tourDateTime;
-		MemoTitle = memoTitle;
-		MemoContent = memoContent;
+		this.tPlanId = tPlanId;
+		this.tPlanLocId = tPlanLocId;
+		this.tourDateTime = tourDateTime;
+		this.memoTitle = memoTitle;
+		this.memoContent = memoContent;
 	}
+
 	public String getTPlanId() {
-		return TPlanId;
+		return tPlanId;
 	}
+
 	public void setTPlanId(String tPlanId) {
-		TPlanId = tPlanId;
+		this.tPlanId = tPlanId;
 	}
+
 	public String getTPlanLocId() {
-		return TPlanLocId;
+		return tPlanLocId;
 	}
+
 	public void setTPlanLocId(String tPlanLocId) {
-		TPlanLocId = tPlanLocId;
+		this.tPlanLocId = tPlanLocId;
 	}
+
 	public String getTourDateTime() {
-		return TourDateTime;
+		return tourDateTime;
 	}
+
 	public void setTourDateTime(String tourDateTime) {
-		TourDateTime = tourDateTime;
+		this.tourDateTime = tourDateTime;
 	}
+
 	public String getMemoTitle() {
-		return MemoTitle;
+		return memoTitle;
 	}
+
 	public void setMemoTitle(String memoTitle) {
-		MemoTitle = memoTitle;
+		this.memoTitle = memoTitle;
 	}
+
 	public String getMemoContent() {
-		return MemoContent;
+		return memoContent;
 	}
+
 	public void setMemoContent(String memoContent) {
-		MemoContent = memoContent;
+		this.memoContent = memoContent;
 	}
+	
 	
 	
 	
