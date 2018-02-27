@@ -9,17 +9,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-	DayDao dayDao = new JdbcDayDao();
-	List<Day> dayList = dayDao.getList();
-	
-	NationDao nationDao = new JdbcNationDao();
-	List<Nation> nationList = nationDao.getList();
-	
-	JdbcTourLogDao tourLogDao = new JdbcTourLogDao();
-	List<TourLog> tourLogList = tourLogDao.getList();
-%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -53,11 +43,11 @@
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
 				<div class="root-container">
-					<input id="tour-log-id" type="hidden" name="tour-log-id" value="2018022500001">
-					<input id="mid" type="hidden" name="mid">
-					<input id="title" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)">
+					<input id="tour-log-id" type="hidden" name="tour-log-id" value="${tourLog.id}">
+					<input id="mid" type="hidden" name="${tourLog.mid}">
+					<input id="title" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)" value="${tourLog.title}">
 					<input id="btn-cover" type="submit" name="btn-main" value="커버교체">
-					<input id="cover-img" type="hidden" name="cover-img">
+					<input id="cover-img" type="hidden" name="cover-img" value="${tourLog.coverImg}">
 				</div>
 		</div>
 		<main>
@@ -67,7 +57,7 @@
 						<div class="first-line-btn">
 							<p id="lock">현재상태<br>비공개</p>
 							<input id="btn-lock" class="btn btn-default" type="submit" name="btn-main" value="공개 전환">
-							<input id="lock-yn" type="hidden" name="lock-yn">
+							<input id="lock-yn" type="hidden" name="lock-yn" value="${tourLog.lockYN}">
 							<input id="btn-companion" class="btn btn-default" type="submit" name="btn-main" value="동행자 추가">
 						</div>
 						<div class="second-line-btn">
@@ -165,27 +155,29 @@
 	           				<div class="tour-log-info-bottom">
 	            					<div class="days">
 		               					<h6>여행시작일 </h6>
-		               					<input id="start-date" type="date" name="start-date" value="2018-01-04" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
+		               					<input id="start-date" type="date" name="start-date" value="${tourLog.startDate}" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
 	            					</div>
 	            					<div class="days">
 	              						<h6>일</h6>
-	              						<select id="period" name="period" style="width:50px; height: 38px;">
-	              						<%for(Day d : dayList){ %>
-	              							<option><%=d.getDay() %></option>
-	              						<%} %>
+	              						<select id="period" name="period" style="width:50px; height: 38px;">	              						
+	              						<c:forEach var="dl" items="${dayList}">
+	              							<option>
+	              								${dl.day}
+	              							</option>
+	              						</c:forEach>
 	              						</select>
 	            					</div>
 	            					<div class="people">
 		               					<h6>명</h6>
-		               					<input type="number" id="companion" name="companion" min="1" style="width:50px; height: 32px;">
+		               					<input type="number" id="companion" name="companion" value="${tourLog.companion}" min="1" style="width:50px; height: 32px;">
 	            					</div>
 	           				</div>
 	           				<div class="nations">
 	            					<h6>여행도시</h6>
 	         						<select id="select-nation" name="select-nation" style="width:70px; height: 38px;">
-	         							<%for(Nation n : nationList){ %>
-	         							<option><%=n.getNation() %></option>
-	         							<%} %>
+	         							<c:forEach var="nl" items="${nationList}">
+	         								<option>${nl.nation}</option>
+	         							</c:forEach>
 	         						</select>
 	             			</div>
 	    					<div class="themes">
@@ -261,7 +253,7 @@
 								</div>
 								<div>
 									<img alt="태그" src="">
-									<input id="tag" type="text" name="tage">
+									<input id="tag" type="text" name="tag">
 								</div>
 								<div>
 									<a href="#" id="add-post-img"><img src="" alt="사진"></a>
