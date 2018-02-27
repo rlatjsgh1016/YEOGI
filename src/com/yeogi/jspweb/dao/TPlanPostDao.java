@@ -7,9 +7,9 @@ import com.yeogi.jspweb.entity.TPlanPost;
 public interface TPlanPostDao {
 	public int insert(TPlanPost tplanpost);
 	public int update(TPlanPost tplanpost);
-	public int delete(String id);
+	public int delete(String idtPlanId,String tPlanLocId);
 	
 	public List<TPlanPost> getList();
-	public TPlanPost get(String id);
+	public TPlanPost get(String idtPlanId,String tPlanLocId);
 
 }

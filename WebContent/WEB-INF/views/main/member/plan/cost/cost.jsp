@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 <HEAD>
 <meta charset="UTF-8">
@@ -6,8 +10,6 @@
 <link href="../../../../CSS/plan-cost.css" type=text/css
 	rel="stylesheet" />
 </HEAD>
-
-<body>
 	<header id="header">
 		<div class="root-container">
 			<a href="../../../main.html"><div id="logo">
@@ -73,55 +75,18 @@
 				<nav>
 						
 						<div class="total-day">
+
 							<div class="b1"><b>DAY 1</b></div>
 							
+						<c:forEach var="pp" items="${pp}">
 							<div class="b2">
 								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
+								<div class = "where">${pp.memoTitle}</div>
 								<div class = "why">식사비</div>
 								<div class = "howmuch">25000원</div>
-								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
+								<div class = "comment">${pp.memoContent}</div>
 							</div>
-							
-							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment"></div>
-							</div>
-							
-							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
-							</div>
-							
-							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
-							</div>
-							
-							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
-							</div>
-							
-							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">맥도날드</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment">맥도날드 평창 한정판 버거 먹기 ! 선착순 1만명</div>
-							</div>
+						</c:forEach>							
 							
 							<div class="plus-cost">
 								<a href=""><img src="../../../../images/plus.png" height="50px" width="50px" style="margin-left: auto; margin-right: auto; display: block;" alt="예산 추가" /></a>
@@ -391,4 +356,4 @@
 		</div>
 	</div>
 </body>
-</HTML>
+</html>
