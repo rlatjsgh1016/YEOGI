@@ -21,7 +21,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		List<TourLog> list = new ArrayList<>();
 		
 		try {
-			// ����̹� �ε�
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -74,7 +74,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		TourLog tourLog = null;
 		
 		try {
-			// ����̹� �ε�
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -155,7 +155,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		int result = 0;
 		
 		try {
-			// ����̹� �ε�
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -214,7 +214,7 @@ public class JdbcTourLogDao implements TourLogDao {
 		int result = 0;
 		
 		try {
-			// ����̹� �ε�
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
@@ -285,6 +285,58 @@ public class JdbcTourLogDao implements TourLogDao {
 	       e.printStackTrace();
 	    }
 		return result;
+	}
+
+	@Override
+	public TourLog getLast() {
+		
+		String sql = "SELECT /*+ INDEX_DESC(A TOUR_LOG_PK) */ A.* FROM TOUR_LOG A WHERE ROWNUM = 1";
+		
+		TourLog tourLog = null;
+		
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+				tourLog = new TourLog(
+						rs.getString("ID"),
+						rs.getString("TITLE"),
+						rs.getString("MEMO"),
+						rs.getString("SUB_TITLE"),
+						rs.getString("COVER_IMG"),
+						rs.getString("LOCK_YN"),
+						rs.getDate("REG_DATE"),
+						rs.getInt("PERIOD"),
+						rs.getDate("START_DATE"),
+						rs.getInt("COMPANION"),
+						rs.getString("MID"),
+						rs.getDate("LAST_MOD_DATE"),
+						rs.getInt("HIT"),
+						rs.getString("T_THEME"),
+						rs.getDate("END_DATE")						
+						);
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+		return tourLog;
 	}
 
 }

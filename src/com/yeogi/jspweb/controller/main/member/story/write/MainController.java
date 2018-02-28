@@ -3,6 +3,7 @@ package com.yeogi.jspweb.controller.main.member.story.write;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,24 +12,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yeogi.jspweb.dao.DayDao;
+import com.yeogi.jspweb.dao.NationDao;
 import com.yeogi.jspweb.dao.TLogNationDao;
 import com.yeogi.jspweb.dao.TourLogDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcDayDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcNationDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogNationDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao;
+import com.yeogi.jspweb.entity.Day;
+import com.yeogi.jspweb.entity.Nation;
 import com.yeogi.jspweb.entity.TLogNation;
 import com.yeogi.jspweb.entity.TourLog;
 
 @WebServlet("/main/member/story/write/main")
 public class MainController extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+	    response.setContentType("text/html; charset=UTF-8");
+	    request.setCharacterEncoding("UTF-8");
+	    
 		String btn = null;
 		String btnNew = request.getParameter("btn-new");
 		if(btnNew != null && !btnNew.equals(""))
 			btn = btnNew;
 		switch(btn){
 			case "작성하기":
+				
+				DayDao dayDao = new JdbcDayDao();
+				List<Day> dayList = dayDao.getList();
+				
+				NationDao nationDao = new JdbcNationDao();
+				List<Nation> nationList = nationDao.getList();
+				
 				TourLogDao tourLogDao = new JdbcTourLogDao();
 				TourLog tl = null;
 				
@@ -52,17 +69,19 @@ public class MainController extends HttpServlet {
 				
 				tourLogDao.insert(tl);
 				
-				/*tln = new TLogNation(tourLogDao.get )*/
+				TourLog tourLog = tourLogDao.getLast();
 				
 				
-				request.setAttribute("tourLog", tl);
+				request.setAttribute("tourLog", tourLog);
+				request.setAttribute("dayList", dayList);
+				request.setAttribute("nationList", nationList);
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/story/write/main.jsp");
 				dispatcher.forward(request, response);
 				break;
 			
 			case "취소":
-				response.sendRedirect("select");
+				response.sendRedirect("select.jsp");
 		}
 	}
 }

@@ -34,7 +34,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 			PreparedStatement st = con.prepareStatement(sql); 
 			
 			st.setString(1, tplanloc.getMyLocId());
-			st.setDate(2, tplanloc.getRegDate()); //이유를 모르겠따...
+			st.setDate(2, tplanloc.getRegDate()); 
 			st.setString(3, tplanloc.getTPlanId());
 			st.setString(4, tplanloc.getId());
 			st.setString(5, tplanloc.getLocId());
@@ -138,7 +138,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 
 	@Override
 	public List<TPlanLoc> getList() {
-		String sql ="SELECT * FROM ANSWERIS_VIEW ORDER BY ID ASC"; 
+		String sql ="SELECT * FROM T_Plan_Loc ORDER BY ID ASC"; 
 		
 		List<TPlanLoc> list = new ArrayList<>();
 		

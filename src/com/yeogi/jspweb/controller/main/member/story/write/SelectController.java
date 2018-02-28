@@ -26,7 +26,10 @@ import com.yeogi.jspweb.entity.Nation;
 public class SelectController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setCharacterEncoding("UTF-8");
+	    response.setContentType("text/html; charset=UTF-8");
+	    request.setCharacterEncoding("UTF-8");
+	    
 		DayDao dayDao = new JdbcDayDao();
 		List<Day> dayList = dayDao.getList();
 		

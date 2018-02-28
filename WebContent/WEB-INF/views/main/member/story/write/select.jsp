@@ -7,6 +7,7 @@
 <%@page import="com.yeogi.jspweb.dao.DayDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,7 @@
 				<h1 class="hidden">메인메뉴</h1>
 				<ul class="menu-hor menu-main">
 					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
-					<li><a class="text-focus" href="main.jsp">기록하기</a></li>
+					<li><a class="text-focus" href="select">기록하기</a></li>
 					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
 					<li><a href="../../../public-board/community/writing.html">커뮤니티</a></li>
 				</ul>
@@ -36,7 +37,7 @@
 			</nav>
 		</div>
 	</header>
-	<form id="form-select" action="main">
+	<form id="form-select" action="main" method="post">
 		<input id="mid" type="hidden" name="mid" value="${sessionScope.mid.id }">
 		<div id="visual">
 			<h1 class="hidden">visual</h1>
@@ -65,31 +66,25 @@
 						<div>
 							<label for="select-nation">여행도시:&nbsp</label>
 							<select id="select-nation"  name="select-nation" style="height: 28px;">
-								<%-- <%for(Nation n : nationList){ %> --%>
-        						<option>
-        							<%-- <%=n.getNation() %> --%>
-        							${nationList[0].nation }
-        						</option>
-        						<%-- <%} %> --%>
+								<c:forEach var="nl" items="${nationList}">
+        						<option>${nl.nation}</option>
+        						</c:forEach>
 							</select>
 						</div>
 						<div>
 							<label for="select-start-date">여행시작일:&nbsp</label>
-           					<input id="select-start-date" type="date" name="select-start-date" value="2018-01-04" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">           					
+           					<input id="select-start-date" type="date" name="select-start-date" value="2018-02-01" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">           					
        					</div>
        					<div>
 							<label for="select-end-date">여행종료일:&nbsp</label>
-           					<input id="select-end-date" type="date" name="select-end-date" value="2018-02-04" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">
+           					<input id="select-end-date" type="date" name="select-end-date" value="2018-02-27" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">
        					</div>
        					<div>
 							<label for="select-period">여행기간:&nbsp</label>
     						<select id="select-period" name="select-period" style="height: 28px;">
-        					<%-- <%for(Day d : dayList){ %> --%>
-        						<option>
-        							<%-- <%=d.getDay() %> --%>
-        							${dayList[0].day }
-        						</option>
-        					<%-- <%} %> --%>
+        						<c:forEach var="dl" items="${dayList}">
+        						<option>${dl.day}</option>
+        						</c:forEach>
         					</select>
         				</div>
 						<div>

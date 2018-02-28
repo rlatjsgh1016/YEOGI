@@ -23,6 +23,9 @@ public interface MemberDao {
 	public ResultSet check(String id) throws ClassNotFoundException, SQLException;
 	
 	public List<Member> getList() throws ClassNotFoundException, SQLException;
-	public Member get(String id) throws ClassNotFoundException, SQLException;
+	public Member getSearch(String id) throws ClassNotFoundException, SQLException;
+	public Member getId(String id) throws ClassNotFoundException, SQLException;
+	public Member getName(String name) throws ClassNotFoundException, SQLException;
+	public Member getMail(String mail) throws ClassNotFoundException, SQLException;
 
 }

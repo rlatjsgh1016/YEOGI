@@ -96,9 +96,9 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 		return result;
 	}
 
-	@Override //딜리트 어케하지???????????????????????????????????????
-	public int delete(String id) {
-		String sql ="DELETE t_plan_post WHERE T_PLAN_ID=? AND T_PLAN_LOC_ID=? "; 
+	@Override 
+	public int delete(String tPlanId, String tPlanLocId) {
+		String sql ="DELETE t_plan_post WHERE T_PLAN_ID=? AND T_PLAN_LOC_ID=?"; 
 		
 		int result=0;
 		
@@ -109,8 +109,8 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql); 
 			
-			st.setString(1, id);
-			st.setString(2, id);
+			st.setString(1, tPlanId);
+			st.setString(2, tPlanLocId);
 			
 			result = st.executeUpdate();
 			
@@ -177,8 +177,8 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 	}
 
 	@Override
-	public TPlanPost get(String id) {
-		String sql ="SELECT * FROM T_PLAN_POST WHERE ID=?"; 
+	public TPlanPost get(String idtPlanId, String tPlanLocId) {
+		String sql ="DELETE t_plan_post WHERE T_PLAN_ID=? AND T_PLAN_LOC_ID=?"; 
 		TPlanPost tplanpost = null;
 		
 		try {
@@ -189,7 +189,9 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql); 
 			
-			st.setString(1, id);
+			st.setString(1, idtPlanId);
+			st.setString(2, tPlanLocId);
+			
 			ResultSet rs = st.executeQuery(); 
 			
 			
@@ -219,5 +221,9 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 		}
 		return tplanpost;
 	}
+
+	
+
+	
 
 }
