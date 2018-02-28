@@ -49,4 +49,11 @@ window.addEventListener("load", function(){
 	btnSave.onclick = function(){
 		formMain.submit();
 	}
+	
+	window.onclick = function(event) {
+		for(var i=0; i<detailPostBox.length; i++){
+			if(event.target == detailPostBox[i])
+				detailPostBox[i].style.visibility = "hidden";
+		}
+    }
 });

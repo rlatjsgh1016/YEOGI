@@ -33,10 +33,17 @@ public class MainController extends HttpServlet {
 	    response.setContentType("text/html; charset=UTF-8");
 	    request.setCharacterEncoding("UTF-8");
 	    
-		String btn = null;
+		String btn = "";
+		String btnPlan = "";
 		String btnNew = request.getParameter("btn-new");
+		String btnPlanLoad = request.getParameter("btn-plan-load");
+		
 		if(btnNew != null && !btnNew.equals(""))
 			btn = btnNew;
+		
+		if(btnPlanLoad != null && !btnPlanLoad.equals(""))
+			btnPlan = btnPlanLoad;
+		
 		switch(btn){
 			case "작성하기":
 				
@@ -81,7 +88,17 @@ public class MainController extends HttpServlet {
 				break;
 			
 			case "취소":
-				response.sendRedirect("select.jsp");
+				response.sendRedirect("select");
+				break;
+			default:
+				break;
+		}
+		
+		switch(btnPlan) {
+		case "불러오기":
+			break;
+		case "취소":
+			response.sendRedirect("select");
 		}
 	}
 }

@@ -182,12 +182,12 @@
 	             			</div>
 	    					<div class="themes">
 	             				<h6>여행테마</h6>
-								<span class="selected" data-theme="0" onclick="">나홀로 여행</span>
-								<span class="" data-theme="1">친구와 함께</span>								
-								<span class="" data-theme="2">가족과 함께</span>
-								<span class="" data-theme="3">단체여행</span>
-								<span class="" data-theme="4">패키지 여행</span>
-								<span class="" data-theme="5">커플</span>
+								<span class="<c:if test="${tourLog.tTheme == '나홀로 여행'}">selected</c:if>" data-theme="0" onclick="">나홀로 여행</span>
+								<span class="<c:if test="${tourLog.tTheme == '친구와 함께'}">selected</c:if>" data-theme="1">친구와 함께</span>								
+								<span class="<c:if test="${tourLog.tTheme == '가족과 함께'}">selected</c:if>" data-theme="2">가족과 함께</span>
+								<span class="<c:if test="${tourLog.tTheme == '단체여행'}">selected</c:if>" data-theme="3">단체여행</span>
+								<span class="<c:if test="${tourLog.tTheme == '패키지 여행'}">selected</c:if>" data-theme="4">패키지 여행</span>
+								<span class="<c:if test="${tourLog.tTheme == '커플'}">selected</c:if>" data-theme="5">커플</span>
 	           				</div>
 	       				</div>
 	   				</div>
