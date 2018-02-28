@@ -1,4 +1,4 @@
-package com.yeogi.jspweb.controller.main.member.story.write;
+package com.yeogi.jspweb.controller.main.member.plan.schedule;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,17 +14,19 @@ import com.yeogi.jspweb.dao.TPlanPostDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostDao;
 import com.yeogi.jspweb.entity.TPlanPost;
 
-@WebServlet("/z")
-public class CostController extends HttpServlet {
+@WebServlet("/main/member/plan/schedule/schedule")
+public class ScheduleController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		String tPlanId = request.getParameter("tPlanId");
 		
 		TPlanPostDao tPlanPostDao = new JdbcTPlanPostDao();
 		List<TPlanPost> pp = tPlanPostDao.getList();
 		
 		request.setAttribute("pp", pp);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/cost/cost.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
 		
 		dispatcher.forward(request, response);
 		

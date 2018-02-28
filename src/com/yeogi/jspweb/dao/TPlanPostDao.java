@@ -5,11 +5,14 @@ import java.util.List;
 import com.yeogi.jspweb.entity.TPlanPost;
 
 public interface TPlanPostDao {
-	public int insert(TPlanPost tplanpost);
-	public int update(TPlanPost tplanpost);
-	public int delete(String idtPlanId,String tPlanLocId);
+	int insert(TPlanPost tplanpost);
+	int update(TPlanPost tplanpost);
+	int delete(String idtPlanId,String tPlanLocId);
 	
-	public List<TPlanPost> getList();
-	public TPlanPost get(String idtPlanId,String tPlanLocId);
+	List<TPlanPost> getList();
+	TPlanPost get(String idtPlanId,String tPlanLocId);
+	
+	//일정 카운트를 위한 
+	int getCount();
 
 }

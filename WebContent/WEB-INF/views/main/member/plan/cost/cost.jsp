@@ -46,7 +46,7 @@
 			<div id="tab">
 				<nav>
 					<h1>선택옵션</h1>
-					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost.html"><div class="cost">Cost</div></a> <a href="../schedule/schedule.html"><div class="calendar">Calendar</div></a>
+					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost"><div class="cost">Cost</div></a> <a href="../schedule/schedule"><div class="calendar">Calendar</div></a>
 				</nav>
 			</div>
 
