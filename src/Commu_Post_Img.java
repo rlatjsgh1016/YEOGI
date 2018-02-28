@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.If;
+
 import com.yeogi.jspweb.dao.Commu_Post_ImgDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcCommuPostImgDao;
 
@@ -26,6 +28,8 @@ public class Commu_Post_Img extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("");
 		
 		dispatcher.forward(request, response);
+		
+		if(request)
 	}
 
 	
