@@ -113,7 +113,7 @@ public class JdbcMemberDao implements MemberDao  {
 	}
 
 	@Override
-	public Member get(String mid) throws ClassNotFoundException, SQLException {
+	public Member getId(String mid) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		 
 		   String sql = "SELECT * FROM MEMBER WHERE ID=?";
@@ -295,6 +295,180 @@ public class JdbcMemberDao implements MemberDao  {
 	
 		
 		return rs;
+	}
+
+	@Override
+	public Member getName(String mname) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM MEMBER WHERE NAME=?";
+		   
+		   Member mem= null;
+		      // 드라이버 로드
+		      try {
+		         Class.forName("oracle.jdbc.driver.OracleDriver");
+		         
+		         String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		         Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		         PreparedStatement st = con.prepareStatement(sql);
+		         st.setString(1, mname);
+		         
+		         ResultSet rs = st.executeQuery();
+		         
+		         String id;
+		 		 String name;
+		 		 String email;
+		 		 String pwd;
+		 		 String phone;
+		 		 Date birth;
+		 		 String adminYn;
+		         
+		         
+		         if(rs.next()) { 
+		        	id = rs.getString("ID");
+		     		name = rs.getString("NAME");
+		     		email = rs.getString("EMAIL");
+		     		pwd = rs.getString("PWD");
+		     		phone = rs.getString("PHONE");
+		     		birth = rs.getDate("BIRTHDAY");
+		     		adminYn = rs.getString("ADMIN_YN");
+		            
+		            
+		            mem = new Member(
+		                   id,name,email,pwd,phone,birth,adminYn         
+		                           );
+		         
+		         }
+		         
+		         rs.close();
+		         st.close();
+		         con.close();
+		         
+		     
+		      } catch (ClassNotFoundException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      
+		      return mem;
+	}
+
+	@Override
+	public Member getMail(String mmail) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM MEMBER WHERE EMAIL=?";
+		   
+		   Member mem= null;
+		      // 드라이버 로드
+		      try {
+		         Class.forName("oracle.jdbc.driver.OracleDriver");
+		         
+		         String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		         Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		         PreparedStatement st = con.prepareStatement(sql);
+		         st.setString(1, mmail);
+		         
+		         ResultSet rs = st.executeQuery();
+		         
+		         String id;
+		 		 String name;
+		 		 String email;
+		 		 String pwd;
+		 		 String phone;
+		 		 Date birth;
+		 		 String adminYn;
+		         
+		         
+		         if(rs.next()) { 
+		        	id = rs.getString("ID");
+		     		name = rs.getString("NAME");
+		     		email = rs.getString("EMAIL");
+		     		pwd = rs.getString("PWD");
+		     		phone = rs.getString("PHONE");
+		     		birth = rs.getDate("BIRTHDAY");
+		     		adminYn = rs.getString("ADMIN_YN");
+		            
+		            
+		            mem = new Member(
+		                   id,name,email,pwd,phone,birth,adminYn         
+		                           );
+		         
+		         }
+		         
+		         rs.close();
+		         st.close();
+		         con.close();
+		         
+		     
+		      } catch (ClassNotFoundException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      
+		      return mem;
+	}
+
+	@Override
+	public Member getSearch(String mid) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		 String sql = "SELECT * FROM MEMBER WHERE ID=?";
+		   
+		   Member mem= null;
+		      // 드라이버 로드
+		      try {
+		         Class.forName("oracle.jdbc.driver.OracleDriver");
+		         
+		         String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		         Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		         PreparedStatement st = con.prepareStatement(sql);
+		         st.setString(1,mid);
+		         
+		         ResultSet rs = st.executeQuery();
+		         
+		         String id;
+		 		 String name;
+		 		 String email;
+		 		 String pwd;
+		 		 String phone;
+		 		 Date birth;
+		 		 String adminYn;
+		         
+		         
+		         if(rs.next()) { 
+		        	id = rs.getString("ID");
+		     		name = rs.getString("NAME");
+		     		email = rs.getString("EMAIL");
+		     		pwd = rs.getString("PWD");
+		     		phone = rs.getString("PHONE");
+		     		birth = rs.getDate("BIRTHDAY");
+		     		adminYn = rs.getString("ADMIN_YN");
+		            
+		            
+		            mem = new Member(
+		                   id,name,email,pwd,phone,birth,adminYn         
+		                           );
+		         
+		         }
+		         
+		         rs.close();
+		         st.close();
+		         con.close();
+		         
+		     
+		      } catch (ClassNotFoundException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      
+		      return mem;
 	}
 	 
 
