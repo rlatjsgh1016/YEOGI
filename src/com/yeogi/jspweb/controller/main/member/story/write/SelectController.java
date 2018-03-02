@@ -40,7 +40,7 @@ public class SelectController extends HttpServlet {
 		Member member;
 		
 		try {
-			member = memberDao.get("dskim");
+			member = memberDao.getId("dskim");
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("mid", member);

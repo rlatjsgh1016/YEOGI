@@ -8,9 +8,8 @@ public interface TourLogDao {
 	
 	List<TourLog> getList();
 	TourLog get(String id);
-	TourLog getLast();
 	
-	int insert(TourLog tl);
+	String insert(TourLog tl);
 	int update(TourLog tl);
 	int delete(String id);
 

@@ -42,7 +42,7 @@ public class TourLog {
 		this.endDate = endDate;
 	}
 	public TourLog(String title, String memo, String subTitle, String coverImg, String lockYN, int period, Date startDate,
-			int companion, String mid, String tTheme, Date endDate) {
+			int companion, String mid, Date lastModDate, String tTheme, Date endDate) {
 		
 		this.title = title;
 		this.memo = memo;
@@ -53,6 +53,7 @@ public class TourLog {
 		this.startDate = startDate;
 		this.companion = companion;
 		this.mid = mid;
+		this.lastModDate = lastModDate;
 		this.tTheme = tTheme;
 		this.endDate = endDate;
 	}
