@@ -72,16 +72,20 @@ public class MainController extends HttpServlet {
 				String theme = request.getParameter("select-theme");
 				Date endDate = Date.valueOf(request.getParameter("select-end-date"));
 				
-				tl = new TourLog(title,null,null,null,null,period,startDate,companion,mid,theme,endDate);
+				tl = new TourLog(title,null,null,null,"Y",period,startDate,companion,mid,null,theme,endDate);
 				
-				tourLogDao.insert(tl);
+				String isInsert = null;
 				
-				TourLog tourLog = tourLogDao.getLast();
+				isInsert = tourLogDao.insert(tl);
+				tl = tourLogDao.get(isInsert);
 				
+				tln = new TLogNation(tl.getId(), nation);
+				tLogNationDao.insert(tln);
 				
-				request.setAttribute("tourLog", tourLog);
+				request.setAttribute("tourLog", tl);
 				request.setAttribute("dayList", dayList);
 				request.setAttribute("nationList", nationList);
+				request.setAttribute("tLogNation", tln);
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/story/write/main.jsp");
 				dispatcher.forward(request, response);

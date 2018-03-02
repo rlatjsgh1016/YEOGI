@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.sql.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
+
 
 <script type="text/javascript">
 
@@ -185,7 +182,7 @@ function formCheck() {
 						</section>
 						
 						
-						<form class="join"  name ="form" action ="my-info-edit-proc.jsp">
+						<form class="join" action ="my-info-edit-proc.jsp">
 	
 							<fieldset class="join">
 							
@@ -197,33 +194,35 @@ function formCheck() {
 									<br>
 									<br>
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 기존 비밀번호"  name="pwd" /><br><br>
+									<input type ="password" placeholder=" 기존 비밀번호"/><br><br>
 									
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 새 비밀번호"  name="newPwd" /><br><br>
-									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder=" 비밀번호 확인"  name="newPwdChk"/> 
+									<input type ="password" placeholder=" 새 비밀번호"/><br><br>
+									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder=" 비밀번호 확인"/> 
 									<br>
 									<br>
 									<label>이메일</label>&ensp;&nbsp;
-									<input type ="text" name="mail"/>&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="mailCheck()" />
+									<input type ="text" />&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>별명</label>&ensp;&ensp;&ensp;&nbsp;
-									<input type ="text"  name="name"/>&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="nameCheck()"/>
+									<input type ="text"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>전화번호</label>
-									<input type =text   name="phone"/>
+									<input type =number style ="width:40px" />-<input type ="number" style ="width:60px"/>-<input type ="number" style ="width:40px"/>
 									<br>
 									<br>
 									<label>생년월일</label>
-									<input type ="date"  name="birth"/><br><br>
+									<input type ="date" /><br><br>
 									<br>
 									<br>
 									
 								</div>
 									
+
 								<input class="btn btn-important join-btn" type ="submit"  name= "btn" value ="정보수정" onclick="formCheck()"/>
+
 								<input class="btn btn-cancel" type ="submit" name= "btn" value ="회원탈퇴"/>
 
 							</fieldset>

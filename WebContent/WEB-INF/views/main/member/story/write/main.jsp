@@ -27,7 +27,7 @@
 				<h1 class="hidden">메인메뉴</h1>
 				<ul class="menu-hor menu-main">
 					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
-					<li><a class="text-focus" href="main.jsp">기록하기</a></li>
+					<li><a class="text-focus" href="select">기록하기</a></li>
 					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
 					<li><a href="../../../public-board/community/writing.html">커뮤니티</a></li>
 				</ul>
@@ -55,8 +55,14 @@
 				<section class="left-main">
 					<div class="btn-container">
 						<div class="first-line-btn">
+							<c:if test="${tourLog.lockYN == 'Y'}">
 							<p id="lock">현재상태<br>비공개</p>
 							<input id="btn-lock" class="btn btn-default" type="submit" name="btn-main" value="공개 전환">
+							</c:if>
+							<c:if test="${tourLog.lockYN == 'N'}">
+							<p id="unlock">현재상태<br>공개</p>
+							<input id="btn-unlock" class="btn btn-default" type="submit" name="btn-main" value="비공개 전환">
+							</c:if>
 							<input id="lock-yn" type="hidden" name="lock-yn" value="${tourLog.lockYN}">
 							<input id="btn-companion" class="btn btn-default" type="submit" name="btn-main" value="동행자 추가">
 						</div>
@@ -161,7 +167,7 @@
 	              						<h6>일</h6>
 	              						<select id="period" name="period" style="width:50px; height: 38px;">	              						
 	              						<c:forEach var="dl" items="${dayList}">
-	              							<option>
+	              							<option <c:if test="${tourLog.period == dl.day}" >selected="selected"</c:if>>
 	              								${dl.day}
 	              							</option>
 	              						</c:forEach>
@@ -176,7 +182,7 @@
 	            					<h6>여행도시</h6>
 	         						<select id="select-nation" name="select-nation" style="width:70px; height: 38px;">
 	         							<c:forEach var="nl" items="${nationList}">
-	         								<option>${nl.nation}</option>
+	         								<option <c:if test="${tLogNation.nation == nl.nation}" >selected="selected"</c:if>>${nl.nation}</option>
 	         							</c:forEach>
 	         						</select>
 	             			</div>

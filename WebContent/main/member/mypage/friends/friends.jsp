@@ -98,11 +98,11 @@
 				
 					<% Member m = ((Member)request.getAttribute("mem")); 
 						if(m != null){
-					%>
 					
-					<div name="mem" style ="width: 295px; height: 35px; border:1px solid black; margin-left: 120px; padding-left:0px; padding-top:0px; padding-bottom:0px; display: table; border-radius: 5px; border:1px solid #BDBDBD;">
-						<img src="../../../../resources/unknown-person.png" width="20px"  style ="padding-top: 5px; margin-left:10px;"/>
-					     ID <span style="font-weight: normal;"> ${mem.id}(${mem.name})     </span> <input type="submit" name="btn" class="btn btn-cancel" value ="친구신청"/>
+					%>
+					<div name="mem" style ="width: 285px; height: 30px; border:1px solid black; margin-left: 120px; padding-left:0px; padding-top:0px; padding-bottom:0px;">
+						<img src="../../../../resources/unknown-person.png" width="20px" hspace="20px" style ="padding-top: 0px;"/>
+					     ID ${mem.id}(${mem.name}) <input type="submit" name="btn" class="btn btn-cancel" value ="친구신청"/>
 					</div>
 					<% } %>
 		
