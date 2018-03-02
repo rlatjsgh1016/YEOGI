@@ -55,17 +55,9 @@ public class JdbcMemberDao implements MemberDao  {
 			throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		
-		String sql = "UPDATE member" + 
-				"    SET" + 
-				"    name =?," + 
-				"    email =?," + 
-				"    pwd =?," + 
-				"    phone =?," + 
-				"    birthday =?" + 
-				"WHERE id =?;";
+		String sql = "UPDATE MEMBER SET NAME = ?, EMAIL = ?, PWD = ?, PHONE = ?, BIRTHDAY = ? WHERE ID = ?";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
         
-	 	
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 		PreparedStatement st = con.prepareStatement(sql);
@@ -76,13 +68,13 @@ public class JdbcMemberDao implements MemberDao  {
         st.setString(4, member.getPhone());
         st.setDate(5, member.getBirthday());
         st.setString(6, member.getId());
-        	
-		int result = st.executeUpdate(sql);
-		
+        
 		if(!con.isClosed())
 			System.out.println("Connected");
-		        
-		
+        
+        System.out.printf("%s, %s, %s, %s, %s, %s", member.getId(), member.getName(), member.getEmail(), member.getPhone(), member.getPwd(), member.getBirthday());	
+		int result = st.executeUpdate();
+		System.out.println(result);
 		return result;
 	}
 
@@ -104,7 +96,7 @@ public class JdbcMemberDao implements MemberDao  {
 		
         st.setString(1, id);
         	
-		int result = st.executeUpdate(sql);
+		int result = st.executeUpdate();
 		
 		if(!con.isClosed())
 			System.out.println("Connected");
