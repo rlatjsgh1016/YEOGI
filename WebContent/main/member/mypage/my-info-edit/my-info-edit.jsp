@@ -1,96 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.sql.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
-
-<script type="text/javascript">
-
-
-
-function nameCheck(){
-	
-	window.name ="parentForm";
-	window.open("name-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
-}
-
-function mailCheck(){
-	
-	window.name ="parentForm";
-	window.open("mail-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
-}
-
-
-
-function formCheck() {
-    // 사용하기 쉽도록 변수를 선언하여 담아주고,
-   	var pwd = document.forms[0].pwd.value;
-    var newPwd = document.forms[0].newPwd.value;
-   	var newpwdChk = document.forms[0].newPwdChk.value;
-   	var mail = document.forms[0].mail.value;
-   	var name = document.forms[0].name.value;
-   	var phone = document.forms[0].phone.value;
-   	var birth = document.forms[0].birth.value;
-
- 
-    // || pwd == null || pwd == "" || pwdChk == null || pwdChk == "" || email == null || email == "" || name == null || name == "" || phone == null || phone == "" || phone == null || phone == "" || birth == null || birth == ""
-    
-    if (pwd == null || pwd == "") { // null인지 비교한 뒤 
-        alert('패스워드를 입력하세요'); // 경고창을 띄우고 
-        document.forms[0].pwd.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (pwdChk == null || pwdChk == "") { // null인지 비교한 뒤 
-        alert('패스워드를 확인해주세요'); // 경고창을 띄우고 
-        document.forms[0].pwdChk.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (email == null || email == "") { // null인지 비교한 뒤 
-        alert('이메일을 입력하세요'); // 경고창을 띄우고 
-        document.forms[0].email.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (name == null || name == "") { // null인지 비교한 뒤 
-        alert('닉네임을 입력하세요'); // 경고창을 띄우고 
-        document.forms[0].name.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (phone == null || phone == "") { // null인지 비교한 뒤 
-        alert('전화번호를 입력하세요'); // 경고창을 띄우고 
-        document.forms[0].phone.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (birth == null || birth == "") { // null인지 비교한 뒤 
-        alert('생년월일을 입력하세요'); // 경고창을 띄우고 
-        document.forms[0].birth.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-    else if (newPwd != newPwdChk) { // null인지 비교한 뒤 
-        alert('입력하신 패스워드가 같지 않습니다'); // 경고창을 띄우고 
-        document.forms[0].pwdChk.focus(); // 해당태그에 포커스를 준뒤
-        event.preventDefault();
-        return false; // false를 리턴합니다.
-    }
-   
-    
-}
-
-</script>
-
-
 </head>
 
 <body>
@@ -177,7 +92,7 @@ function formCheck() {
 						</section>
 						
 						
-						<form class="join"  name ="form" action ="my-info-edit-proc.jsp">
+						<form class="join" action ="my-info-edit-proc.jsp">
 	
 							<fieldset class="join">
 							
@@ -189,33 +104,33 @@ function formCheck() {
 									<br>
 									<br>
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 기존 비밀번호"  name="pwd" /><br><br>
+									<input type ="password" placeholder=" 기존 비밀번호"/><br><br>
 									
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 새 비밀번호"  name="newPwd" /><br><br>
-									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder=" 비밀번호 확인"  name="newPwdChk"/> 
+									<input type ="password" placeholder=" 새 비밀번호"/><br><br>
+									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder=" 비밀번호 확인"/> 
 									<br>
 									<br>
 									<label>이메일</label>&ensp;&nbsp;
-									<input type ="text" name="mail"/>&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="mailCheck()" />
+									<input type ="text" />&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>별명</label>&ensp;&ensp;&ensp;&nbsp;
-									<input type ="text"  name="name"/>&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="nameCheck()"/>
+									<input type ="text"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
 									<br>
 									<br>
 									<label>전화번호</label>
-									<input type =text   name="phone"/>
+									<input type =number style ="width:40px" />-<input type ="number" style ="width:60px"/>-<input type ="number" style ="width:40px"/>
 									<br>
 									<br>
 									<label>생년월일</label>
-									<input type ="date"  name="birth"/><br><br>
+									<input type ="date" /><br><br>
 									<br>
 									<br>
 									
 								</div>
 									
-								<input class="btn btn-important join-btn" type ="submit"  name= "btn" value ="정보수정"/>
+								<input class="btn btn-important join-btn" type ="submit" value ="정보수정"/>
 								<input class="btn btn-cancel" type ="submit" name= "btn" value ="회원탈퇴"/>
 
 							</fieldset>
