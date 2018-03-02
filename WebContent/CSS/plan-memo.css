@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/*--------------------------- reset ----------------------------------*/
+h1 {
+	margin: 0px;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	display: block;
+}
+
+a { 
+    
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	margin: 0px;
+}
+
+table {
+	text-align: center;
+	border-spacing: 0px;
+	table-layout: fixed; /* 테이블 와따가따 거리는거 고정 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	position: absolute;
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+#memoscreen {
+	margin:20px;
+	height: 350px;
+	width: 600px;
+	border:1px solid red;
+	box-sizing: content-box;
+}
+#memoscreen ul{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+	
+}
+
+#memoscreen ul li{
+	margin:5px;
+	height: 30px;
+	width: 30px;
+	border:1px solid red;
+	box-sizing: content-box;
+	
+}
+#memoscreen ul li:first-child {
+	flex:1 0 auto;
+}
+
+#memoscreen ul li:nth-child(2) {
+	flex:10 0 auto;
+}
+
+#memoscreen ul li:nth-child(3) {
+	 flex-basis: 590px;
+	 height: 150px;
+}
+#memoscreen ul li:nth-child(4) {
+	 flex-basis: 60px;
+}
+#memoscreen ul li:nth-child(5) {
+	 flex-basis: 310px;
+}
+#memoscreen ul li:nth-child(6) {
+	 flex-basis: 60px;
+}
+#memoscreen ul li:nth-child(7) {
+	 flex-basis: 100px;
+}
+#memoscreen ul li:nth-child(8) {
+	flex-direction:row-reverse;
+	flex-basis: 60px;
+}
+#memoscreen ul li:nth-child(9) {
+	flex-direction:row-reverse;
+	flex-basis: 60px;
+}
