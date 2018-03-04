@@ -145,5 +145,49 @@ public class JdbcDayDao implements DayDao {
 		return list;
 	}
 
+	@Override
+	public List<Day> getList(int startDay) {
+
+		String sql = "SELECT * FROM DAY WHERE DAY <= ?";
+		
+		List<Day> list = new ArrayList<>();
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setInt(1, startDay);
+			
+			ResultSet rs = st.executeQuery(sql);
+			
+			
+			while(rs.next()) {
+						
+				Day day = new Day(rs.getInt("DAY"));
+				list.add(day);
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+	    
+		return list;
+	}
+
 
 }

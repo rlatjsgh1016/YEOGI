@@ -7,7 +7,8 @@ import com.yeogi.jspweb.entity.Day;
 public interface DayDao {
 
 	List<Day> getList();
-	List<Day> getPrevList(int day);
-	List<Day> getNextList(int day);
+	List<Day> getList(int startDay);
+	List<Day> getPrevList(int currDay);
+	List<Day> getNextList(int currDay);
 
 }

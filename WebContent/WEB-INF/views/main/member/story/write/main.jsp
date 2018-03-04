@@ -39,7 +39,7 @@
 			</nav>
 		</div>
 	</header>
-	<form id="form-main" action="main-proc.jsp">
+	<form id="form-main" method="post">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
 				<div class="root-container">
@@ -186,14 +186,14 @@
 	         							</c:forEach>
 	         						</select>
 	             			</div>
-	    					<div class="themes">
+	    					<div id="themes">
 	             				<h6>여행테마</h6>
-								<span class="<c:if test="${tourLog.tTheme == '나홀로 여행'}">selected</c:if>" data-theme="0" onclick="">나홀로 여행</span>
-								<span class="<c:if test="${tourLog.tTheme == '친구와 함께'}">selected</c:if>" data-theme="1">친구와 함께</span>								
-								<span class="<c:if test="${tourLog.tTheme == '가족과 함께'}">selected</c:if>" data-theme="2">가족과 함께</span>
-								<span class="<c:if test="${tourLog.tTheme == '단체여행'}">selected</c:if>" data-theme="3">단체여행</span>
-								<span class="<c:if test="${tourLog.tTheme == '패키지 여행'}">selected</c:if>" data-theme="4">패키지 여행</span>
-								<span class="<c:if test="${tourLog.tTheme == '커플'}">selected</c:if>" data-theme="5">커플</span>
+								<a class="<c:if test="${tourLog.tTheme == '나홀로 여행'}">selected</c:if>" href="#">나홀로 여행</a>
+								<a class="<c:if test="${tourLog.tTheme == '친구와 함께'}">selected</c:if>" href="#">친구와 함께</a>
+								<a class="<c:if test="${tourLog.tTheme == '가족과 함께'}">selected</c:if>" href="#">가족과 함께</a>
+								<a class="<c:if test="${tourLog.tTheme == '단체여행'}">selected</c:if>" href="#">단체 여행</a>
+								<a class="<c:if test="${tourLog.tTheme == '패키지 여행'}">selected</c:if>" href="#">패키지 여행</a>
+								<a class="<c:if test="${tourLog.tTheme == '커플 여행'}">selected</c:if>" href="#">커플 여행</a>
 	           				</div>
 	       				</div>
 	   				</div>
@@ -222,51 +222,46 @@
 							<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="../../../../images/close-button.png"></a>
 						</div>
 						<div class="detail-form-box">
-							<fieldset>
-								<textarea class="detail-textarea" name="review" rows="" cols=""></textarea>
-								<div class="detail-position-box">
-									<img alt="위치" src="">
-									<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
-									<label for="vehicle" >이동수단</label>
-									<select id="vehicle" name="vehicle">
-										<option>비행기</option>
-										<option>기차</option>
-										<option>지하철</option>	
-										<option>버스</option>
-										<option>도보</option>
-										<option>택시</option>
-										<option>배</option>
-										<option>자가용</option>
-									</select>
-								</div>
-								<div class="detail-spend">
-									<img alt="화폐" src="">
-									<select id="spd-type" name="spd-type">
-										<option>명소</option>
-										<option>맛집</option>
-										<option>숙소</option>
-										<option>교통</option>
-										<option>쇼핑</option>
-										<option>기타</option>
-									</select>
-									<input id="spd-content" type="text" name="spd-content">
-									<select id="spd-unit" name="spd-unit">
-										<option>KRW(한국)</option>
-									</select>
-									<input id="apd-amuont" type="number" name="apd-amount">
-									<button><img alt="행추가" src=""></button>
-									<button><img alt="행삭제" src=""></button>
-								</div>
-								<div>
-									<img alt="태그" src="">
-									<input id="tag" type="text" name="tag">
-								</div>
-								<div>
-									<a href="#" id="add-post-img"><img src="" alt="사진"></a>
-									<input id="btn-post" type="submit" name="btn-post" value="저장">
-								</div>
-								<div id="map"></div>
-							</fieldset>
+							<textarea class="detail-textarea" name="review" rows="" cols=""></textarea>
+							<div class="post-list post-spot">
+								<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
+								<label for="vehicle" >이동수단</label>
+								<select id="vehicle" name="vehicle">
+									<option>비행기</option>
+									<option>기차</option>
+									<option>지하철</option>	
+									<option>버스</option>
+									<option>도보</option>
+									<option>택시</option>
+									<option>배</option>
+									<option>자가용</option>
+								</select>
+							</div>
+							<div class="post-list post-expense">
+								<select id="spd-type" name="spd-type">
+									<option>명소</option>
+									<option>맛집</option>
+									<option>숙소</option>
+									<option>교통</option>
+									<option>쇼핑</option>
+									<option>기타</option>
+								</select>
+								<input id="spd-content" type="text" name="spd-content">
+								<select id="spd-unit" name="spd-unit">
+									<option>KRW(한국)</option>
+								</select>
+								<input id="apd-amuont" type="number" name="apd-amount">
+								<button><img alt="행추가" src=""></button>
+								<button><img alt="행삭제" src=""></button>
+							</div>
+							<div class="post-list post-tag">
+								<input id="tag" type="text" name="tag">
+							</div>
+							<div class="post-add-button">
+								<a href="#" id="add-post-img"><img src="" alt="사진"></a>
+								<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
+							</div>
+							<div id="map"></div>
 						</div>
 					</div>
 				</section>
