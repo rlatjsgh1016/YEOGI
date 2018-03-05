@@ -19,13 +19,14 @@ import com.yeogi.jspweb.entity.Commu_Post;
 import com.yeogi.jspweb.entity.Commu_Post_Img;
 
 
-@WebServlet("/WebContent/main/public-board/communitywritting")
+@WebServlet("/main/public-board/community/communitywritting")
 public class Commu_PostwriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		super.doGet(request, response);
+		
 		
 		String id =request.getParameter("img");
 		
@@ -35,12 +36,14 @@ public class Commu_PostwriteController extends HttpServlet {
 		
 		request.setAttribute("Commu_Post_Img", commu_post_img);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/public-board/community/CommunityWritting.jsp");
 	
 		dispatcher.forward(request,response);
 		
 		
 	}
+
+
 
 	
 

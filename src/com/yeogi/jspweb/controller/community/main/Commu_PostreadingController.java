@@ -19,13 +19,13 @@ import com.yeogi.jspweb.entity.Commu_Post;
 import com.yeogi.jspweb.entity.Commu_Post_Cmt;
 
 
-@WebServlet("/WebContent/main/public-board/communityreading1")
+@WebServlet("/main/public-board/community/communityreading1")
 public class Commu_PostreadingController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(request, response);
+	
 		
 		String id =request.getParameter("commu_id");
 		
@@ -35,15 +35,25 @@ public class Commu_PostreadingController extends HttpServlet {
 		
 		request.setAttribute("Commu_Post_Cmt", commu_post_cmt);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/public-board/community/CommunityReading.jsp");
 	
 		dispatcher.forward(request,response);
-		
-		
-	}
-
-	
-
-	
-	
 }
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String id =request.getParameter("commu_id");
+		
+		Commu_Post_CmtDao commu_post_cmtDao = new JdbcCommuPostCmtDao();
+		List<Commu_Post_Cmt> commu_post_cmt = commu_post_cmtDao.getList();
+		
+		request.setAttribute("Commu_Post_Cmt", commu_post_cmt);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/public-board/community/CommunityReading.jsp");
+		
+		dispatcher.forward(request, response);
+	}
+}
+
+
