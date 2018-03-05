@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <HEAD>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../../../../CSS/plan-schdule.css" type=text/css
 	rel="stylesheet" />
 </HEAD>
-
 <body>
 	<header id="header">
 		<div class="root-container">
@@ -44,7 +46,7 @@
 			<div id="tab">
 				<nav>
 					<h1>선택옵션</h1>
-					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost.html"><div class="cost">Cost</div></a> <a href="../schedule/schedule.html"><div class="calendar">Calendar</div></a>
+					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost"><div class="cost">Cost</div></a> <a href="../schedule/schedule"><div class="calendar">Calendar</div></a>
 				</nav>
 			</div>
 
@@ -66,13 +68,15 @@
 				<div class="total-day">
 							<div class="b1"><b>DAY 1</b></div>
 							
+						<c:forEach var="pp" items="${pp}">
 							<div class="b2">
 							    <div class ="when">08:00</div>
-								<div class = "where">제주항공</div>
-								<div class = "count-place">1</div>
+								<div class = "where"> ${pp.memoTitle} </div>
+								<div class = "count-place"> </div>
 								<div class = "picture"><img src="../../../../images/jeju.png"/></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />일찍일어나서 공항에서 밥먹으러가자</div>
+								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />${pp.memoContent}</div>
 							</div>	
+						</c:forEach>
 				</div>
                 
                 <div class="total-day">
@@ -384,4 +388,4 @@
 		</div>
 	</div>
 </body>
-</HTML>
+</html>

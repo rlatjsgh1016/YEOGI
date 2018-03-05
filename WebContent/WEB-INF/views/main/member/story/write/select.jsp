@@ -73,11 +73,7 @@
 						</div>
 						<div>
 							<label for="select-start-date">여행시작일:&nbsp</label>
-           					<input id="select-start-date" type="date" name="select-start-date" value="2018-02-01" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">           					
-       					</div>
-       					<div>
-							<label for="select-end-date">여행종료일:&nbsp</label>
-           					<input id="select-end-date" type="date" name="select-end-date" value="2018-02-27" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">
+           					<input id="select-start-date" type="date" name="select-start-date" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">           					
        					</div>
        					<div>
 							<label for="select-period">여행기간:&nbsp</label>
@@ -97,9 +93,9 @@
 								<option>나홀로 여행</option>
 								<option>친구와 함께</option>
 								<option>가족과 함께</option>
-								<option>단체여행</option>
+								<option>단체 여행</option>
 								<option>패키지 여행</option>
-								<option>커플</option>
+								<option>커플 여행</option>
 							</select>
 						</div>
 						<div>

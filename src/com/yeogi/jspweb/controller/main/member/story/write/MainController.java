@@ -3,6 +3,7 @@ package com.yeogi.jspweb.controller.main.member.story.write;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -59,7 +60,7 @@ public class MainController extends HttpServlet {
 				TLogNationDao tLogNationDao = new JdbcTLogNationDao();
 				TLogNation tln = null;
 				
-				SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 				
 				String mid = request.getParameter("mid");
 				String title = request.getParameter("select-title");
@@ -70,18 +71,28 @@ public class MainController extends HttpServlet {
 				int period = Integer.parseInt(request.getParameter("select-period"));
 				int companion = Integer.parseInt(request.getParameter("select-companion"));
 				String theme = request.getParameter("select-theme");
-				Date endDate = Date.valueOf(request.getParameter("select-end-date"));
 				
-				tl = new TourLog(title,null,null,null,null,period,startDate,companion,mid,theme,endDate);
+				List<Day> tLogDayList = dayDao.getList(period);
+
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(startDate);
+				cal.add(Calendar.DATE, period);
+				String dateOff = formatter.format(cal.getTime());
 				
-				tourLogDao.insert(tl);
+				Date endDate = Date.valueOf(dateOff);
 				
-				TourLog tourLog = tourLogDao.getLast();
+				tl = new TourLog(title,null,null,null,"Y",period,startDate,companion,mid,null,theme,endDate);
 				
+				String isInsert = tourLogDao.insert(tl);
+				tl = tourLogDao.get(isInsert);
 				
-				request.setAttribute("tourLog", tourLog);
+				tln = new TLogNation(tl.getId(), nation);
+				tLogNationDao.insert(tln);
+				
+				request.setAttribute("tourLog", tl);
 				request.setAttribute("dayList", dayList);
 				request.setAttribute("nationList", nationList);
+				request.setAttribute("tLogNation", tln);
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/story/write/main.jsp");
 				dispatcher.forward(request, response);
@@ -95,10 +106,13 @@ public class MainController extends HttpServlet {
 		}
 		
 		switch(btnPlan) {
-		case "불러오기":
-			break;
-		case "취소":
-			response.sendRedirect("select");
+			case "불러오기":
+				break;
+			case "취소":
+				response.sendRedirect("select");
+				break;
+			default:
+				break;
 		}
 	}
 }

@@ -222,6 +222,47 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 		return tplanpost;
 	}
 
+	@Override
+	public int getCount() {
+		String sql ="SELECT T_PLAN_LOC_ID  FROM T_PLAN_POST ORDER BY REG_DATE DESC"; 
+		
+		int count = 0;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##sist","dclass");
+			//Statement st = con.createStatement(); //? 사용하기 전 원래 하던놈
+			Statement st = con.createStatement(); 
+			
+			//ResultSet rs = st.executeQuery(sql); //프리페어드 쓸때 sql 이미 써버렸어... 원래 하던놈
+			ResultSet rs = st.executeQuery(sql); //프리페어드 쓸때 sql 이미 써버렸어... 그러니 이렇게 하자 !
+			
+			//결과집합 가져오기
+
+			
+			
+			if(rs.next())  
+				count=rs.getInt("count");
+			
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return count; //앤서이즈를 통해 반환되는것이 꼭 있어야 널이 안됨. //궁금증!
+	}
+
 	
 
 	

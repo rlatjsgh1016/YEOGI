@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -100,7 +100,8 @@
 						if(m != null){
 					
 					%>
-					<div name="mem" style ="width: 285px; height: 30px; border:1px solid black; margin-left: 120px; padding-left:10px; padding-top:5px;">
+					<div name="mem" style ="width: 285px; height: 30px; border:1px solid black; margin-left: 120px; padding-left:0px; padding-top:0px; padding-bottom:0px;">
+						<img src="../../../../resources/unknown-person.png" width="20px" hspace="20px" style ="padding-top: 0px;"/>
 					     ID ${mem.id}(${mem.name}) <input type="submit" name="btn" class="btn btn-cancel" value ="친구신청"/>
 					</div>
 					<% } %>

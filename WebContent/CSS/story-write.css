@@ -674,18 +674,18 @@ textarea.form-control{
 	overflow: hidden;
 }
 
-.themes{
+#themes{
 	margin: 10px 0;
 	float: left;
 	overflow: hidden;
 }
 
-.themes h6{
+#themes h6{
 	display: block;
 	clear: both;	
 }
 
-.themes span{
+#themes a{
 	display:block;
 	float:left;
 	border: 2px solid #AFAFAF;
@@ -694,7 +694,11 @@ textarea.form-control{
 	color: #AFAFAF;
 }
 
-.themes .selected{
+#themes a:last-child::after{
+	clear: both;
+}
+
+#themes .selected{
 	border: 2px solid #E64C3C;
 	margin: 0 2px;
 	padding: 9px 3px;
@@ -755,19 +759,19 @@ textarea.form-control{
 .view-info li:first-child{
 	padding: 5px 0;
 	padding-left: 26px;
-	background: url("../images/loca.png") no-repeat left;
+	background :url("../images/spot16.png") no-repeat left;
 }
 
 .view-info li:nth-child(2){
 	padding: 5px 0;
 	padding-left: 26px;
-	background: url("../images/coin.png") no-repeat left;
+	background :url("../images/won16.png") no-repeat left;
 }
 
 .view-info li:last-child{
 	padding: 5px 0;
 	padding-left: 26px;
-	background: url("../images/tag.png") no-repeat left;
+	background :url("../images/tag16.png") no-repeat left;
 }
 
 /*----------------------- form ------------------------*/
@@ -776,7 +780,7 @@ textarea.form-control{
 	width: 780px;
 	height: 480px;
 	padding: 10px;
-	background: #E6E6E6;
+	background: #ffffff;
 	border: 1px solid #000000;
 	position: fixed;
 	left: 50%;
@@ -785,8 +789,15 @@ textarea.form-control{
 	visibility: hidden;
 }
 
+.detail-post-box>input,
+.detail-post-box>label,
+.detail-post-box>select{
+	border: 2px solid #000000;
+	padding: 1px;
+	height: 20px;
+}
+
 .detail-title-box{
-	text-align: center;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -817,12 +828,22 @@ textarea.form-control{
 	overflow: auto;
 }
 
-.detail-position-box{
-	
+.detail-form-box>.post-list{
+	padding-left: 30px;
+}
+.detail-form-box>.post-spot{
+	background :url("../images/spot16.png") no-repeat left;
+}
+.detail-form-box>.post-expense{
+	background :url("../images/won16.png") no-repeat left;
+}
+.detail-form-box>.post-tag{
+	background :url("../images/tag16.png") no-repeat left;
 }
 
-detail-position-box img{
-	
+.post-add-button{
+	display: flex;
+	justify-content: space-between;
 }
 	
 #map{
