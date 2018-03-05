@@ -1,3 +1,6 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.sql.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.yeogi.jspweb.dao.jdbc.JdbcMemberDao"%>
 <%@page import="com.yeogi.jspweb.dao.MemberDao"%>
 <%@page import="com.yeogi.jspweb.entity.Member"%>
@@ -23,25 +26,81 @@
 	
 	switch(btn) {
 	
-	case "탈퇴하기":
+	case "회원탈퇴":
 		member.delete(temp);
 		
 		response.sendRedirect("join.jsp");
 		break;
 		
-	case "중복확인" : 
-		String id =  request.getParameter("id");
+	case "메일 중복확인" : 
+		String mail =  request.getParameter("mailinput");
 
-		String message = "아이디가 중복됩니다.";
-		mem = member.get(id);
+		
+		PrintWriter outt = response.getWriter(); 
+
+		mem = member.getMail(mail);
 		if( mem != null)	
 		{
-			System.out.println(message);
+
+			outt.println("<script type=\'text/javascript\'>"); 
+			outt.println("alert('이메일이 중복됩니다');"); 
+			outt.println("location.href ='mail-check-form.jsp';");
+			outt.println("</script>"); 	
 		}
-		response.sendRedirect("join.jsp");
+		else{
+			outt.println("<script type=\'text/javascript\'>"); 
+			outt.println("alert('사용가능한 이메일입니다.');"); 
+			outt.println("location.href ='mail-check-form.jsp';");
+			outt.println("</script>"); 	
+			
+		}
+		break;
+		
+	case "별명 중복확인" : 
+		String name =  request.getParameter("nameinput");
+
+		
+		PrintWriter outtt = response.getWriter(); 
+
+		mem = member.getName(name);
+		if( mem != null)	
+		{
+
+			outtt.println("<script type=\'text/javascript\'>"); 
+			outtt.println("alert('별명이 중복됩니다');"); 
+			outtt.println("location.href ='name-check-form.jsp';");
+			outtt.println("</script>"); 	
+		}
+		else{
+			outtt.println("<script type=\'text/javascript\'>"); 
+			outtt.println("alert('사용가능한 별명입니다.');"); 
+			outtt.println("location.href ='name-check-form.jsp';");
+			outtt.println("</script>"); 	
+			
+		}
 		break;
 		
 	case "수정하기" :
+		mem.setId("sist1218");
+		mem.setName(request.getParameter("name"));
+		mem.setEmail(request.getParameter("mail"));
+		mem.setPwd(request.getParameter("newPwd"));
+		mem.setPhone(request.getParameter("phone"));
+		
+		String dateStr = request.getParameter("birth");  
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+		Date date = java.sql.Date.valueOf(dateStr);
+		
+		mem.setBirthday(date);
+		mem.setAdminYN("N");
+		
+		//System.out.printf("%s, %s, %s, %s, %s, %s", mem.getId(), mem.getName(), mem.getEmail(), mem.getPhone(), mem.getPwd(), mem.getAdminYn());	
+		
+		member.update(mem);
+		
+		response.sendRedirect("my-info-edit.jsp");
+		
 		break;
 	}
 
