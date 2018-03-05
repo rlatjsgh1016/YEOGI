@@ -680,12 +680,12 @@ textarea.form-control{
 	overflow: hidden;
 }
 
-#themes h6{
+#themes>h6{
 	display: block;
 	clear: both;	
 }
 
-#themes a{
+#themes>a{
 	display:block;
 	float:left;
 	border: 2px solid #AFAFAF;
@@ -694,11 +694,11 @@ textarea.form-control{
 	color: #AFAFAF;
 }
 
-#themes a:last-child::after{
+#themes>a:last-child::after{
 	clear: both;
 }
 
-#themes .selected{
+#themes>.selected{
 	border: 2px solid #E64C3C;
 	margin: 0 2px;
 	padding: 9px 3px;
