@@ -32,7 +32,7 @@ public class Commu_PostmainController extends HttpServlet {
 		
 		request.setAttribute("Commu_Post", commu_post);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/public-board/community/community.jsp");
 	
 		dispatcher.forward(request,response);
 		

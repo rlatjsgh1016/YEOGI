@@ -35,7 +35,7 @@ public class Commu_PostwriteController extends HttpServlet {
 		
 		request.setAttribute("Commu_Post_Img", commu_post_img);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
 	
 		dispatcher.forward(request,response);
 		

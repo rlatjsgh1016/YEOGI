@@ -35,7 +35,7 @@ public class Commu_PostreadingController extends HttpServlet {
 		
 		request.setAttribute("Commu_Post_Cmt", commu_post_cmt);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
 	
 		dispatcher.forward(request,response);
 		
