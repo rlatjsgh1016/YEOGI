@@ -7,8 +7,7 @@
  <title>Insert title here</title> 
  <link href = "../../../../CSS/style.css" type ="text/css" rel ="stylesheet" /> 
  <script type="text/javascript"> 
-  
- 	function pValue(){
+   	function pValue(){
 		document.getElementById("userMail").value = opener.document.form.mail.value;
 	}	
 	
