@@ -12,6 +12,7 @@ import java.util.List;
 import com.yeogi.jspweb.dao.TPlanPostSpdDao;
 import com.yeogi.jspweb.entity.TPlanPost;
 import com.yeogi.jspweb.entity.TPlanPostSpd;
+import com.yeogi.jspweb.entity.TPlanPostSpdView;
 
 public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 
@@ -135,10 +136,10 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 	}
 
 	@Override
-	public List<TPlanPostSpd> getList() {
-		String sql ="SELECT * FROM T_PLAN_POST_SPD order by ID ASC"; 
+	public List<TPlanPostSpdView> getList() {
+		String sql ="SELECT * FROM T_PLAN_POST_SPD_VIEW order by ID ASC"; 
 
-		List<TPlanPostSpd> list = new ArrayList<>();
+		List<TPlanPostSpdView> list = new ArrayList<>();
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -150,20 +151,23 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			
 			ResultSet rs = st.executeQuery();
 			
-			TPlanPostSpd tplanpostspd = null;
+			TPlanPostSpdView tplanpostspdview = null;
 			
 			
 			while(rs.next()) {
-				tplanpostspd = new TPlanPostSpd(
+				tplanpostspdview = new TPlanPostSpdView(
 							rs.getString("ID"),
 							rs.getString("T_PLAN_LOC_ID"),
 							rs.getString("T_PLAN_ID"),
 							rs.getString("TYPE"),
 							rs.getString("CONTENT"),
 							rs.getString("UNIT"),
-							rs.getString("AMOUNT")
-						);
-				list.add(tplanpostspd);
+							rs.getString("AMOUNT"), 
+							rs.getString("TOUR_DATE_TIME"),
+							rs.getString("MEMO_TITLE"), 
+							rs.getString("MEMO_CONTENT")
+							);
+				list.add(tplanpostspdview);
 			}
 			
 			
