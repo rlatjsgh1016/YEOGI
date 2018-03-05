@@ -7,36 +7,10 @@
 <%@page import="com.yeogi.jspweb.dao.DayDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>story main page</title>
-<link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
-<script src="../../../../js/story-write-select.js"></script>
-</head>
-<body>
-	<header>
-		<div class="root-container">
-			<a id="logo" href="../../../main.html"><img alt="로고" src="../../../../images/logo.png" height="60px;"></a>
-			<nav>
-				<h1 class="hidden">메인메뉴</h1>
-				<ul class="menu-hor menu-main">
-					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
-					<li><a class="text-focus" href="select">기록하기</a></li>
-					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
-					<li><a href="../../../public-board/community/writing.html">커뮤니티</a></li>
-				</ul>
-				<h1 class="hidden">로그인메뉴</h1>
-				<ul class="menu-hor menu-login">
-					<li><a href="../../../log-in.html">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+<c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
+<script src="${ctx}/js/story-write-select.js"></script>
 	<form id="form-select" action="main" method="post">
 		<input id="mid" type="hidden" name="mid" value="${sessionScope.mid.id }">
 		<div id="visual">
@@ -67,7 +41,7 @@
 							<label for="select-nation">여행도시:&nbsp</label>
 							<select id="select-nation"  name="select-nation" style="height: 28px;">
 								<c:forEach var="nl" items="${nationList}">
-        						<option>${nl.nation}</option>
+        						<option value="${nl.nation}">${nl.nation}</option>
         						</c:forEach>
 							</select>
 						</div>
@@ -79,7 +53,7 @@
 							<label for="select-period">여행기간:&nbsp</label>
     						<select id="select-period" name="select-period" style="height: 28px;">
         						<c:forEach var="dl" items="${dayList}">
-        						<option>${dl.day}</option>
+        						<option value="${dl.day}">${dl.day}</option>
         						</c:forEach>
         					</select>
         				</div>
@@ -89,13 +63,13 @@
 	            		</div>
 	            		<div>
 							<label for="select-theme">여행테마:&nbsp</label>
-							<select id="select-theme"  name="select-theme" style="height: 28px;">
-								<option>나홀로 여행</option>
-								<option>친구와 함께</option>
-								<option>가족과 함께</option>
-								<option>단체 여행</option>
-								<option>패키지 여행</option>
-								<option>커플 여행</option>
+							<select id="select-theme"  name="select-theme" style="height: 28px;" required>
+								<option value="나홀로 여행" selected="selected">나홀로 여행</option>
+								<option value="친구와 함께">친구와 함께</option>
+								<option value="가족과 함께">가족과 함께</option>
+								<option value="단체 여행">단체 여행</option>
+								<option value="패키지 여행">패키지 여행</option>
+								<option value="커플 여행">커플 여행</option>
 							</select>
 						</div>
 						<div>
@@ -140,5 +114,3 @@
 		</div>
 		
 	</footer>
-</body>
-</html>

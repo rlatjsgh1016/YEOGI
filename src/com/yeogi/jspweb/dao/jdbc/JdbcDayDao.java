@@ -56,7 +56,7 @@ public class JdbcDayDao implements DayDao {
 	}
 
 	@Override
-	public List<Day> getPrevList(int currDay) {
+	public List<Day> getPrevList(int startDay) {
 
 		String sql = "SELECT * FROM DAY WHERE DAY BETWEEN ? AND ?";
 		
@@ -69,8 +69,8 @@ public class JdbcDayDao implements DayDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setInt(1, currDay-1);
-			st.setInt(2, currDay+1);
+			st.setInt(1, startDay-1);
+			st.setInt(2, startDay+1);
 			
 			ResultSet rs = st.executeQuery(sql);
 			
@@ -101,7 +101,7 @@ public class JdbcDayDao implements DayDao {
 	}
 
 	@Override
-	public List<Day> getNextList(int currDay) {
+	public List<Day> getNextList(int lastDay) {
 
 		String sql = "SELECT * FROM DAY WHERE DAY BETWEEN ? AND ?";
 		
@@ -114,8 +114,8 @@ public class JdbcDayDao implements DayDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setInt(1, currDay+1);
-			st.setInt(2, currDay+3);
+			st.setInt(1, lastDay+1);
+			st.setInt(2, lastDay+3);
 			
 			ResultSet rs = st.executeQuery(sql);
 			
@@ -146,7 +146,7 @@ public class JdbcDayDao implements DayDao {
 	}
 
 	@Override
-	public List<Day> getList(int startDay) {
+	public List<Day> getList(int lastDay) {
 
 		String sql = "SELECT * FROM DAY WHERE DAY <= ?";
 		
@@ -159,7 +159,7 @@ public class JdbcDayDao implements DayDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setInt(1, startDay);
+			st.setInt(1, lastDay);
 			
 			ResultSet rs = st.executeQuery(sql);
 			

@@ -9,36 +9,10 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>story main page</title>
-<link type="text/css" href="../../../../CSS/story-write.css" rel="stylesheet">
-<script src="../../../../js/story-write-main.js"></script>
-</head>
-<body>
-	<header>
-		<div class="root-container">
-			<a id="logo" href="../../../main.html"><img alt="로고" src="../../../../images/logo.png" height="60px;"></a>
-			<nav>
-				<h1 class="hidden">메인메뉴</h1>
-				<ul class="menu-hor menu-main">
-					<li><a href="../../plan/newplan/new-plan.html">계획하기</a></li>
-					<li><a class="text-focus" href="select">기록하기</a></li>
-					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
-					<li><a href="../../../public-board/community/writing.html">커뮤니티</a></li>
-				</ul>
-				<h1 class="hidden">로그인메뉴</h1>
-				<ul class="menu-hor menu-login">
-					<li><a href="../../../log-in.html">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+<c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
+<script src="${ctx}/js/story-write-main.js"></script>
 	<form id="form-main" method="post">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
@@ -125,26 +99,26 @@
 						</div>
 					</div>
 					<div class="day-btn-container clear-fix">
-						<a id="left-arrow" href="#"><img alt="좌측화살표" src="../../../../images/left-arrow.png"></a>
+						<a id="left-arrow" href="#"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
 						<ul class="day-btn">
 							<li><a href="#">DAY1</a></li>
 							<li><a href="#">DAY2</a></li>
 							<li><a href="#">DAY3</a></li>
 						</ul>
-						<a id="right-arrow" href="#"><img alt="우측화살표" src="../../../../images/right-arrow.png"></a>
+						<a id="right-arrow" href="#"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
 					</div>
 					<div class="place-container">
 						<div class="card-frame">
 							<div class="image-frame">
-								<img alt="장소이미지" src="../../../../resources/small_visual.jpg">
+								<img alt="장소이미지" src="${ctx}/resources/small_visual.jpg">
 							</div>
 							
 							<div class="place-frame">
 								<p>인천공항</p>
 							</div>
 							<div class="place-btn-container">
-								<a class="btn-place-delete" href="#"><img alt="삭제" src="../../../../images/delete.png"></a>
-								<a class="btn-place-edit" href="#"><img alt="편집" src="../../../../images/write.png"></a>
+								<a class="btn-place-delete" href="#"><img alt="삭제" src="${ctx}/images/delete.png"></a>
+								<a class="btn-place-edit" href="#"><img alt="편집" src="${ctx}/images/write.png"></a>
 							</div>
 						</div>
 						<div class="place-add">
@@ -191,7 +165,7 @@
 								<a class="<c:if test="${tourLog.tTheme == '나홀로 여행'}">selected</c:if>" href="#">나홀로 여행</a>
 								<a class="<c:if test="${tourLog.tTheme == '친구와 함께'}">selected</c:if>" href="#">친구와 함께</a>
 								<a class="<c:if test="${tourLog.tTheme == '가족과 함께'}">selected</c:if>" href="#">가족과 함께</a>
-								<a class="<c:if test="${tourLog.tTheme == '단체여행'}">selected</c:if>" href="#">단체 여행</a>
+								<a class="<c:if test="${tourLog.tTheme == '단체 여행'}">selected</c:if>" href="#">단체 여행</a>
 								<a class="<c:if test="${tourLog.tTheme == '패키지 여행'}">selected</c:if>" href="#">패키지 여행</a>
 								<a class="<c:if test="${tourLog.tTheme == '커플 여행'}">selected</c:if>" href="#">커플 여행</a>
 	           				</div>
@@ -204,7 +178,7 @@
 								<p>기내식은 언제 제공하나?</p>
 								<p>승무원들은 비행기에 탑승하자마자 기내식을 준비한다. 승객들이 잠들기 전에 식사를 제공하기 위해서다. 보통 비행시간이 8시간 이상의 경우 두 끼, 그 이하는 한 끼를 제공한다. 아침, 점심, 저녁을 기본으로 늦은 아침(Brunch), 늦은 점심(Heavey Snack), 늦은 저녁(Supper) 등으로 나뉜다. 아침이나 늦은 저녁의 경우엔 위에 부담이 적고 소화가 잘되는 메뉴로 구성하고 그 외는 밥과 면류가 포함된 다양한 음식이 나온다.</p>
 								<div class="view-frame-photo">
-									<img alt="게시물사진" src="../../../../resources/small_visual.jpg">
+									<img alt="게시물사진" src="${ctx}/resources/small_visual.jpg">
 								</div>
 								<div class="view-info">
 									<ul>
@@ -219,7 +193,7 @@
 					<div class="detail-post-box">
 						<div class="detail-title-box">
 							<p>포스트작성</p>
-							<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="../../../../images/close-button.png"></a>
+							<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="${ctx}/images/close-button.png"></a>
 						</div>
 						<div class="detail-form-box">
 							<textarea class="detail-textarea" name="review" rows="" cols=""></textarea>
@@ -258,6 +232,7 @@
 								<input id="tag" type="text" name="tag">
 							</div>
 							<div class="post-add-button">
+								<input id="attached" type="file">
 								<a href="#" id="add-post-img"><img src="" alt="사진"></a>
 								<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
 							</div>
@@ -268,5 +243,3 @@
 			</div>
 		</main>
 	</form>
-</body>
-</html>

@@ -10,8 +10,6 @@
 
 <script type="text/javascript">
 
-
-
 function nameCheck(){
 	
 	window.name ="parentForm";
@@ -38,7 +36,6 @@ function formCheck() {
 
  
     // || pwd == null || pwd == "" || pwdChk == null || pwdChk == "" || email == null || email == "" || name == null || name == "" || phone == null || phone == "" || phone == null || phone == "" || birth == null || birth == ""
-    
     
     if (pwd == null || pwd == "") { // null인지 비교한 뒤 
         alert('패스워드를 입력하세요'); // 경고창을 띄우고 
@@ -194,34 +191,34 @@ function formCheck() {
 									<br>
 									<br>
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 기존 비밀번호"/><br><br>
+									<input type ="password" name="pwd" placeholder=" 기존 비밀번호"/><br><br>
 									
 									<label>비밀번호</label>
-									<input type ="password" placeholder=" 새 비밀번호"/><br><br>
-									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" placeholder=" 비밀번호 확인"/> 
+									<input type ="password" name="newPwd" placeholder=" 새 비밀번호"/><br><br>
+									&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type ="password" name="newPwdChk" placeholder=" 비밀번호 확인"/> 
 									<br>
 									<br>
 									<label>이메일</label>&ensp;&nbsp;
-									<input type ="text" />&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
+									<input name="mail" id="mail" type ="email" />&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="mailCheck()"/>
 									<br>
 									<br>
 									<label>별명</label>&ensp;&ensp;&ensp;&nbsp;
-									<input type ="text"/>&nbsp;<input class="btn btn-cancel" type ="submit" value ="중복확인"/>
+									<input name="name" id="name" type ="text"/>&nbsp;<input class="btn btn-cancel"  type ="button" value ="중복확인" onclick="nameCheck()"/>
 									<br>
 									<br>
 									<label>전화번호</label>
-									<input type =number style ="width:40px" />-<input type ="number" style ="width:60px"/>-<input type ="number" style ="width:40px"/>
+									<input name="phone" type =text  />
 									<br>
 									<br>
 									<label>생년월일</label>
-									<input type ="date" /><br><br>
+									<input name="birth" type ="date" /><br><br>
 									<br>
 									<br>
 									
 								</div>
 									
 
-								<input class="btn btn-important join-btn" type ="submit"  name= "btn" value ="정보수정" onclick="formCheck()"/>
+								<input class="btn btn-important join-btn" type ="submit"  name= "btn" value ="수정하기" onclick="formCheck()"/>
 
 								<input class="btn btn-cancel" type ="submit" name= "btn" value ="회원탈퇴"/>
 

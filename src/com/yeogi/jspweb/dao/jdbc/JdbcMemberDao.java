@@ -62,7 +62,7 @@ public class JdbcMemberDao implements MemberDao  {
 				"    pwd =?," + 
 				"    phone =?," + 
 				"    birthday =?" + 
-				"WHERE id =?;";
+				"WHERE id =?";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
         
 	 	
@@ -77,7 +77,7 @@ public class JdbcMemberDao implements MemberDao  {
         st.setDate(5, member.getBirthday());
         st.setString(6, member.getId());
         	
-		int result = st.executeUpdate(sql);
+		int result = st.executeUpdate();
 		
 		if(!con.isClosed())
 			System.out.println("Connected");
