@@ -37,7 +37,6 @@ function mailCheck(){
 }
 
 
-
 function formCheck() {
     // 사용하기 쉽도록 변수를 선언하여 담아주고,
     var id = document.forms[0].id.value;
@@ -132,7 +131,7 @@ function formCheck() {
 					<h1>회원 메뉴</h1>
 					<ul>
 						<li><a href= "log-in.html">로그인</a></li> 
-						<li><a href= "join.html">회원가입</a></li>
+						<li><a href= "join">회원가입</a></li>
 						<li><a href ="member/mypage/mypage.html" class ="btn btn-mypage">마이페이지</a></li>
 					</ul>
 					
