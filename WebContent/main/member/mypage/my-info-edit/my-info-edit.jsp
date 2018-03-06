@@ -13,13 +13,13 @@
 function nameCheck(){
 	
 	window.name ="parentForm";
-	window.open("name-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
+	window.open("my-name-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
 }
 
 function mailCheck(){
 	
 	window.name ="parentForm";
-	window.open("mail-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
+	window.open("my-mail-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
 }
 
 
@@ -199,11 +199,11 @@ function formCheck() {
 									<br>
 									<br>
 									<label>이메일</label>&ensp;&nbsp;
-									<input name="mail" id="mail" type ="email" />&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="mailCheck()"/>
+									<input id="mail" type ="email"  name="mail" />&nbsp;<input class="btn btn-cancel" type ="button" value ="중복확인" onclick="mailCheck()"/>
 									<br>
 									<br>
 									<label>별명</label>&ensp;&ensp;&ensp;&nbsp;
-									<input name="name" id="name" type ="text"/>&nbsp;<input class="btn btn-cancel"  type ="button" value ="중복확인" onclick="nameCheck()"/>
+									<input  id="name" type ="text" name="nameinput"/>&nbsp;<input class="btn btn-cancel"  type ="button" value ="중복확인" onclick="nameCheck()"/>
 									<br>
 									<br>
 									<label>전화번호</label>

@@ -9,11 +9,11 @@
 <script type="text/javascript">
 
 	function pValue(){
-		document.getElementById("userName").value = opener.document.form.name.value;
+		document.getElementById("userName").value = opener.document.form.nameinput.value;
 	}	
 	
 	function sendCheckValue(){
-		opener.document.form.name.value = document.getElementById("userName").value;
+		opener.document.form.nameinput.value = document.getElementById("userName").value;
 		self.close();
 	}
 	

@@ -8,11 +8,11 @@
  <link href = "../../../../CSS/style.css" type ="text/css" rel ="stylesheet" /> 
  <script type="text/javascript"> 
    	function pValue(){
-		document.getElementById("userMail").value = opener.document.form.mail.value;
+		document.getElementById("userMail").value = opener.document.forms[0].mail.value;
 	}	
 	
 	function sendCheckValue(){
-		opener.document.form.mail.value = document.getElementById("userMail").value;
+		opener.document.forms[0].mail.value = document.getElementById("userMail").value;
 		self.close();
 	}
  	 
