@@ -22,21 +22,15 @@ public class ScheduleController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		/*String tPlanId = request.getParameter("tPlanId");
-		
-		TPlanPostDao tPlanPostDao = new JdbcTPlanPostDao();
-		List<TPlanPost> pp = tPlanPostDao.getList();
-		
-		request.setAttribute("pp", pp);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
-		
-		dispatcher.forward(request, response);*/
-		
 		String id = request.getParameter("id");
 		
 		TPlanPostSpdDao tPlanPostSpdDao = new JdbcTPlanPostSpdDao();
-		List<TPlanPostSpdView> list = tPlanPostSpdDao.getList();
+		List<TPlanPostSpdView> tppsv = tPlanPostSpdDao.getList();
+		
+		request.setAttribute("tppsv", tppsv);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
+		
+		dispatcher.forward(request, response);
 		
 	}
 }
