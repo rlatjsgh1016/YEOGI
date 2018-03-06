@@ -20,7 +20,9 @@ window.addEventListener("load", function(){
 	var selectCompanion = document.getElementById("select-companion");
 	
 	var selectTheme = document.getElementById("select-theme");		//셀렉트
-	var optionTheme = selectTheme.options[selectTheme.selectedIndex].text;
+
+
+	
 	
 	
 	selectNation.onchange = function(){

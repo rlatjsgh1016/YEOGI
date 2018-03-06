@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tiles.TilesContainer;
+import org.apache.tiles.access.TilesAccess;
+import org.apache.tiles.request.ApplicationContext;
+import org.apache.tiles.request.servlet.ServletRequest;
+import org.apache.tiles.request.servlet.ServletUtil;
+
 import com.yeogi.jspweb.dao.DayDao;
 import com.yeogi.jspweb.dao.NationDao;
 import com.yeogi.jspweb.dao.TLogNationDao;
@@ -35,15 +41,16 @@ public class MainController extends HttpServlet {
 	    request.setCharacterEncoding("UTF-8");
 	    
 		String btn = "";
-		String btnPlan = "";
 		String btnNew = request.getParameter("btn-new");
 		String btnPlanLoad = request.getParameter("btn-plan-load");
+		String btnEdit = request.getParameter("btn-edit");
 		
 		if(btnNew != null && !btnNew.equals(""))
 			btn = btnNew;
-		
-		if(btnPlanLoad != null && !btnPlanLoad.equals(""))
-			btnPlan = btnPlanLoad;
+		else if(btnPlanLoad != null && !btnPlanLoad.equals(""))
+			btn = btnPlanLoad;
+		else if(btnEdit != null && !btnEdit.equals(""))
+			btn = btnEdit;
 		
 		switch(btn){
 			case "작성하기":
@@ -89,28 +96,35 @@ public class MainController extends HttpServlet {
 				tln = new TLogNation(tl.getId(), nation);
 				tLogNationDao.insert(tln);
 				
+				int firstDay = 1;
+				int lastDay = period;
+				
 				request.setAttribute("tourLog", tl);
 				request.setAttribute("dayList", dayList);
 				request.setAttribute("nationList", nationList);
 				request.setAttribute("tLogNation", tln);
 				
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/story/write/main.jsp");
-				dispatcher.forward(request, response);
+				/*RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/story/write/main.jsp");
+				dispatcher.forward(request, response);*/
+				
+				ApplicationContext applicationContext = ServletUtil
+						.getApplicationContext(request.getSession().getServletContext());
+				TilesContainer container = TilesAccess.getContainer(applicationContext);
+				ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+				container.render("main.member.story.write.main", servletRequest);
+				
+				break;
+			
+			case "불러오기":
+				break;
+				
+			case "수정하기":
 				break;
 			
 			case "취소":
 				response.sendRedirect("select");
 				break;
-			default:
-				break;
-		}
-		
-		switch(btnPlan) {
-			case "불러오기":
-				break;
-			case "취소":
-				response.sendRedirect("select");
-				break;
+				
 			default:
 				break;
 		}

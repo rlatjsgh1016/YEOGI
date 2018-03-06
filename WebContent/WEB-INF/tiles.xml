@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+<!-- 타일즈는 *을 2개까지만 사용가능하다. -->
+<!-- 중첩경로의 경우 더 상세한 경로를 위쪽에 작성해야 무한루프에 빠지지 않는다. -->
+
+  <definition name="main.member.story.*.*" template="/WEB-INF/views/main/member/story/write/inc/sub-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/member/story/write/inc/header.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/member/story/{1}/{2}.jsp" />
+  </definition>
+  
+</tiles-definitions>
