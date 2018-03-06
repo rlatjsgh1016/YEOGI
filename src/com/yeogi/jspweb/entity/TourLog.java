@@ -1,6 +1,7 @@
 package com.yeogi.jspweb.entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class TourLog {
 	private String id;
@@ -14,7 +15,7 @@ public class TourLog {
 	private Date startDate;
 	private int companion;
 	private String mid;
-	private Date lastModDate;
+	private Timestamp lastModDate;
 	private int hit;
 	private String tTheme;
 	private Date endDate;
@@ -22,7 +23,7 @@ public class TourLog {
 
 	}
 	public TourLog(String id, String title, String memo, String subTitle, String coverImg, String lockYN, Date regDate,
-			int period, Date startDate, int companion, String mid, Date lastModDate, int hit, String tTheme,
+			int period, Date startDate, int companion, String mid, Timestamp lastModDate, int hit, String tTheme,
 			Date endDate) {
 		
 		this.id = id;
@@ -42,7 +43,7 @@ public class TourLog {
 		this.endDate = endDate;
 	}
 	public TourLog(String title, String memo, String subTitle, String coverImg, String lockYN, int period, Date startDate,
-			int companion, String mid, Date lastModDate, String tTheme, Date endDate) {
+			int companion, String mid, Timestamp lastModDate, String tTheme, Date endDate) {
 		
 		this.title = title;
 		this.memo = memo;
@@ -123,10 +124,10 @@ public class TourLog {
 	public void setMid(String mid) {
 		this.mid = mid;
 	}
-	public Date getLastModDate() {
+	public Timestamp getLastModDate() {
 		return lastModDate;
 	}
-	public void setLastModDate(Date lastModDate) {
+	public void setLastModDate(Timestamp lastModDate) {
 		this.lastModDate = lastModDate;
 	}
 	public int getHit() {

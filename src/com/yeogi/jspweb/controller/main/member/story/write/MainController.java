@@ -2,11 +2,11 @@ package com.yeogi.jspweb.controller.main.member.story.write;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,15 +34,70 @@ import com.yeogi.jspweb.entity.TourLog;
 
 @WebServlet("/main/member/story/write/main")
 public class MainController extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setCharacterEncoding("UTF-8");
+	    response.setContentType("text/html; charset=UTF-8");
+	    request.setCharacterEncoding("UTF-8");
+	    
+	    int d = 1;
+	    String id = null;
+	    
+	    String d_ = request.getParameter("d");
+	    if(d_!=null && !d_.equals(""))
+	    	d = Integer.parseInt(d_);
+	    
+	    String id_ = request.getParameter("id");
+	    if(id_!=null && !id_.equals(""))
+	    	id = id_;
+	    
+	    DayDao dayDao = new JdbcDayDao();
+		List<Day> dayList = dayDao.getList();
+		
+		NationDao nationDao = new JdbcNationDao();
+		List<Nation> nationList = nationDao.getList();
+		
+		TLogNationDao tLogNationDao = new JdbcTLogNationDao();
+			    
+	    TourLogDao tourLogDao = new JdbcTourLogDao();
+		TourLog tl = tourLogDao.get(id);
+		
+		TLogNation tln = tLogNationDao.getList(tl).get(0);
+	    
+		int firstDay = d;
+		
+		request.setAttribute("firstDay", firstDay);
+		request.setAttribute("tourLog", tl);
+		request.setAttribute("dayList", dayList);
+		request.setAttribute("nationList", nationList);
+		request.setAttribute("tLogNation", tln);
+	    
+	    ApplicationContext applicationContext = ServletUtil
+				.getApplicationContext(request.getSession().getServletContext());
+		TilesContainer container = TilesAccess.getContainer(applicationContext);
+		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+		container.render("main.member.story.write.main", servletRequest);
+		
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 	    response.setContentType("text/html; charset=UTF-8");
 	    request.setCharacterEncoding("UTF-8");
 	    
+	    int d = 1;
+	    String d_ = request.getParameter("d");
+	    
+	    if(d_!=null && !d_.equals(""))
+	    	d = Integer.parseInt(d_);
+	    
 		String btn = "";
 		String btnNew = request.getParameter("btn-new");
 		String btnPlanLoad = request.getParameter("btn-plan-load");
+		String btnMain = request.getParameter("btn-main");
 		String btnEdit = request.getParameter("btn-edit");
 		
 		if(btnNew != null && !btnNew.equals(""))
@@ -51,10 +106,12 @@ public class MainController extends HttpServlet {
 			btn = btnPlanLoad;
 		else if(btnEdit != null && !btnEdit.equals(""))
 			btn = btnEdit;
+		else if(btnMain != null && !btnMain.equals(""))
+			btn = btnMain;
 		
 		switch(btn){
 			case "작성하기":
-				
+			{
 				DayDao dayDao = new JdbcDayDao();
 				List<Day> dayList = dayDao.getList();
 				
@@ -79,7 +136,6 @@ public class MainController extends HttpServlet {
 				int companion = Integer.parseInt(request.getParameter("select-companion"));
 				String theme = request.getParameter("select-theme");
 				
-				List<Day> tLogDayList = dayDao.getList(period);
 
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(startDate);
@@ -96,9 +152,9 @@ public class MainController extends HttpServlet {
 				tln = new TLogNation(tl.getId(), nation);
 				tLogNationDao.insert(tln);
 				
-				int firstDay = 1;
-				int lastDay = period;
+				int firstDay = d;
 				
+				request.setAttribute("firstDay", firstDay);
 				request.setAttribute("tourLog", tl);
 				request.setAttribute("dayList", dayList);
 				request.setAttribute("nationList", nationList);
@@ -112,12 +168,143 @@ public class MainController extends HttpServlet {
 				TilesContainer container = TilesAccess.getContainer(applicationContext);
 				ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
 				container.render("main.member.story.write.main", servletRequest);
-				
+			}
 				break;
-			
 			case "불러오기":
 				break;
 				
+			case "공개 전환":
+				{
+				response.setCharacterEncoding("UTF-8");
+			    response.setContentType("text/html; charset=UTF-8");
+			    request.setCharacterEncoding("UTF-8");
+			    
+			    String id = null;
+			    			    
+			    String id_ = request.getParameter("tour-log-id");
+			    if(id_!=null && !id_.equals(""))
+			    	id = id_;
+			    
+			    DayDao dayDao = new JdbcDayDao();
+				List<Day> dayList = dayDao.getList();
+				
+				NationDao nationDao = new JdbcNationDao();
+				List<Nation> nationList = nationDao.getList();
+				
+				TLogNationDao tLogNationDao = new JdbcTLogNationDao();
+					    
+			    TourLogDao tourLogDao = new JdbcTourLogDao();
+				TourLog tl = tourLogDao.get(id);
+
+				Calendar cal = Calendar.getInstance();
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+				String sysDate = formatter.format(cal.getTime());
+				Timestamp lastModDate = Timestamp.valueOf(sysDate);
+				
+				tl = new TourLog(
+						tl.getId(),
+						tl.getTitle(),
+						tl.getMemo(),
+						tl.getSubTitle(),
+						tl.getCoverImg(),
+						"N",
+						tl.getRegDate(),
+						tl.getPeriod(),
+						tl.getStartDate(),
+						tl.getCompanion(),
+						tl.getMid(),
+						lastModDate,
+						tl.getHit(),
+						tl.gettTheme(),
+						tl.getEndDate()
+						);
+				
+				tourLogDao.update(tl);
+				
+				TLogNation tln = tLogNationDao.getList(tl).get(0);
+			    
+				int firstDay = d;
+				
+				
+				request.setAttribute("firstDay", firstDay);
+				request.setAttribute("tourLog", tl);
+				request.setAttribute("dayList", dayList);
+				request.setAttribute("nationList", nationList);
+				request.setAttribute("tLogNation", tln);
+			    
+			    ApplicationContext applicationContext = ServletUtil
+						.getApplicationContext(request.getSession().getServletContext());
+				TilesContainer container = TilesAccess.getContainer(applicationContext);
+				ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+				container.render("main.member.story.write.main", servletRequest);
+			}
+				break;
+			case "비공개 전환":
+			{
+			response.setCharacterEncoding("UTF-8");
+		    response.setContentType("text/html; charset=UTF-8");
+		    request.setCharacterEncoding("UTF-8");
+		    
+		    String id = null;
+		    			    
+		    String id_ = request.getParameter("tour-log-id");
+		    if(id_!=null && !id_.equals(""))
+		    	id = id_;
+		    
+		    DayDao dayDao = new JdbcDayDao();
+			List<Day> dayList = dayDao.getList();
+			
+			NationDao nationDao = new JdbcNationDao();
+			List<Nation> nationList = nationDao.getList();
+			
+			TLogNationDao tLogNationDao = new JdbcTLogNationDao();
+				    
+		    TourLogDao tourLogDao = new JdbcTourLogDao();
+			TourLog tl = tourLogDao.get(id);
+
+			Calendar cal = Calendar.getInstance();
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			String sysDate = formatter.format(cal.getTime());
+			Timestamp lastModDate = Timestamp.valueOf(sysDate);
+			
+			tl = new TourLog(
+					tl.getId(),
+					tl.getTitle(),
+					tl.getMemo(),
+					tl.getSubTitle(),
+					tl.getCoverImg(),
+					"Y",
+					tl.getRegDate(),
+					tl.getPeriod(),
+					tl.getStartDate(),
+					tl.getCompanion(),
+					tl.getMid(),
+					lastModDate,
+					tl.getHit(),
+					tl.gettTheme(),
+					tl.getEndDate()
+					);
+			
+			tourLogDao.update(tl);
+			
+			TLogNation tln = tLogNationDao.getList(tl).get(0);
+		    
+			int firstDay = d;
+			
+			
+			request.setAttribute("firstDay", firstDay);
+			request.setAttribute("tourLog", tl);
+			request.setAttribute("dayList", dayList);
+			request.setAttribute("nationList", nationList);
+			request.setAttribute("tLogNation", tln);
+		    
+		    ApplicationContext applicationContext = ServletUtil
+					.getApplicationContext(request.getSession().getServletContext());
+			TilesContainer container = TilesAccess.getContainer(applicationContext);
+			ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+			container.render("main.member.story.write.main", servletRequest);
+		}
+			break;	
 			case "수정하기":
 				break;
 			
