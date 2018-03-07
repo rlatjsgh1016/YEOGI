@@ -22,6 +22,7 @@
 </head>
 	<tiles:insertAttribute name="header" />
 <body>
-	<tiles:insertAttribute name="main" />
+	<tiles:insertAttribute name="main"
+	 />
 </body>
 </html>
