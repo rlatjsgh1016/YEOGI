@@ -40,6 +40,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* -------------------------------------------------------------------------------------- */
+input{
+    height: 25px;
+}
+
+select{
+    height: 30px;
+}
+
 #memoscreen {
 	margin:20px;
 	height: 350px;
@@ -58,8 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin:5px;
 	height: 30px;
 	width: 30px;
-	border:1px solid red;
-	box-sizing: content-box;
 	
 }
 
@@ -79,23 +85,37 @@ h1, h2, h3, h4, h5, h6 {
 
 #memoscreen ul li:nth-child(3) {
 	 flex-basis: 590px;
-	 height: 150px;
+	 height: 100px;
+    margin-bottom: 30px;
 }
 #memoscreen ul li:nth-child(4) {
 	 flex-basis: 60px;
 }
 #memoscreen ul li:nth-child(5) {
-	 flex-basis: 310px;
+	 flex-basis: 260px;
 }
 #memoscreen ul li:nth-child(6) {
-	 flex-basis: 60px;
+    margin-left: 30px;
+	 flex-basis: 90px;
 }
 #memoscreen ul li:nth-child(7) {
 	 flex-basis: 100px;
 }
 #memoscreen ul:nth-child(2) li:nth-child(1) {
-	 width: 70px;
+    margin-top: 50px;
+    width: 70px;
 }
 #memoscreen ul:nth-child(2) li:nth-child(2) {
-	 width: 70px;
+    margin-top: 50px;
+	width: 70px;
+}
+
+li:nth-child(2) input{
+    width: 480px;
+    height: 25px;
+}
+
+li:nth-child(3) input{
+    width: 565px;
+    height: 100px;
 }
