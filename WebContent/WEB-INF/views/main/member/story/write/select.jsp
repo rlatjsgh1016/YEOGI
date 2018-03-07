@@ -35,11 +35,11 @@
 					<fieldset class="select-field">
 						<div>
 							<label for="select-title">제목:&nbsp</label>
-							<input id="select-title" type="text" name="select-title" maxlength="40" style="width:200px; height:28px;">
+							<input id="select-title" type="text" name="select-title" maxlength="40" style="width:200px; height:28px;" required="required">
 						</div>
 						<div>
 							<label for="select-nation">여행도시:&nbsp</label>
-							<select id="select-nation"  name="select-nation" style="height: 28px;">
+							<select id="select-nation"  name="select-nation" style="height: 28px;" required="required">
 								<c:forEach var="nl" items="${nationList}">
         						<option value="${nl.nation}">${nl.nation}</option>
         						</c:forEach>
@@ -47,11 +47,11 @@
 						</div>
 						<div>
 							<label for="select-start-date">여행시작일:&nbsp</label>
-           					<input id="select-start-date" type="date" name="select-start-date" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;">           					
+           					<input id="select-start-date" type="date" name="select-start-date" style="height: 24px; margin-left:5px; cursor: pointer;background-color: white;" required="required">           					
        					</div>
        					<div>
 							<label for="select-period">여행기간:&nbsp</label>
-    						<select id="select-period" name="select-period" style="height: 28px;">
+    						<select id="select-period" name="select-period" style="height: 28px;" required="required">
         						<c:forEach var="dl" items="${dayList}">
         						<option value="${dl.day}">${dl.day}</option>
         						</c:forEach>
@@ -59,11 +59,11 @@
         				</div>
 						<div>
 							<label for="select-companion">여행인원:&nbsp</label>
-              				<input type="number" id="select-companion" name="select-companion" min="1" style="width:50px; height: 22px;">
+              				<input type="number" id="select-companion" name="select-companion" min="1" style="width:50px; height: 22px;" required="required">
 	            		</div>
 	            		<div>
 							<label for="select-theme">여행테마:&nbsp</label>
-							<select id="select-theme"  name="select-theme" style="height: 28px;" required>
+							<select id="select-theme"  name="select-theme" style="height: 28px;" required="required">
 								<option value="나홀로 여행" selected="selected">나홀로 여행</option>
 								<option value="친구와 함께">친구와 함께</option>
 								<option value="가족과 함께">가족과 함께</option>

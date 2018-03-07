@@ -17,6 +17,42 @@
 <script type="text/javascript">
 	bkLib.onDomLoaded(nicEditors.allTextAreas);
 </script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMXDDT7xUpHdm3onxXFqsP5lF3rKOaZRk&libraries=places">
+window.addEventListener("load", function(){
+	var map;
+	var service;
+	var infowindow;
+	var googleButton = document.getElementById("btn-google");
+	var locationSearch = document.getElementById("search-location");
+	
+	googleButton.onclick = function() {
+	  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+	
+	  map = new google.maps.Map(document.getElementById("map"), {
+	      center: pyrmont,
+	      zoom: 15
+	    });
+	
+	  var request = {
+	    location: pyrmont,
+	    radius: "500",
+	    query: "레스토랑"
+	  };
+	
+	  service = new google.maps.places.PlacesService(map);
+	  service.textSearch(request, callback);
+	}
+	
+	function callback(results, status) {
+	  if (status == google.maps.places.PlacesServiceStatus.OK) {
+	    for (var i = 0; i < results.length; i++) {
+	      var place = results[i];
+	      createMarker(results[i]);
+	    }
+	  }
+	}
+}
+</script>
 	<form id="form-main" method="post">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
@@ -218,53 +254,55 @@
 							</div>
 						</div>
 					</div>
-					<div class="detail-post-box">
-						<div class="detail-title-box">
-							<p>포스트작성</p>
-							<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="${ctx}/images/close-button.png"></a>
-						</div>
-						<div class="detail-form-box">
-							<textarea class="detail-textarea" name="review" rows="15" cols=""></textarea>
-							<div class="post-list post-spot">
-								<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
-								<label for="vehicle" >이동수단</label>
-								<select id="vehicle" name="vehicle">
-									<option>비행기</option>
-									<option>기차</option>
-									<option>지하철</option>	
-									<option>버스</option>
-									<option>도보</option>
-									<option>택시</option>
-									<option>배</option>
-									<option>자가용</option>
-								</select>
+					<div class="modal">
+						<div class="detail-post-box">
+							<div class="detail-title-box">
+								<p>포스트작성</p>
+								<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="${ctx}/images/close-button.png"></a>
 							</div>
-							<div class="post-list post-expense">
-								<select id="spd-type" name="spd-type">
-									<option>명소</option>
-									<option>맛집</option>
-									<option>숙소</option>
-									<option>교통</option>
-									<option>쇼핑</option>
-									<option>기타</option>
-								</select>
-								<input id="spd-content" type="text" name="spd-content">
-								<select id="spd-unit" name="spd-unit">
-									<option>KRW(한국)</option>
-								</select>
-								<input id="apd-amuont" type="number" name="apd-amount">
-								<button><img alt="행추가" src=""></button>
-								<button><img alt="행삭제" src=""></button>
+							<div class="detail-form-box">
+								<textarea class="detail-textarea" name="review" rows="15" cols=""></textarea>
+								<div class="post-list post-spot">
+									<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
+									<label for="vehicle" >이동수단</label>
+									<select id="vehicle" name="vehicle">
+										<option>비행기</option>
+										<option>기차</option>
+										<option>지하철</option>	
+										<option>버스</option>
+										<option>도보</option>
+										<option>택시</option>
+										<option>배</option>
+										<option>자가용</option>
+									</select>
+								</div>
+								<div class="post-list post-expense">
+									<select id="spd-type" name="spd-type">
+										<option>명소</option>
+										<option>맛집</option>
+										<option>숙소</option>
+										<option>교통</option>
+										<option>쇼핑</option>
+										<option>기타</option>
+									</select>
+									<input id="spd-content" type="text" name="spd-content">
+									<select id="spd-unit" name="spd-unit">
+										<option>KRW(한국)</option>
+									</select>
+									<input id="apd-amuont" type="number" name="apd-amount">
+									<button><img alt="행추가" src=""></button>
+									<button><img alt="행삭제" src=""></button>
+								</div>
+								<div class="post-list post-tag">
+									<input id="tag" type="text" name="tag">
+								</div>
+								<div class="post-add-button">
+									<input id="attached" type="file">
+									<a href="#" id="add-post-img"><img src="" alt="사진"></a>
+									<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
+								</div>
+								<div id="map"></div>
 							</div>
-							<div class="post-list post-tag">
-								<input id="tag" type="text" name="tag">
-							</div>
-							<div class="post-add-button">
-								<input id="attached" type="file">
-								<a href="#" id="add-post-img"><img src="" alt="사진"></a>
-								<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
-							</div>
-							<div id="map"></div>
 						</div>
 					</div>
 				</section>
