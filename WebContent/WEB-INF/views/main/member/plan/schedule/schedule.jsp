@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link href="../../../../CSS/plan-schdule.css" type=text/css
 	rel="stylesheet" />
+<script src="../../../../js/plan-side-function.js"></script>
 </HEAD>
 <body>
 	<header id="header">
@@ -68,39 +69,18 @@
 				<div class="total-day">
 							<div class="b1"><b>DAY 1</b></div>
 							
-						<c:forEach var="pp" items="${pp}">
+						<c:forEach var="tppsv" items="${tppsv}">
 							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where"> ${pp.memoTitle} </div>
-								<div class = "count-place"> </div>
+							    <div class ="when">${tppsv.tourDateTime}</div>
+								<div class = "where"> ${tppsv.memoTitle} </div>
+								<div class = "count-place">${tppsv.id}</div>
 								<div class = "picture"><img src="../../../../images/jeju.png"/></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />${pp.memoContent}</div>
+								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />${tppsv.memoContent}</div>
 							</div>	
 						</c:forEach>
 				</div>
                 
-                <div class="total-day">
-							
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">독도</div>
-								<div class = "count-place">2</div>
-								<div class = "picture"><img src="../../../../images/dokdo.png"/></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" /></div>
-							</div>	
-				</div>
-				
-				<div class="total-day">
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">중국집</div>
-								<div class = "count-place">3</div>
-								<div class = "picture"><img src="../../../../images/ex1.png"/></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />짬뽕이 유명하다. 꼭  먹을 수 있도록 해보자ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-							</div>	
-				</div>
+                
 				
 				<div class="total-day">
 							<div class="b1"><b>DAY 2</b></div>
@@ -159,31 +139,32 @@
 			<div id="time-table">
 				<div id="add-day">
 					<h1>DAY추가</h1>
-					<a href=""><div class="left-direct"></div></a>
+					<a href="#"><div class="left-direct"></div></a>
 					<div class="now">
-						<b>day 1</b>
+						<b>day<span>1</span></b>
 					</div>
-					<a href=""><div class="right-direct"></div></a>
+					<a href="#"><div class="right-direct"></div></a>
 					<div class="year">
 						<b>2018년 3월 14일</b>
 					</div>
-					<a href=""><div class="plus">일정 추가하기</div></a> <a href=""><div
-							class="minus">해당일정 삭제하기</div></a> <a href=""><div
-							class="all-minus">전체일정 삭제하기</div></a>
-					
+				<div>
+					<a href="#"><div class="plus">일정 추가하기</div></a> 
+					<a href="#"><div class="minus">해당일정 삭제하기</div></a> 
+					<a href="#"><div class="all-minus">전체일정 삭제하기</div></a>
+				</div>
 				</div>
 
 
-
+				
 				<div id="schedule">
 					<table border="1">
 						<thead>
 							<tr>
 
 								<td width="100px">[AM]06:00</td>
-								<td width="300px">김포공항</td>
+								<td width="300px"></td>
 								<td class="memo-pad" width="100px"><a href=""></a></td>
-								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
+								<td width="300px"></td>
 
 							</tr>
 						</thead>

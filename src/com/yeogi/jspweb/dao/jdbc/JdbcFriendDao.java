@@ -21,19 +21,22 @@ public class JdbcFriendDao implements FriendDao {
 		// TODO Auto-generated method stub
 	 	Class.forName("oracle.jdbc.driver.OracleDriver");
         
-	 	String sql = "INSERT INTO FRIEND(ID,MY_ID,REQ_DATE,ACCEPT_YN,FRIEND_ID) VALUES(?,?,?,?,?)";
+	 	String sql = "INSERT INTO FRIEND(ID,MY_ID,ACCEPT_YN,FRIEND_ID) VALUES('1',?,?,?)";
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setString(1, friend.getId());
-		st.setString(2, friend.getMyId());
-	    st.setDate(3, friend.getReqDate());
-	    st.setString(4, friend.getAcceptYN());
-        st.setString(5, friend.getFriendId());
+		System.out.println(friend.getMyId());
+		System.out.println(friend.getAcceptYN());
+		System.out.println(friend.getFriendId());
+		
+		
+		st.setString(1, friend.getMyId());
+	    st.setString(2, friend.getAcceptYN());
+        st.setString(3, friend.getFriendId());
 	       
 		
-		int result = st.executeUpdate(sql);
+		int result = st.executeUpdate();
 		
 		if(!con.isClosed())
 			System.out.println("Connected");

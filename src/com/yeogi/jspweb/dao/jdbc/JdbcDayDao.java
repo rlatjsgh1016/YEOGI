@@ -54,7 +54,7 @@ public class JdbcDayDao implements DayDao {
 	    
 		return list;
 	}
-
+/*
 	@Override
 	public List<Day> getPrevList(int startDay) {
 
@@ -188,6 +188,6 @@ public class JdbcDayDao implements DayDao {
 	    
 		return list;
 	}
-
+*/
 
 }

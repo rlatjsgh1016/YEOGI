@@ -458,6 +458,15 @@ main>.root-container{
 	text-align: center;
 }
 
+#unlock{
+	padding-top: 24px;
+	background: url("../images/unlock.png") no-repeat top;
+	font-size: 12px;
+	font-weight: bold;
+	color: #008000;
+	text-align: center;
+}
+
 .spending-container{
 	height: 50px;
 	margin: 3px 18px 3px 18px;
@@ -512,18 +521,26 @@ main>.root-container{
 	
 }
 
-#left-arrow{
+.left-arrow{
 	width: 25px;
 	height: 40px;
 	margin: 5px 0 5px 20px;
 	background-color: #D8D8D8;
 }
 
-#right-arrow{
+.left-arrow:hover{
+	cursor: pointer;
+}
+
+.right-arrow{
 	width: 25px;
 	height: 40px;
 	margin: 5px 20px 5px 5px;
 	background-color: #D8D8D8;
+}
+
+.right-arrow:hover{
+	cursor: pointer;
 }
 
 .day-btn{
@@ -533,7 +550,8 @@ main>.root-container{
 }
 
 
-.day-btn a{
+.day-btn a,
+.day-btn span{
 	display: inline-block;
 	width: 62px;
 	padding: 12px 0;
@@ -824,8 +842,15 @@ textarea.form-control{
 .detail-textarea{
 	width: 774px;
 	height: 274px;
-	resize: none;
-	overflow: auto;
+}
+
+.nicEdit-main{
+	overflow: auto !important;
+	height: 15em;
+}
+
+.detail-form-box{
+	height: 460px;
 }
 
 .detail-form-box>.post-list{

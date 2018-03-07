@@ -13,12 +13,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
 <script src="${ctx}/js/story-write-main.js"></script>
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+	bkLib.onDomLoaded(nicEditors.allTextAreas);
+</script>
 	<form id="form-main" method="post">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
 				<div class="root-container">
 					<input id="tour-log-id" type="hidden" name="tour-log-id" value="${tourLog.id}">
-					<input id="mid" type="hidden" name="${tourLog.mid}">
+					<input id="mid" type="hidden" name="mid" value="${tourLog.mid}">
 					<input id="title" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)" value="${tourLog.title}">
 					<input id="btn-cover" type="submit" name="btn-main" value="커버교체">
 					<input id="cover-img" type="hidden" name="cover-img" value="${tourLog.coverImg}">
@@ -99,13 +103,37 @@
 						</div>
 					</div>
 					<div class="day-btn-container clear-fix">
-						<a id="left-arrow" href="#"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
+						<c:if test="${firstDay>1}">
+						<a class="left-arrow" href="?id=${tourLog.id}&d=${firstDay-1}"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
+						</c:if>
+						<c:if test="${firstDay==1}">
+						<a class="left-arrow" onclick="alert('이전 날짜가 없습니다.');"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
+						</c:if>
 						<ul class="day-btn">
+						<c:if test="${tourLog.period == 1}">
+							<li><a href="#">DAY1</a></li>
+							<li><span>없음</span></li>
+							<li><span>없음</span></li>
+						</c:if>
+						<c:if test="${tourLog.period == 2}">
 							<li><a href="#">DAY1</a></li>
 							<li><a href="#">DAY2</a></li>
-							<li><a href="#">DAY3</a></li>
+							<li><span>없음</span></li>
+						</c:if>
+						<c:if test="${tourLog.period > 2}">
+						<c:forEach var="i" begin="0" end="2">
+							<c:if test="${firstDay+i <= tourLog.period}">
+							<li><a href="#">DAY${firstDay+i}</a></li>
+							</c:if>
+						</c:forEach>
+						</c:if>
 						</ul>
-						<a id="right-arrow" href="#"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
+						<c:if test="${firstDay+3 <= tourLog.period}">
+						<a class="right-arrow" href="?id=${tourLog.id}&d=${firstDay+1}"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
+						</c:if>
+						<c:if test="${firstDay+3 > tourLog.period}">
+						<a class="right-arrow" onclick="alert('다음 날짜가 없습니다.');"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
+						</c:if>
 					</div>
 					<div class="place-container">
 						<div class="card-frame">
@@ -196,7 +224,7 @@
 							<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="${ctx}/images/close-button.png"></a>
 						</div>
 						<div class="detail-form-box">
-							<textarea class="detail-textarea" name="review" rows="" cols=""></textarea>
+							<textarea class="detail-textarea" name="review" rows="15" cols=""></textarea>
 							<div class="post-list post-spot">
 								<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
 								<label for="vehicle" >이동수단</label>

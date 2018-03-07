@@ -41,7 +41,7 @@ public class JdbcTourLogDao implements TourLogDao {
 						rs.getDate("START_DATE"),
 						rs.getInt("COMPANION"),
 						rs.getString("MID"),
-						rs.getDate("LAST_MOD_DATE"),
+						rs.getTimestamp("LAST_MOD_DATE"),
 						rs.getInt("HIT"),
 						rs.getString("T_THEME"),
 						rs.getDate("END_DATE")						
@@ -97,7 +97,7 @@ public class JdbcTourLogDao implements TourLogDao {
 						rs.getDate("START_DATE"),
 						rs.getInt("COMPANION"),
 						rs.getString("MID"),
-						rs.getDate("LAST_MOD_DATE"),
+						rs.getTimestamp("LAST_MOD_DATE"),
 						rs.getInt("HIT"),
 						rs.getString("T_THEME"),
 						rs.getDate("END_DATE")						
@@ -175,7 +175,7 @@ public class JdbcTourLogDao implements TourLogDao {
 			st.setDate(7, tl.getStartDate());
 			st.setInt(8, tl.getCompanion());
 			st.setString(9, tl.getMid());
-			st.setDate(10, tl.getLastModDate());
+			st.setTimestamp(10, tl.getLastModDate());
 			st.setString(11, tl.gettTheme());
 			st.setDate(12, tl.getEndDate());
 			
@@ -242,7 +242,7 @@ public class JdbcTourLogDao implements TourLogDao {
 			st.setInt(6, tl.getPeriod());
 			st.setDate(7, tl.getStartDate());
 			st.setInt(8, tl.getCompanion());
-			st.setDate(9, tl.getLastModDate());
+			st.setTimestamp(9, tl.getLastModDate());
 			st.setInt(10, tl.getHit());
 			st.setString(11, tl.gettTheme());
 			st.setDate(12, tl.getEndDate());

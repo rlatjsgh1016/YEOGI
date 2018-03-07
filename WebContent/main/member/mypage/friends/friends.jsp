@@ -9,6 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href = "../../../../CSS/mypage-style.css" type ="text/css" rel ="stylesheet" />
+
+<script>
+function request(){
+	window.name ="parentForm";
+	window.open("friends-request.jsp","chkForm",'width=450, height=250,  resizable=no, scrollbars=no');}
+</script>
+
 </head>
 <body>
 <!-- 제목 목록 표 문장 폼 -->
@@ -100,10 +107,11 @@
 						if(m != null){
 					
 					%>
-					<div name="mem" style ="width: 285px; height: 30px; border:1px solid black; margin-left: 120px; padding-left:0px; padding-top:0px; padding-bottom:0px;">
-						<img src="../../../../resources/unknown-person.png" width="20px" hspace="20px" style ="padding-top: 0px;"/>
-					     ID ${mem.id}(${mem.name}) <input type="submit" name="btn" class="btn btn-cancel" value ="친구신청"/>
-					</div>
+						<div name="mem" style ="width: 295px; height: 30px; border:1px solid #BDBDBD; margin-left: 120px; padding-left:0px; padding-top:5px; padding-bottom:5px; border-radius:5px;">
+							<img src="../../../../resources/unknown-person.png" width="21px" hspace="5px" style ="padding-top: 0px; padding-left:10px;"/>
+						     ID ${mem.id}(${mem.name}) <input type="button" name="btn" class="btn btn-cancel" value ="친구신청" onclick="request()"/>
+						</div>
+
 					<% } %>
 		
 				</form>
