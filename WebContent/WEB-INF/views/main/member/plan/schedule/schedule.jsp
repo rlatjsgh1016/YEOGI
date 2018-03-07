@@ -162,9 +162,43 @@
 							<tr>
 
 								<td width="100px">[AM]06:00</td>
-								<td width="300px"></td>
-								<td class="memo-pad" width="100px"><a href=""></a></td>
-								<td width="300px"></td>
+								<td width="300px">김포공항</td>
+								<td class="memo-pad" width="100px"><a href="#open"></a></td>
+									<div class="white_content" id="open">
+								        <section>
+											<div id = "memoscreen">
+												<ul>
+													<li>06:00</li>
+													<li><input type="text" name="" value="" placeholder="메모 제목이 무엇이죠? :)" maxlength="100" /></li>
+										            <li><textarea name="" value="" placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+													<li><select class="select-money">
+										                            <option value="서버로 넘길 값"> 명소 </option>
+										                            <option value="서버로 넘길 값"> 맛집 </option>
+										                            <option value="서버로 넘길 값"> 숙소 </option>
+										                            <option value="서버로 넘길 값"> 교통 </option>
+										                            <option value="서버로 넘길 값"> 쇼핑 </option>
+										                            <option value="서버로 넘길 값"> 기타 </option>
+										                        </select></li>
+													<li><input type="text" name="" value="" placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50" style= "width: 260px;"/></li>
+													<li><select class="select-money" style="width: 90px;">
+										                            <option value="서버로 넘길 값">원(KRW) </option>
+										                            <option value="서버로 넘길 값">달러(USD) </option>
+										                            <option value="서버로 넘길 값">위안(CNY) </option>
+										                            <option value="서버로 넘길 값">유로(EUR) </option>
+										                            <option value="서버로 넘길 값">엔(JPY) </option>
+										                        </select></li>
+													<li><input type="text" name="" value="" placeholder="금액 입력칸 :)" maxlength="10" style= "width: 100px;"/></li>
+												</ul>
+												
+												<ul>
+													<li><a href="#close">취소</a></li>
+													<li><a href="#close">저장</a></li>
+												</ul>
+												
+											</div>
+										</section>
+								    </div>
+								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
 
 							</tr>
 						</thead>
