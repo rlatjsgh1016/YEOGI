@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<c:set var="ctx" value="${pageContext.request.servletContext.contextPath}"></c:set>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -10,8 +13,8 @@
 <style type="text/css">
 </style>
 </head>
-<body>
-	<header id="header">
+<body> -->
+	<!-- header id="header">
 		<div class="root-container">
 			<h1 id="logo">
 				<img id="logo-img" alt="여기" src="../../../../images/logo.png">
@@ -38,23 +41,23 @@
 				</nav>				
 			</section>
 		</div>
-	</header>
+	</header> -->
 	<!------------title 시작--------------------------------------------------------->
-	<div id="title">
+<div id="title">
 		<div id="title-box">
 			<div id="title-img">
-				<img id="img" alt="img" src="../../../../images/japan2.png">
+				<img id="img" alt="img" src="${ctx}/images/japan2.png">
 			</div>
 			<div class="tit title-name">
 				<a>타이틀제목</a>
 			</div>
 			<div class="tit title-desc">
-				<span>나라</span> 
-				<span>몇박몇일</span> 
-				<span>2018-01-05</span> 
-				<span>2018-01-09</span>
-				<span>작성일 :</span>
-				<span>2018-01-15</span>
+				<span>나라 /</span> 
+				<span>몇박몇일 /</span> 
+				<span>2018-01-05 /</span> 
+				<span>2018-01-09 /</span>
+				<span>작성일 : </span>
+				<span>2018-01-15 /</span>
 				<span>최종 수정일 :</span>
 				<span>2018-01-25</span>
 			</div>
@@ -76,7 +79,7 @@
 			<aside id="aside">
 				<div class="user-box">
 					<div id="user-img-box">
-						<img id="user-img" alt="사진" src="../../../../images/dog2.png">
+						<img id="user-img" alt="사진" src="${ctx}/images/user128.png">
 					</div>
 					<div class="user-name">
 						<span>글쓴이</span>
@@ -88,18 +91,18 @@
 					</div>
 					<div class="scrap-box">
 						<img id="btn-scrap" alt="스크랩이미지"
-							src="../../../../images/scrap.png"> <span>스크랩</span>
+							src="${ctx}/images/scrap.png"> <span>스크랩</span>
 					</div>
 				</div>
 				<div class="summary-box">
 					<ul>
-						<li><a class="summary-btn trv-theme"> <span
+						<li><a class="summary-btn trv-theme" data-toggle="modal" data-target="#myModal"> <span
 								class="summary-list">여행테마</span> <span class="summary-info">혼자여행</span></a>
 						</li>
-						<li><a class="summary-btn trv-spot"> <span
+						<li><a type="button" id = "btn-total-spot" class="summary-btn trv-spot"> <span
 								class="summary-list">총 방문명소</span> <span class="summary-info">20</span></a>
 						</li>
-						<li><a class="summary-btn trv-budget"> <span
+						<li><a type="button" id = "btn-total-expense" class="summary-btn trv-budget"> <span
 								class="summary-list">지출내역</span> <span class="summary-info">KRW
 									600,000,000</span></a></li>
 					</ul>
@@ -108,6 +111,13 @@
 			</aside>
 			<!------------main 시작-------------------------------------------------------->
 			<main id="main">
+			<div class="side-bar">
+				<ul>
+					<li>TOP</li>
+					<li>DAY1</li>
+					<li>DAY2</li>
+				</ul>
+			</div>
 			<div class="story-intro-box">
 				<div class="story-strapline">
 					<span>소제목</span>
@@ -205,7 +215,7 @@
 					곳을 못 찾고 버스도 놓치고 하니 도착부터 너무 힘들었다. 그래도 드디어 도착했다.</span>
 				<div class="spot-img">
 					<img id="post-img" alt="여기"
-						src="../../../../resources/main_img.png">
+						src="${ctx}/resources/main_img.png">
 				</div>
 				<div class="post-info-box">
 						<div class="post-info post-spot"><span class="post-info-start">도쿄 나리타 국제 공항</span></div>
@@ -214,25 +224,87 @@
 
 				</div>
 			</div>
+
+			<div id="total-spot-box" class="modal">
+				<div class="modal-content">
+					<div class="day-total-title">방문명소<span class="close">&times;</span></div>			
+					<div class="total-box">
+						<div class="day-total-box">
+								<div class="day-spot-title">
+									<span>DAY 1</span><span>일본</span>
+								</div>
+							<div class="day-spot-list">
+								<p>어딘가sferereferffㄴㄴㄹㄷㄹㄴㄹㄴㄷㄹㄷㄹㄴㄹㄷㄹ</p>
+								<p>어딘가</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="total-expense-box" class="modal">
+				<div class="modal-content">
+					<div class="day-total-title">
+						지출내역<span class="close">&times;</span>
+					</div>
+					<div class="total-box">
+
+						<table class="expense-list">
+							<tr>
+								<td>명소</td>
+								<td class="expense">KRW 190,000</td>
+							</tr>
+							<tr>
+								<td>맛집</td>
+								<td class="expense">KRW</td>
+							</tr>
+							<tr>
+								<td>숙소</td>
+								<td class="expense">KRW</td>
+							</tr>
+							<tr>
+								<td>교통</td>
+								<td class="expense">KRW</td>
+							</tr>
+							<tr>
+								<td>쇼핑</td>
+								<td class="expense">KRW</td>
+							</tr>
+							<tr>
+								<td>기타</td>
+								<td class="expense">KRW</td>
+							</tr>
+
+						</table>
+
+					</div>
+				</div>
+			</div>
+
 			<div class="st-comment-box">
+
 				<div class="comment-cnt-box">
 					<span class="comment">댓글</span><span>0</span>
 				</div>
 			</div>
-			<div class="st-comment-write-box">
+			<div id="un-lock" class="st-comment-write-box">
 				<div class="comment-write-box">
-				    <img id= "comment-write-user-img"alt="" src="../../../../images/dog2.png">
+					<img id="comment-writer-img" alt=""
+						src="${ctx}/images/user36.png">
 					<textarea class="form-control new-comment" placeholder="댓글을 남겨주세요."></textarea>
 					<div class="comment-reg">등록</div>
-					<div class="lock"></div>
+					<a type="button" class="unlock"></a>
 				</div>
+			<div class="comment-list-box">
+				<div></div>
 			</div>
-
-			</main>
+			</div>
+		</main>
 		</div>
+	
 	</div>
 	<!------------footer 시작-------------------------------------------------------->
-	<footer id="footer">
+	<!-- <footer id="footer">
 		<div class="root-container">
 			<div id="footer_logo">
 			</div>
@@ -247,4 +319,4 @@
 		</div>
 	</footer>	
 </body>
-</html>
+</html> -->

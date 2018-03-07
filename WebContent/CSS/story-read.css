@@ -147,7 +147,7 @@ a{
 	
 }
 #title .title-desc>span{
-	padding-left: 15px;
+	padding-left: 5px;
 	text-align: center;
 	display: inline;
 	
@@ -170,7 +170,7 @@ a{
 	align-items: center;
 }
 .post-cnt li{
-	width: 100px;
+	min-width: 80px;
 	height: 30px;
 	/* display: flex;
 	align-items: center; */
@@ -245,6 +245,7 @@ a{
 	object-position: top;
 	border-radius: 50%;
 	margin-top: 15px;
+	border: 1px solid #D8D8D8;
 }
 #aside .user-name{
 	margin-top: 10px;
@@ -577,6 +578,125 @@ a{
 .post-info-box>.post-tag{
 	background :url("../images/tag16.png") no-repeat left;
 }
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; 
+	padding: 20px;
+	border: 1px solid #888;
+	width: 880px;
+	height: 420px;
+	overflow: auto;
+}
+.day-total-title{
+	width: 880px;
+	height: 60px;
+	border-bottom: 1px solid #AFAFAF;
+    text-align: center;
+	/* display:block; */
+	font-family: 맑은고딕,HY고딕,sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 5px;
+    
+}
+
+.total-box{		
+	width: 880px;
+	height: 350px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	/* align-content: center; */ 
+	/* justify-content: center; */
+	overflow: auto;
+	
+}
+.day-total-box{
+	width: 250px;
+	min-height: 60px;
+	border: 1px solid #AFAFAF;
+	margin: 20px 15px;	
+	border-radius: 5px;	
+}
+.day-spot-title{
+	width: 240px;
+	height: 40px;
+	font-size: 15px;
+    font-weight: bold;
+    color: #E64C3C;
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
+    padding: 0px 5px 0px 5px;
+    border-bottom: 1px solid #AFAFAF;
+   
+}
+.day-spot-list{
+	width: 240px;
+	/* min-height: 30px; */
+	font-size: 13px;
+	padding: 8px 5px;
+}
+.day-spot-list>p{
+	width: 240px;
+	display: block;
+	margin-top: 5px;
+}
+.expense-list{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.expense-list>tr{
+	width: 880px;
+	height: 50px;	
+}
+.expense-list td{
+	width: 120px;
+	height: 50px;
+	text-align: center;
+	border: 1px solid #AFAFAF;
+	color: #888a99;
+	font-size: 18px;
+	font-weight: bold;
+}
+.expense-list .expense{
+	width: 720px;
+	height: 50px;
+	text-align: right;
+	padding-right: 10px;
+	color: #E64C3C;
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	width: 18px;
+	height: 33px;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .st-comment-box{
 	width: 960px;
 	min-height: 50px;
@@ -635,13 +755,14 @@ a{
     font-family: 맑은고딕,HY고딕,sans-serif;
 	font-size: 13px;
 }
-.st-comment-write-box>.comment-write-box>#comment-write-user-img{
+.st-comment-write-box>.comment-write-box>#comment-writer-img{
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
 	object-position: top;
 	border-radius: 50%;
 	margin-top: 10px;
+	border: 1px solid #D8D8D8;
 }
 .st-comment-write-box>.comment-write-box>.comment-reg{
 	width: 58px;
@@ -658,11 +779,37 @@ a{
 	padding-top: 10px;
 	vertical-align: middle;
 }
-.st-comment-write-box>.comment-write-box>.lock{
+.st-comment-write-box>.comment-write-box>.unlock{
 	width: 40px;
 	height:40px;
 	background: url("../images/unlock24.png") no-repeat center;
 	margin: 10px 0px;
+
+}
+.st-comment-write-box>.comment-write-box>.lock{
+	width: 40px;
+	height:40px;
+	background: url("../images/lock24.png") no-repeat center;
+	margin: 10px 0px;
+}
+
+.side-bar{
+	width: 50px;
+	min-height:50px;
+	border-left:1px solid #212121;
+	position: fixed;
+	right: 12.5%;
+	z-index:999;
+	/* margin-right: -615px; */
+	visibility: visible;
+	margin-top: 10px;
+}
+.side-bar li{
+	color: #212121;
+	font-weight: bold;
+	font-size: 15px;
+	padding-left: 3px;
+	
 }
 
 /* -----footer--------------------------------------------------------- */
