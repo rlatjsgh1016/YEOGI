@@ -6,7 +6,7 @@
 
 	<header>
 		<div class="root-container">
-			<a id="logo" href="${ctx}/main.html"><img alt="로고" src="${ctx}/images/logo.png" height="60px;"></a>
+			<a id="logo" href="${ctx}/main"><img alt="로고" src="${ctx}/images/logo.png" height="60px;"></a>
 			<nav>
 				<h1 class="hidden">메인메뉴</h1>
 				<ul class="menu-hor menu-main">

@@ -42,8 +42,8 @@ public class JdbcTLogLocDao implements TLogLocDao {
 						rs.getString("ID"),
 						rs.getString("T_LOG_ID"),
 						rs.getDate("REG_DATE"),
-						rs.getString("MY_LOC_ID"),
-						rs.getInt("ORDER"));
+						rs.getInt("ORDER"),
+						rs.getInt("DAY"));
 				
 				list.add(tlogloc);
 			}
@@ -82,8 +82,8 @@ public class JdbcTLogLocDao implements TLogLocDao {
 			st.setString(1, tll.getLocId());
 			st.setString(2, tll.getId());
 			st.setString(3, tll.gettLogId());
-			st.setString(4, tll.getMyLocId());
-			st.setInt(5, tll.getOrder());
+			st.setInt(4, tll.getOrder());
+			st.setInt(5, tll.getDay());
 
 			result = st.executeUpdate();
 
@@ -104,7 +104,7 @@ public class JdbcTLogLocDao implements TLogLocDao {
 	@Override
 	public int update(TLogLoc tll) {
 
-		String sql = "UPDATE T_LOG_LOC SET LOC_ID = ?, T_LOC_ID = ?, MY_LOC_ID, ORDER = ? WHERE ID = ?";
+		String sql = "UPDATE T_LOG_LOC SET LOC_ID = ?, T_LOC_ID = ?, ORDER = ?, DAY = ?, WHERE ID = ?";
 
 		int result = 0;
 
@@ -116,8 +116,8 @@ public class JdbcTLogLocDao implements TLogLocDao {
 
 			st.setString(1, tll.getLocId());
 			st.setString(2, tll.gettLogId());
-			st.setString(3, tll.getMyLocId());
-			st.setInt(4, tll.getOrder());
+			st.setInt(3, tll.getOrder());
+			st.setInt(4, tll.getDay());
 			st.setString(5, tll.getId());
 
 			result = st.executeUpdate();

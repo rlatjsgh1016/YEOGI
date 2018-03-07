@@ -71,18 +71,26 @@ window.addEventListener("load", function(){
 						<div class="first-line-btn">
 							<c:if test="${tourLog.lockYN == 'Y'}">
 							<p id="lock">현재상태<br>비공개</p>
-							<input id="btn-lock" class="btn btn-default" type="submit" name="btn-main" value="공개 전환">
 							</c:if>
 							<c:if test="${tourLog.lockYN == 'N'}">
 							<p id="unlock">현재상태<br>공개</p>
-							<input id="btn-unlock" class="btn btn-default" type="submit" name="btn-main" value="비공개 전환">
 							</c:if>
-							<input id="lock-yn" type="hidden" name="lock-yn" value="${tourLog.lockYN}">
-							<input id="btn-companion" class="btn btn-default" type="submit" name="btn-main" value="동행자 추가">
 						</div>
 						<div class="second-line-btn">
-							<input id="btn-save" class="btn btn-lg" type="submit" name="btn-main" value="저장">
-							<input class="btn btn-lg" type="submit" name="btn-main" value="취소">
+							<div>
+								<c:if test="${tourLog.lockYN == 'Y'}">
+								<input class="btn-main-submit" type="submit" name="btn-main" value="공개 전환">
+								</c:if>
+								<c:if test="${tourLog.lockYN == 'N'}">
+								<input class="btn-main-submit" type="submit" name="btn-main" value="비공개 전환">
+								</c:if>
+								<input id="lock-yn" type="hidden" name="lock-yn" value="${tourLog.lockYN}">
+								<input id="btn-companion" class="btn-main-submit" type="submit" name="btn-main" value="동행자 추가">
+							</div>
+							<div>
+								<input id="btn-save" class="btn-main-submit" type="submit" name="btn-main" value="저장">
+								<input class="btn-main-submit" type="submit" name="btn-main" value="취소">
+							</div>
 						</div>
 					</div>
 					<div class="spending-container" onmouseover="" onclick="">
@@ -256,52 +264,49 @@ window.addEventListener("load", function(){
 					</div>
 					<div class="modal">
 						<div class="detail-post-box">
-							<div class="detail-title-box">
-								<p>포스트작성</p>
-								<a href="#" class="btn-detail-post-box-close"><img alt="닫기" src="${ctx}/images/close-button.png"></a>
-							</div>
+							<div class="detail-title-box">포스트작성</div>
 							<div class="detail-form-box">
 								<textarea class="detail-textarea" name="review" rows="15" cols=""></textarea>
 								<div class="post-list post-spot">
 									<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
 									<label for="vehicle" >이동수단</label>
 									<select id="vehicle" name="vehicle">
-										<option>비행기</option>
-										<option>기차</option>
-										<option>지하철</option>	
-										<option>버스</option>
-										<option>도보</option>
-										<option>택시</option>
-										<option>배</option>
-										<option>자가용</option>
+										<option value="">선택</option>
+										<option value="비행기">비행기</option>
+										<option value="기차">기차</option>
+										<option value="지하철">지하철</option>	
+										<option value="버스">버스</option>
+										<option value="도보">도보</option>
+										<option value="택시">택시</option>
+										<option value="배">배</option>
+										<option value="자가용">자가용</option>
 									</select>
 								</div>
 								<div class="post-list post-expense">
 									<select id="spd-type" name="spd-type">
-										<option>명소</option>
-										<option>맛집</option>
-										<option>숙소</option>
-										<option>교통</option>
-										<option>쇼핑</option>
-										<option>기타</option>
+										<option value="">선택</option>
+										<option value="명소">명소</option>
+										<option value="맛집">맛집</option>
+										<option value="숙소">숙소</option>
+										<option value="교통">교통</option>
+										<option value="쇼핑">쇼핑</option>
+										<option value="기타">기타</option>
 									</select>
-									<input id="spd-content" type="text" name="spd-content">
+									<input id="spd-content" type="text" name="spd-content" placeholder="비용설명 (ex)에펠탑 입장료">
 									<select id="spd-unit" name="spd-unit">
-										<option>KRW(한국)</option>
+										<option value="KRW">KRW(한국)</option>
 									</select>
-									<input id="apd-amuont" type="number" name="apd-amount">
+									<input id="apd-amuont" type="number" name="apd-amount" placeholder="지출금액을 입력해주세요.">
 									<button><img alt="행추가" src=""></button>
 									<button><img alt="행삭제" src=""></button>
 								</div>
 								<div class="post-list post-tag">
-									<input id="tag" type="text" name="tag">
+									<input id="tag" type="text" name="tag" placeholder="입력방식 (ex)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">
-									<input id="attached" type="file">
-									<a href="#" id="add-post-img"><img src="" alt="사진"></a>
 									<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
+									<input class="btn btn-default btn-detail-post-box-close" type="reset" value="취소">
 								</div>
-								<div id="map"></div>
 							</div>
 						</div>
 					</div>

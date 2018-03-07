@@ -7,26 +7,26 @@ public class TLogLoc {
 	private String id;
 	private String tLogId;
 	private Date regDate;
-	private String myLocId;
 	private int order;
+	private int day;
 	public TLogLoc() {
 
 	}
-	public TLogLoc(String locId, String id, String tLogId, Date regDate, String myLocId, int order) {
+	public TLogLoc(String locId, String id, String tLogId, Date regDate, int order, int day) {
 		
 		this.locId = locId;
 		this.id = id;
 		this.tLogId = tLogId;
 		this.regDate = regDate;
-		this.myLocId = myLocId;
 		this.order = order;
+		this.day = day;
 	}
-	public TLogLoc(String locId, String tLogId, String myLocId, int order) {
+	public TLogLoc(String locId, String tLogId, int order, int day) {
 		
 		this.locId = locId;
 		this.tLogId = tLogId;
-		this.myLocId = myLocId;
 		this.order = order;
+		this.day = day;
 	}
 	public String getLocId() {
 		return locId;
@@ -52,17 +52,17 @@ public class TLogLoc {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	public String getMyLocId() {
-		return myLocId;
-	}
-	public void setMyLocId(String myLocId) {
-		this.myLocId = myLocId;
-	}
 	public int getOrder() {
 		return order;
 	}
 	public void setOrder(int order) {
 		this.order = order;
+	}
+	public int getDay() {
+		return day;
+	}
+	public void setDay(int day) {
+		this.day = day;
 	}
 	
 }
