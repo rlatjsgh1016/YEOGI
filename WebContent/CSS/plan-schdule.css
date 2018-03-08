@@ -685,7 +685,7 @@ table td:nth-child(2) a:hover{
 }
 
 
-
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 
 
@@ -717,11 +717,11 @@ table td:nth-child(2) a:hover{
 	overflow: auto;	
 }
 
-input{
+.memoscreen input{
     height: 25px;
 }
 
-select{
+.memoscreen select{
     height: 30px;
 }
 
@@ -793,7 +793,7 @@ li:nth-child(2) input{
     height: 25px;
 }
 
-textarea {
+memoscreen.textarea {
     width: 565px;
     height: 100px;
 }

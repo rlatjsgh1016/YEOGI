@@ -190,14 +190,19 @@
 													<li><input type="text" name="" value="" placeholder="금액 입력칸 :)" maxlength="10" style= "width: 100px;"/></li>
 												</ul>
 												
+												
 												<ul>
 													<li><a href="#close">취소</a></li>
 													<li><a href="#close">저장</a></li>
 												</ul>
 												
+												
+												
 											</div>
 										</section>
 								    </div>
+								    
+								    
 								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
 
 							</tr>

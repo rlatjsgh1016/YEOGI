@@ -5,8 +5,9 @@ window.addEventListener("load", function () {
     var left = document.querySelector("#add-day .left-direct");
     var right = document.querySelector("#add-day .right-direct");
     var allminus = document.querySelector("#add-day .all-minus");
-    
     var count = parseInt(now.textContent);
+    
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
     plus.onclick = function () {
     	if(count<60)
@@ -27,11 +28,14 @@ window.addEventListener("load", function () {
     allminus.onclick = function () {
     	count=1;
 		now.textContent = count;
-};
+    };
+    
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 메모창  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    
+    	
     
     
-    
-    
+   
     
     
     
