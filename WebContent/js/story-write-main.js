@@ -6,12 +6,14 @@ window.addEventListener("load", function(){
 	var btnPlaceDelete = document.getElementsByClassName("btn-place-delete");
 	var btnDetailPostBoxClose = document.getElementsByClassName("btn-detail-post-box-close");
 	var detailPostBox = document.getElementsByClassName("detail-post-box");
-	var formMain = document.getElementById("form-main");
-	var btnCover = document.getElementById("btn-cover");
-	var btnCompanion = document.getElementById("btn-companion");
-	var btnSave = document.getElementById("btn-save");
+	var btnCover = document.querySelector("#btn-cover");
 	var modal = document.getElementsByClassName("modal");
-	var nicEdit = document.getElementsByClassName("detail-textarea");
+	var themesButtons = document.querySelectorAll("#themes>button");
+	var themesInput = document.querySelector("input[name='themes']");
+	var spdTypeSelect = document.querySelector("select[name='spd-type']");
+	var spdUnitSelect = document.querySelector("select[name='spd-unit']");
+	var spdContentInput = document.querySelector("input[name='spd-content']");
+	var spdAmountInput = document.querySelector("input[name='spd-amount']");
 	
 	for(var i=0; i<btnPlaceAdd.length; i++){
 		btnPlaceAdd[i].onclick = function(){
@@ -46,14 +48,23 @@ window.addEventListener("load", function(){
 			modal[i].style.display = "block";
 		}
 	}
-	
-	btnCompanion.onclick = function(){
-		formMain.submit();
+
+	for(var i=0; i<themesButtons.length; i++){
+		themesButtons[i].addEventListener("click",function(i){
+			for(var j=0; j<themesButtons.length; j++){
+				themesButtons[j].classList.remove("selected");
+			};
+			themesButtons[i].classList.add("selected");
+			themesInput.value = themesButtons[i].textContent;
+		}.bind(this,i));
 	}
-	
-	btnSave.onclick = function(){
-		formMain.submit();
-	}
-	
+
+	spdContentInput.oninput = function(){
+		spdTypeSelect.required;
+	};
+
+	spdAmountInput.oninput = function(){
+		spdUnitSelect.required;
+	};
 	
 });

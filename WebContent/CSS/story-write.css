@@ -98,6 +98,13 @@ input, select {
     vertical-align:middle;
 }
 
+button{
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	overflow: visible;
+}
+
 /*----------------------- abstract style ------------------------*/
 
 .root-container{
@@ -200,6 +207,16 @@ input, select {
 	color: #ffffff;
 	background: #333333;
 	width: 90px;
+}
+
+.btn-sm{
+	color: #ffffff;
+	background: #333333;
+	min-width: 0;
+	width: 50px;
+	padding: 0;
+	font-size: 80%;
+	font-weight: normal;
 }
 
 .btn-default:hover,
@@ -557,18 +574,18 @@ main>.root-container{
 	cursor: pointer;
 }
 
-.day-btn{
+.ul-day-btn{
 	list-style: none;
 	display: flex;
 	justify-content: center;
 }
 
 
-.day-btn a,
-.day-btn span{
+.ul-day-btn button,
+.ul-day-btn span{
 	display: inline-block;
 	width: 62px;
-	padding: 12px 0;
+	padding: 11px 0;
 	margin: 5px 0 5px 5px;
 	text-align: center;
 	font-size: 16px;
@@ -577,7 +594,19 @@ main>.root-container{
 	background-color: #212121;
 }
 
-.day-btn a:hover{
+.ul-day-btn span{
+	display: inline-block;
+	width: 62px;
+	padding: 11px 0;
+	margin: 5px 0 5px 5px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #D8D8D8;
+	background-color: #212121;
+}
+
+.ul-day-btn button:hover{
 	color: #E64C3C;
 }
 
@@ -717,23 +746,23 @@ textarea.form-control{
 	clear: both;	
 }
 
-#themes>a{
+#themes>button{
 	display:block;
 	float:left;
 	border: 2px solid #AFAFAF;
-	margin: 0 2px;
-	padding: 9px 3px;
+	margin: 0 5px;
+	padding: 8px 5px;
 	color: #AFAFAF;
 }
 
-#themes>a:last-child::after{
+#themes>button:last-child::after{
 	clear: both;
 }
 
 #themes>.selected{
 	border: 2px solid #E64C3C;
-	margin: 0 2px;
-	padding: 9px 3px;
+	margin: 0 5px;
+	padding: 8px 5px;
 	color: #E64C3C;
 }
 

@@ -155,21 +155,21 @@ window.addEventListener("load", function(){
 						<c:if test="${firstDay==1}">
 						<a class="left-arrow" onclick="alert('이전 날짜가 없습니다.');"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
 						</c:if>
-						<ul class="day-btn">
+						<ul class="ul-day-btn">
 						<c:if test="${tourLog.period == 1}">
-							<li><a href="#">DAY1</a></li>
+							<li><button type="button" name="btn-day" value="1">DAY1</button></li>
 							<li><span>없음</span></li>
 							<li><span>없음</span></li>
 						</c:if>
 						<c:if test="${tourLog.period == 2}">
-							<li><a href="#">DAY1</a></li>
-							<li><a href="#">DAY2</a></li>
+							<li><button type="button" name="btn-day" value="1">DAY1</button></li>
+							<li><button type="button" name="btn-day" value="2">DAY2</button></li>
 							<li><span>없음</span></li>
 						</c:if>
 						<c:if test="${tourLog.period > 2}">
 						<c:forEach var="i" begin="0" end="2">
 							<c:if test="${firstDay+i <= tourLog.period}">
-							<li><a href="#">DAY${firstDay+i}</a></li>
+							<li><button type="button" name="btn-day" value="${firstDay+i}">DAY${firstDay+i}</button></li>
 							</c:if>
 						</c:forEach>
 						</c:if>
@@ -191,13 +191,14 @@ window.addEventListener("load", function(){
 								<p>인천공항</p>
 							</div>
 							<div class="place-btn-container">
-								<a class="btn-place-delete" href="#"><img alt="삭제" src="${ctx}/images/delete.png"></a>
-								<a class="btn-place-edit" href="#"><img alt="편집" src="${ctx}/images/write.png"></a>
+							
+								<button class="btn-place-delete" type="button" ><img alt="삭제" src="${ctx}/images/delete.png"></button>
+								<button class="btn-place-edit" type="button" ><img alt="편집" src="${ctx}/images/write.png"></button>
 							</div>
 						</div>
 						<div class="place-add">
 							<div class="large-loca"></div>
-							<a class="btn btn-focus btn-place-add" href=#>장소추가</a>
+							<button class="btn btn-focus btn-place-add" type="button">장소추가</button>
 						</div>
 					</div>
 				</section>
@@ -236,12 +237,13 @@ window.addEventListener("load", function(){
 	             			</div>
 	    					<div id="themes">
 	             				<h6>여행테마</h6>
-								<a class="<c:if test="${tourLog.tTheme == '나홀로 여행'}">selected</c:if>" href="#">나홀로 여행</a>
-								<a class="<c:if test="${tourLog.tTheme == '친구와 함께'}">selected</c:if>" href="#">친구와 함께</a>
-								<a class="<c:if test="${tourLog.tTheme == '가족과 함께'}">selected</c:if>" href="#">가족과 함께</a>
-								<a class="<c:if test="${tourLog.tTheme == '단체 여행'}">selected</c:if>" href="#">단체 여행</a>
-								<a class="<c:if test="${tourLog.tTheme == '패키지 여행'}">selected</c:if>" href="#">패키지 여행</a>
-								<a class="<c:if test="${tourLog.tTheme == '커플 여행'}">selected</c:if>" href="#">커플 여행</a>
+	             				<input type="hidden" name="themes" value="${tourLog.tTheme}">
+	             				<button type="button" <c:if test="${tourLog.tTheme == '나홀로 여행'}">class = "selected"</c:if> >나홀로 여행</button>
+	             				<button type="button" <c:if test="${tourLog.tTheme == '친구와 함께'}">class = "selected"</c:if> >친구와 함께</button>
+	             				<button type="button" <c:if test="${tourLog.tTheme == '가족과 함께'}">class = "selected"</c:if> >가족과 함께</button>
+	             				<button type="button" <c:if test="${tourLog.tTheme == '단체 여행'}">class = "selected"</c:if> >단체 여행</button>
+	             				<button type="button" <c:if test="${tourLog.tTheme == '패키지 여행'}">class = "selected"</c:if> >패키지 여행</button>
+	             				<button type="button" <c:if test="${tourLog.tTheme == '커플 여행'}">class = "selected"</c:if> >커플 여행</button>
 	           				</div>
 	       				</div>
 	   				</div>
@@ -285,9 +287,9 @@ window.addEventListener("load", function(){
 										<option value="자가용">자가용</option>
 									</select>
 								</div>
-								<div class="post-list post-expense">
-									<select id="spd-type" name="spd-type">
-										<option value="">선택</option>
+								<div class="post-list post-expense" >
+									<select id="spd-type" name="spd-type" required>
+										<option value="">지출유형 선택</option>
 										<option value="명소">명소</option>
 										<option value="맛집">맛집</option>
 										<option value="숙소">숙소</option>
@@ -297,12 +299,12 @@ window.addEventListener("load", function(){
 									</select>
 									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료">
 									<select id="spd-unit" name="spd-unit">
-										<option value="">선택</option>
+										<option value="">화폐단위 선택</option>
 										<option value="KRW">KRW(한국)</option>
 									</select>
-									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력">
-									<button><img alt="행추가" src=""></button>
-									<button><img alt="행삭제" src=""></button>
+									<input id="spd-amount" type="number" name="spd-amount" on placeholder="지출금액 입력">
+									<button class="btn btn-sm" type="button">추가</button>
+									<button class="btn btn-sm" type="button">삭제</button>
 								</div>
 								<div class="post-list post-tag">
 									<input id="tag" type="text" name="tag" pattern="^(*,*)+$" placeholder="태그입력 (예)한국,식당,맛집">
