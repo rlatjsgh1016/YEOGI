@@ -687,43 +687,27 @@ table td:nth-child(2) a:hover{
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
+input, select {
+    vertical-align:middle;
+    height:25px;
+    box-sizing: border-box;
+}
 
-
-.white_content {
+.modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0);
-    opacity:0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity:1;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-.white_content:target {
-    opacity:1;
-    pointer-events: auto;
-}
-.white_content > div {
-	position: absolute;
-	top: 25%;
-	left: 25%;
-	width: 50%;
-	height: 50%;
-	padding: 16px;
-	background-color: white;
-	overflow: auto;	
+    display: none;
 }
 
-.memoscreen input{
-    height: 25px;
-}
 
-.memoscreen select{
-    height: 30px;
-}
 
 #memoscreen {
 	margin:250px auto;
@@ -731,7 +715,7 @@ table td:nth-child(2) a:hover{
 	width: 600px;
 	border:1px solid red;
 	box-sizing: content-box;
-	background-color: #7d6269;
+	background-color: #ffffff;
 }
 #memoscreen ul{
 	display: flex;
@@ -793,7 +777,7 @@ li:nth-child(2) input{
     height: 25px;
 }
 
-memoscreen.textarea {
+#memoscreen textarea {
     width: 565px;
     height: 100px;
 }
