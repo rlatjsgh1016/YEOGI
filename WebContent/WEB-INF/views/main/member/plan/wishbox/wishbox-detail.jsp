@@ -1,32 +1,32 @@
-<!-- ìží˜¸ --><!-- ìží˜¸ --><!-- ìží˜¸ -->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>wishbox-detail</title>
-<link href = "../../../../CSS/wishbox-detail.css?ver=1"  type="text/css" rel="stylesheet"/>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<link href = "../../../../CSS/wishbox-detail.css"  type="text/css" rel="stylesheet"/>
 </head>
-
 <body>
 	<header id="header">
 		<div class="root-container">
 			<h1 id="logo">
-				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="ì—¬ê¸°" /></a>
+				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="¿©±â" /></a>
 			</h1>
 			<nav class ="hor-menu main-menu first-pad-none">
 				<ul>
-					<li><a href="">ê³„íší•˜ê¸°</a></li>
-					<li><a href="../../story/write/main.jsp">ê¸°ë¡í•˜ê¸°</a></li>
-					<li><a href="../../../public-board/travel-log/log-main/log-main.html">ì—¬í–‰ê¸°</a></li>
-					<li><a href="">ì»¤ë®¤ë‹ˆí‹°</a></li>
+					<li><a href="">°èÈ¹ÇÏ±â</a></li>
+					<li><a href="../../story/write/main.jsp">±â·ÏÇÏ±â</a></li>
+					<li><a href="../../../public-board/travel-log/log-main/log-main.html">¿©Çà±â</a></li>
+					<li><a href="">Ä¿¹Â´ÏÆ¼</a></li>
 				</ul>
 			</nav>
 				
 			<nav class ="hor-menu member-menu first-pad-none">
 				<ul>
-					<li><a href="../../../log-in.html">ë¡œê·¸ì¸</a></li>
-					<li><a href="">íšŒì›ê°€ìž…</a></li>
-					<li><a href="">ë§ˆì´íŽ˜ì´ì§€</a></li>
+					<li><a href="../../../log-in.html">·Î±×ÀÎ</a></li>
+					<li><a href="">È¸¿ø°¡ÀÔ</a></li>
+					<li><a href="">¸¶ÀÌÆäÀÌÁö</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -53,18 +53,18 @@
 				
 				<div id="search">
 					<div id="travel-dayname">
-						<p id="travelName">ì—¬í–‰ì´ë¦„</p>
-						<p id="travelDay">ì—¬í–‰ê¸°ê°„</p>
+						<p id="travelName">¿©ÇàÀÌ¸§</p>
+						<p id="travelDay">¿©Çà±â°£</p>
 					</div>
 					<div id="search-box">
 								
 						<div id = "button-box">
-							<p class="btn"><a href="">ìµœì‹ ìˆœ</a></p>
-							<p class="btn"><a href="">êµ­ê°€ìˆœ</a></p>
+							<p class="btn"><a href="">ÃÖ½Å¼ø</a></p>
+							<p class="btn"><a href="">±¹°¡¼ø</a></p>
 						</div>
 						
 						<div id="searched-content">
-							<div>í”„ëž‘ìŠ¤</div>
+							<div>ÇÁ¶û½º</div>
 							<div class="searched-result">
 							 	
 							 	<div class="searched-pic">
@@ -74,15 +74,15 @@
 							 	<div class="searched-info">
 							 	 	
 							 	 	<div class="searched-name">
-							 	 		ì—íŽ íƒ‘
+							 	 		¿¡ÆçÅ¾
 							 	 	</div>
 							 	 	
 							 	 	<div class="wishput-btn">
 								 	 	<div class="searched-wish">
-								 	 		ìž¥ë°”êµ¬ë‹ˆ(111)
+								 	 		Àå¹Ù±¸´Ï(111)
 								 	 	</div>
 								 	 	<div class="searched-put">
-								 	 		ì¼ì •ë‹´ê¸°
+								 	 		ÀÏÁ¤´ã±â
 								 	 	</div>
 							 	 	</div>
 							 	</div>
@@ -93,7 +93,7 @@
 			</div>
 			
 			<div id="main">
-			<!-- ì§€ë„ -->
+			<!-- Áöµµ -->
 				  <div id="map">
 				   <script>
 				      var map;
@@ -107,11 +107,11 @@
 				   
 				   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU&callback=initMap"
     async defer></script>
-				  	<!-- detail ì¶”ê°€ ë¶€ë¶„ -->
+				  	<!-- detail Ãß°¡ ºÎºÐ -->
 				 	<div id="plan-detail">
 				 		<div class="detail-top">
 				 			<p class="back-btn"></p>
-				 			<p class="wishbox-put">ë‹´ê¸°</p>
+				 			<p class="wishbox-put">´ã±â</p>
 				 		</div>
 				 		
 				 		<div class="detail-img">
@@ -119,13 +119,13 @@
 				 		</div>
 				 		
 				 		<div class="detail-name">
-				 			<p class="spot-name">ì—íŽ íƒ‘</p>
-				 			<p class="detail-famous">ì¸ê¸°ë„(111)</p>
-				 			<p class="timeline-put">ê³„íšë„£ê¸°</p>
+				 			<p class="spot-name">¿¡ÆçÅ¾</p>
+				 			<p class="detail-famous">ÀÎ±âµµ(111)</p>
+				 			<p class="timeline-put">°èÈ¹³Ö±â</p>
 				 		</div>
 				 		
 				 		<div class="detail-info">
-				 			ì—íŽ  íƒ‘ì€ 1889ë…„ íŒŒë¦¬ ë§ˆë¥´ìŠ¤ ê´‘ìž¥ì— ì§€ì–´ì§„ íƒ‘ì´ë‹¤. í”„ëž‘ìŠ¤ì˜ ëŒ€í‘œ ê±´ì¶•ë¬¼ì¸ ì´ íƒ‘ì€ ê²©ìž êµ¬ì¡°ë¡œ ì´ë£¨ì–´ì ¸ íŒŒë¦¬ì—ì„œ ê°€ìž¥ ë†’ì€ ê±´ì¶•ë¬¼ì´ë©°, ë§¤ë…„ ìˆ˜ë°±ë§Œ ëª…ì´ ë°©ë¬¸í•  ë§Œí¼ ì„¸ê³„ì ì¸ ìœ ë£Œ ê´€ëžŒì§€ì´ë‹¤. ì´ë¥¼ ë””ìžì¸í•œ í”„ëž‘ìŠ¤ ê³µí•™ìž ë° ê±´ì¶•ê°€ ê·€ìŠ¤íƒ€ë¸Œ ì—íŽ ì˜ ì´ë¦„ì—ì„œ ëª…ì¹­ì„ ì–»ì—ˆìœ¼ë©°, 1889ë…„ í”„ëž‘ìŠ¤ í˜ëª… 100ì£¼ë…„ ê¸°ë… ì„¸ê³„ ë°•ëžŒíšŒì˜ ì¶œìž… ê´€ë¬¸ìœ¼ë¡œ ê±´ì¶•ë˜ì—ˆë‹¤. ì—íŽ  íƒ‘ì€ ê·¸ ë†’ì´ê°€ 324 mì´ë©°, ì´ëŠ” 81ì¸µ ë†’ì´ì˜ ê±´ë¬¼ê³¼ ë§žë¨¹ëŠ” ë†’ì´ì´ë‹¤
+				 			¿¡Æç Å¾Àº 1889³â ÆÄ¸® ¸¶¸£½º ±¤Àå¿¡ Áö¾îÁø Å¾ÀÌ´Ù. ÇÁ¶û½ºÀÇ ´ëÇ¥ °ÇÃà¹°ÀÎ ÀÌ Å¾Àº °ÝÀÚ ±¸Á¶·Î ÀÌ·ç¾îÁ® ÆÄ¸®¿¡¼­ °¡Àå ³ôÀº °ÇÃà¹°ÀÌ¸ç, ¸Å³â ¼ö¹é¸¸ ¸íÀÌ ¹æ¹®ÇÒ ¸¸Å­ ¼¼°èÀûÀÎ À¯·á °ü¶÷ÁöÀÌ´Ù. ÀÌ¸¦ µðÀÚÀÎÇÑ ÇÁ¶û½º °øÇÐÀÚ ¹× °ÇÃà°¡ ±Í½ºÅ¸ºê ¿¡ÆçÀÇ ÀÌ¸§¿¡¼­ ¸íÄªÀ» ¾ò¾úÀ¸¸ç, 1889³â ÇÁ¶û½º Çõ¸í 100ÁÖ³â ±â³ä ¼¼°è ¹Ú¶÷È¸ÀÇ ÃâÀÔ °ü¹®À¸·Î °ÇÃàµÇ¾ú´Ù. ¿¡Æç Å¾Àº ±× ³ôÀÌ°¡ 324 mÀÌ¸ç, ÀÌ´Â 81Ãþ ³ôÀÌÀÇ °Ç¹°°ú ¸Â¸Ô´Â ³ôÀÌÀÌ´Ù
 				 		</div>
 				 	</div>
 				 	<div id="map-right">				 	
@@ -161,21 +161,21 @@
 				 	 	</div>
 				 	 	
 				 	 	<p id="control-date">
-				 	 		2018ë…„ 1ì›” 5ì¼
+				 	 		2018³â 1¿ù 5ÀÏ
 				 	 	</p>
 				 	 	
 				 	 	
 				 	 	
 				 	 	<p id="control-dayadd">
-				 	 		<a href="">Dayì¶”ê°€</a>
+				 	 		<a href="">DayÃß°¡</a>
 				 	 	</p>
 				 	 	
 				 	 	<p id="control-daydelete">
-				 	 		<a href="">í•´ë‹¹ì¼ì • ì‚­ì œí•˜ê¸°</a>
+				 	 		<a href="">ÇØ´çÀÏÁ¤ »èÁ¦ÇÏ±â</a>
 				 	 	</p>
 				 	 	
 				 	 	<p id="control-alldelete">
-				 	 		<a href="">ì „ì²´ì¼ì • ì‚­ì œí•˜ê¸°</a>
+				 	 		<a href="">ÀüÃ¼ÀÏÁ¤ »èÁ¦ÇÏ±â</a>
 				 	 	</p>
 				 	</div>
 				 	
@@ -185,28 +185,28 @@
 								<tbody>
 									<tr>
 										<td class="table-time">07:00</td>
-										<td class="table-spot">ëª½ë§ˆë¥´ëœ¨</td>
-										<td class="memo-pad">ì±™ê²¨ë¼!</td>		
+										<td class="table-spot">¸ù¸¶¸£¶ß</td>
+										<td class="memo-pad">Ã¬°Ü¶ó!</td>		
 									</tr>
 									<tr>
 										<td class="table-time">08:00</td>
-										<td class="table-spot">ê°œì„ ë¬¸</td>
+										<td class="table-spot">°³¼±¹®</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">09:00</td>
-										<td class="table-spot">ìƒ¹ì œë¦¬ì œê±°ë¦¬</td>
+										<td class="table-spot">¼§Á¦¸®Á¦°Å¸®</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">10:00</td>
-										<td class="table-spot">ë¥´ë¸Œë£¨</td>
+										<td class="table-spot">¸£ºê·ç</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									
 									<tr>
 										<td class="table-time">11:00</td>
-										<td class="table-spot">ê³µí•­</td>
+										<td class="table-spot">°øÇ×</td>
 										<td class="memo-pad"></td>		
 									</tr>
 								</tbody>
@@ -215,11 +215,11 @@
 				 	
 				 	<div id="table-info">
 				 		<p id="info-weather">
-				 			<a href="">ë‚ ì”¨</a>
+				 			<a href="">³¯¾¾</a>
 				 		</p>
 				 		
 				 		<p id="info-emergency">
-				 			ê²½ë³´
+				 			°æº¸
 				 		</p>
 				 	</div>
 				 	

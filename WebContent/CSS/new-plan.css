@@ -135,6 +135,9 @@ form{
 	display: flex;
 	justify-content: center;
 	margin-top: 25px;
+	margin-left: 170px;
+	height: 80px;
+	width: 160px;	
 }
 
 	#newbutton p{
