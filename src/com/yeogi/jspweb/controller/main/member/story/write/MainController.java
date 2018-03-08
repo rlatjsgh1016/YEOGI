@@ -19,17 +19,27 @@ import org.apache.tiles.request.ApplicationContext;
 import org.apache.tiles.request.servlet.ServletRequest;
 import org.apache.tiles.request.servlet.ServletUtil;
 
+import com.google.gson.Gson;
 import com.yeogi.jspweb.dao.DayDao;
 import com.yeogi.jspweb.dao.NationDao;
 import com.yeogi.jspweb.dao.TLogNationDao;
+import com.yeogi.jspweb.dao.TLogPostDao;
+import com.yeogi.jspweb.dao.TLogPostSpdDao;
+import com.yeogi.jspweb.dao.TagDao;
 import com.yeogi.jspweb.dao.TourLogDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcDayDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcNationDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogNationDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostSpdDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTagDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao;
 import com.yeogi.jspweb.entity.Day;
 import com.yeogi.jspweb.entity.Nation;
 import com.yeogi.jspweb.entity.TLogNation;
+import com.yeogi.jspweb.entity.TLogPost;
+import com.yeogi.jspweb.entity.TLogPostSpd;
+import com.yeogi.jspweb.entity.Tag;
 import com.yeogi.jspweb.entity.TourLog;
 
 @WebServlet("/main/member/story/write/main")
@@ -95,10 +105,12 @@ public class MainController extends HttpServlet {
 	    	d = Integer.parseInt(d_);
 	    
 		String btn = "";
+		String btnSub = "";
 		String btnNew = request.getParameter("btn-new");
 		String btnPlanLoad = request.getParameter("btn-plan-load");
 		String btnMain = request.getParameter("btn-main");
 		String btnEdit = request.getParameter("btn-edit");
+		String btnPost = request.getParameter("btn-post");
 		
 		if(btnNew != null && !btnNew.equals(""))
 			btn = btnNew;
@@ -108,6 +120,9 @@ public class MainController extends HttpServlet {
 			btn = btnEdit;
 		else if(btnMain != null && !btnMain.equals(""))
 			btn = btnMain;
+		
+		if(btnPost != null && !btnPost.equals(""))
+			btnSub = btnPost;
 		
 		switch(btn){
 			case "작성하기":
@@ -175,10 +190,7 @@ public class MainController extends HttpServlet {
 				
 			case "공개 전환":
 				{
-				response.setCharacterEncoding("UTF-8");
-			    response.setContentType("text/html; charset=UTF-8");
-			    request.setCharacterEncoding("UTF-8");
-			    
+					
 			    String id = null;
 			    			    
 			    String id_ = request.getParameter("tour-log-id");
@@ -241,10 +253,7 @@ public class MainController extends HttpServlet {
 				break;
 			case "비공개 전환":
 			{
-			response.setCharacterEncoding("UTF-8");
-		    response.setContentType("text/html; charset=UTF-8");
-		    request.setCharacterEncoding("UTF-8");
-		    
+				
 		    String id = null;
 		    			    
 		    String id_ = request.getParameter("tour-log-id");
@@ -314,6 +323,64 @@ public class MainController extends HttpServlet {
 				
 			default:
 				break;
+		}
+		
+		switch(btnSub) {
+		case "저장":{
+			// 포스트 가져오기
+			String tourLogId = request.getParameter("tour-log-id");
+			String postContent = request.getParameter("post-memo");
+			String postLocId = request.getParameter("loc-id");
+			String postVehicle = request.getParameter("vehicle");
+			String postSpdType = request.getParameter("spd-type");
+			String postSpdContent = request.getParameter("spd-content");
+			String postSpdUnit = request.getParameter("spd-unit");
+			String postSpdAmount_ = request.getParameter("spd-amount");
+			String postTag = request.getParameter("tag");
+			
+			
+			// 포스트 crud DAO 준비
+			TLogPostDao tLogPostDao = new JdbcTLogPostDao();
+			TLogPostSpdDao tLogPostSpdDao = new JdbcTLogPostSpdDao();
+			TagDao tagDao = new JdbcTagDao();
+			
+			
+			// 엔티티 객체 생성 & 쿼리실행
+			TLogPost tlp = new TLogPost(postContent, tourLogId ,postLocId, postVehicle);
+			String isInsert = tLogPostDao.insert(tlp);
+			TLogPostSpd tlps = null;
+			int postSpdAmount = 0; 
+			if(postSpdAmount_ != null && !postSpdAmount_.equals("")) {
+				postSpdAmount = Integer.parseInt(postSpdAmount_);
+				tlps = new TLogPostSpd(postSpdType, postSpdContent, postSpdUnit, postSpdAmount, isInsert);
+				tLogPostSpdDao.insert(tlps);
+			}
+			else {
+				tlps = new TLogPostSpd(postSpdType, postSpdContent, postSpdUnit, postSpdAmount, isInsert);
+				tLogPostSpdDao.insertNonAmount(tlps);
+			}
+			
+			if(postTag != null && !postTag.equals("")) {
+
+				//문자열 파싱
+				String[] postTags = postTag.split(",");
+				for(int i=0; i<postTags.length; i++) {
+					if(!postTags[i].trim().equals("")) {
+						Tag tag = new Tag(postTags[i], isInsert);
+						tagDao.insert(tag);
+					}
+				}
+			}
+			ApplicationContext applicationContext = ServletUtil
+					.getApplicationContext(request.getSession().getServletContext());
+			TilesContainer container = TilesAccess.getContainer(applicationContext);
+			ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+			container.render("main.member.story.write.main", servletRequest);
+			
+		}
+			break;
+		default:
+			break;
 		}
 	}
 }

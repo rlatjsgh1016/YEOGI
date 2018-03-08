@@ -8,6 +8,7 @@ public interface TLogPostSpdDao {
 
 	List<TLogPostSpd> getList(String tLogPostId);
 	int insert(TLogPostSpd tlps);
+	int insertNonAmount(TLogPostSpd tlps);
 	int update(TLogPostSpd tlps);
 	int delete(String id);
 	

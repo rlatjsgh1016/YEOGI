@@ -13,11 +13,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
 <script src="${ctx}/js/story-write-main.js"></script>
-<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">
-	bkLib.onDomLoaded(nicEditors.allTextAreas);
-</script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMXDDT7xUpHdm3onxXFqsP5lF3rKOaZRk&libraries=places">
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMXDDT7xUpHdm3onxXFqsP5lF3rKOaZRk&libraries=places">
 window.addEventListener("load", function(){
 	var map;
 	var service;
@@ -52,8 +54,8 @@ window.addEventListener("load", function(){
 	  }
 	}
 }
-</script>
-	<form id="form-main" method="post">
+</script> -->
+	<form id="form-main" method="post" novalidate="novalidate">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
 				<div class="root-container">
@@ -266,9 +268,10 @@ window.addEventListener("load", function(){
 						<div class="detail-post-box">
 							<div class="detail-title-box">포스트작성</div>
 							<div class="detail-form-box">
-								<textarea class="detail-textarea" name="review" rows="15" cols=""></textarea>
+								<textarea id="post-memo" class="detail-textarea" name="post-memo" rows="15" required="required"></textarea>
 								<div class="post-list post-spot">
-									<input id="location" type="text" name="location" placeholder="장소를 등록해주세요 :)">
+									<input id="loc-id" type="hidden" name="loc-id" value="2018030700001" required="required"> <!-- api받아와서 입력 -->
+									<input id="loc-name" type="text" name="loc-name" value="경복궁" placeholder="장소를 등록해주세요 :)" required="required">	<!-- api받아와서 입력 -->
 									<label for="vehicle" >이동수단</label>
 									<select id="vehicle" name="vehicle">
 										<option value="">선택</option>
@@ -292,16 +295,17 @@ window.addEventListener("load", function(){
 										<option value="쇼핑">쇼핑</option>
 										<option value="기타">기타</option>
 									</select>
-									<input id="spd-content" type="text" name="spd-content" placeholder="비용설명 (ex)에펠탑 입장료">
+									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료">
 									<select id="spd-unit" name="spd-unit">
+										<option value="">선택</option>
 										<option value="KRW">KRW(한국)</option>
 									</select>
-									<input id="apd-amuont" type="number" name="apd-amount" placeholder="지출금액을 입력해주세요.">
+									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력">
 									<button><img alt="행추가" src=""></button>
 									<button><img alt="행삭제" src=""></button>
 								</div>
 								<div class="post-list post-tag">
-									<input id="tag" type="text" name="tag" placeholder="입력방식 (ex)한국,식당,맛집">
+									<input id="tag" type="text" name="tag" pattern="^(*,*)+$" placeholder="태그입력 (예)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">
 									<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
