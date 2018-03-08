@@ -25,11 +25,8 @@ public class Commu_PostwriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(request, response);
-		
 		
 		String id =request.getParameter("img");
-		
 		
 		Commu_Post_ImgDao commu_post_imgDao = new JdbcCommuPostImgDao();
 		List<Commu_Post_Img> commu_post_img =  commu_post_imgDao.getList();

@@ -12,6 +12,8 @@
     <put-attribute name="footer" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
     
 	 </definition>
+	 
+	 
 
 	</tiles-definitions>
  

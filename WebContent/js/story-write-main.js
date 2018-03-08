@@ -38,14 +38,14 @@ window.addEventListener("load", function(){
 		};
 	}
 	
-	btnCover.onclick = function(e){
+	btnCover.onclick = function(e) {
 		e.preventDefault();
 		for(var i=0; i<modal.length; i++){
 			modal[i].style.display = "block";
 		}
 	}
 	
-	btnLock.onclick = function(){
+	btnLock.onclick = function() {
 		formMain.submit();
 	}
 	

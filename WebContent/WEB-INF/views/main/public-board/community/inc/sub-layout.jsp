@@ -16,7 +16,7 @@
 <tiles:insertAttribute name="header" />
 <body>
 <tiles:insertAttribute name="visual"/>
-<tiles:insertAttribute name="Communitymain"/>
+<tiles:insertAttribute name="main"/>
 <tiles:insertAttribute name="footer"/>
 </body>
 </html>
