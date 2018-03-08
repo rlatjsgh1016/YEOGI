@@ -1,35 +1,35 @@
-<!-- 자호 --><!-- 자호 -->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>search plan</title>
-<link href = "../../../../CSS/search-plan.css?ver=1"  type="text/css" rel="stylesheet"/>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<link href = "../../../../CSS/wishbox-national.css"  type="text/css" rel="stylesheet"/>
 </head>
-
 <body>
 	<header id="header">
 		<div class="root-container">
 			<h1 id="logo">
-				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="여기" /></a>
+				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="����" /></a>
 			</h1>
-			<nav class="hor-menu main-menu first-pad-none">
+			<nav class ="hor-menu main-menu first-pad-none">
 				<ul>
-					<li><a href="">계획하기</a></li>
-					<li><a href="../../story/write/main.jsp">기록하기</a></li>
-					<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
-					<li><a href="">커뮤니티</a></li>
+					<li><a href="">��ȹ�ϱ�</a></li>
+					<li><a href="../../story/write/main.jsp">����ϱ�</a></li>
+					<li><a href="../../../public-board/travel-log/log-main/log-main.html">�����</a></li>
+					<li><a href="">Ŀ�´�Ƽ</a></li>
 				</ul>
 			</nav>
-
-			<nav class="hor-menu member-menu first-pad-none">
+				
+			<nav class ="hor-menu member-menu first-pad-none">
 				<ul>
-					<li><a href="../../../log-in.html">로그인</a></li>
-					<li><a href="">회원가입</a></li>
-					<li><a href="" class="mypageBtn">마이페이지</a></li>
+					<li><a href="../../../log-in.html">�α���</a></li>
+					<li><a href="">ȸ������</a></li>
+					<li><a href="">����������</a></li>
 				</ul>
 			</nav>
-		</div>	
+		</div>
 	</header>
 
 	<div id="body">
@@ -38,11 +38,10 @@
 				<div id="tab">
 					<section>
 					<ul>
-						<li id="search-btn"><a href="">Search</a></li>
-						<li id="wishbox-btn"><a href="../wishbox/wishbox.html">Wishbox</a></li>
+						<li id="search-btn"><a href="../searchplan/search-plan.html">Search</a></li>
+						<li id="wishbox-btn"><a href="">Wishbox</a></li>
 						<li id="cost-btn"><a href="../cost/cost.html">Cost</a></li>
 						<li id="review-btn"><a href="../schedule/schedule.html">Plan</a></li>
-						
 					</ul>
 					
 					<ul id="save">
@@ -54,36 +53,18 @@
 				
 				<div id="search">
 					<div id="travel-dayname">
-						<p id="travelName">여행이름</p>
-						<p id="travelDay">여행기간</p>
+						<p id="travelName">�����̸�</p>
+						<p id="travelDay">����Ⱓ</p>
 					</div>
 					<div id="search-box">
-						<!-- 검색창  -->
-						<div id="search-form">
-							<form>
-							<input type="text" placeholder="지역검색(ex 프랑스, 파리)"/>
-							<input class = "button" type = "submit" value = "검색" type="submit" value="검색" />
-							</form>
-							
-							<form>
-							<input type="text" placeholder="명소검색(ex 에펠탑, 자유의 여신상)"/>
-							<input class = "button" type = "submit" value = "검색" type="submit" value="검색" />
-							</form>
+								
+						<div id = "button-box">
+							<p class="btn"><a href="">�ֽż�</a></p>
+							<p class="btn"><a href="">������</a></p>
 						</div>
-						
-						<!-- 정렬 버튼 -->
-						<div id="sort">
-							<ul>
-								<li><a href="">전체</a></li>
-								<li><a href="">명소</a></li>
-								<li><a href="">맛집</a></li>
-								<li><a href="">숙박</a></li>
-							</ul>
-						</div>
-						
 						
 						<div id="searched-content">
-							검색결과
+							<div>������</div>
 							<div class="searched-result">
 							 	
 							 	<div class="searched-pic">
@@ -93,16 +74,15 @@
 							 	<div class="searched-info">
 							 	 	
 							 	 	<div class="searched-name">
-							 	 		에펠탑
+							 	 		����ž
 							 	 	</div>
 							 	 	
 							 	 	<div class="wishput-btn">
 								 	 	<div class="searched-wish">
-								 	 		장바구니(111)
-								 	 		담기+
+								 	 		��ٱ���(111)
 								 	 	</div>
 								 	 	<div class="searched-put">
-								 	 		일정담기
+								 	 		�������
 								 	 	</div>
 							 	 	</div>
 							 	</div>
@@ -113,9 +93,8 @@
 			</div>
 			
 			<div id="main">
-			<!-- 지도 -->
-				 <div id="map">
-				 
+			<!-- ���� -->
+				  <div id="map">
 				   <script>
 				      var map;
 				      function initMap() {
@@ -142,15 +121,11 @@
 							<div class="down"></div>
 						</div>
 					</div>
-				
 				 </div>
 				 
-				 
-				
-				
 				 <div id="table">
 				 	<div id="table-control">
-				 	
+				 	 	
 				 	 	<div id="button">
 					 	 	<p id="control-leftbtn">
 					 	 		<a href=""></a>
@@ -165,51 +140,52 @@
 				 	 	</div>
 				 	 	
 				 	 	<p id="control-date">
-				 	 		2018년 1월 5일
+				 	 		2018�� 1�� 5��
 				 	 	</p>
 				 	 	
 				 	 	
 				 	 	
 				 	 	<p id="control-dayadd">
-				 	 		<a href="">Day추가</a>
+				 	 		<a href="">Day�߰�</a>
 				 	 	</p>
 				 	 	
 				 	 	<p id="control-daydelete">
-				 	 		<a href="">해당일정 삭제하기</a>
+				 	 		<a href="">�ش����� �����ϱ�</a>
 				 	 	</p>
 				 	 	
 				 	 	<p id="control-alldelete">
-				 	 		<a href="">전체일정 삭제하기</a>
+				 	 		<a href="">��ü���� �����ϱ�</a>
 				 	 	</p>
 				 	</div>
+				 	
 				 	
 				 	<div class="table-planFrame">
 							<table class="table">
 								<tbody>
 									<tr>
 										<td class="table-time">07:00</td>
-										<td class="table-spot">몽마르뜨</td>
-										<td class="memo-pad">챙겨라!</td>		
+										<td class="table-spot">��������</td>
+										<td class="memo-pad">ì�ܶ�!</td>		
 									</tr>
 									<tr>
 										<td class="table-time">08:00</td>
-										<td class="table-spot">개선문</td>
+										<td class="table-spot">������</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">09:00</td>
-										<td class="table-spot">샹제리제거리</td>
+										<td class="table-spot">���������Ÿ�</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">10:00</td>
-										<td class="table-spot">르브루</td>
+										<td class="table-spot">�����</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									
 									<tr>
 										<td class="table-time">11:00</td>
-										<td class="table-spot">공항</td>
+										<td class="table-spot">����</td>
 										<td class="memo-pad"></td>		
 									</tr>
 								</tbody>
@@ -218,11 +194,11 @@
 				 	
 				 	<div id="table-info">
 				 		<p id="info-weather">
-				 			<a href="">날씨</a>
+				 			<a href="">����</a>
 				 		</p>
 				 		
 				 		<p id="info-emergency">
-				 			경보
+				 			�溸
 				 		</p>
 				 	</div>
 				 	

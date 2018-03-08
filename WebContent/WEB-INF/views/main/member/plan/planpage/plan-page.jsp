@@ -1,32 +1,32 @@
-<!-- ìží˜¸ --><!-- ìží˜¸ -->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>plan page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
 <link href = "../../../../CSS/plan-page.css"  type="text/css" rel="stylesheet"/>
 </head>
-
 <body>
 	<header id="header">
 		<div class="root-container">
 			<h1 id="logo">
-				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="ì—¬ê¸°" /></a>
+				<a href="../../../main.html"><img src="../../../../images/logo.png" height="65px" alt="¿©±â" /></a>
 			</h1>
 			<nav class ="hor-menu main-menu first-pad-none">
 				<ul>
-					<li><a href="../searchplan/search-plan.html">ê³„íší•˜ê¸°</a></li>
-					<li><a href="../../story/write/main.jsp">ê¸°ë¡í•˜ê¸°</a></li>
-					<li><a href="../../../public-board/travel-log/log-main/log-main.html">ì—¬í–‰ê¸°</a></li>
-					<li><a href="">ì»¤ë®¤ë‹ˆí‹°</a></li>
+					<li><a href="../searchplan/search-plan.html">°èÈ¹ÇÏ±â</a></li>
+					<li><a href="../../story/write/main.jsp">±â·ÏÇÏ±â</a></li>
+					<li><a href="../../../public-board/travel-log/log-main/log-main.html">¿©Çà±â</a></li>
+					<li><a href="">Ä¿¹Â´ÏÆ¼</a></li>
 				</ul>
 			</nav>
 				
 			<nav class ="hor-menu member-menu first-pad-none">
 				<ul>
-					<li><a href="../../../log-in.html">ë¡œê·¸ì¸</a></li>
-					<li><a href="">íšŒì›ê°€ìž…</a></li>
-					<li><a href="">ë§ˆì´íŽ˜ì´ì§€</a></li>
+					<li><a href="../../../log-in.html">·Î±×ÀÎ</a></li>
+					<li><a href="">È¸¿ø°¡ÀÔ</a></li>
+					<li><a href="">¸¶ÀÌÆäÀÌÁö</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -42,20 +42,20 @@
 					<div class="title-name"><a>title</a></div>
 	
 					<div class="title-info">
-						<span>ë‚˜ë¼</span> 
-						<span>ëª‡ë°•ë©°ì¹ </span>
+						<span>³ª¶ó</span> 
+						<span>¸î¹Ú¸çÄ¥</span>
 						<span>2018-01-05</span>
 						<span>2018-01-09</span>
-						<span>ìž‘ì„±ì¼ : </span>
+						<span>ÀÛ¼ºÀÏ : </span>
 						<span>2018-01-15</span>
-						<span>ìµœì¢… ìˆ˜ì •ì¼ : </span>
+						<span>ÃÖÁ¾ ¼öÁ¤ÀÏ : </span>
 						<span>2018-01-25</span>
 					</div>
 	
 					<div class="title-hit">
-						<span>ì¡°íšŒìˆ˜</span> <span>125</span>
-						<span>ìŠ¤í¬ëž©</span> <span>180</span>
-						<span>ëŒ“ê¸€</span> <span>10</span>
+						<span>Á¶È¸¼ö</span> <span>125</span>
+						<span>½ºÅ©·¦</span> <span>180</span>
+						<span>´ñ±Û</span> <span>10</span>
 					</div>
 				</div>
 			</div>
@@ -63,21 +63,21 @@
 	
 	<div id="body">
 		<div class="root-container">
-		<!-- asideì‹œìž‘ë¶€ë¶„ -->
+		<!-- aside½ÃÀÛºÎºÐ -->
 			<aside id="aside">
 				<div class="user-box">
 					<div class="user-imgbox">
-						<img id="user-img" alt="ì‚¬ì§„" src="../../../../images/dog2.png">
+						<img id="user-img" alt="»çÁø" src="../../../../images/dog2.png">
 					</div>
-					<div class="user-name">ê¸€ì“´ì´</div>
+					<div class="user-name">±Û¾´ÀÌ</div>
 					<div class="user-collection">
-						<span>ê³„íš</span> <span class="post-count">(3)</span>
-						<span>ê¸°ë¡</span> <span class="post-count">(5)</span>
-						<span>ì»¤ë®¤ë‹ˆí‹°</span> <span class="post-count">(10)</span>
+						<span>°èÈ¹</span> <span class="post-count">(3)</span>
+						<span>±â·Ï</span> <span class="post-count">(5)</span>
+						<span>Ä¿¹Â´ÏÆ¼</span> <span class="post-count">(10)</span>
 					</div>
 					<div class="user-scrap">
-						<img id="btn-scrap" alt="ìŠ¤í¬ëž©ì´ë¯¸ì§€"
-							src="../../../../images/scrap.png"> <span>ìŠ¤í¬ëž©</span>
+						<img id="btn-scrap" alt="½ºÅ©·¦ÀÌ¹ÌÁö"
+							src="../../../../images/scrap.png"> <span>½ºÅ©·¦</span>
 					</div>
 				
 				</div>
@@ -85,22 +85,22 @@
 				<div class="summary-box">
 					<ul>
 						<li><a class="summary-btn theme-img" href="">
-						<span class="summary-list">ì—¬í–‰í…Œë§ˆ</span> <span class="summary-info">í˜¼ìžì—¬í–‰</span>
+						<span class="summary-list">¿©ÇàÅ×¸¶</span> <span class="summary-info">È¥ÀÚ¿©Çà</span>
 						</a></li>
 						
 						<li><a class="summary-btn totalplace-img" href="">
-						<span class="summary-list">ì´ ë°©ë¬¸ëª…ì†Œ</span> <span class="summary-info">20</span>
+						<span class="summary-list">ÃÑ ¹æ¹®¸í¼Ò</span> <span class="summary-info">20</span>
 						</a></li>
 						
 						<li><a class="summary-btn pay-img" href="">
-						<span class="summary-list">ì§€ì¶œë‚´ì—­</span> <span class="summary-info">$111111</span>
+						<span class="summary-list">ÁöÃâ³»¿ª</span> <span class="summary-info">$111111</span>
 						</a></li>
 					</ul>
 				</div>
 			</aside>
 			
 			<div id="main">				 				 	
-				<!-- ì§€ë„ -->
+				<!-- Áöµµ -->
 					<div id="map" style="height:500px">
 						<script>
 						      var map;
@@ -125,7 +125,7 @@
 								<a class="table-rightbtn"></a>
 							</div>
 							<div class="customizing">
-								ì»¤ìŠ¤í…€ë§ˆì´ì§•
+								Ä¿½ºÅÒ¸¶ÀÌÂ¡
 							</div>
 						</div>
 						
@@ -134,34 +134,34 @@
 								<tbody>
 									<tr>
 										<td class="table-time">07:00</td>
-										<td class="table-spot">ëª½ë§ˆë¥´ëœ¨</td>
-										<td class="memo-pad">ì±™ê²¨ë¼!</td>		
+										<td class="table-spot">¸ù¸¶¸£¶ß</td>
+										<td class="memo-pad">Ã¬°Ü¶ó!</td>		
 									</tr>
 									<tr>
 										<td class="table-time">08:00</td>
-										<td class="table-spot">ê°œì„ ë¬¸</td>
+										<td class="table-spot">°³¼±¹®</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">09:00</td>
-										<td class="table-spot">ìƒ¹ì œë¦¬ì œê±°ë¦¬</td>
+										<td class="table-spot">¼§Á¦¸®Á¦°Å¸®</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									<tr>
 										<td class="table-time">10:00</td>
-										<td class="table-spot">ë¥´ë¸Œë£¨</td>
+										<td class="table-spot">¸£ºê·ç</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									
 									<tr>
 										<td class="table-time">11:00</td>
-										<td class="table-spot">ê³µí•­</td>
+										<td class="table-spot">°øÇ×</td>
 										<td class="memo-pad"></td>		
 									</tr>
 									
 									<tr>
 										<td class="table-time">14:00</td>
-										<td class="table-spot">ì§‘</td>
+										<td class="table-spot">Áý</td>
 										<td class="memo-pad"></td>		
 									</tr>
 								</tbody>

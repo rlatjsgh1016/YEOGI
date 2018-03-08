@@ -22,8 +22,10 @@ public class JdbcTourPlanDao implements TourPlanDao {
 				"    START_DATE," + 
 				"    END_DATE," + 
 				"    COMPANION," + 
+				"    MID," +
+				"    PERIOD," +
 				"    T_THEME" + 
-				") VALUES (SELECT NVL(MAX(TO_NUMBER(ID)),0)+1 ID FROM TOUR_PLAN,?,?,?,?,?);";
+				") VALUES (?,?,?,?,?,?,?,?)";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
 		int result = 0;
 		
@@ -40,7 +42,9 @@ public class JdbcTourPlanDao implements TourPlanDao {
 			st.setDate(3, tourPlan.getStartDate());
 			st.setDate(4, tourPlan.getEndDate());
 			st.setInt(5, tourPlan.getCompanion());
-			st.setString(6, tourPlan.gettTheme());
+			st.setString(6, tourPlan.getmId());
+			st.setInt(7, tourPlan.getPeriod());
+			st.setString(8, tourPlan.gettTheme());
 				
 			result = st.executeUpdate();
 			st.close();
