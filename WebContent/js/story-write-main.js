@@ -14,6 +14,7 @@ window.addEventListener("load", function(){
 	var spdUnitSelect = document.querySelector("select[name='spd-unit']");
 	var spdContentInput = document.querySelector("input[name='spd-content']");
 	var spdAmountInput = document.querySelector("input[name='spd-amount']");
+	var postSubmitButton = this.document.querySelector("input[name='btn-post']");
 	
 	for(var i=0; i<btnPlaceAdd.length; i++){
 		btnPlaceAdd[i].onclick = function(){
@@ -60,11 +61,24 @@ window.addEventListener("load", function(){
 	}
 
 	spdContentInput.oninput = function(){
-		spdTypeSelect.required;
+		isInputSpdContent = true;
 	};
 
 	spdAmountInput.oninput = function(){
-		spdUnitSelect.required;
+		isInputSpdAmount = true;
+	};
+
+	postSubmitButton.onclick = function(e){
+		if(spdTypeSelect.value == "" && spdContentInput.value != ""){
+			alert("지출유형을 선택해주세요.");
+			e.preventDefault();
+			return;
+		}
+		else if(spdUnitSelect.value == "" && spdAmountInput != ""){
+			alert("화폐단위를 선택해주세요.");
+			e.preventDefault();
+			return;
+		}
 	};
 	
 });

@@ -7,11 +7,11 @@ import com.yeogi.jspweb.entity.TLogCmt;
 
 public interface TLogCmtDao {
 	
-	List<TLogCmt> getList(TLogCmt tLogCmt);
+	List<TLogCmt> getList(String tourLogId);
 
-	int insert(Member id);
+	int insert(TLogCmt id);
 
-	int update(Member id);
+	int update(TLogCmt id);
 
 	int delete(String id);
 
