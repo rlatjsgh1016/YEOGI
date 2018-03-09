@@ -733,29 +733,34 @@ a{
 	min-height: 50px;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 }
+.comment-list-box,
 .st-comment-write-box>.comment-write-box{
 	width: 930px;
-	height: 55px;
+	min-height: 55px;
 	border-top: 1px solid #AFAFAF;
 	display: flex;
 	justify-content: space-between;
+	/* position: relative; */
+	/* overflow: hidden; */
 }
 .st-comment-write-box>.comment-write-box>.new-comment{
 	display: block;
 	width: 750px;
     resize: vertical;
-    min-height: 25px;
+    min-height: 20px;
     border: 1px solid #eee;
     background: #f6f6f6;
     border-radius: 3px;
     overflow: auto;
     margin: 10px 5px;
-    padding-top : 10px;
+    padding-top : 12px;
     font-family: 맑은고딕,HY고딕,sans-serif;
 	font-size: 13px;
+	
 }
-.st-comment-write-box>.comment-write-box>#comment-writer-img{
+.comment-writer-img{
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
@@ -766,7 +771,7 @@ a{
 }
 .st-comment-write-box>.comment-write-box>.comment-reg{
 	width: 58px;
-	height:28px;
+	height:38px;
 	font-family: 맑은고딕,HY고딕,sans-serif;
 	font-size: 15px;
 	font-weight: bold;
@@ -776,7 +781,7 @@ a{
 	border: 1px solid #E64C3C;
 	text-align: center; 
 	margin: 10px 0px 10px 10px;
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	vertical-align: middle;
 }
 .st-comment-write-box>.comment-write-box>.unlock{
@@ -792,13 +797,60 @@ a{
 	background: url("../images/lock24.png") no-repeat center;
 	margin: 10px 0px;
 }
-
+.comment-list{
+	margin-left: 10px;
+	/* display: flex; */
+}
+.comment-list>.comment-writer-img{
+	float: left;
+}
+.comment-contents-box{
+	width: 850px;
+	min-height: 55px;
+	margin: 10px 5px 10px 50px;	
+}
+.comment-writer-box{
+	width: 850px;
+	height: 22px;
+	/* margin: 10px 5px; */
+	float: left;
+}
+.id-date{
+	width: 500px;
+	float: left;
+}
+.comment-writer-id{
+	font-weight: bold;
+	font-size: 16px!important;
+	color: #000000;
+}
+.comment-writer-date{
+	font-size: 13px;
+	margin-left: 5px;
+	color: #333333;
+}
+.reply-button{
+	width: 50px;
+	background: url("../images/cmt-arrow.png") no-repeat center;
+	float: right;
+	border: none;	
+	margin-top: 5px;
+}
+.reply-button:hover{
+	background: url("../images/cmt-arrow-hover.png") no-repeat center;
+}
+.comment-content{
+	width: 800px;
+	min-height: 30px;
+	font-size: 15px;
+	color: #333333;
+}
 .side-bar{
 	width: 50px;
 	min-height:50px;
 	border-left:1px solid #212121;
 	position: fixed;
-	right: 12.5%;
+	right: 14%;
 	z-index:999;
 	/* margin-right: -615px; */
 	visibility: visible;
