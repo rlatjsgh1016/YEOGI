@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+/*--------------------------- reset ----------------------------------*/
+h1 {
+	margin: 0px;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	display: block;
+}
+
+a { 
+    
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	margin: 0px;
+}
+
+table {
+	text-align: center;
+	border-spacing: 0px;
+	table-layout: fixed; /* 테이블 와따가따 거리는거 고정 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	position: absolute;
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+
+#add-friend-screen{
+	height: 350px;
+	width: 550px;
+	background: #c0c0c0;
+	padding: 10px; 
+	
+}
+
+.add-friend-title{
+	height: 30px;
+	width: auto;
+	background: #ffffff;
+}
+
+.fbox{
+	background:yellowgreen;
+	height: 200px;
+	width: 160px;
+	float:left;
+	margin: 10px; 
+}
+
+.friend-list{
+}
+
+.friend-wait{
+}
+
+.friend-with{
+}
+
+.confirm{
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: right;
+}
+
+.close{
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: right;
+}
+
+
+.btn-default {
+	min-width:71px;
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #759d2a;
+    border-color: #608618;
+}
+
+#clearfix{
+	content: '';
+	dispaly: table;
+	clear: both 
+}
+
+

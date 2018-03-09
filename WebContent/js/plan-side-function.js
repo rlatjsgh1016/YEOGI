@@ -11,6 +11,21 @@ window.addEventListener("load", function () {
     var modal = document.getElementsByClassName("modal");
     var close = document.getElementsByClassName("close");
     var save = document.querySelector(".save");
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    var verySad = document.querySelector(".verysad");
+    var origin = verySad.querySelector(".select-place");
+    
+    
+    var costPlus = document.querySelector(".modal .cost-plus");
+    
+     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    costPlus.onclick = function(e){
+    	var copy = verySad.cloneNode(true);
+    	
+    	verySad.appendChild(copy);
+    };
+    
+    
     
     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 메모창  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
@@ -25,7 +40,7 @@ window.addEventListener("load", function () {
 				modal[i].style.display = "block";
 			}
 		};
-	}
+	};
     
     
     for(var i=0; i<close.length; i++){
@@ -34,12 +49,12 @@ window.addEventListener("load", function () {
 				modal[i].style.display = "none";
 			
 		};
-	}
+	};
     
     
     
     
-    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 메모창  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 날짜 더하기  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
     
     plus.onclick = function () {

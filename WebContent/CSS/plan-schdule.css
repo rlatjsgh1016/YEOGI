@@ -687,7 +687,7 @@ table td:nth-child(2) a:hover{
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
-input, select {
+.heiwh {
     vertical-align:middle;
     height:25px;
     box-sizing: border-box;
@@ -711,7 +711,8 @@ input, select {
 
 #memoscreen {
 	margin:250px auto;
-	height: 350px;
+	height: auto;
+	height-max:800px;
 	width: 600px;
 	border:1px solid red;
 	box-sizing: content-box;
@@ -738,6 +739,7 @@ input, select {
 #memoscreen ul:nth-child(2){
 	flex-direction: row-reverse;
 	margin-top:30px;
+	width: 300px;
 }
 
 
@@ -750,34 +752,42 @@ input, select {
 	 height: 100px;
     margin-bottom: 30px;
 }
-#memoscreen ul li:nth-child(4) {
-	 flex-basis: 60px;
+.select-place {
+	 width: 60px;
 }
-#memoscreen ul li:nth-child(5) {
-	 flex-basis: 260px;
+.select-place +input {
+	 width: 240px;
 }
-#memoscreen ul li:nth-child(6) {
-    margin-left: 30px;
-	 flex-basis: 90px;
+.select-money {
+    margin-left: 20px;
+	width: 90px;
 }
-#memoscreen ul li:nth-child(7) {
-	 flex-basis: 100px;
+.input-cost {
+	width: 10px;
 }
-#memoscreen ul:nth-child(2) li:nth-child(1) {
-    margin-top: 50px;
+.cost-plus {
+	display:block;
+	width: 5px;
+	cursor:pointer;
+}
+
+
+.close{
     width: 70px;
+    
 }
-#memoscreen ul:nth-child(2) li:nth-child(2) {
-    margin-top: 50px;
+.check{
 	width: 70px;
 }
 
-li:nth-child(2) input{
-    width: 480px;
-    height: 25px;
-}
+
 
 #memoscreen textarea {
     width: 565px;
     height: 100px;
+}
+
+.verysad{
+	width: 600px;
+	padding: 5px;
 }
