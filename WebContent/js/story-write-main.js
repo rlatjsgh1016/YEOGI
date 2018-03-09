@@ -10,11 +10,20 @@ window.addEventListener("load", function(){
 	var modal = document.getElementsByClassName("modal");
 	var themesButtons = document.querySelectorAll("#themes>button");
 	var themesInput = document.querySelector("input[name='themes']");
-	var spdTypeSelect = document.querySelector("select[name='spd-type']");
-	var spdUnitSelect = document.querySelector("select[name='spd-unit']");
-	var spdContentInput = document.querySelector("input[name='spd-content']");
-	var spdAmountInput = document.querySelector("input[name='spd-amount']");
+	
+	//포스트 테이블 데이터 정의
+	var inputTourLogId = document.querySelector("input[name='tour-log-id']");
+	var inputPostMemo = document.querySelector("input[name='post-memo']");
+	var inputLocId = document.querySelector("input[name='loc-id']");
+	var selectVehicle = document.querySelector("select[name='vehicle']");
+	var selectSpdType = document.querySelector("select[name='spd-type']");
+	var inputSpdContent = document.querySelector("input[name='spd-content']");
+	var selectSpdUnit = document.querySelector("select[name='spd-unit']");
+	var inputSpdAmount = document.querySelector("input[name='spd-amount']");
+	var inputTag = document.querySelector("input[name='tag']");
+	
 	var postSubmitButton = this.document.querySelector("input[name='btn-post']");
+	
 	
 	for(var i=0; i<btnPlaceAdd.length; i++){
 		btnPlaceAdd[i].onclick = function(){
@@ -60,25 +69,52 @@ window.addEventListener("load", function(){
 		}.bind(this,i));
 	}
 
-	spdContentInput.oninput = function(){
+	inputSpdContent.oninput = function(){
 		isInputSpdContent = true;
 	};
 
-	spdAmountInput.oninput = function(){
+	inputSpdAmount.oninput = function(){
 		isInputSpdAmount = true;
 	};
 
 	postSubmitButton.onclick = function(e){
-		if(spdTypeSelect.value == "" && spdContentInput.value != ""){
+		
+		var request = new XMLHttpRequest();
+		var ctx = reqeust.servletContext().contextPath();
+		
+		request.onreadystatechange = function(){
+
+            if(request.readyState != 4)	//	4번상태: 페이지 로딩이 완료 되지 않으면 리턴
+                return;
+
+            var posts = JSON.parse(request.responseText);
+            if(member == null){
+                alert("사용할 수 있는 아이디 입니다.");
+                idChecked = true;
+            }
+            else{
+                alert("이미 " + member.name + " 님이 사용중 입니다.");
+                idChecked = false;
+            }
+        };
+
+		request.open("POST", "/main/member/story/write/main", true );
+		
+		request.send(inputTourLogId.name+"="+inputTourLogId.value+"&"+inputPostMemo.name+"="+inputPostMemo.value+"&"+
+		inputLocId.name+"="+inputLocId.value+"&"+selectVehicle.name+"="+selectVehicle.value+"&"+selectSpdType.name+"="+selectSpdType.value+"&"+
+		inputSpdContent.name+"="+inputSpdContent.value+"&"+selectSpdUnit.name+"="+selectSpdUnit.value+"&"+inputSpdAmount.name+"="+inputSpdAmount.value+"&"+
+		inputTag.name+"="+inputTag.value);
+		
+		/*if(selectSpdType.value == "" && inputSpdContent.value != ""){
 			alert("지출유형을 선택해주세요.");
 			e.preventDefault();
 			return;
 		}
-		else if(spdUnitSelect.value == "" && spdAmountInput != ""){
+		else if(selectSpdUnit.value == "" && inputSpdAmount != ""){
 			alert("화폐단위를 선택해주세요.");
 			e.preventDefault();
 			return;
-		}
+		}*/
 	};
 	
 });
