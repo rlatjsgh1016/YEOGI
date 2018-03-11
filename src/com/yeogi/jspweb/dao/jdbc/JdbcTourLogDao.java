@@ -10,15 +10,16 @@ import java.util.List;
 
 import com.yeogi.jspweb.dao.TourLogDao;
 import com.yeogi.jspweb.entity.TourLog;
+import com.yeogi.jspweb.entity.TourLogView;
 
 public class JdbcTourLogDao implements TourLogDao {
 	
 	@Override
-	public List<TourLog> getList() {
+	public List<TourLogView> getList() {
 		
-		String sql = "SELECT * FROM TOUR_LOG ORDER BY REG_DATE DESC";
+		String sql = "SELECT * FROM TOUR_LOG_VIEW ORDER BY REG_DATE DESC";
 		
-		List<TourLog> list = new ArrayList<>();
+		List<TourLogView> list = new ArrayList<>();
 		
 		try {
 
@@ -29,7 +30,7 @@ public class JdbcTourLogDao implements TourLogDao {
 			ResultSet rs = st.executeQuery();
 						
 			while(rs.next()) {
-				TourLog tourLog = new TourLog(
+				TourLogView tourLog = new TourLogView(
 						rs.getString("ID"),
 						rs.getString("TITLE"),
 						rs.getString("MEMO"),
@@ -44,7 +45,8 @@ public class JdbcTourLogDao implements TourLogDao {
 						rs.getTimestamp("LAST_MOD_DATE"),
 						rs.getInt("HIT"),
 						rs.getString("T_THEME"),
-						rs.getDate("END_DATE")						
+						rs.getDate("END_DATE"),
+						rs.getString("NAION")
 						);
 				list.add(tourLog);
 			}
@@ -67,11 +69,11 @@ public class JdbcTourLogDao implements TourLogDao {
 	}
 
 	@Override
-	public TourLog get(String id) {
+	public TourLogView get(String id) {
 
-		String sql = "SELECT * FROM TOUR_LOG WHERE ID=?";
+		String sql = "SELECT * FROM TOUR_LOG_VIEW WHERE ID=?";
 		
-		TourLog tourLog = null;
+		TourLogView tourLog = null;
 		
 		try {
 
@@ -85,7 +87,7 @@ public class JdbcTourLogDao implements TourLogDao {
 			ResultSet rs = st.executeQuery();
 			
 			if(rs.next()) {
-				tourLog = new TourLog(
+				tourLog = new TourLogView(
 						rs.getString("ID"),
 						rs.getString("TITLE"),
 						rs.getString("MEMO"),
@@ -100,7 +102,8 @@ public class JdbcTourLogDao implements TourLogDao {
 						rs.getTimestamp("LAST_MOD_DATE"),
 						rs.getInt("HIT"),
 						rs.getString("T_THEME"),
-						rs.getDate("END_DATE")						
+						rs.getDate("END_DATE"),
+						rs.getString("NATION")
 						);
 			}
 			
@@ -267,6 +270,80 @@ public class JdbcTourLogDao implements TourLogDao {
 		
 	}
 
+	@Override
+	public int updateLock(TourLog tl) {
+
+		String sql = "UPDATE TOUR_LOG SET LOCK_YN=? WHERE ID=?";
+		
+		int result = 0;
+		
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tl.getLockYN());
+			st.setString(2, tl.getId());
+			
+			result = st.executeUpdate();
+						
+			st.close();
+			con.close();
+		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+		return result;
+		
+	}
+	
+	@Override
+	public int updateCover(TourLog tl) {
+
+		String sql = "UPDATE TOUR_LOG SET "
+				+ "COVER_IMG=? "
+				+ "WHERE ID=?";
+		
+		int result = 0;
+		
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tl.getCoverImg());
+			st.setString(2, tl.getId());
+			
+			result = st.executeUpdate();
+						
+			st.close();
+			con.close();
+		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+		return result;
+		
+	}
+	
 	@Override
 	public int delete(String id) {
 

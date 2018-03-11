@@ -3,10 +3,11 @@ package com.yeogi.jspweb.dao;
 import java.util.List;
 
 import com.yeogi.jspweb.entity.Tag;
+import com.yeogi.jspweb.entity.TagView;
 
 public interface TagDao {
 
-	List<Tag> getList(String tLogPostId);
+	List<TagView> getList(String tLogId);
 
 	int insert(Tag tag);
 

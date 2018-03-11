@@ -335,7 +335,6 @@ header nav{
 
 #visual{
 	height: 145px;
-	background: #1C1C1C url(../resources/small_visual.jpg) no-repeat center;
     border-top: 5px solid #E64C3C;
 }
 
@@ -556,6 +555,7 @@ main>.root-container{
 	width: 25px;
 	height: 40px;
 	margin: 5px 0 5px 20px;
+	padding: 0;
 	background-color: #D8D8D8;
 }
 
@@ -567,6 +567,7 @@ main>.root-container{
 	width: 25px;
 	height: 40px;
 	margin: 5px 20px 5px 5px;
+	padding: 0;
 	background-color: #D8D8D8;
 }
 
@@ -663,8 +664,6 @@ main>.root-container{
 	align-items: center;
 	padding: 10px 0;
 }
-
-
 
 /*----------------------- right-main ------------------------*/
 .right-main{
@@ -789,7 +788,7 @@ textarea.form-control{
 	
 }
 
-.view-frame>p{
+.view-frame div:first-child{
 	display: inline-block;
 	padding: 5px;
 	width: 967px;
@@ -817,19 +816,29 @@ textarea.form-control{
 	font-weight: bold;
 }
 
-.view-info li:first-child{
+.view-info .loc-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/spot16.png") no-repeat left;
 }
 
-.view-info li:nth-child(2){
+.view-info .spd-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/won16.png") no-repeat left;
 }
 
-.view-info li:last-child{
+.view-info .spd-list span{
+	padding-left: 16px;
+	background: url("../images/header_bar.png") no-repeat 5px center;
+}
+
+.view-info .spd-list span:first-child{
+	padding-left: 0;
+	background: none;
+}
+
+.view-info .tag-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/tag16.png") no-repeat left;
@@ -904,7 +913,7 @@ textarea.form-control{
 	margin-right: 10px;
 }
 	
-.modal{
+#detail-post-modal{
 	position: fixed;
     top: 0;
     right: 0;

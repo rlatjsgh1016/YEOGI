@@ -55,7 +55,7 @@ window.addEventListener("load", function(){
 	}
 }
 </script> -->
-	<form id="form-main" method="post" novalidate="novalidate">
+	<form id="form-main" method="post" enctype="multipart/form-data">
 		<div id="visual">
 			<h1 class="hidden">타이틀 입력 필드</h1>
 				<div class="root-container">
@@ -63,7 +63,8 @@ window.addEventListener("load", function(){
 					<input id="mid" type="hidden" name="mid" value="${tourLog.mid}">
 					<input id="title" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)" value="${tourLog.title}">
 					<input id="btn-cover" type="submit" name="btn-main" value="커버교체">
-					<input id="cover-img" type="hidden" name="cover-img" value="${tourLog.coverImg}">
+					<input type="hidden" name="cover-img" value="${tourLog.coverImg}">
+					<input id="attached-file" type="file" name="attached-file" class="hidden">
 				</div>
 		</div>
 		<main>
@@ -91,7 +92,7 @@ window.addEventListener("load", function(){
 							</div>
 							<div>
 								<input id="btn-save" class="btn-main-submit" type="submit" name="btn-main" value="저장">
-								<input class="btn-main-submit" type="submit" name="btn-main" value="취소">
+								<input class="btn-main-submit" type="reset" name="btn-main" value="취소">
 							</div>
 						</div>
 					</div>
@@ -149,12 +150,7 @@ window.addEventListener("load", function(){
 						</div>
 					</div>
 					<div class="day-btn-container clear-fix">
-						<c:if test="${firstDay>1}">
-						<a class="left-arrow" href="?id=${tourLog.id}&d=${firstDay-1}"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
-						</c:if>
-						<c:if test="${firstDay==1}">
-						<a class="left-arrow" onclick="alert('이전 날짜가 없습니다.');"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></a>
-						</c:if>
+						<button class="left-arrow" type="button"><img alt="좌측화살표" src="${ctx}/images/left-arrow.png"></button>
 						<ul class="ul-day-btn">
 						<c:if test="${tourLog.period == 1}">
 							<li><button type="button" name="btn-day" value="1">DAY1</button></li>
@@ -174,28 +170,26 @@ window.addEventListener("load", function(){
 						</c:forEach>
 						</c:if>
 						</ul>
-						<c:if test="${firstDay+3 <= tourLog.period}">
-						<a class="right-arrow" href="?id=${tourLog.id}&d=${firstDay+1}"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
-						</c:if>
-						<c:if test="${firstDay+3 > tourLog.period}">
-						<a class="right-arrow" onclick="alert('다음 날짜가 없습니다.');"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></a>
-						</c:if>
+						<button class="right-arrow" type="button"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></button>
 					</div>
 					<div class="place-container">
+						<c:forEach var="pl" items="${postList}">
+						<c:if test="${firstDay == pl.day}">
 						<div class="card-frame">
 							<div class="image-frame">
-								<img alt="장소이미지" src="${ctx}/resources/small_visual.jpg">
+								<img alt="장소이미지" src="${pl.img}">
 							</div>
-							
 							<div class="place-frame">
-								<p>인천공항</p>
+								<p>${pl.name}</p>
 							</div>
 							<div class="place-btn-container">
-							
 								<button class="btn-place-delete" type="button" ><img alt="삭제" src="${ctx}/images/delete.png"></button>
 								<button class="btn-place-edit" type="button" ><img alt="편집" src="${ctx}/images/write.png"></button>
+								<input type="hidden" name="post-id" value="${pl.id}">
 							</div>
 						</div>
+						</c:if>
+						</c:forEach>
 						<div class="place-add">
 							<div class="large-loca"></div>
 							<button class="btn btn-focus btn-place-add" type="button">장소추가</button>
@@ -210,13 +204,13 @@ window.addEventListener("load", function(){
 	           				<div class="tour-log-info-bottom">
 	            					<div class="days">
 		               					<h6>여행시작일 </h6>
-		               					<input id="start-date" type="date" name="start-date" value="${tourLog.startDate}" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;">
+		               					<input id="start-date" type="date" name="start-date" value="${tourLog.startDate}" style="height: 34px; margin-left:5px; cursor: pointer;background-color: white;" required="required">
 	            					</div>
 	            					<div class="days">
 	              						<h6>일</h6>
-	              						<select id="period" name="period" style="width:50px; height: 38px;">	              						
+	              						<select id="period" name="period" style="width:50px; height: 38px;" required="required">	              						     						
 	              						<c:forEach var="dl" items="${dayList}">
-	              							<option <c:if test="${tourLog.period == dl.day}" >selected="selected"</c:if>>
+	              							<option <c:if test="${tourLog.period == dl.day}" >selected="selected"</c:if> value="${dl.day}">
 	              								${dl.day}
 	              							</option>
 	              						</c:forEach>
@@ -224,14 +218,14 @@ window.addEventListener("load", function(){
 	            					</div>
 	            					<div class="people">
 		               					<h6>명</h6>
-		               					<input type="number" id="companion" name="companion" value="${tourLog.companion}" min="1" style="width:50px; height: 32px;">
+		               					<input type="number" id="companion" name="companion" value="${tourLog.companion}" min="1" style="width:50px; height: 32px;" required="required">
 	            					</div>
 	           				</div>
 	           				<div class="nations">
 	            					<h6>여행도시</h6>
-	         						<select id="select-nation" name="select-nation" style="width:70px; height: 38px;">
+	         						<select id="select-nation" name="select-nation" style="width:70px; height: 38px;" required="required">
 	         							<c:forEach var="nl" items="${nationList}">
-	         								<option <c:if test="${tLogNation.nation == nl.nation}" >selected="selected"</c:if>>${nl.nation}</option>
+	         								<option <c:if test="${tourLog.nation == nl.nation}" >selected="selected"</c:if> value="${nl.nation}">${nl.nation}</option>
 	         							</c:forEach>
 	         						</select>
 	             			</div>
@@ -248,25 +242,42 @@ window.addEventListener("load", function(){
 	       				</div>
 	   				</div>
 					<div class="view-container">
+						<c:forEach var="pl" items="${postList}">
 						<div class="view-frame-box">
-							<p>인천공항 (Incheon International Airport, ICN)</p>
+							<p>${pl.name}</p>
 							<div class="view-frame">
-								<p>기내식은 언제 제공하나?</p>
-								<p>승무원들은 비행기에 탑승하자마자 기내식을 준비한다. 승객들이 잠들기 전에 식사를 제공하기 위해서다. 보통 비행시간이 8시간 이상의 경우 두 끼, 그 이하는 한 끼를 제공한다. 아침, 점심, 저녁을 기본으로 늦은 아침(Brunch), 늦은 점심(Heavey Snack), 늦은 저녁(Supper) 등으로 나뉜다. 아침이나 늦은 저녁의 경우엔 위에 부담이 적고 소화가 잘되는 메뉴로 구성하고 그 외는 밥과 면류가 포함된 다양한 음식이 나온다.</p>
-								<div class="view-frame-photo">
-									<img alt="게시물사진" src="${ctx}/resources/small_visual.jpg">
-								</div>
+								<div>${pl.content}</div>
 								<div class="view-info">
 									<ul>
-										<li>인천공항</li>
-										<li><span>KRW</span> <span>190,000</span></li>
-										<li>인천공항,공항,인천</li>
+										<li class="loc-list">${pl.name}</li>
+										<c:if test="${!empty spdList}">
+										<c:forEach var="spd" items="${spdList}">
+										<c:if test="${pl.id == spd.tLogPostId}">
+										<li class="spd-list">
+											<span>${spd.type}</span>
+											<span>${spd.content}</span>
+											<span>${spd.unit}</span>
+											<span>${spd.amount}</span>
+										</li>
+										</c:if>
+										</c:forEach>
+										</c:if>
+										<c:if test="${!empty tagList}">
+										<li class="tag-list">
+										<c:forEach var="tag" items="${tagList}">
+										<c:if test="${pl.id == tag.tLogPostId}">
+										#${tag.content}
+										</c:if>
+										</c:forEach>
+										</li>
+										</c:if>
 									</ul>
 								</div>
 							</div>
 						</div>
+						</c:forEach>
 					</div>
-					<div class="modal">
+					<div id="detail-post-modal">
 						<div class="detail-post-box">
 							<div class="detail-title-box">포스트작성</div>
 							<div class="detail-form-box">
@@ -288,7 +299,7 @@ window.addEventListener("load", function(){
 									</select>
 								</div>
 								<div class="post-list post-expense" >
-									<select id="spd-type" name="spd-type" required>
+									<select id="spd-type" name="spd-type" required="required" >
 										<option value="">지출유형 선택</option>
 										<option value="명소">명소</option>
 										<option value="맛집">맛집</option>
@@ -297,12 +308,12 @@ window.addEventListener("load", function(){
 										<option value="쇼핑">쇼핑</option>
 										<option value="기타">기타</option>
 									</select>
-									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료">
-									<select id="spd-unit" name="spd-unit">
+									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료" required="required" >
+									<select id="spd-unit" name="spd-unit" required="required" >
 										<option value="">화폐단위 선택</option>
 										<option value="KRW">KRW(한국)</option>
 									</select>
-									<input id="spd-amount" type="number" name="spd-amount" on placeholder="지출금액 입력">
+									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력" required="required" >
 									<button class="btn btn-sm" type="button">추가</button>
 									<button class="btn btn-sm" type="button">삭제</button>
 								</div>

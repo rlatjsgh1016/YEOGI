@@ -13,11 +13,6 @@ public class Tag {
 		this.id = id;
 		this.tLogPostId = tLogPostId;
 	}
-	public Tag(String content, String tLogPostId) {
-
-		this.content = content;
-		this.tLogPostId = tLogPostId;
-	}
 	public String getContent() {
 		return content;
 	}
