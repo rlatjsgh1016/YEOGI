@@ -711,12 +711,13 @@ table td:nth-child(2) a:hover{
 
 #memoscreen {
 	margin:250px auto;
-	height: auto;
-	height-max:800px;
-	width: 600px;
+	height: 330px;
+	width: 630px;
 	border:1px solid red;
 	box-sizing: content-box;
 	background-color: #ffffff;
+	
+	overflow-y:scroll;
 }
 #memoscreen ul{
 	display: flex;
@@ -742,6 +743,10 @@ table td:nth-child(2) a:hover{
 	width: 300px;
 }
 
+#memo-title{
+	width: 480px;
+}
+
 
 #memoscreen ul:first-child li:nth-child(2) {
 	flex:10 0 auto;
@@ -759,7 +764,7 @@ table td:nth-child(2) a:hover{
 	 width: 240px;
 }
 .select-money {
-    margin-left: 20px;
+    margin-left: 5px;
 	width: 90px;
 }
 .input-cost {
@@ -767,17 +772,77 @@ table td:nth-child(2) a:hover{
 }
 .cost-plus {
 	display:block;
-	width: 5px;
 	cursor:pointer;
+	float:right;
+	margin-right: 10px;
+}
+.cost-minus{
+	display:block;
+	cursor:pointer;
+	float:right;
+	margin-right: 15px;
 }
 
+.mok{
+	float:right;
+	margin-top: 15px;
+}
 
 .close{
-    width: 70px;
+	min-width:71px;
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #759d2a;
+    border-color: #608618;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: left;
+    margin: 5px;
     
 }
 .check{
-	width: 70px;
+	min-width:71px;
+    padding: 3px 8px;
+    color: #fff;
+    background-color: #759d2a;
+    border-color: #608618;
+	display: inline-block;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: left;
+    margin: 5px;
 }
 
 
@@ -788,6 +853,17 @@ table td:nth-child(2) a:hover{
 }
 
 .verysad{
-	width: 600px;
+	width: 550px;
 	padding: 5px;
+	float: left;
 }
+
+
+
+
+
+
+
+
+
+

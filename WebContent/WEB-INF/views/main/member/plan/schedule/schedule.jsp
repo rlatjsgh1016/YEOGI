@@ -376,46 +376,49 @@
 		<div id="memoscreen">
 			<ul>
 				<li>06:00</li>
-				<li><input type="text" name="" value=""
+				<li><input id="memo-title" type="text" name="" value=""
 					placeholder="메모 제목이 무엇이죠? :)" maxlength="100" /></li>
 				<li><textarea name="" value=""
 						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
-				</ul>
-				<div class="verysad">
-					<select class="select-place heiwh">
-							<option value="서버로 넘길 값">명소</option>
-							<option value="서버로 넘길 값">맛집</option>
-							<option value="서버로 넘길 값">숙소</option>
-							<option value="서버로 넘길 값">교통</option>
-							<option value="서버로 넘길 값">쇼핑</option>
-							<option value="서버로 넘길 값">기타</option>
-					</select>
-					<input class="heiwh" type="text" name="" value=""
-						placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
-						style="width: 260px;" />
-					<select class="select-money heiwh" style="width: 90px;">
-							<option value="서버로 넘길 값">원(KRW)</option>
-							<option value="서버로 넘길 값">달러(USD)</option>
-							<option value="서버로 넘길 값">위안(CNY)</option>
-							<option value="서버로 넘길 값">유로(EUR)</option>
-							<option value="서버로 넘길 값">엔(JPY)</option>
-					</select>
-					<input class ="input-cost" type="text" name="" value=""
-						placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" /></li>
-					<div class="cost-plus heiwh">+</div>
-				</div>
-			
+			</ul>
+			<div class="verysad">
+				<select class="select-place heiwh">
+					<option value="서버로 넘길 값">명소</option>
+					<option value="서버로 넘길 값">맛집</option>
+					<option value="서버로 넘길 값">숙소</option>
+					<option value="서버로 넘길 값">교통</option>
+					<option value="서버로 넘길 값">쇼핑</option>
+					<option value="서버로 넘길 값">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="" value=""
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select class="select-money heiwh"
+					style="width: 90px;">
+					<option value="서버로 넘길 값">원(KRW)</option>
+					<option value="서버로 넘길 값">달러(USD)</option>
+					<option value="서버로 넘길 값">위안(CNY)</option>
+					<option value="서버로 넘길 값">유로(EUR)</option>
+					<option value="서버로 넘길 값">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="" value=""
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
 
 
-			<div class ="check">저장</div>
-			<div class ="close">취소</div>
-
+			<div class="mok">
+				<div class="check">저장</div>
+				<div class="close">취소</div>
+			</div>
 
 
 		</div>
 	</div>
 	<div class="modal-friend">
-		<<div></div>
+		<div></div>
 		
 	</div>
 </body>

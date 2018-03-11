@@ -11,20 +11,50 @@ window.addEventListener("load", function () {
     var modal = document.getElementsByClassName("modal");
     var close = document.getElementsByClassName("close");
     var save = document.querySelector(".save");
-    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ+ - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     var verySad = document.querySelector(".verysad");
     var origin = verySad.querySelector(".select-place");
     
-    
+    var addedDiv = document.createElement("div");
+    var addedFormDiv = document.querySelector(".addedFormDiv");
     var costPlus = document.querySelector(".modal .cost-plus");
+    var costMinus = document.querySelector(".modal .cost-minus");
     
-     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    var clone = verySad.cloneNode(true);
+    var count = 0;
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ + - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     costPlus.onclick = function(e){
-    	var copy = verySad.cloneNode(true);
-    	
-    	verySad.appendChild(copy);
+    	clone = verySad.cloneNode(true);
+    	addedFormDiv.appendChild(clone);
+    	count++;
     };
     
+    costMinus.onclick = function(e){
+    	if(count==1){
+    	addedFormDiv.removeChild(clone);
+    	count--;
+    	}else{
+    		addedFormDiv.removeChild(clone);
+    		count = 1;
+    	}
+    		
+    	
+    }
+    
+   
+    
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
     
     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 메모창  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/

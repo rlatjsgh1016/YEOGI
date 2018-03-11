@@ -5,32 +5,96 @@
 <title></title>
 <link href="../../../../CSS/plan-add-friend.css" type=text/css
 	rel="stylesheet" />
+<script>
+
+
+	window.addEventListener("load", function() {
+
+		var size = document.getElementsByName("checked-friend").length;
+		var addFriend = document.querySelector(".add-friend");
+
+		var checkedFriend = document.getElementsByName("checked-friend");
+		var ple = "";
+		var msg = "님께 함께 계획짜기를 요청했습니다  :)\n";
+		var waitBox = document.querySelector(".wait-box");
+		
+	
+			
+			addFriend.onclick = function() {
+				for (var i = 0; i < checkedFriend.length; i++) {
+					
+					if (checkedFriend[i].checked) {
+						ple += checkedFriend[i].value + " ";
+						
+						if(waitBox.innerHTML.indexOf(checkedFriend[i].value)==-1)
+						waitBox.innerHTML+=checkedFriend[i].value+"\n님<br/><br/>";
+						
+					}
+					
+				}
+				alert(ple + msg);
+				ple="";
+			
+			}
+	});
+</script>
 </head>
 <body>
 
-	<form id="" method="post">
+	<form name="check-form" id="" method="post" action="">
 		<div id="add-friend-screen">
 			<div class="add-friend-title">
-				<b>친구와 함께 여행을 작성해보세요! :)</b>
+                <b>친구와 멋진 여행을 <span style="color: red">함께 계획
+</span> 해보세요! :)</b>
 			</div>
 			<div class="">
 				<div class="friend-list fbox">
-					<input type="checkbox" name="checked-friend" value="1" />김대신 <input
-						type="checkbox" name="checked-friend" value="2" />김수경 <input
-						type="checkbox" name="checked-friend" value="3" />이자호 <input
-						type="checkbox" name="checked-friend" value="4" />김선호 <input
-						type="checkbox" name="checked-friend" value="5" />박제욱 <input
-						type="submit" value="추가하기" />
+				<div class="friend-list-inside" >내 친구 전체 목록</div>
+                <div class="inside">
+				    <p>
+                        <input type="checkbox" name="checked-friend" id="c1" value="김대신"/>
+                        <label for="c1">김대신</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checked-friend" id="c2" value="김수경"/>
+                        <label for="c2">김수경</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checked-friend" id="c3" value="김선호"/>
+                        <label for="c3">김선호</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checked-friend" id="c4" value="이자호"/>
+                        <label for="c4">이자호</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checked-friend" id="c5" value="박제욱"/>
+                        <label for="c5">박제욱</label>
+                    </p>
+                </div>
+                <div>
+				    <input class= "add-friend" type="button" value="추가하기" />
+				    </div>
 				</div>
 				<div class="friend-wait fbox">
-					<div class=""></div>
+				
+				<div class="friend-list-inside" >응답을 기다리는 친구</div>
+                    <div class="inside">
+                    	<div style="margin: 15px;" class="wait-box"></div>
+                    
+                    
+                    
+                    </div>
 				</div>
 				<div class="friend-with fbox">
-					<div class=""></div>
+				<div class="friend-list-inside" >계획을 공유중인 친구</div>
+                    <div class="inside"></div>
 				</div>
 			</div>
+			<div class="last-box">
 			<div class="confirm btn-default">확인</div>
 			<div class="close btn-default">취소</div>
+			</div>
 		</div>
 	</form>
 
