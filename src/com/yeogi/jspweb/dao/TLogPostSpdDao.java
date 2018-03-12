@@ -9,6 +9,7 @@ public interface TLogPostSpdDao {
 
 	List<TLogPostSpdView> getList(String tLogId);
 	List<TLogPostSpdView> getSum(String tLogId);
+	List<TLogPostSpdView> getPostIdList(String tLogPostId);
 	
 	int insert(TLogPostSpd tlps);
 	int update(TLogPostSpd tlps);

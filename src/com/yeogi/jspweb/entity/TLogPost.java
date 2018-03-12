@@ -3,27 +3,30 @@ package com.yeogi.jspweb.entity;
 public class TLogPost {
 	private String content;
 	private String tLogId;
-	private String tLogLocId;
+	private String locId;
 	private String trans;
 	private String id;
+	private int day;
 	public TLogPost() {
 
 	}
-	public TLogPost(String content, String tLogId, String tLogLocId, String trans, String id) {
+	public TLogPost(String content, String tLogId, String locId, String trans, String id, int day) {
 		
 		this.content = content;
 		this.tLogId = tLogId;
-		this.tLogLocId = tLogLocId;
+		this.locId = locId;
 		this.trans = trans;
 		this.id = id;
+		this.day = day;
 	}
 	
-	public TLogPost(String content, String tLogId, String tLogLocId, String trans) {
+	public TLogPost(String content, String tLogId, String locId, String trans, int day) {
 		
 		this.content = content;
 		this.tLogId = tLogId;
-		this.tLogLocId = tLogLocId;
+		this.locId = locId;
 		this.trans = trans;
+		this.day = day;
 	}
 	public String getContent() {
 		return content;
@@ -37,11 +40,11 @@ public class TLogPost {
 	public void settLogId(String tLogId) {
 		this.tLogId = tLogId;
 	}
-	public String gettLogLocId() {
-		return tLogLocId;
+	public String getLocId() {
+		return locId;
 	}
-	public void settLogLocId(String tLogLocId) {
-		this.tLogLocId = tLogLocId;
+	public void setLocId(String locId) {
+		this.locId = locId;
 	}
 	public String getTrans() {
 		return trans;
@@ -54,6 +57,12 @@ public class TLogPost {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public int getDay() {
+		return day;
+	}
+	public void setDay(int day) {
+		this.day = day;
 	}
 	
 }

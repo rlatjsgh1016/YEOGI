@@ -117,7 +117,10 @@ button{
 }
 
 .hidden{
-	display: none;
+	visibility: hidden;
+	height: 0;
+	margin: 0 !important;
+	padding: 0;
 }
 
 .clear-fix::after{
@@ -776,11 +779,13 @@ textarea.form-control{
 .view-container{
 	margin-top: 20px;
 	width: inherit;
-	padding: 2px;
+	padding: 1px;
 }
 
 .view-frame-box{
 	background: #ffffff;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #D8D8D8;
 }
 
 .view-frame-box>p{

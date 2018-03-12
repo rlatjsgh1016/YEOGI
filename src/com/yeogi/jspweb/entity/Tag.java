@@ -1,23 +1,23 @@
 package com.yeogi.jspweb.entity;
 
 public class Tag {
-	private String content;
+	private String tagContent;
 	private String id;
 	private String tLogPostId;
 	public Tag() {
 
 	}
-	public Tag(String content, String id, String tLogPostId) {
+	public Tag(String tagContent, String id, String tLogPostId) {
 
-		this.content = content;
+		this.tagContent = tagContent;
 		this.id = id;
 		this.tLogPostId = tLogPostId;
 	}
-	public String getContent() {
-		return content;
+	public String getTagContent() {
+		return tagContent;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setTagContent(String tagContent) {
+		this.tagContent = tagContent;
 	}
 	public String getId() {
 		return id;

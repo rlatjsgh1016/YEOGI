@@ -9,7 +9,7 @@ public class TLogPostSpdView extends TLogPostSpd {
 	}
 	public TLogPostSpdView(
 			String type, 
-			String content, 
+			String spdContent, 
 			String unit, 
 			int amount, 
 			String id, 
@@ -17,7 +17,7 @@ public class TLogPostSpdView extends TLogPostSpd {
 			String tLogId
 			) 
 	{
-		super(type, content, unit, amount, id, tLogPostId);
+		super(type, spdContent, unit, amount, id, tLogPostId);
 		this.tLogId = tLogId;
 	}
 	public TLogPostSpdView(String tLogId, String type, int sum) {
