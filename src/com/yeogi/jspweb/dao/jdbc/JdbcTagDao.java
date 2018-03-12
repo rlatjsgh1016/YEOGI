@@ -64,7 +64,11 @@ public class JdbcTagDao implements TagDao {
 	@Override
 	public int insert(Tag tag) {
 		
-		String sql = "INSERT INTO TAG VALUES(?,?,?)";
+		String sql = "INSERT INTO TAG VALUES("
+				+ "?,"
+				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TAG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),"
+				+ "?"
+				+ ")";
 
 		int result = 0;
 
@@ -74,9 +78,8 @@ public class JdbcTagDao implements TagDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tag.getId());
-			st.setString(2, tag.getContent());
-			st.setString(3, tag.gettLogPostId());
+			st.setString(1, tag.getContent());
+			st.setString(2, tag.gettLogPostId());
 
 			result = st.executeUpdate();
 

@@ -8,11 +8,10 @@ window.addEventListener("load", function(){
 	var detailPostBox = document.getElementsByClassName("detail-post-box");
 	var formMain = document.getElementById("form-main");
 	var btnCover = document.getElementById("btn-cover");
-	var btnLock = document.getElementById("btn-lock");
-	var btnUnlock = document.getElementById("btn-unlock");
 	var btnCompanion = document.getElementById("btn-companion");
 	var btnSave = document.getElementById("btn-save");
 	var modal = document.getElementsByClassName("modal");
+	var nicEdit = document.getElementsByClassName("detail-textarea");
 	
 	for(var i=0; i<btnPlaceAdd.length; i++){
 		btnPlaceAdd[i].onclick = function(){
@@ -35,6 +34,9 @@ window.addEventListener("load", function(){
 			for(var i=0; i<modal.length; i++){
 				modal[i].style.display = "none";
 			}
+			for(var i=0; i<nicEdit.length; i++){
+				nicEdit[i].value = "";
+			}
 		};
 	}
 	
@@ -45,6 +47,7 @@ window.addEventListener("load", function(){
 		}
 	}
 	
+<<<<<<< HEAD
 	btnLock.onclick = function() {
 		formMain.submit();
 	}
@@ -53,6 +56,8 @@ window.addEventListener("load", function(){
 		formMain.submit();
 	}
 	
+=======
+>>>>>>> refs/remotes/origin/master
 	btnCompanion.onclick = function(){
 		formMain.submit();
 	}

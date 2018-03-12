@@ -203,7 +203,8 @@ input, select {
 }
 
 .btn-default:hover,
-.btn-lg:hover{
+.btn-lg:hover,
+.btn-main-submit:hover{
 	cursor: pointer;
 	background: #E64C3C;
 }
@@ -221,8 +222,19 @@ input, select {
 	cursor: pointer;
 }
 
-.btn-cancel{
-	
+.btn-main-submit{
+	display : inline-block;
+	width : 90px;
+	text-align: center;
+	font-size:13px;
+	font-weight: bold;
+	color: #ffffff;
+	background: #333333;
+	padding : 8px;
+	border-radius: 5px;
+	overflow : hidden;
+	/* overriding for input button*/
+	border: 0px; /* 원래 버튼 초기화 */
 }
 
 .small-loca{
@@ -426,27 +438,29 @@ main>.root-container{
 }
 
 .btn-container{
+	margin: 15px;
+	padding: 10px 0;
 	display:flex;
-	flex-direction: column;
 	justify-content: space-around;
 	align-items: stretch;
-	margin: 10px;
-	padding: 10px;
 	background: #ffffff;
 	border-radius: 5px;
 }
 
 .first-line-btn{
-	display:flex;
-	justify-content: space-around;
-	align-items: center;
+	padding-left: 10px;
+	align-self: center;
 }
 
 .second-line-btn{
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	margin-top: 10px;
+}
+
+.second-line-btn>div{
+	padding: 5px;
 }
 
 #lock{
@@ -806,36 +820,11 @@ textarea.form-control{
 	background-color: white;
 }
 
-.detail-post-box>input,
-.detail-post-box>label,
-.detail-post-box>select{
-	border: 2px solid #000000;
-	padding: 1px;
-	height: 20px;
-}
-
 .detail-title-box{
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.detail-title-box>:first-child{
-	display:block;
-	align-self: center;
-	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
+	text-align: center;
 	margin-bottom: 10px;
-}
-
-.detail-title-box>:last-child{
-	align-self: flex-start;
-}
-
-.detail-title-box>button{
-	width: 20px;
-	height: 20px;
 }
 
 .detail-textarea{
@@ -852,9 +841,20 @@ textarea.form-control{
 	height: 460px;
 }
 
-.detail-form-box>.post-list{
-	padding-left: 30px;
+.post-list{
+	padding-left: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
 }
+
+.post-list *{
+	margin-right: 5px;
+	font-weight: bold;
+}
+
 .detail-form-box>.post-spot{
 	background :url("../images/spot16.png") no-repeat left;
 }
@@ -865,9 +865,14 @@ textarea.form-control{
 	background :url("../images/tag16.png") no-repeat left;
 }
 
+
 .post-add-button{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
+}
+
+.post-add-button *{
+	margin-right: 10px;
 }
 	
 .modal{

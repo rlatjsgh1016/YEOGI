@@ -304,7 +304,7 @@
 	
 	</div>
 	<!------------footer 시작-------------------------------------------------------->
-	<!-- <footer id="footer">
+	<footer id="footer">
 		<div class="root-container">
 			<div id="footer_logo">
 			</div>
@@ -319,4 +319,4 @@
 		</div>
 	</footer>	
 </body>
-</html> -->
+</html>

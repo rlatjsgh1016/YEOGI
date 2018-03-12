@@ -9,19 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yeogi.jspweb.dao.TLogPostDao;
-import com.yeogi.jspweb.entity.TLogLoc;
-import com.yeogi.jspweb.entity.TLogModAuth;
 import com.yeogi.jspweb.entity.TLogPost;
+import com.yeogi.jspweb.entity.TLogPostView;
 import com.yeogi.jspweb.entity.TourLog;
 
 public class JdbcTLogPostDao implements TLogPostDao {
 
 	@Override
-	public List<TLogPost> getList(TourLog tourLog, TLogLoc tLogLoc) {
+	public List<TLogPostView> getList(TourLog tourLog) {
 		
-		String sql = "SELECT * FROM T_LOG_POST WHERE T_LOG_ID = ? AND T_LOG_LOC = ?";
+		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ?";
 
-		List<TLogPost> list = new ArrayList<>();
+		List<TLogPostView> list = new ArrayList<>();
 
 		try {
 
@@ -31,19 +30,32 @@ public class JdbcTLogPostDao implements TLogPostDao {
 			PreparedStatement st = con.prepareStatement(sql);
 			
 			st.setString(1, tourLog.getId());
-			st.setString(2, tLogLoc.getId());
 			
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {
 
-				TLogPost tlogpost = new TLogPost(		
+				TLogPostView tlogpost = new TLogPostView(	
 						
-						rs.getString("CONTENT"),
+						rs.getString("POST_CONTENT"),
 						rs.getString("T_LOG_ID"),
 						rs.getString("T_LOG_LOC_ID"),
 						rs.getString("TRANS"),
-						rs.getString("ID"));
+						rs.getString("T_LOG_POST_ID"),
+						rs.getString("T_LOG_POST_SPD_ID"),
+						rs.getString("TYPE"),
+						rs.getString("SPD_CONTENT"),
+						rs.getString("UNIT"),
+						rs.getInt("AMOUNT"),
+						rs.getString("TAG_ID"),
+						rs.getString("TAG_CONTENT"),
+						rs.getString("LOC_ID"),
+						rs.getInt("ORDER"),
+						rs.getInt("DAY"),
+						rs.getString("NAME"),
+						rs.getString("IMG")
+						
+						);
 				
 				list.add(tlogpost);
 			}
@@ -67,17 +79,19 @@ public class JdbcTLogPostDao implements TLogPostDao {
 	}
 
 	@Override
-	public int insert(TLogPost tlp) {
+	public String insert(TLogPost tlp) {
 		
 		String sql = "INSERT INTO T_LOG_POST VALUES("
 				+ "?,"
 				+ "?,"
 				+ "?,"
 				+ "?,"
-				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'))"
+				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM T_LOG_POST WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'))"
 				+ ")";
 
-		int result = 0;
+		String sql2 = "SELECT MAX(TO_NUMBER(ID)) ID FROM T_LOG_POST WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')";
+		
+		String result = null;
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -90,8 +104,17 @@ public class JdbcTLogPostDao implements TLogPostDao {
 			st.setString(3, tlp.gettLogLocId());
 			st.setString(4, tlp.getTrans());
 	
-			result = st.executeUpdate();
+			st.executeUpdate();
+			
+			st = con.prepareStatement(sql2);
 
+			ResultSet rs = st.executeQuery();
+
+			if(rs.next()) {
+				result = rs.getString("ID");
+			}
+			
+			rs.close();
 			st.close();
 			con.close();
 
