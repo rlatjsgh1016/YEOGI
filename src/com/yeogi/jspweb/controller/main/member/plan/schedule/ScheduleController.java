@@ -43,31 +43,31 @@ public class ScheduleController extends HttpServlet {
 	    
 	    TPlanPostSpd tplanpostspd = new TPlanPostSpd();
 	    
-	    tplanpostspd.setId("2018031200011");
-	    tplanpostspd.setTPlanId("2018031200011");
-	    tplanpostspd.setTPlanLocId("2018031200011");
+	    tplanpostspd.setId("2018031200001");
+	    tplanpostspd.setTPlanId("1");
+	    tplanpostspd.setTPlanLocId("2018031200001");
 	    tplanpostspd.setAmount(request.getParameter("input-cost"));
-	    tplanpostspd.setContent(request.getParameter("content"));
-	    tplanpostspd.setType("명소");
-	    tplanpostspd.setUnit("달러");
+	    tplanpostspd.setContent(request.getParameter("memo-cost-spd"));
+	    tplanpostspd.setType(request.getParameter("type"));
+	    tplanpostspd.setUnit(request.getParameter("unit"));
 	    
 	    TPlanPostSpdDao tPlanPostSpdDao = new JdbcTPlanPostSpdDao();
 	    tPlanPostSpdDao.insert(tplanpostspd);
 	    
 	    
-	    TPlanPost tplanpost = new TPlanPost();
+	    /*TPlanPost tplanpost = new TPlanPost();
 	    
 	    tplanpost.setMemoTitle(request.getParameter("memo-title"));
 	    tplanpost.setMemoContent(request.getParameter("memo-content"));
-	    tplanpost.setTourDateTime("23:00");
-	    tplanpost.setTPlanId("2018031200011");
-	    tplanpost.setTPlanLocId("201803120011");
+	    tplanpost.setTourDateTime("06:00");
+	    tplanpost.setTPlanId("1");
+	    tplanpost.setTPlanLocId("2018031200001");
 	    
 	    TPlanPostDao tPlanPostDao = new JdbcTPlanPostDao();
-	    tPlanPostDao.insert(tplanpost);
+	    tPlanPostDao.insert(tplanpost);*/
 	    
 	    
-	    response.sendRedirect("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
+	    response.sendRedirect("schedule");
 	}
 }
 

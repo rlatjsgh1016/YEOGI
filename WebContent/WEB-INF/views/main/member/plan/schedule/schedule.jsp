@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 <link href="../../../../CSS/plan-schdule.css" type=text/css
 	rel="stylesheet" />
-<script src="../../../../js/plan-side-function.js"></script>
+<script src="../../../../js/plan-side-function.js">
+
+
+</script>
 </HEAD>
 <body>
 	<header id="header">
@@ -161,7 +164,7 @@
 						<thead>
 							<tr>
 
-								<td width="100px">[AM]06:00</td>
+								<td width="100px">06:00</td>
 								<td width="300px"></td>
 								
 								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
@@ -214,8 +217,92 @@
 
 							</tr>
 							<tr>
-								<td>[PM]01:00</td>
+								<td>13:00</td>
 								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>14:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>15:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>16:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>17:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>18:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>19:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>20:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>21:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>22:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>23:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>24:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>01:00</td>
+								<td></td>
 								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
@@ -243,90 +330,6 @@
 							</tr>
 							<tr>
 								<td>05:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>06:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>07:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>08:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>09:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>10:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>11:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>[AM]12:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>1:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>2:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>3:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>4:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>5:00</td>
 								<td></td>
 								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
@@ -382,7 +385,7 @@
 						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
 			</ul>
 			<div class="verysad">
-				<select class="select-place heiwh">
+				<select name="type" class="select-place heiwh">
 					<option value="명소">명소</option>
 					<option value="맛집">맛집</option>
 					<option value="숙소">숙소</option>
@@ -390,16 +393,16 @@
 					<option value="쇼핑">쇼핑</option>
 					<option value="기타">기타</option>
 				</select> 
-				<input class="heiwh" type="text" name="memo-costspd"
+				<input class="heiwh" type="text" name="memo-cost-spd"
 					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
 					style="width: 260px;" /> 
-				<select class="select-money heiwh"
+				<select name="unit" class="select-money heiwh"
 					style="width: 90px;">
-					<option value="원">원(KRW)</option>
-					<option value="달러">달러(USD)</option>
-					<option value="위안">위안(CNY)</option>
-					<option value="유로">유로(EUR)</option>
-					<option value="엔">엔(JPY)</option>
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
 				</select> 
 				<input class="input-cost" type="text" name="input-cost"
 					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />

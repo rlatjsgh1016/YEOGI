@@ -27,7 +27,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 						"    amount," + 
 						"    id" + 
 						") VALUES(?,?,?,?,?,?,?)";*/
-		String sql = "insert into t_plan_post_spd(content, type, unit, t_plan_id, t_plan_loc_id, amount, id) values(?,?,?,?,?,?,?)";
+		String sql = "insert into t_plan_post_spd(content, type, unit, t_plan_id, t_plan_loc_id, amount, id) VALUES(?,?,?,?,?,?,?)";
 		int result=0;
 		
 		try {
@@ -37,7 +37,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			result = st.executeUpdate();
+			
 		
 			st.setString(1, tplanpostspd.getContent());
 			st.setString(2, tplanpostspd.getType());
@@ -47,7 +47,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			st.setString(6, tplanpostspd.getAmount());
 			st.setString(7, tplanpostspd.getId());
 			
-		
+			result = st.executeUpdate();
 			
 			st.close();
 			con.close();
