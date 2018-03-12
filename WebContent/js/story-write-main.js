@@ -21,6 +21,7 @@ window.addEventListener("load", function(){
 	var inputTourLogId = document.querySelector("input[name='tour-log-id']");
 	var inputPostMemo = document.querySelector("textarea[name='post-memo']");
 	var inputLocId = document.querySelector("input[name='loc-id']");
+	var inputLocName = document.querySelector("input[name='loc-name']");
 	var selectVehicle = document.querySelector("select[name='vehicle']");
 	var selectSpdType = document.querySelectorAll("select[name='spd-type']");
 	var inputSpdContent = document.querySelectorAll("input[name='spd-content']");
@@ -41,21 +42,89 @@ window.addEventListener("load", function(){
 	for(var i=0; i<btnPlaceAdd.length; i++){
 		btnPlaceAdd[i].addEventListener("click",function(i){
 			detailPostMadal.style.display = "block";
-		}.bind(this.i));
+		}.bind(this,i));
 	}
 	
-	//포스트 수정버튼
+	//포스트 편집버튼
 	for(var i=0; i<btnPlaceEdit.length; i++){
 		btnPlaceEdit[i].addEventListener("click",function(i){
 			detailPostMadal.style.display = "block";
-		}.bind(this.i));
+			var postIdInput = btnPlaceEdit[i].previousElementSibling;
+			
+			var formData = new FormData();
+			formData.append("id", postIdInput.value);
+
+			var request = new XMLHttpRequest();
+
+			request.onload = function(){
+				var result = JSON.parse(request.responseText);
+
+				inputPostMemo.value = result.content;
+
+		// var inputLocId = document.querySelector("input[name='loc-id']");
+		// var inputLocName = document.querySelector("input[name='loc-name']");
+		// var selectVehicle = document.querySelector("select[name='vehicle']");
+		// var selectSpdType = document.querySelectorAll("select[name='spd-type']");
+		// var inputSpdContent = document.querySelectorAll("input[name='spd-content']");
+		// var selectSpdUnit = document.querySelectorAll("select[name='spd-unit']");
+		// var inputSpdAmount = document.querySelectorAll("input[name='spd-amount']");
+		// var inputTag = document.querySelector("input[name='tag']");
+
+				// String content, 
+				// String tLogId, 
+				// String tLogLocId, 
+				// String trans, 
+				// String id,  
+				// String locId, 
+				// int order, 
+				// int day, 
+				// String name, 
+				// String img
+				// result.content;
+				// result.tLogLocId;
+				// result.trans;
+				// result.tLogLocId;
+				// result.locId;
+
+			}
+
+			request.open("POST","editPost",true);
+			request.send(formData);
+
+		}.bind(this,i));
+		
+		inputPostMemo.value = "";
+		inputLocId.value = "";
+		inputLocName.value = "";
+		inputSpdContent.value = "";
+		inputSpdAmount.value = "";
+		inputTag.value = "";
+		// var vehicleOpts = selectVehicle.querySelectorAll('option');
+		// vehicleOpts[0].selected = selected;
+		// var spdTypeOpts = selectSpdType.querySelectorAll('option');
+		// spdTypeOpts[0].selected = selected;
+		// var spdUnitOpts = selectSpdUnit.querySelectorAll('option');
+		// spdUnitOpts[0].selected = selected;
 	}
+
+	// var inputPostMemo = document.querySelector("textarea[name='post-memo']");
+	// var inputLocId = document.querySelector("input[name='loc-id']");
+	// var inputLocName = document.querySelector("input[name='loc-name']");
+	// var selectVehicle = document.querySelector("select[name='vehicle']");
+	// var selectSpdType = document.querySelectorAll("select[name='spd-type']");
+	// var inputSpdContent = document.querySelectorAll("input[name='spd-content']");
+	// var selectSpdUnit = document.querySelectorAll("select[name='spd-unit']");
+	// var inputSpdAmount = document.querySelectorAll("input[name='spd-amount']");
+	// var inputTag = document.querySelector("input[name='tag']");
+
+
+	
 	
 	//포스트 닫기 버튼
 	for(var i=0; i<btnDetailPostBoxClose.length; i++){
 		btnDetailPostBoxClose[i].addEventListener("click",function(i){
 			detailPostMadal.style.display = "none";
-		}.bind(this.i));
+		}.bind(this,i));
 	}
 
 	//여행테마 선택 버튼
@@ -90,14 +159,15 @@ window.addEventListener("load", function(){
 					return;
 				var returnString = request.responseText;
 				var result = JSON.parse(returnString);
-
+				var currDayInput = document.querySelector("#curr-day");
+				currDayInput.value = btnValue;
 				placeDiv.innerHTML = "";
 				for(var i=0; i<result.length; i++){
 					if(result[i].day == btnValue){
 						placeDiv.insertAdjacentHTML("beforeend","<div class='card-frame'><div class='image-frame'><img alt='장소이미지' src='"+result[i].img+"'>"+"</div>"+
 													"<div class='place-frame'><p>"+result[i].name+"</p></div><div class='place-btn-container'>"+
-													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/images/delete.png'></button>"+
-													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/images/write.png'></button>"+
+													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/Yeogi/images/delete.png'></button>"+
+													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/Yeogi/images/write.png'></button>"+
 													"<input type='hidden' name='post-id' value='"+result[i].id+"'></div></div>");
 					}
 				}
@@ -115,21 +185,21 @@ window.addEventListener("load", function(){
 				for(var i=0; i<btnPlaceAdd.length; i++){
 					btnPlaceAdd[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 수정버튼
 				for(var i=0; i<btnPlaceEdit.length; i++){
 					btnPlaceEdit[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 닫기 버튼
 				for(var i=0; i<btnDetailPostBoxClose.length; i++){
 					btnDetailPostBoxClose[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "none";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 			};
 
@@ -157,6 +227,8 @@ window.addEventListener("load", function(){
 					return;
 				var returnString = request.responseText;
 				var result = JSON.parse(returnString);
+				var currDayInput = document.querySelector("#curr-day");
+				currDayInput.value = firstDay-1;
 
 				for(var j=0; j<dayButtons.length; j++){
 					dayButtons[j].style.color = "#D8D8D8";
@@ -170,8 +242,8 @@ window.addEventListener("load", function(){
 					if(parseInt(result[i].day) == firstDay-1){
 						placeDiv.insertAdjacentHTML("beforeend","<div class='card-frame'><div class='image-frame'><img alt='장소이미지' src='"+result[i].img+"'>"+"</div>"+
 													"<div class='place-frame'><p>"+result[i].name+"</p></div><div class='place-btn-container'>"+
-													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/images/delete.png'></button>"+
-													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/images/write.png'></button>"+
+													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/Yeogi/images/delete.png'></button>"+
+													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/Yeogi/images/write.png'></button>"+
 													"<input type='hidden' name='post-id' value='"+result[i].id+"'></div></div>");
 					}
 				}
@@ -189,21 +261,21 @@ window.addEventListener("load", function(){
 				for(var i=0; i<btnPlaceAdd.length; i++){
 					btnPlaceAdd[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 수정버튼
 				for(var i=0; i<btnPlaceEdit.length; i++){
 					btnPlaceEdit[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 닫기 버튼
 				for(var i=0; i<btnDetailPostBoxClose.length; i++){
 					btnDetailPostBoxClose[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "none";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 			};
 
@@ -229,6 +301,8 @@ window.addEventListener("load", function(){
 					return;
 				var returnString = request.responseText;
 				var result = JSON.parse(returnString);
+				var currDayInput = document.querySelector("#curr-day");
+				currDayInput.value = lastDay+1;
 
 				for(var j=0; j<dayButtons.length; j++){
 					dayButtons[j].style.color = "#D8D8D8";
@@ -242,8 +316,8 @@ window.addEventListener("load", function(){
 					if(parseInt(result[i].day) == lastDay+1){
 						placeDiv.insertAdjacentHTML("beforeend","<div class='card-frame'><div class='image-frame'><img alt='장소이미지' src='"+result[i].img+"'>"+"</div>"+
 													"<div class='place-frame'><p>"+result[i].name+"</p></div><div class='place-btn-container'>"+
-													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/images/delete.png'></button>"+
-													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/images/write.png'></button>"+
+													"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/Yeogi/images/delete.png'></button>"+
+													"<button class='btn-place-edit' type='button' ><img alt='편집' src='/Yeogi/images/write.png'></button>"+
 													"<input type='hidden' name='post-id' value='"+result[i].id+"'></div></div>");
 					}
 				}
@@ -261,21 +335,21 @@ window.addEventListener("load", function(){
 				for(var i=0; i<btnPlaceAdd.length; i++){
 					btnPlaceAdd[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 수정버튼
 				for(var i=0; i<btnPlaceEdit.length; i++){
 					btnPlaceEdit[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "block";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 				
 				//포스트 닫기 버튼
 				for(var i=0; i<btnDetailPostBoxClose.length; i++){
 					btnDetailPostBoxClose[i].addEventListener("click",function(i){
 						detailPostMadal.style.display = "none";
-					}.bind(this.i));
+					}.bind(this,i));
 				}
 			};
 

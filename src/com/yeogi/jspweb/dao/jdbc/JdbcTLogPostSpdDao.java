@@ -176,4 +176,51 @@ public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 		return result;
 	}
 
+	@Override
+	public List<TLogPostSpdView> getSum(String tLogId) {
+
+		String sql = "SELECT T_LOG_ID, TYPE, SUM(AMOUNT) SUM FROM T_LOG_POST_SPD_VIEW WHERE T_LOG_ID=? GROUP BY T_LOG_ID, TYPE";
+
+		List<TLogPostSpdView> list = new ArrayList<>();
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tLogId);
+			
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				TLogPostSpdView tLogPostSpd = new TLogPostSpdView(
+						rs.getString("T_LOG_ID"),
+						rs.getString("TYPE"),
+						rs.getInt("SUM")
+						);
+				
+				list.add(tLogPostSpd);
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 }

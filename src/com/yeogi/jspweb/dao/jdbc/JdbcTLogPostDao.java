@@ -187,4 +187,58 @@ public class JdbcTLogPostDao implements TLogPostDao {
 		return result;
 	}
 
+	@Override
+	public TLogPostView get(String tLogPostId) {
+		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_POST_ID = ?";
+
+		TLogPostView tLogPostView = null;
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tLogPostId);
+			
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				tLogPostView = new TLogPostView(	
+						
+						rs.getString("POST_CONTENT"),
+						rs.getString("T_LOG_ID"),
+						rs.getString("T_LOG_LOC_ID"),
+						rs.getString("TRANS"),
+						rs.getString("T_LOG_POST_ID"),
+						rs.getString("LOC_ID"),
+						rs.getInt("ORDER"),
+						rs.getInt("DAY"),
+						rs.getString("NAME"),
+						rs.getString("IMG")
+						
+						);
+				
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tLogPostView;
+	}
+
 }

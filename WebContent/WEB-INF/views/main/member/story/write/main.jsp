@@ -100,52 +100,23 @@ window.addEventListener("load", function(){
 						<span id="spending-txt">지출내역</span>
 						<div class="spending-box">
 							<span>KRW</span>
-							<span>300,000</span>
+							<span>
+							<!-- 합계 -->
+							</span>
 						</div>
 						<div class="spending-detail">
 							<div class="table">
+								<c:forEach var="ps" items="${postSum}">
 								<div class="tr">
-									<div class="td width-sm">명소</div>
+									<div class="td width-sm">${ps.type}</div>
 									<div class="td width-md">
 										<span>KRW</span>
-										<span>1000</span>
+										<span>
+										${ps.sum}
+										</span>
 									</div>
 								</div>
-								<div class="tr">
-									<div class="td width-sm">맛집</div>
-									<div class="td width-md">
-										<span>KRW</span>
-										<span>1000</span>
-									</div>
-								</div>
-								<div class="tr">
-									<div class="td width-sm">숙소</div>
-									<div class="td width-md">
-										<span>KRW</span>
-										<span>1000</span>
-									</div>
-								</div>
-								<div class="tr">
-									<div class="td width-sm">교통</div>
-									<div class="td width-md">
-										<span>KRW</span>
-										<span>1000</span>
-									</div>
-								</div>
-								<div class="tr">
-									<div class="td width-sm">쇼핑</div>
-									<div class="td width-md">
-										<span>KRW</span>
-										<span>1000</span>
-									</div>
-								</div>
-								<div class="tr">
-									<div class="td width-sm">기타</div>
-									<div class="td width-md">
-										<span>KRW</span>
-										<span>1000</span>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
 					</div>
@@ -171,6 +142,7 @@ window.addEventListener("load", function(){
 						</c:if>
 						</ul>
 						<button class="right-arrow" type="button"><img alt="우측화살표" src="${ctx}/images/right-arrow.png"></button>
+						<input id="curr-day" type="hidden" name="curr-day" value="1">
 					</div>
 					<div class="place-container">
 						<c:forEach var="pl" items="${postList}">
@@ -184,8 +156,8 @@ window.addEventListener("load", function(){
 							</div>
 							<div class="place-btn-container">
 								<button class="btn-place-delete" type="button" ><img alt="삭제" src="${ctx}/images/delete.png"></button>
-								<button class="btn-place-edit" type="button" ><img alt="편집" src="${ctx}/images/write.png"></button>
 								<input type="hidden" name="post-id" value="${pl.id}">
+								<button class="btn-place-edit" type="button" ><img alt="편집" src="${ctx}/images/write.png"></button>
 							</div>
 						</div>
 						</c:if>
@@ -315,9 +287,11 @@ window.addEventListener("load", function(){
 									</select>
 									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력" required="required" >
 									<button class="btn btn-sm" type="button">추가</button>
+									<input id="spd-id" type="hidden" name="spd-id">
 									<button class="btn btn-sm" type="button">삭제</button>
 								</div>
 								<div class="post-list post-tag">
+									<input id="tag-id" type="hidden" name="tag-id">
 									<input id="tag" type="text" name="tag" pattern="^(*,*)+$" placeholder="태그입력 (예)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">

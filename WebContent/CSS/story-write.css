@@ -581,21 +581,29 @@ main>.root-container{
 	justify-content: center;
 }
 
-
-.ul-day-btn button,
-.ul-day-btn span{
+.ul-day-btn>li{
 	display: inline-block;
 	width: 62px;
 	padding: 11px 0;
 	margin: 5px 0 5px 5px;
 	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	color: #D8D8D8;
 	background-color: #212121;
 }
 
-.ul-day-btn span{
+.ul-day-btn>li:first-child button{
+	font-size: 16px;
+	font-weight: bold;
+	color: #E64C3C;
+}
+
+.ul-day-btn>li:nth-child(2) button,
+.ul-day-btn>li:nth-child(3) button{
+	font-size: 16px;
+	font-weight: bold;
+	color: #D8D8D8;
+}
+
+.ul-day-btn>span{
 	display: inline-block;
 	width: 62px;
 	padding: 11px 0;

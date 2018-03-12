@@ -10,6 +10,7 @@ import com.yeogi.jspweb.entity.TourLog;
 public interface TLogPostDao {
 
 	List<TLogPostView> getList(String id);
+	TLogPostView get(String tLogPostId);
 	
 	String insert(TLogPost tlp);
 	int update(TLogPost tlp);

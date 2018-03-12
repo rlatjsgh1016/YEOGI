@@ -2,6 +2,8 @@ package com.yeogi.jspweb.entity;
 
 public class TLogPostSpdView extends TLogPostSpd {
 	private String tLogId;
+	private int sum;
+	
 	public TLogPostSpdView() {
 
 	}
@@ -18,11 +20,23 @@ public class TLogPostSpdView extends TLogPostSpd {
 		super(type, content, unit, amount, id, tLogPostId);
 		this.tLogId = tLogId;
 	}
+	public TLogPostSpdView(String tLogId, String type, int sum) {
+		super.setType(type);
+		this.tLogId = tLogId;
+		this.sum = sum;
+	}
+	
 	public String gettLogId() {
 		return tLogId;
 	}
 	public void settLogId(String tLogId) {
 		this.tLogId = tLogId;
+	}
+	public int getSum() {
+		return sum;
+	}
+	public void setSum(int sum) {
+		this.sum = sum;
 	}
 	
 }
