@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 <link href="../../../../CSS/plan-schdule.css" type=text/css
 	rel="stylesheet" />
-<script src="../../../../js/plan-side-function.js"></script>
+<script src="../../../../js/plan-side-function.js">
+
+
+</script>
 </HEAD>
 <body>
 	<header id="header">
@@ -116,7 +119,7 @@
 		<div id="main">
 
 			<div id="map">
-					<a href="" id="add-friend"><!--<div id="add-friend">-->
+					<a href="#" id="add-friend"><!--<div id="add-friend">-->
 						<h1>친구추가</h1>
 						   <!-- <ul>
 						        <li><img src="../../../../images/now-friends.png" height="40px"/>
@@ -161,11 +164,11 @@
 						<thead>
 							<tr>
 
-								<td width="100px">[AM]06:00</td>
-								<td width="300px">김포공항</td>
+								<td width="100px">06:00</td>
+								<td width="300px"></td>
 								
 								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
-								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
+								<td width="300px"></td>
 
 							</tr>
 						</thead>
@@ -214,8 +217,92 @@
 
 							</tr>
 							<tr>
-								<td>[PM]01:00</td>
+								<td>13:00</td>
 								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>14:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>15:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>16:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>17:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>18:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>19:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>20:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>21:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>22:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>23:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>24:00</td>
+								<td></td>
+								<td class="memo-pad"><a href=""></a></td>
+								<td></td>
+
+							</tr>
+							<tr>
+								<td>01:00</td>
+								<td></td>
 								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
 
@@ -243,90 +330,6 @@
 							</tr>
 							<tr>
 								<td>05:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>06:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>07:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>08:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>09:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>10:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>11:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>[AM]12:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>1:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>2:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>3:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>4:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
-
-							</tr>
-							<tr>
-								<td>5:00</td>
 								<td></td>
 								<td class="memo-pad"><a href=""></a></td>
 								<td></td>
@@ -371,37 +374,37 @@
 			</div>
 		</div>
 	</div>
-
+<form method="post">
 	<div class="modal">
 		<div id="memoscreen">
 			<ul>
 				<li>06:00</li>
-				<li><input id="memo-title" type="text" name="" value=""
-					placeholder="메모 제목이 무엇이죠? :)" maxlength="100" /></li>
-				<li><textarea name="" value=""
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
 						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
 			</ul>
 			<div class="verysad">
-				<select class="select-place heiwh">
-					<option value="서버로 넘길 값">명소</option>
-					<option value="서버로 넘길 값">맛집</option>
-					<option value="서버로 넘길 값">숙소</option>
-					<option value="서버로 넘길 값">교통</option>
-					<option value="서버로 넘길 값">쇼핑</option>
-					<option value="서버로 넘길 값">기타</option>
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
 				</select> 
-				<input class="heiwh" type="text" name="" value=""
+				<input class="heiwh" type="text" name="memo-cost-spd"
 					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
 					style="width: 260px;" /> 
-				<select class="select-money heiwh"
+				<select name="unit" class="select-money heiwh"
 					style="width: 90px;">
-					<option value="서버로 넘길 값">원(KRW)</option>
-					<option value="서버로 넘길 값">달러(USD)</option>
-					<option value="서버로 넘길 값">위안(CNY)</option>
-					<option value="서버로 넘길 값">유로(EUR)</option>
-					<option value="서버로 넘길 값">엔(JPY)</option>
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
 				</select> 
-				<input class="input-cost" type="text" name="" value=""
+				<input class="input-cost" type="text" name="input-cost"
 					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
 			</div>
 				<span class="cost-minus"><b>━</b></span>
@@ -410,16 +413,71 @@
 
 
 			<div class="mok">
-				<div class="check">저장</div>
+				<input type="submit" class="check" value="저장" />
 				<div class="close">취소</div>
 			</div>
 
 
 		</div>
 	</div>
+</form>
 	<div class="modal-friend">
-		<div></div>
-		
+		<form name="check-form" id="" method="post" action="">
+			<div id="add-friend-screen">
+				<div class="add-friend-title">
+					<b>친구와 멋진 여행을 <span style="color: red">함께 계획 </span> 해보세요! :)
+					</b>
+				</div>
+				<div class="">
+					<div class="friend-list fbox">
+						<div class="friend-list-inside">내 친구 전체 목록</div>
+						<div class="inside">
+							<p>
+								<input type="checkbox" name="checked-friend" id="c1" value="김대신" />
+								<label for="c1">김대신</label>
+							</p>
+							<p>
+								<input type="checkbox" name="checked-friend" id="c2" value="김수경" />
+								<label for="c2">김수경</label>
+							</p>
+							<p>
+								<input type="checkbox" name="checked-friend" id="c3" value="김선호" />
+								<label for="c3">김선호</label>
+							</p>
+							<p>
+								<input type="checkbox" name="checked-friend" id="c4" value="이자호" />
+								<label for="c4">이자호</label>
+							</p>
+							<p>
+								<input type="checkbox" name="checked-friend" id="c5" value="박제욱" />
+								<label for="c5">박제욱</label>
+							</p>
+						</div>
+						<div>
+							<input class="add-friend" type="button" value="추가하기" />
+						</div>
+					</div>
+					<div class="friend-wait fbox">
+
+						<div class="friend-list-inside">응답을 기다리는 친구</div>
+						<div class="inside">
+							<div style="margin: 15px;" class="wait-box"></div>
+
+
+
+						</div>
+					</div>
+					<div class="friend-with fbox">
+						<div class="friend-list-inside">계획을 공유중인 친구</div>
+						<div class="inside"></div>
+					</div>
+				</div>
+				<div class="last-box">
+					<div class="confirm btn-default">확인</div>
+					<div class="close1 btn-default">취소</div>
+				</div>
+			</div>
+		</form>
 	</div>
 </body>
 </html>

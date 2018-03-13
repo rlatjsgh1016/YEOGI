@@ -39,11 +39,9 @@ public class JdbcTLogPostDao implements TLogPostDao {
 						
 						rs.getString("POST_CONTENT"),
 						rs.getString("T_LOG_ID"),
-						rs.getString("T_LOG_LOC_ID"),
+						rs.getString("LOC_ID"),
 						rs.getString("TRANS"),
 						rs.getString("T_LOG_POST_ID"),
-						rs.getString("LOC_ID"),
-						rs.getInt("ORDER"),
 						rs.getInt("DAY"),
 						rs.getString("NAME"),
 						rs.getString("IMG")
@@ -79,8 +77,8 @@ public class JdbcTLogPostDao implements TLogPostDao {
 				+ "?,"
 				+ "?,"
 				+ "?,"
-				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM T_LOG_POST WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD'))"
-				+ ")";
+				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM T_LOG_POST WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),"
+				+ "?)";
 
 		String sql2 = "SELECT MAX(TO_NUMBER(ID)) ID FROM T_LOG_POST WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')";
 		
@@ -94,8 +92,9 @@ public class JdbcTLogPostDao implements TLogPostDao {
 
 			st.setString(1, tlp.getContent());
 			st.setString(2, tlp.gettLogId());
-			st.setString(3, tlp.gettLogLocId());
+			st.setString(3, tlp.getLocId());
 			st.setString(4, tlp.getTrans());
+			st.setInt(5, tlp.getDay());
 	
 			st.executeUpdate();
 			
@@ -125,7 +124,7 @@ public class JdbcTLogPostDao implements TLogPostDao {
 	@Override
 	public int update(TLogPost tlp) {
 
-		String sql = "UPDATE T_LOG_POST SET CONTENT = ?, T_LOG_ID = ?, T_LOG_LOC_ID = ?, TRANS = ? WHERE ID = ? ";
+		String sql = "UPDATE T_LOG_POST SET CONTENT = ?, T_LOG_ID = ?, T_LOG_LOC_ID = ?, TRANS = ?, DAY = ? WHERE ID = ?";
 
 		int result = 0;
 
@@ -137,9 +136,10 @@ public class JdbcTLogPostDao implements TLogPostDao {
 
 			st.setString(1, tlp.getContent());
 			st.setString(2, tlp.gettLogId());
-			st.setString(3, tlp.gettLogLocId());
+			st.setString(3, tlp.getLocId());
 			st.setString(4, tlp.getTrans());
-			st.setString(5, tlp.getId());
+			st.setInt(5, tlp.getDay());
+			st.setString(6, tlp.getId());
 	
 			result = st.executeUpdate();
 
@@ -185,6 +185,58 @@ public class JdbcTLogPostDao implements TLogPostDao {
 		}
 
 		return result;
+	}
+
+	@Override
+	public TLogPostView get(String tLogPostId) {
+		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_POST_ID = ? ORDER BY T_LOG_POST_ID";
+
+		TLogPostView tLogPostView = null;
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tLogPostId);
+			
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				tLogPostView = new TLogPostView(	
+						
+						rs.getString("POST_CONTENT"),
+						rs.getString("T_LOG_ID"),
+						rs.getString("LOC_ID"),
+						rs.getString("TRANS"),
+						rs.getString("T_LOG_POST_ID"),
+						rs.getInt("DAY"),
+						rs.getString("NAME"),
+						rs.getString("IMG")
+						
+						);
+				
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tLogPostView;
 	}
 
 }

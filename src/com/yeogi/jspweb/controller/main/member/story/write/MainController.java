@@ -76,6 +76,7 @@ public class MainController extends HttpServlet {
 		
 		TLogPostSpdDao tlpsDao = new JdbcTLogPostSpdDao();
 		List<TLogPostSpdView> tlpsList = tlpsDao.getList(id);
+		List<TLogPostSpdView> sumList = tlpsDao.getSum(id);
 		
 		TagDao tagDao = new JdbcTagDao();
 		List<TagView> tagList = tagDao.getList(id);
@@ -89,6 +90,7 @@ public class MainController extends HttpServlet {
 		request.setAttribute("postList", tlpvList);
 		request.setAttribute("spdList", tlpsList);
 		request.setAttribute("tagList", tagList);
+		request.setAttribute("postSum", sumList);
 	    
 	    ApplicationContext applicationContext = ServletUtil
 				.getApplicationContext(request.getSession().getServletContext());

@@ -8,6 +8,7 @@ import com.yeogi.jspweb.entity.TagView;
 public interface TagDao {
 
 	List<TagView> getList(String tLogId);
+	List<TagView> getPostIdList(String tLogPostId);
 
 	int insert(Tag tag);
 

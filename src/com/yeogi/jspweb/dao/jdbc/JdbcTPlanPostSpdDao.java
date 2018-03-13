@@ -18,7 +18,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 
 	@Override
 	public int insert(TPlanPostSpd tplanpostspd) {
-		String sql ="INSERT INTO t_plan_post_spd (" + 
+		/*String sql ="INSERT INTO t_plan_post_spd (" + 
 						"    content," + 
 						"    type," + 
 						"    unit," + 
@@ -26,7 +26,8 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 						"    t_plan_loc_id," + 
 						"    amount," + 
 						"    id" + 
-						") VALUES(?,?,?,?,?,?)";
+						") VALUES(?,?,?,?,?,?,?)";*/
+		String sql = "insert into t_plan_post_spd(content, type, unit, t_plan_id, t_plan_loc_id, amount, id) VALUES(?,?,?,?,?,?,?)";
 		int result=0;
 		
 		try {
@@ -36,16 +37,17 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			result = st.executeUpdate();
-		
-			st.setString(1, tplanpostspd.getContent());
-			st.setString(1, tplanpostspd.getType());
-			st.setString(1, tplanpostspd.getUnit());
-			st.setString(1, tplanpostspd.getTPlanId());
-			st.setString(1, tplanpostspd.getTPlanLocId());
-			st.setString(1, tplanpostspd.getId());
 			
 		
+			st.setString(1, tplanpostspd.getContent());
+			st.setString(2, tplanpostspd.getType());
+			st.setString(3, tplanpostspd.getUnit());
+			st.setString(4, tplanpostspd.getTPlanId());
+			st.setString(5, tplanpostspd.getTPlanLocId());
+			st.setString(6, tplanpostspd.getAmount());
+			st.setString(7, tplanpostspd.getId());
+			
+			result = st.executeUpdate();
 			
 			st.close();
 			con.close();
@@ -83,7 +85,8 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			st.setString(1, tplanpostspd.getContent());
 			st.setString(2, tplanpostspd.getType());
 			st.setString(3, tplanpostspd.getUnit());
-			st.setString(3, tplanpostspd.getAmount());
+			st.setString(4, tplanpostspd.getAmount());
+			st.setString(5, tplanpostspd.getId());
 			st.setString(6, tplanpostspd.getId());
 
 			result = st.executeUpdate();
@@ -234,5 +237,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 		}
 		return tplanpostspd;
 	}
+
+	
 
 }

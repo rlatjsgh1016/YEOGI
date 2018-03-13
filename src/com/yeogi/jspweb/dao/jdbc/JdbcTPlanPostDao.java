@@ -17,13 +17,14 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 
 	@Override
 	public int insert(TPlanPost tplanpost) {
-		String sql ="INSERT INTO t_plan_post (" + 
+		/*String sql ="INSERT INTO t_plan_post (" + 
 				"    tour_date_time," + 
 				"    memo_title," + 
 				"    memo_content," + 
 				"    t_plan_id," + 
 				"    t_plan_loc_id" + 
-				") VALUES (?,?,?,?,?)"; 
+				") VALUES (?,?,?,?,?)"; */
+		String sql = "insert into t_plan_post(tour_date_time, memo_title, memo_content, t_plan_id, t_plan_loc_id) values(?,?,?,?,?)";
 		
 		int result=0;
 		

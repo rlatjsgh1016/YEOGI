@@ -15,6 +15,7 @@ import com.yeogi.jspweb.dao.TPlanPostSpdDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostSpdDao;
 import com.yeogi.jspweb.entity.TPlanPost;
+import com.yeogi.jspweb.entity.TPlanPostSpd;
 import com.yeogi.jspweb.entity.TPlanPostSpdView;
 
 @WebServlet("/main/member/plan/schedule/schedule")
@@ -33,4 +34,54 @@ public class ScheduleController extends HttpServlet {
 		dispatcher.forward(request, response);
 		
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+	    response.setContentType("text/html; charset=UTF-8");
+	    request.setCharacterEncoding("UTF-8");
+	    
+	    TPlanPostSpd tplanpostspd = new TPlanPostSpd();
+	    
+	    tplanpostspd.setId("2018031200001");
+	    tplanpostspd.setTPlanId("1");
+	    tplanpostspd.setTPlanLocId("2018031200001");
+	    tplanpostspd.setAmount(request.getParameter("input-cost"));
+	    tplanpostspd.setContent(request.getParameter("memo-cost-spd"));
+	    tplanpostspd.setType(request.getParameter("type"));
+	    tplanpostspd.setUnit(request.getParameter("unit"));
+	    
+	    TPlanPostSpdDao tPlanPostSpdDao = new JdbcTPlanPostSpdDao();
+	    tPlanPostSpdDao.insert(tplanpostspd);
+	    
+	    
+	    /*TPlanPost tplanpost = new TPlanPost();
+	    
+	    tplanpost.setMemoTitle(request.getParameter("memo-title"));
+	    tplanpost.setMemoContent(request.getParameter("memo-content"));
+	    tplanpost.setTourDateTime("06:00");
+	    tplanpost.setTPlanId("1");
+	    tplanpost.setTPlanLocId("2018031200001");
+	    
+	    TPlanPostDao tPlanPostDao = new JdbcTPlanPostDao();
+	    tPlanPostDao.insert(tplanpost);*/
+	    
+	    
+	    response.sendRedirect("schedule");
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

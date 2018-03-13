@@ -5,9 +5,9 @@ public class TagView extends Tag{
 	public TagView() {
 
 	}
-	public TagView(String content, String id, String tLogPostId, String tLogId) {
+	public TagView(String tagContent, String id, String tLogPostId, String tLogId) {
 
-		super(content, id, tLogPostId);
+		super(tagContent, id, tLogPostId);
 		this.tLogId = tLogId;
 	}
 	public String gettLogId() {

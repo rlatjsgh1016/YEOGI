@@ -61,6 +61,54 @@ public class JdbcTagDao implements TagDao {
 		}
 		return list;
 	}
+	
+	@Override
+	public List<TagView> getPostIdList(String tLogPostId) {
+		
+		String sql = "SELECT * FROM TAG_VIEW WHERE T_LOG_POST_ID = ?";
+
+		List<TagView> list = new ArrayList<>();
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1,tLogPostId);
+			
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				TagView tag = new TagView(
+						rs.getString("CONTENT"),
+						rs.getString("ID"),
+						rs.getString("T_LOG_POST_ID"),
+						rs.getString("T_LOG_ID")
+						);
+				
+				list.add(tag);
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 	@Override
 	public int insert(Tag tag) {
@@ -79,7 +127,7 @@ public class JdbcTagDao implements TagDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tag.getContent());
+			st.setString(1, tag.getTagContent());
 			st.setString(2, tag.gettLogPostId());
 
 			result = st.executeUpdate();
@@ -111,7 +159,7 @@ public class JdbcTagDao implements TagDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tag.getContent());
+			st.setString(1, tag.getTagContent());
 			st.setString(2, tag.gettLogPostId());
 			st.setString(3, tag.getId());
 
