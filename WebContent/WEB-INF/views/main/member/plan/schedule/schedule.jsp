@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<!-- -----------------------------------sub-layout에서 해결------------------------- -->
+
+<!-- <html>
 <HEAD>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -13,38 +16,10 @@
 
 </script>
 </HEAD>
-<body>
-	<header id="header">
-		<div class="root-container">
-			<a href="../../../main.html"><div id="logo">
-					<img src="../../../../resources/logo.png" height="65px" alt="여기" />
-				</div></a>
-			<section>
-				<h1>헤더</h1>
-				<nav class="hor-menu main-menu first-pad-none">
-					<h1>메인메뉴</h1>
-					<ul>
-						<li><a href="">계획하기</a></li>
-						<li><a href="">기록하기</a></li>
-						<li><a href="../../../member/story/read/main.html">여행기</a></li>
-						<li><a href="../../../public-board/community/community.html">커뮤니티</a></li>
-					</ul>
-				</nav>
+<body> -->
+	
 
-				<nav class="hor-menu member-menu first-pad-none"
-					style="margin-bottom: 15px">
-					<h1>회원 메뉴</h1>
-					<ul>
-						<li><a href="../../../log-in.html">로그인</a></li>
-						<li><a href="../../../join.html">회원가입</a></li>
-						<li><a href="../../mypage/mypage.html" class="btn btn-mypage">마이페이지</a></li>
-					</ul>
-				</nav>
-			</section>
-		</div>
-	</header>
-
-
+	<!------------tile 작업하고나서 메인------------------------------------------------>
 	<div id="fullscreen">
 		<div id="menu-plate">
 			<div id="tab">
@@ -67,7 +42,7 @@
         
         
 			<div id="cost-option">
-			<div id="printer"><!-- <img src="../../../../images/printer.png" height="25px" align="right"/></div> -->
+			<div id="printer">
 			</div>
 				<div class="total-day">
 							<div class="b1"><b>DAY 1</b></div>
@@ -76,45 +51,20 @@
 							<div class="b2">
 							    <div class ="when">${tppsv.tourDateTime}</div>
 								<div class = "where"> ${tppsv.memoTitle} </div>
-								<div class = "count-place">${tppsv.id}</div>
+								<div class = "count-place"></div>
 								<div class = "picture"><img src="../../../../images/jeju.png"/></div>
 								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />${tppsv.memoContent}</div>
 							</div>	
 						</c:forEach>
 				</div>
-                
-                
-				
-				<div class="total-day">
-							<div class="b1"><b>DAY 2</b></div>
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">도깨비 도로</div>
-								<div class = "count-place">4</div>
-								<div class = "picture"></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" /></div>
-							</div>	
-				</div>
-				
-				<div class="total-day">
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">섭지코지</div>
-								<div class = "count-place">5</div>
-								<div class = "picture"></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" /></div>
-							</div>	
-				</div>
 			</div>
 
-        
-        
-			<a href=""><div id="save-trip">
-					<b>Save</b>
-				</div></a>
-		</div>
+
+
+		<a href=""><div id="save-trip">
+				<b>Save</b>
+			</div></a>
+	</div>
 
 		<div id="main">
 
@@ -479,5 +429,6 @@
 			</div>
 		</form>
 	</div>
-</body>
-</html>
+<!-- -----------------------------------sub-layout에서 해결------------------------- -->
+<!-- </body>
+</html> -->
