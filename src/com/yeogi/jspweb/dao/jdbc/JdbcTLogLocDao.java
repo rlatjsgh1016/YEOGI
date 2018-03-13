@@ -41,9 +41,7 @@ public class JdbcTLogLocDao implements TLogLocDao {
 						rs.getString("LOC_ID"),
 						rs.getString("ID"),
 						rs.getString("T_LOG_ID"),
-						rs.getDate("REG_DATE"),
-						rs.getInt("ORDER"),
-						rs.getInt("DAY"));
+						rs.getDate("REG_DATE"));
 				
 				list.add(tlogloc);
 			}
@@ -69,7 +67,7 @@ public class JdbcTLogLocDao implements TLogLocDao {
 	@Override
 	public int insert(TLogLoc tll) {
 		
-		String sql = "INSERT INTO T_LOG_LOC VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO T_LOG_LOC(LOC_ID, ID, T_LOG_ID) VALUES(?,?,?)";
 
 		int result = 0;
 
@@ -82,8 +80,6 @@ public class JdbcTLogLocDao implements TLogLocDao {
 			st.setString(1, tll.getLocId());
 			st.setString(2, tll.getId());
 			st.setString(3, tll.gettLogId());
-			st.setInt(4, tll.getOrder());
-			st.setInt(5, tll.getDay());
 
 			result = st.executeUpdate();
 
@@ -104,7 +100,7 @@ public class JdbcTLogLocDao implements TLogLocDao {
 	@Override
 	public int update(TLogLoc tll) {
 
-		String sql = "UPDATE T_LOG_LOC SET LOC_ID = ?, T_LOC_ID = ?, ORDER = ?, DAY = ?, WHERE ID = ?";
+		String sql = "UPDATE T_LOG_LOC SET LOC_ID = ?, T_LOC_ID = ? WHERE ID = ?";
 
 		int result = 0;
 
@@ -116,9 +112,7 @@ public class JdbcTLogLocDao implements TLogLocDao {
 
 			st.setString(1, tll.getLocId());
 			st.setString(2, tll.gettLogId());
-			st.setInt(3, tll.getOrder());
-			st.setInt(4, tll.getDay());
-			st.setString(5, tll.getId());
+			st.setString(3, tll.getId());
 
 			result = st.executeUpdate();
 
