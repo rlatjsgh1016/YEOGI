@@ -5,6 +5,7 @@
 <tiles-definitions>
 <!-- 타일즈는 *을 2개까지만 사용가능하다. -->
 <!-- 중첩경로의 경우 더 상세한 경로를 위쪽에 작성해야 무한루프에 빠지지 않는다. -->
+ 
   <definition name="main.member.story.read.*" template="/WEB-INF/views/main/member/story/read/inc/sub-layout.jsp">
     <put-attribute name="header" value="/WEB-INF/views/main/member/story/read/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/member/story/read/{1}.jsp" />
@@ -14,5 +15,40 @@
     <put-attribute name="header" value="/WEB-INF/views/main/member/story/write/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/member/story/{1}/{2}.jsp" />
   </definition>
+   <definition name="main.member.mypage.mypage" template="/WEB-INF/views/main/member/mypage/inc/sub-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/main/member/mypage/inc/visual.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/views/main/member/mypage/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/member/mypage/mypage.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
+  </definition>
+  <definition name="main.member.mypage.*.*" template="/WEB-INF/views/main/member/mypage/inc/sub-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/main/member/mypage/inc/visual.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/views/main/member/mypage/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/member/mypage/{1}/{2}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
+  </definition>
+  <definition name="main.public-board.travel-log.*.*" template="/WEB-INF/views/main/public-board/travel-log/inc/sub-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/main/public-board/travel-log/inc/visual.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/views/main/public-board/travel-log/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/public-board/travel-log/{1}/{2}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
+  </definition>
+  
+  <definition name="main.main" template="/WEB-INF/views/main/inc/main-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/main/inc/visual.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/main.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
+  </definition>
+   <definition name="main.*" template="/WEB-INF/views/main/inc/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/main/inc/visual2.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/{1}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
+  </definition>
+
   
 </tiles-definitions>

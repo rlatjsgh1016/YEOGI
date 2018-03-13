@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,49 +8,12 @@
 <link href = "../CSS/style.css" type ="text/css" rel ="stylesheet" />
 </head>
 
-<body>
+<body> -->
  	<!-- 제목 목록 표 문장 폼 -->
-		<header id = "header">
-			<div class="root-container">
-			<a href= "main.html"><h1 id="logo"><img src ="../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
 	
-			<section>
-				<h1 class="hidden">헤더</h1>
-				
-				<nav class="hor-menu main-menu first-pad-none">
-					<h1>메인메뉴</h1>
-					<ul>
-						<li><a href="">계획하기</a></li>
-						<li><a href="member/story/write/select">기록하기</a></li>
-						<li><a href="public-board/travel-log/log-main/log-main.html">여행기</a></li>
-						<li><a href="">커뮤니티</a></li>
-					</ul>
-				</nav>
-
-				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
-					<h1>회원 메뉴</h1>
-					<ul>
-						<li><a href= "log-in.html">로그인</a></li> 
-						<li><a href= "join">회원가입</a></li>
-						<li><a href ="member/mypage/mypage.html" class ="btn btn-mypage">마이페이지</a></li>
-					</ul>
-					
-				</nav>	
-				
-			</section> 
-			
-		</div>
-		
-	</header>
 	
 	<!-- Visual 부분 시작 -->
-	<div id = "visual">
-		<div class="root-container">
-			<a class="btn btn-plan" href="member/plan/newplan/new-plan.html">계획하기</a>
-			<a class="btn btn-log"  href="member/story/write/select">기록하기</a>	
-		</div>
-	</div>
-	
+
 	<div id = "body">
 		<div class="root-container" > <!-- 따옴표 안에 clear-fix --> 
 			
@@ -164,31 +129,3 @@
 		</div>
 		
 	</div>
-	
-	<!-- footer 시작------------------------------------------------------------------------------------------------------------ --> 
-	
-	<footer id = "footer">
-	
-		<div class="root-container">
-				
-				<div id = "footer_logo">
-				
-					<div id = "footer_bar">
-				
-					</div>
-					
-				</div>
-
-				회사정보
-				서울특별시 마포구 월드컵북로 21 풍성빌딩 2, 3, 4층 쌍용강북교육센터 <br>
-				Tel 02)000-0000 | Fax 02)000-0000<br>
-				사업자번호 : 000-00-00000 | 제작 : 여행자들 | 개인정보처리관리책임자 : 김땡땡
-				<br><br>
-				Copyright (C) 2018 Travelers , ALL Right Reserved 
-
-		</div>
-		
-	</footer>
-	
-</body>
-</html>

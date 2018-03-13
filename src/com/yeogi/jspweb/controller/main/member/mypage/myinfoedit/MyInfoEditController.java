@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tiles.TilesContainer;
+import org.apache.tiles.access.TilesAccess;
+import org.apache.tiles.request.ApplicationContext;
+import org.apache.tiles.request.servlet.ServletRequest;
+import org.apache.tiles.request.servlet.ServletUtil;
+
 import com.yeogi.jspweb.dao.MemberDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcMemberDao;
 import com.yeogi.jspweb.entity.Member;
@@ -36,9 +42,18 @@ public class MyInfoEditController extends HttpServlet{
 		
 		request.setAttribute("member", member);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/mypage/my-info-edit/my-info-edit.jsp");
+/*		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/mypage/my-info-edit/my-info-edit.jsp");
 		
 		dispatcher.forward(request, response);
+		*/
+
+		// TODO Auto-generated method stub
+		ApplicationContext applicationContext = ServletUtil
+				.getApplicationContext(request.getSession().getServletContext());
+		TilesContainer container = TilesAccess.getContainer(applicationContext);
+		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+		container.render("main.member.mypage.my-info-edit.my-info-edit", servletRequest);
+	
 	}
 	
 	@Override

@@ -14,6 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tiles.TilesContainer;
+import org.apache.tiles.access.TilesAccess;
+import org.apache.tiles.request.ApplicationContext;
+import org.apache.tiles.request.servlet.ServletRequest;
+import org.apache.tiles.request.servlet.ServletUtil;
+
 import com.yeogi.jspweb.dao.MemberDao;
 import com.yeogi.jspweb.dao.TPlanPostDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcMemberDao;
@@ -27,9 +33,11 @@ public class JoinController extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/join.jsp");
-		
-		dispatcher.forward(request, response);
+		ApplicationContext applicationContext = ServletUtil
+				.getApplicationContext(request.getSession().getServletContext());
+		TilesContainer container = TilesAccess.getContainer(applicationContext);
+		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+		container.render("main.join", servletRequest);
 	}
 	
 	@Override

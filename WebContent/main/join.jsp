@@ -16,8 +16,6 @@
 
 <script type="text/javascript">
 
-
-
 function idCheck(){
 	
 	window.name ="parentForm";
@@ -99,7 +97,6 @@ function formCheck() {
         event.preventDefault();
         return false; // false를 리턴합니다.
     }
-   
     
 }
 
@@ -128,6 +125,7 @@ function formCheck() {
 				</nav>
 
 				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
+				
 					<h1>회원 메뉴</h1>
 					<ul>
 						<li><a href= "log-in.html">로그인</a></li> 
@@ -137,7 +135,6 @@ function formCheck() {
 					
 				</nav>	
 				
-			
 			</section> 
 			
 		</div>
