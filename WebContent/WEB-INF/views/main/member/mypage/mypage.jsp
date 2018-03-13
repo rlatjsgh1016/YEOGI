@@ -6,7 +6,7 @@
 				<section>
 				
 						<section class = "title">
-							내 지도보기
+							 <span style="color:#E64C3C;">${member.id }</span>(${member.name })님의 지도보기 
 						</section>
 						
 						
@@ -24,7 +24,7 @@
 					         
 				
 						<section class = "title">
-							내 계획<a class="btn btn-more" href="myplan/myplan.html">더보기</a>
+							내 계획<a class="btn btn-more" href="myplan/myplan">더보기</a>
 						</section>
 						
 						<section class = "travel-cont">
@@ -63,7 +63,7 @@
 						</section>
 						
 						<section class = "title">
-							내 기록<a class="btn btn-more" href="mystory/mystory.html">더보기</a>
+							내 기록<a class="btn btn-more" href="mystory/mystory">더보기</a>
 						</section>
 						
 						<section class = "travel-cont">

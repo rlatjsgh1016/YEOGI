@@ -20,8 +20,9 @@
 <link type="text/css" href="${ctx}/CSS/story-write.css" rel="stylesheet">
 
 </head>
-	<tiles:insertAttribute name="header" />
+	
 <body>
+	<tiles:insertAttribute name="header" />
 	<tiles:insertAttribute name="main" />
 </body>
 </html>
