@@ -26,7 +26,7 @@
 
 <body>
 <!-- --------------------------- <header> --------------------------------------- -->
-	<tiles:insertAttribute name="header" />
+	<tiles:insertAttribute name="header"></tiles:insertAttribute>
 
 
 

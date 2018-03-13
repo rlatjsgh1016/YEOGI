@@ -15,6 +15,10 @@
     <put-attribute name="header" value="/WEB-INF/views/main/member/story/write/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/member/story/{1}/{2}.jsp" />
   </definition>
+  <definition name="main.member.plan.schedule.*" template="/WEB-INF/views/main/member/plan/schedule/inc/sub-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/main/member/plan/schedule/inc/header.jsp" />
+    <put-attribute name="main" value="/WEB-INF/views/main/member/plan/schedule/{1}.jsp" />
+  </definition>
    <definition name="main.member.mypage.mypage" template="/WEB-INF/views/main/member/mypage/inc/sub-layout.jsp">
     <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
     <put-attribute name="visual" value="/WEB-INF/views/main/member/mypage/inc/visual.jsp" />
@@ -50,5 +54,7 @@
     <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
   </definition>
 
+  
+  
   
 </tiles-definitions>
