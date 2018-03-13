@@ -231,40 +231,60 @@ window.addEventListener("load", function(){
 	       				</div>
 	   				</div>
 					<div class="view-container">
-						<c:forEach var="pl" items="${postList}">
-						<div class="view-frame-box">
+						<!-- ========================================== -->
+						<div id="view-template" class="view-frame-box hidden">
 							<p>${pl.name}</p>
 							<div class="view-frame">
 								<div>${pl.content}</div>
 								<div class="view-info">
-									<ul>
+									<ul id="view-ul-root">
 										<li class="loc-list">${pl.name}</li>
-										<c:if test="${!empty spdList}">
-										<c:forEach var="spd" items="${spdList}">
-										<c:if test="${pl.id == spd.tLogPostId}">
-										<li class="spd-list">
-											<span>${spd.type}</span>
-											<span>${spd.spdContent}</span>
-											<span>${spd.unit}</span>
-											<span>${spd.amount}</span>
-										</li>
-										</c:if>
-										</c:forEach>
-										</c:if>
-										<c:if test="${!empty tagList}">
-										<li class="tag-list">
-										<c:forEach var="tag" items="${tagList}">
-										<c:if test="${pl.id == tag.tLogPostId}">
-										#${tag.tagContent}
-										</c:if>
-										</c:forEach>
-										</li>
-										</c:if>
 									</ul>
 								</div>
 							</div>
 						</div>
-						</c:forEach>
+						<!-- ========================================== -->
+						<li id="view-li-root view-spd-template" class="spd-list hidden">
+							<span>${spd.type}</span>
+							<span>${spd.spdContent}</span>
+							<span>${spd.unit}</span>
+							<span>${spd.amount}</span>
+						</li>
+						<!-- ========================================== -->
+						<li id="view-tag-template" class="tag-list hidden">#${tag.tagContent}</li>
+						<!-- ========================================== -->
+						<div id="view-root">
+							<c:forEach var="pl" items="${postList}">
+							<div class="view-frame-box">
+								<p>${pl.name}</p>
+								<div class="view-frame">
+									<div>${pl.content}</div>
+									<div class="view-info">
+										<ul>
+											<li class="loc-list">${pl.name}</li>
+											<c:if test="${!empty spdList}">
+											<c:forEach var="spd" items="${spdList}">
+											<c:if test="${pl.id == spd.tLogPostId}">
+											<li class="spd-list">
+												<span>${spd.type}</span>
+												<span>${spd.spdContent}</span>
+												<span>${spd.unit}</span>
+												<span>${spd.amount}</span>
+											</li>
+											</c:if>
+											</c:forEach>
+											</c:if>
+											<c:forEach var="tag" items="${tagList}">
+											<c:if test="${!empty tagList && pl.id == tag.tLogPostId}">
+											<li class="tag-list">#${tag.tagContent}</li>
+											</c:if>
+											</c:forEach>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</c:forEach>
+						</div>
 					</div>
 					<div id="detail-post-modal">
 						<div class="detail-post-box">
@@ -312,7 +332,7 @@ window.addEventListener("load", function(){
 									<input id="tag" type="text" name="tag" placeholder="태그입력 (예)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">
-									<input id="btn-post" class="btn btn-focus" type="submit" name="btn-post" value="저장">
+									<input id="btn-post" class="btn btn-focus" type="button" name="btn-post" value="저장">
 									<input class="btn btn-default btn-detail-post-box-close" type="button" value="취소">
 								</div>
 							</div>

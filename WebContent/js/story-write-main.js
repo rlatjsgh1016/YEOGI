@@ -32,6 +32,22 @@ window.addEventListener("load", function(){
 	else
 		visual.style.background = "#1C1C1C";
 	
+	//포스트 저장버튼
+	postSubmitButton.onclick = function(){
+		inputPostMemo.value = nicEditors.findEditor('post-memo').getContent();
+
+		var formData = new FormData(formElement);
+		var request = new XMLHttpRequest();
+
+		request.onload = function(){
+			var result = JSON.parse(request1.responseText);
+			
+		}
+		request.open("POST","postSave",fasle);
+		request.send(formData)
+	}
+
+
 	//포스트 추가버튼
 	postAdd();
 	function postAdd(){
@@ -45,7 +61,7 @@ window.addEventListener("load", function(){
 	
 				inputLocId.value = "";
 				inputLocName.value = "";
-				inputPostMemo.value = "";
+				inputPostMemo.value = nicEditors.findEditor('post-memo').setContent("");
 				var vehicleOpts = selectVehicle.options;
 				for(var i=0; i<vehicleOpts.length; i++){
 					vehicleOpts[i].selected = false;
@@ -101,7 +117,8 @@ window.addEventListener("load", function(){
 						
 					inputLocId.value = result.locId;
 					inputLocName.value = result.name;
-					inputPostMemo.value = result.content;
+					//inputPostMemo.value = result.content;
+					nicEditors.findEditor('post-memo').setContent(result.content);
 	
 					var vehicleOpts = selectVehicle.options;
 					for(var i=0; i<vehicleOpts.length; i++){
@@ -224,7 +241,7 @@ window.addEventListener("load", function(){
 	
 				inputLocId.value = "";
 				inputLocName.value = "";
-				inputPostMemo.value = "";
+				inputPostMemo.value = nicEditors.findEditor('post-memo').setContent("");
 				var vehicleOpts = selectVehicle.options;
 				for(var i=0; i<vehicleOpts.length; i++){
 					vehicleOpts[i].selected = false;
@@ -321,7 +338,7 @@ window.addEventListener("load", function(){
 		if(firstDay == 1)
 			alert("이전 날짜가 없습니다.");
 		else{
-			//var placeDiv = document.querySelector(".place-container");
+			
 			var formData = new FormData(formElement);
 			var request = new XMLHttpRequest();
 			
@@ -360,59 +377,6 @@ window.addEventListener("load", function(){
 				postAdd();
 				postEdit();
 				postDelete();
-
-
-				// var returnString = request.responseText;
-				// var result = JSON.parse(returnString);
-				// var currDayInput = document.querySelector("#curr-day");
-				// currDayInput.value = firstDay-1;
-
-				// for(var j=0; j<dayButtons.length; j++){
-				// 	dayButtons[j].style.color = "#D8D8D8";
-				// 	dayButtons[j].value = firstDay+j-1;
-				// 	dayButtons[j].textContent = "DAY"+(firstDay+j-1);
-				// }
-				// dayButtons[0].style.color = "#E64C3C";
-				
-				// placeDiv.innerHTML = "";
-				// for(var i=0; i<result.length; i++){
-				// 	if(parseInt(result[i].day) == firstDay-1){
-				// 		placeDiv.insertAdjacentHTML("beforeend","<div class='card-frame'><div class='image-frame'><img alt='장소이미지' src='"+result[i].img+"'>"+"</div>"+
-				// 									"<div class='place-frame'><p>"+result[i].name+"</p></div><div class='place-btn-container'>"+
-				// 									"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/Yeogi/images/delete.png'></button>"+
-				// 									"<button class='btn-place-edit' type='button' ><img alt='편집' src='/Yeogi/images/write.png'></button>"+
-				// 									"<input type='hidden' name='post-id' value='"+result[i].id+"'></div></div>");
-				// 	}
-				// }
-				// placeDiv.insertAdjacentHTML("beforeend","<div class='place-add'><div class='large-loca'></div><button class='btn btn-focus btn-place-add' type='button'>장소추가</button></div>");
-
-				// //포스트 버튼 정의
-				// var btnPlaceAdd = document.querySelectorAll(".btn-place-add");
-				// var btnPlaceEdit = document.querySelectorAll(".btn-place-edit");
-				// var btnPlaceDelete = document.querySelectorAll(".btn-place-delete");
-				// var btnDetailPostBoxClose = document.querySelectorAll(".btn-detail-post-box-close");
-				// var detailPostMadal = document.querySelector("#detail-post-modal");
-
-				// //포스트 추가버튼
-				// for(var i=0; i<btnPlaceAdd.length; i++){
-				// 	btnPlaceAdd[i].addEventListener("click",function(i){
-				// 		detailPostMadal.style.display = "block";
-				// 	}.bind(this,i));
-				// }
-				
-				// //포스트 수정버튼
-				// for(var i=0; i<btnPlaceEdit.length; i++){
-				// 	btnPlaceEdit[i].addEventListener("click",function(i){
-				// 		detailPostMadal.style.display = "block";
-				// 	}.bind(this,i));
-				// }
-				
-				// //포스트 닫기 버튼
-				// for(var i=0; i<btnDetailPostBoxClose.length; i++){
-				// 	btnDetailPostBoxClose[i].addEventListener("click",function(i){
-				// 		detailPostMadal.style.display = "none";
-				// 	}.bind(this,i));
-				// }
 			};
 
 			request.open("POST", "selectDay", false);
@@ -428,7 +392,6 @@ window.addEventListener("load", function(){
 			alert("다음 날짜가 없습니다.");
 		else{
 
-			//var placeDiv = document.querySelector(".place-container");
 			var formData = new FormData(formElement);
 			var request = new XMLHttpRequest();
 			
@@ -468,73 +431,6 @@ window.addEventListener("load", function(){
 				postEdit();
 				postDelete();
 
-
-
-
-
-
-
-
-
-			// var placeDiv = document.querySelector(".place-container");
-			// var formData = new FormData(formElement);
-			// var request = new XMLHttpRequest();
-			
-			// request.onreadystatechange = function(){
-
-			// 	if(request.readyState != 4)	//	4번상태: 페이지 로딩이 완료 되지 않으면 리턴
-			// 		return;
-			// 	var returnString = request.responseText;
-			// 	var result = JSON.parse(returnString);
-			// 	var currDayInput = document.querySelector("#curr-day");
-			// 	currDayInput.value = lastDay+1;
-
-			// 	for(var j=0; j<dayButtons.length; j++){
-			// 		dayButtons[j].style.color = "#D8D8D8";
-			// 		dayButtons[j].value = lastDay+j-1;
-			// 		dayButtons[j].textContent = "DAY"+(lastDay+j-1);
-			// 	}
-			// 	dayButtons[2].style.color = "#E64C3C";
-				
-			// 	placeDiv.innerHTML = null;
-			// 	for(var i=0; i<result.length; i++){
-			// 		if(parseInt(result[i].day) == lastDay+1){
-			// 			placeDiv.insertAdjacentHTML("beforeend","<div class='card-frame'><div class='image-frame'><img alt='장소이미지' src='"+result[i].img+"'>"+"</div>"+
-			// 										"<div class='place-frame'><p>"+result[i].name+"</p></div><div class='place-btn-container'>"+
-			// 										"<button class='btn-place-delet' type='button' ><img alt='삭제' src='/Yeogi/images/delete.png'></button>"+
-			// 										"<button class='btn-place-edit' type='button' ><img alt='편집' src='/Yeogi/images/write.png'></button>"+
-			// 										"<input type='hidden' name='post-id' value='"+result[i].id+"'></div></div>");
-			// 		}
-			// 	}
-			// 	placeDiv.insertAdjacentHTML("beforeend","<div class='place-add'><div class='large-loca'></div><button class='btn btn-focus btn-place-add' type='button'>장소추가</button></div>");
-
-			// 	//포스트 버튼 정의
-			// 	var btnPlaceAdd = document.querySelectorAll(".btn-place-add");
-			// 	var btnPlaceEdit = document.querySelectorAll(".btn-place-edit");
-			// 	var btnPlaceDelete = document.querySelectorAll(".btn-place-delete");
-			// 	var btnDetailPostBoxClose = document.querySelectorAll(".btn-detail-post-box-close");
-			// 	var detailPostMadal = document.querySelector("#detail-post-modal");
-
-			// 	//포스트 추가버튼
-			// 	for(var i=0; i<btnPlaceAdd.length; i++){
-			// 		btnPlaceAdd[i].addEventListener("click",function(i){
-			// 			detailPostMadal.style.display = "block";
-			// 		}.bind(this,i));
-			// 	}
-				
-			// 	//포스트 수정버튼
-			// 	for(var i=0; i<btnPlaceEdit.length; i++){
-			// 		btnPlaceEdit[i].addEventListener("click",function(i){
-			// 			detailPostMadal.style.display = "block";
-			// 		}.bind(this,i));
-			// 	}
-				
-			// 	//포스트 닫기 버튼
-			// 	for(var i=0; i<btnDetailPostBoxClose.length; i++){
-			// 		btnDetailPostBoxClose[i].addEventListener("click",function(i){
-			// 			detailPostMadal.style.display = "none";
-			// 		}.bind(this,i));
-			// 	}
 			};
 
 			request.open("POST", "selectDay", false);
