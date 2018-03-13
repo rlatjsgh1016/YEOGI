@@ -5,22 +5,21 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.yeogi.jspweb.dao.TagDao;
-import com.yeogi.jspweb.entity.Nation;
 import com.yeogi.jspweb.entity.Tag;
+import com.yeogi.jspweb.entity.TagView;
 
 public class JdbcTagDao implements TagDao {
 
 	@Override
-	public List<Tag> getList(String tLogPostId) {
+	public List<TagView> getList(String tLogId) {
 		
-		String sql = "SELECT * FROM TAG WHERE T_LOG_POST_ID = ?";
+		String sql = "SELECT * FROM TAG_VIEW WHERE T_LOG_ID = ?";
 
-		List<Tag> list = new ArrayList<>();
+		List<TagView> list = new ArrayList<>();
 
 		try {
 
@@ -29,16 +28,18 @@ public class JdbcTagDao implements TagDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setString(1,tLogPostId);
+			st.setString(1,tLogId);
 			
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {
 
-				Tag tag = new Tag(
+				TagView tag = new TagView(
 						rs.getString("CONTENT"),
 						rs.getString("ID"),
-						rs.getString("T_LOG_POST_ID"));
+						rs.getString("T_LOG_POST_ID"),
+						rs.getString("T_LOG_ID")
+						);
 				
 				list.add(tag);
 			}

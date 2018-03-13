@@ -326,7 +326,7 @@ p{
 }
 	/*--detail 추가부분--*/
 	#plan-detail{
-		width: 280px;
+		width: 230px;
 		background: #EFEFEF;
 		overflow: hidden;
 	}
@@ -337,7 +337,7 @@ p{
 		}
 		
 			.detail-top > .back-btn{
-				margin: 5px 0px 5px 5px;
+				margin: 5px 0px 5px 10px;
 				width: 40px;
 				height: 40px;
 				/* border: 1px solid black; */
@@ -347,7 +347,7 @@ p{
 			}
 			
 			.detail-top > .wishbox-put{
-				margin: 5px 5px 5px 160px;
+				margin: 5px 5px 5px 120px;
 				width: 80px;
 				height: 40px;
 				/* border: 1px solid black; */

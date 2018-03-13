@@ -33,5 +33,12 @@ public class ReadMainController extends HttpServlet {
 		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
 		container.render("main.member.story.read.main", servletRequest);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+	}
 
 }

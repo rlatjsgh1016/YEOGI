@@ -98,6 +98,13 @@ input, select {
     vertical-align:middle;
 }
 
+button{
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	overflow: visible;
+}
+
 /*----------------------- abstract style ------------------------*/
 
 .root-container{
@@ -200,6 +207,16 @@ input, select {
 	color: #ffffff;
 	background: #333333;
 	width: 90px;
+}
+
+.btn-sm{
+	color: #ffffff;
+	background: #333333;
+	min-width: 0;
+	width: 50px;
+	padding: 0;
+	font-size: 80%;
+	font-weight: normal;
 }
 
 .btn-default:hover,
@@ -318,7 +335,6 @@ header nav{
 
 #visual{
 	height: 145px;
-	background: #1C1C1C url(../resources/small_visual.jpg) no-repeat center;
     border-top: 5px solid #E64C3C;
 }
 
@@ -539,6 +555,7 @@ main>.root-container{
 	width: 25px;
 	height: 40px;
 	margin: 5px 0 5px 20px;
+	padding: 0;
 	background-color: #D8D8D8;
 }
 
@@ -550,6 +567,7 @@ main>.root-container{
 	width: 25px;
 	height: 40px;
 	margin: 5px 20px 5px 5px;
+	padding: 0;
 	background-color: #D8D8D8;
 }
 
@@ -557,18 +575,18 @@ main>.root-container{
 	cursor: pointer;
 }
 
-.day-btn{
+.ul-day-btn{
 	list-style: none;
 	display: flex;
 	justify-content: center;
 }
 
 
-.day-btn a,
-.day-btn span{
+.ul-day-btn button,
+.ul-day-btn span{
 	display: inline-block;
 	width: 62px;
-	padding: 12px 0;
+	padding: 11px 0;
 	margin: 5px 0 5px 5px;
 	text-align: center;
 	font-size: 16px;
@@ -577,7 +595,19 @@ main>.root-container{
 	background-color: #212121;
 }
 
-.day-btn a:hover{
+.ul-day-btn span{
+	display: inline-block;
+	width: 62px;
+	padding: 11px 0;
+	margin: 5px 0 5px 5px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #D8D8D8;
+	background-color: #212121;
+}
+
+.ul-day-btn button:hover{
 	color: #E64C3C;
 }
 
@@ -634,8 +664,6 @@ main>.root-container{
 	align-items: center;
 	padding: 10px 0;
 }
-
-
 
 /*----------------------- right-main ------------------------*/
 .right-main{
@@ -717,23 +745,23 @@ textarea.form-control{
 	clear: both;	
 }
 
-#themes>a{
+#themes>button{
 	display:block;
 	float:left;
 	border: 2px solid #AFAFAF;
-	margin: 0 2px;
-	padding: 9px 3px;
+	margin: 0 5px;
+	padding: 8px 5px;
 	color: #AFAFAF;
 }
 
-#themes>a:last-child::after{
+#themes>button:last-child::after{
 	clear: both;
 }
 
 #themes>.selected{
 	border: 2px solid #E64C3C;
-	margin: 0 2px;
-	padding: 9px 3px;
+	margin: 0 5px;
+	padding: 8px 5px;
 	color: #E64C3C;
 }
 
@@ -760,7 +788,7 @@ textarea.form-control{
 	
 }
 
-.view-frame>p{
+.view-frame div:first-child{
 	display: inline-block;
 	padding: 5px;
 	width: 967px;
@@ -788,19 +816,29 @@ textarea.form-control{
 	font-weight: bold;
 }
 
-.view-info li:first-child{
+.view-info .loc-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/spot16.png") no-repeat left;
 }
 
-.view-info li:nth-child(2){
+.view-info .spd-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/won16.png") no-repeat left;
 }
 
-.view-info li:last-child{
+.view-info .spd-list span{
+	padding-left: 16px;
+	background: url("../images/header_bar.png") no-repeat 5px center;
+}
+
+.view-info .spd-list span:first-child{
+	padding-left: 0;
+	background: none;
+}
+
+.view-info .tag-list{
 	padding: 5px 0;
 	padding-left: 26px;
 	background :url("../images/tag16.png") no-repeat left;
@@ -875,7 +913,7 @@ textarea.form-control{
 	margin-right: 10px;
 }
 	
-.modal{
+#detail-post-modal{
 	position: fixed;
     top: 0;
     right: 0;

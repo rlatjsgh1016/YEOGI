@@ -73,17 +73,18 @@
 						
 						
 						<div id="searched-content">
-							검색결과
+							
+							<div id="print">검색결과</div>
 							<div class="searched-result">
 							 	
 							 	<div class="searched-pic">
-							 	 	
+							 	 	<img style="width:120px; height:150px;" src="http://cfs3.blog.daum.net/image/7/blog/2007/07/27/21/08/46a9dff4d049d&filename=%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C33222.bmp">
 							 	</div>
 							 	
 							 	<div class="searched-info">
 							 	 	
 							 	 	<div class="searched-name">
-							 	 		에펠탑
+							 	 		
 							 	 	</div>
 							 	 	
 							 	 	<div class="wishput-btn">
@@ -107,7 +108,8 @@
 			<!-- 지도 -->
 			<input id="pac-input" class="controls" type="text" placeholder="지역검색(ex 프랑스, 파리)"/>
 				<div id="map"></div>
-			
+
+				<!--클릭했을 때 나오는 박스 -->
 				 <div id="infowindow-content">
 			      <span id="place-name"  class="title"></span><br>
 			      Place ID <span id="place-id"></span><br>
@@ -230,7 +232,7 @@
 
 					function initMap() {	
 						var map = new google.maps.Map(document.getElementById('map'), {
-							center : {lat : -33.8688, lng : 151.2195},
+							center : {lat : 37.56,  lng : 126.97},
 							zoom : 13
 						});
 
@@ -246,6 +248,7 @@
 						var marker = new google.maps.Marker({
 							map : map
 						});
+						//태그 눌렀을 때 반응
 						marker.addListener('click', function() {
 							infowindow.open(map, marker);
 						});
@@ -271,16 +274,31 @@
 									});
 							marker.setVisible(true);
 							
+
+
+
+							//사진
+							// var API = "AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU";
+							//var PR = place.photos[0].photo_reference;
+							
+							// document.querySelector('.searched-pic img').src =
+							// "https://maps.googleapis.com/maps/api/place/photo?maxwidth=120&photoreference="+PR+"&key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU";
+							var printDiv = document.querySelector("#print");
+							
+							printDiv.textContent = place.photos[0].photo_reference;
 							//해당 장소 이름, 아이디, 주소, 뿌려준다
+							document.querySelector(".searched-name").textContent = place.name;
+
 							document.getElementById('place-name').textContent = place.name;
 							document.getElementById('place-id').textContent = place.place_id;
 							document.getElementById('place-address').textContent = place.formatted_address;
 							infowindow.setContent(document.getElementById('infowindow-content'));
 							infowindow.open(map, marker);
+							
 						});
 					}
 				</script>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU&callback=initMap&libraries=places&sensor=false" async defer></script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfcHbvgPNc6lfCcsU7NaG1xc2qO6heLFU&callback=initMap&libraries=places" async defer></script>
 				
 </body>
 </html>

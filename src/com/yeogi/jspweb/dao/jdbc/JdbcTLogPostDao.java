@@ -16,7 +16,7 @@ import com.yeogi.jspweb.entity.TourLog;
 public class JdbcTLogPostDao implements TLogPostDao {
 
 	@Override
-	public List<TLogPostView> getList(TourLog tourLog) {
+	public List<TLogPostView> getList(String id) {
 		
 		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ?";
 
@@ -29,7 +29,7 @@ public class JdbcTLogPostDao implements TLogPostDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setString(1, tourLog.getId());
+			st.setString(1, id);
 			
 			ResultSet rs = st.executeQuery();
 
@@ -42,13 +42,6 @@ public class JdbcTLogPostDao implements TLogPostDao {
 						rs.getString("T_LOG_LOC_ID"),
 						rs.getString("TRANS"),
 						rs.getString("T_LOG_POST_ID"),
-						rs.getString("T_LOG_POST_SPD_ID"),
-						rs.getString("TYPE"),
-						rs.getString("SPD_CONTENT"),
-						rs.getString("UNIT"),
-						rs.getInt("AMOUNT"),
-						rs.getString("TAG_ID"),
-						rs.getString("TAG_CONTENT"),
 						rs.getString("LOC_ID"),
 						rs.getInt("ORDER"),
 						rs.getInt("DAY"),
