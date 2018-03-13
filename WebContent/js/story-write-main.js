@@ -2,15 +2,18 @@
 
 window.addEventListener("load", function(){
 	
+	//버튼 정의
+	var mainButtons = document.querySelectorAll("input[name='btn-main']");
+	var addPostButton = document.querySelector("input[name='btn-add-post']");
+	var editPostButton = document.querySelector("input[name='btn-edit-post']");
+	
+	//로그 테이블 데이터 정의
 	var themesButtons = document.querySelectorAll("#themes>button");
 	var themesInput = document.querySelector("input[name='themes']");
 	var fileInput = document.querySelector("#attached-file");
 	var formElement = document.querySelector("#form-main");
 	var visual = document.querySelector("#visual");
-	
-	//메인버튼 6개 정의
-	var mainButtons = document.querySelectorAll("input[name='btn-main']");
-	
+
 	//포스트 테이블 데이터 정의
 	var inputTourLogId = document.querySelector("input[name='tour-log-id']");
 	var inputPostMemo = document.querySelector("textarea[name='post-memo']");
@@ -23,7 +26,6 @@ window.addEventListener("load", function(){
 	var inputSpdAmount = document.querySelector("input[name='spd-amount']");
 	var inputTag = document.querySelector("input[name='tag']");
 	
-	var postSubmitButton = document.querySelector("input[name='btn-post']");
 	
 	//배경화면 로딩
 	var coverImgInput = document.querySelector("input[name='cover-img']");
@@ -33,18 +35,154 @@ window.addEventListener("load", function(){
 		visual.style.background = "#1C1C1C";
 	
 	//포스트 저장버튼
-	postSubmitButton.onclick = function(){
+	addPostButton.onclick = function(){
 		inputPostMemo.value = nicEditors.findEditor('post-memo').getContent();
 
-		var formData = new FormData(formElement);
-		var request = new XMLHttpRequest();
-
-		request.onload = function(){
-			var result = JSON.parse(request1.responseText);
-			
+		if(inputLocId.value == null || inputLocId.value == ""){
+			alert("장소ID를 입력해주세요.");
+			return;
 		}
-		request.open("POST","postSave",fasle);
-		request.send(formData)
+		if(inputLocName.value == null || inputLocName.value == ""){
+			alert("장소명을 입력해주세요.");
+			return;
+		}
+		if(selectSpdType.value == null || selectSpdType.value == ""
+			|| inputSpdContent.value == null || inputSpdContent.value == ""
+			|| selectSpdUnit.value == null || selectSpdUnit.value == ""
+			|| inputSpdAmount.value == null || inputSpdAmount.value == "")
+		{
+			alert("지출내역을 입력해주세요.");
+			return;
+		}
+
+		var request1 = new XMLHttpRequest();
+		var formData1 = new FormData(formElement);
+		request1.open("POST","addPost",true);
+		request1.send(formData1)
+
+		
+		request1.onload = function(){
+			result = JSON.parse(request1.responseText);
+
+			var viewPostData = result.post;
+			var viewSpdData = result.spd;
+			var viewTagData = result.tag;
+			var viewSumData = result.sum;
+	
+			var viewRootDiv = document.querySelector("#view-root");
+			viewRootDiv.innerHTML = "";
+			var tempRoot = document.querySelector("#view-template");
+			var tempLoc = document.querySelector("#view-loc-template");
+			var tempSpd = document.querySelector("#view-spd-template");
+			var tempTag = document.querySelector("#view-tag-template");
+	
+			for(var i in viewPostData){
+				//루트 템플릿 복사 & id / class 삭제
+				var cloneRoot = document.importNode(tempRoot, true);
+				cloneRoot.classList.remove("hidden");
+				cloneRoot.id = "";
+				var viewRootUi = cloneRoot.querySelector("#view-ul-root");
+				viewRootUi.id = "";
+				//루트 템플릿 데이터 삽입
+				var locationName1 = cloneRoot.querySelector("p:first-child");
+				locationName1.textContent = viewPostData[i].name;
+				var postContent = cloneRoot.querySelector(".view-frame>div:first-child");
+				postContent.textContent = viewPostData[i].content;
+	
+				//장소 템플릿 복사 & id / class 삭제
+				var cloneLoc = document.importNode(tempLoc, true);
+				cloneLoc.classList.remove("hidden");
+				cloneLoc.id = "";
+				//장소 템플릿 데이터 삽입
+				cloneLoc.textContent = viewPostData[i].name;
+				//장소 템플릿 붙여넣기
+				viewRootUi.appendChild(cloneLoc);
+	
+				for(var j in viewSpdData){
+					if(viewSpdData[j].tLogPostId == viewPostData[i].id){
+						//지출 템플릿 복사 & id / class 삭제
+						var cloneSpd = document.importNode(tempSpd, true);
+						cloneSpd.classList.remove("hidden");
+						cloneSpd.id = "";
+						//지출 템플릿 데이터 삽입
+						var spans = cloneSpd.querySelectorAll("span");
+						spans[0].textContent = viewSpdData[j].type;
+						spans[1].textContent = viewSpdData[j].spdContent;
+						spans[2].textContent = viewSpdData[j].unit;
+						spans[3].textContent = viewSpdData[j].amount;
+						//지출 템플릿 붙여넣기
+						viewRootUi.appendChild(cloneSpd);
+					}
+				}
+				
+				for(var k in viewTagData){
+					//태그 템플릿 복사 & id / class 삭제
+					var cloneTag = document.importNode(tempTag, true);
+					cloneTag.classList.remove("hidden");
+					cloneTag.id = "";
+					//태그 템플릿 데이터 삽입
+					if(viewTagData[k].tLogPostId == viewPostData[i].id){
+						cloneTag.textContent = "#" + viewTagData[k].tagContent;
+						//태그 템플릿 데이터 삽입
+						viewRootUi.appendChild(cloneTag);
+					}
+				}
+				//루트 템플릿 붙여넣기
+				viewRootDiv.appendChild(cloneRoot);
+			}
+
+			//장소 리스트 갱신
+			var currDayInput = document.querySelector("#curr-day");
+			var postRootDiv = document.querySelector("#post-root");
+			postRootDiv.innerHTML = "";
+			for(var i=0; i<viewPostData.length; i++){
+				if(viewPostData[i].day == currDayInput.value){
+					var temp = document.querySelector("#template");
+					var placeImg = temp.querySelector(".image-frame>img");
+					var placeName = temp.querySelector(".place-frame>p");
+					var placeId = temp.querySelector("input[name='post-id']");
+					placeImg.src = viewPostData[i].img;
+					placeName.textContent = viewPostData[i].name;
+					placeId.value = viewPostData[i].id;
+					var clone = document.importNode(temp, true);
+					clone.classList.remove("hidden");
+					clone.id = "";
+					postRootDiv.appendChild(clone);
+				}
+			}
+			postAdd();
+			postEdit();
+			postDelete();
+
+			//포스트창 닫기
+			var detailPostMadal = document.querySelector("#detail-post-modal");
+			detailPostMadal.style.display = "none";
+			inputLocId.value = "";
+			inputLocName.value = "";
+			inputPostMemo.value = nicEditors.findEditor('post-memo').setContent("");
+			var vehicleOpts = selectVehicle.options;
+			for(var i=0; i<vehicleOpts.length; i++){
+				vehicleOpts[i].selected = false;
+			}
+			vehicleOpts[0].selected = true;
+
+			inputSpdContent.value ="";
+			inputSpdAmount.value = "";
+
+			var spdTypeOpts = selectSpdType.options;
+			for(var i=0; i<spdTypeOpts.length; i++){
+				spdTypeOpts[i].selected = false;
+			}
+			spdTypeOpts[0].selected = true;
+
+			var spdUnitOpts = selectSpdUnit.options;
+			for(var i=0; i<spdUnitOpts.length; i++){
+				spdUnitOpts[i].selected = false;
+			}
+			spdUnitOpts[0].selected = true;
+
+			inputTag.value = "";
+		}
 	}
 
 
@@ -58,6 +196,8 @@ window.addEventListener("load", function(){
 		for(var i=0; i<btnPlaceAdd.length; i++){
 			btnPlaceAdd[i].addEventListener("click",function(i){
 				detailPostMadal.style.display = "block";
+				addPostButton.style.display = "block";
+				editPostButton.style.display = "none";
 	
 				inputLocId.value = "";
 				inputLocName.value = "";
@@ -99,53 +239,49 @@ window.addEventListener("load", function(){
 		for(var i=0; i<btnPlaceEdit.length; i++){
 			btnPlaceEdit[i].addEventListener("click",function(i){
 				detailPostMadal.style.display = "block";
+				addPostButton.style.display = "none";
+				editPostButton.style.display = "block";
 				var postIdInput = btnPlaceEdit[i].previousElementSibling;
 				
 				var postId = new FormData();
 				postId.append("post-id", postIdInput.value);
-				var spdId = new FormData();
-				spdId.append("spd-id", postIdInput.value);
-				var tagId = new FormData();
-				tagId.append("tag-id", postIdInput.value);
 	
 				var request1 = new XMLHttpRequest();
-				var request2 = new XMLHttpRequest();
-				var request3 = new XMLHttpRequest();
 	
 				request1.onload = function(){
 					var result = JSON.parse(request1.responseText);
+					var editPostData = result.post;
+					var editSpdData = result.spd;
+					var editTagData = result.tag;
 						
-					inputLocId.value = result.locId;
-					inputLocName.value = result.name;
+					inputLocId.value = editPostData.locId;
+					inputLocName.value = editPostData.name;
 					//inputPostMemo.value = result.content;
-					nicEditors.findEditor('post-memo').setContent(result.content);
+					nicEditors.findEditor('post-memo').setContent(editPostData.content);
 	
 					var vehicleOpts = selectVehicle.options;
 					for(var i=0; i<vehicleOpts.length; i++){
 						vehicleOpts[i].selected = false;
-						if(vehicleOpts[i].value == result.trans){
+						if(vehicleOpts[i].value == editPostData.trans){
 							vehicleOpts[i].selected = true;
 						}
 					}
-				}
-			
-				request2.onload = function(){
-					var result = JSON.parse(request2.responseText);
-					if(result != null && result != ""){
-						inputSpdContent.value = result[0].spdContent;
-						inputSpdAmount.value = parseInt(result[0].amount);
+
+					if(editSpdData != null && editSpdData != ""){
+						inputSpdContent.value = editSpdData[0].spdContent;
+						inputSpdAmount.value = parseInt(editSpdData[0].amount);
 	
 						var spdTypeOpts = selectSpdType.options;
 						for(var i=0; i<spdTypeOpts.length; i++){
 							spdTypeOpts[i].selected = false;
-							if(spdTypeOpts[i].value == result[0].type){
+							if(spdTypeOpts[i].value == editSpdData[0].type){
 								spdTypeOpts[i].selected = true;
 							}
 						}
 						var spdUnitOpts = selectSpdUnit.options;
 						for(var i=0; i<spdUnitOpts.length; i++){
 							spdUnitOpts[i].selected = false;
-							if(spdUnitOpts[i].value == result[0].unit){
+							if(spdUnitOpts[i].value == editSpdData[0].unit){
 								spdUnitOpts[i].selected = true;
 							}
 						}
@@ -166,26 +302,17 @@ window.addEventListener("load", function(){
 						}
 						spdUnitOpts[0].selected = true;
 					}
-				}
-	
-				request3.onload = function(){
-					var result = JSON.parse(request3.responseText);
-	
-					if(result != null && result != ""){
+
+					if(editTagData != null && editTagData != ""){
 						var arr = [];
-						for(var i in result)
-							arr.push(result[i].tagContent);
+						for(var i in editTagData)
+							arr.push(editTagData[i].tagContent);
 						inputTag.value = arr.join(",");
 					}
-					
 				}
-	
+			
 				request1.open("POST","editPost",false);
 				request1.send(postId);
-				request2.open("POST","editPost",false);
-				request2.send(spdId);
-				request3.open("POST","editPost",false);
-				request3.send(tagId);
 	
 			}.bind(this,i));
 		}
@@ -200,28 +327,122 @@ window.addEventListener("load", function(){
 		for(var i=0; i<btnPlaceDelete.length; i++){
 			btnPlaceDelete[i].addEventListener("click",function(i){
 				var postIdInput = btnPlaceDelete[i].nextElementSibling;
-				var rootNode = postIdInput.parentElement.parentElement;
 				var isDelete = confirm("선택한 게시물을 삭제하시겠습니까?");
 				if(!isDelete){
-					return;
+					alert("삭제를 취소하였습니다.");
 				}
 				else{
-					var postId = new FormData();
+					var postId = new FormData(formElement);
 					postId.append("post-id", postIdInput.value);
+					
 					var request = new XMLHttpRequest();
-	
-					request.onload = function(){
-						var result = JSON.parse(request.responseText);
-						var intResult = parseInt(result);
-						if(intResult == 1){
-							rootNode.outerHTML = "";
-							alert("게시물을 삭제하였습니다.");
-						}
-						else
-							alert("삭제에 실패하였습니다.");
-						}
+					
 					request.open("POST","deletePost",false);
 					request.send(postId);
+					request.onload = function(){
+						alert('a');
+						var returnOut = request.responseText;
+						if(returnOut == "failed"){
+							alert("삭제에 실패하였습니다.");
+						}
+						else{
+							var result = JSON.parse(returnOut);
+	
+							var viewPostData = result.post;
+							var viewSpdData = result.spd;
+							var viewTagData = result.tag;
+							var viewSumData = result.sum;
+							for(var key in viewPostData)
+								alert(key);
+	
+							var viewRootDiv = document.querySelector("#view-root");
+							viewRootDiv.innerHTML = "";
+							var tempRoot = document.querySelector("#view-template");
+							var tempLoc = document.querySelector("#view-loc-template");
+							var tempSpd = document.querySelector("#view-spd-template");
+							var tempTag = document.querySelector("#view-tag-template");
+					
+							for(var i in viewPostData){
+								//루트 템플릿 복사 & id / class 삭제
+								var cloneRoot = document.importNode(tempRoot, true);
+								cloneRoot.classList.remove("hidden");
+								cloneRoot.id = "";
+								var viewRootUi = cloneRoot.querySelector("#view-ul-root");
+								viewRootUi.id = "";
+								//루트 템플릿 데이터 삽입
+								var locationName1 = cloneRoot.querySelector("p:first-child");
+								locationName1.textContent = viewPostData[i].name;
+								var postContent = cloneRoot.querySelector(".view-frame>div:first-child");
+								postContent.textContent = viewPostData[i].content;
+					
+								//장소 템플릿 복사 & id / class 삭제
+								var cloneLoc = document.importNode(tempLoc, true);
+								cloneLoc.classList.remove("hidden");
+								cloneLoc.id = "";
+								//장소 템플릿 데이터 삽입
+								cloneLoc.textContent = viewPostData[i].name;
+								//장소 템플릿 붙여넣기
+								viewRootUi.appendChild(cloneLoc);
+					
+								for(var j in viewSpdData){
+									if(viewSpdData[j].tLogPostId == viewPostData[i].id){
+										//지출 템플릿 복사 & id / class 삭제
+										var cloneSpd = document.importNode(tempSpd, true);
+										cloneSpd.classList.remove("hidden");
+										cloneSpd.id = "";
+										//지출 템플릿 데이터 삽입
+										var spans = cloneSpd.querySelectorAll("span");
+										spans[0].textContent = viewSpdData[j].type;
+										spans[1].textContent = viewSpdData[j].spdContent;
+										spans[2].textContent = viewSpdData[j].unit;
+										spans[3].textContent = viewSpdData[j].amount;
+										//지출 템플릿 붙여넣기
+										viewRootUi.appendChild(cloneSpd);
+									}
+								}
+								
+								for(var k in viewTagData){
+									//태그 템플릿 복사 & id / class 삭제
+									var cloneTag = document.importNode(tempTag, true);
+									cloneTag.classList.remove("hidden");
+									cloneTag.id = "";
+									//태그 템플릿 데이터 삽입
+									if(viewTagData[k].tLogPostId == viewPostData[i].id){
+										cloneTag.textContent = "#" + viewTagData[k].tagContent;
+										//태그 템플릿 데이터 삽입
+										viewRootUi.appendChild(cloneTag);
+									}
+								}
+								//루트 템플릿 붙여넣기
+								viewRootDiv.appendChild(cloneRoot);
+							}
+	
+							//장소 리스트 갱신
+							var currDayInput = document.querySelector("#curr-day");
+							var postRootDiv = document.querySelector("#post-root");
+							postRootDiv.innerHTML = "";
+							for(var i=0; i<viewPostData.length; i++){
+								if(viewPostData[i].day == currDayInput.value){
+									var temp = document.querySelector("#template");
+									var placeImg = temp.querySelector(".image-frame>img");
+									var placeName = temp.querySelector(".place-frame>p");
+									var placeId = temp.querySelector("input[name='post-id']");
+									placeImg.src = viewPostData[i].img;
+									placeName.textContent = viewPostData[i].name;
+									placeId.value = viewPostData[i].id;
+									var clone = document.importNode(temp, true);
+									clone.classList.remove("hidden");
+									clone.id = "";
+									postRootDiv.appendChild(clone);
+								}
+							}
+							postAdd();
+							postEdit();
+							postDelete();
+	
+							alert("게시물을 삭제하였습니다.");
+						}
+					}
 				}
 	
 			}.bind(this,i));
@@ -324,7 +545,7 @@ window.addEventListener("load", function(){
 				postDelete();
 			};
 
-			request.open("POST", "selectDay", false);
+			request.open("POST", "selectDay", true);
 			request.send(formData);
 		}.bind(this,i));
 	}
@@ -379,7 +600,7 @@ window.addEventListener("load", function(){
 				postDelete();
 			};
 
-			request.open("POST", "selectDay", false);
+			request.open("POST", "selectDay", true);
 			request.send(formData);
 		}
 	}
@@ -433,7 +654,7 @@ window.addEventListener("load", function(){
 
 			};
 
-			request.open("POST", "selectDay", false);
+			request.open("POST", "selectDay", true);
 			request.send(formData);
 		}
 	}
@@ -507,7 +728,7 @@ window.addEventListener("load", function(){
 						
 					};
 
-					request.open("POST", "lock", false);
+					request.open("POST", "lock", true);
 					request.send(formData);
 				}break;
 				case "비공개 전환":{
@@ -540,7 +761,7 @@ window.addEventListener("load", function(){
 						
 					};
 
-					request.open("POST", "lock", false);
+					request.open("POST", "lock", true);
 					request.send(formData);
 				}break;
 				case "동행자 추가":{
