@@ -68,7 +68,7 @@
 						<option>동행</option>
 						<option>잡담</option>
 					</select>
-					<input type="text" class="input1">
+					<input type="text" class="input1" name="title">
 					<textarea rows="10" cols="" class="text-area"></textarea>
 					<div class ="clear"></div>
 					<input class="btn btn-image btn-search" type="submit" value="사진추가">

@@ -7,7 +7,6 @@ public class Commu_Post_Img {
 	private String Commu_Post_Img;
 	public Commu_Post_Img(String id, String commu_Post_Img) {
 	
-
 	}
 	public Commu_Post_Img(String id, String commu_Post_id, String img, String commu_Post_Img) {
 		super();

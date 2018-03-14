@@ -23,6 +23,8 @@ public class Commu_PostmainController extends HttpServlet {
 		String id =request.getParameter("id");
 		
 		
+		
+		
 		Commu_PostDao commu_postDao = new JdbcCommuPostDao();
 		List<Commu_Post> commu_post =  commu_postDao.getList();
 		

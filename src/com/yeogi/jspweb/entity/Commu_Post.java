@@ -9,6 +9,8 @@ public class Commu_Post {
 	private String Post_Type;
 	private String id;
 	private String Commu_Post;
+ 	private String searchKey;
+    private String searchValue;
 	public Commu_Post(String title, String rEG_Date, String content, String hit, String mid, String post_Type,
 			String id, String commu_Post) {
 		super();
@@ -20,6 +22,7 @@ public class Commu_Post {
 		Post_Type = post_Type;
 		this.id = id;
 		Commu_Post = commu_Post;
+		
 
 	}
 	

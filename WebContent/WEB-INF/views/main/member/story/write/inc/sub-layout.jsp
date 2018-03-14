@@ -20,9 +20,14 @@
 <link type="text/css" href="${ctx}/CSS/story-write.css" rel="stylesheet">
 
 </head>
-	<tiles:insertAttribute name="header" />
+	
 <body>
+<<<<<<< HEAD
 	<tiles:insertAttribute name="main"
 	 />
+=======
+	<tiles:insertAttribute name="header" />
+	<tiles:insertAttribute name="main" />
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>

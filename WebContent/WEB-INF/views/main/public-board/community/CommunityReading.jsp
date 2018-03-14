@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
+
+<link type="text/css" href="../../../CSS/communityreading.css" rel="stylesheet">
+    <body>
+<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -34,14 +37,11 @@
 			</ul>
 		</div>
 	</header>
-	
-	<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 
-<visual>
- 	
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
+<visual>		
 	<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
-				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
@@ -55,11 +55,11 @@
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
 			</fieldset>
 		</form>
-</visual>
-</body>
-</html>
+</visual>	
     
 <!-- main 시작------------------------------------------------------------------------------------------------------------- -->
+
+
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -114,7 +114,8 @@
 			<div class ="rightmain">
 				<p class="p1">공지게시판</p>
 				<img alt="" src="">
-			
+			<a href="http://localhost:8080/Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">수정</a>
+			<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">목록</a>
 			<p class="p2">조회수:10</p2>
 				<div>
 					<p>
@@ -155,8 +156,7 @@
 		</form>
 	</main>
 	
-			
-		<!-- footer 시작------------------------------------------------------------------------------------------------------------- --> 
+	<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
 	<footer>
 		<div class="root-container">
 		
@@ -169,5 +169,4 @@
 		</div>
 	</footer>
 </body>
-</html>
-	
+</html>			

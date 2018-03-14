@@ -1,0 +1,91 @@
+#header{
+	height : 70px ;
+	padding-top : 10px ;
+}
+
+#header .root-container {
+	height :70px ;
+}
+
+#header #logo {
+	width : 200px ;
+	float : left ;
+}
+
+.main-menu{
+	font-family : "맑은 고딕","고딕","sans-serif " ;
+	font-size : 20px ;
+	font-weight : bold ;
+	color : #333333 ;
+	padding-bottom: 20px ;
+}
+
+.main-menu > ul > li{
+	padding-left : 24px ;
+	background: url("../resources/header_bar.png") no-repeat 13px center ;
+	background-size: 1px ;	
+	
+}
+.hor-menu{
+	display : inline-block ;
+	padding-top : 15px ; /* 메뉴 글씨 패딩*/
+}
+
+.hor-menu > h1{
+	display : none ;
+}
+
+.hor-menu > ul{
+	
+}
+
+.hor-menu > ul > li{
+	float : left ;
+}
+
+.hor-menu.first-pad-none > ul > li:first-child
+{
+	padding-left: 0px ;
+	background : none ;
+}
+
+
+.btn,
+.button{
+	display : inline-block ; /*display가 inline이 아니면 너비를 설정할 수 없음*/
+	min-width : 71px ;
+	color : #ffffff ;
+	text-align: center ;
+	padding : 3px 8px ;
+	border-radius: 5px ;	
+	overflow : hidden ;
+	/* overriding for input button*/
+	border: 0px ; /* 원래 버튼 초기화 */
+}
+
+.btn-mypage{
+	background : #000000 ;
+	width: 70px ;
+	margin-bottom: 5px  ;
+	height: 17px ;
+	padding-top: 2px ;
+}
+
+.hidden{
+	display : none ;
+}
+
+
+.member-menu{
+	font-family : "맑은 고딕","고딕","sans-serif";
+	font-size : 13px;
+	font-weight : bold;
+	color : #6E6E6E;
+	margin-left: 40%;
+}
+
+.member-menu > ul > li{
+	padding-left : 9px;
+	/*background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	*/
+}
+

@@ -16,7 +16,6 @@
 		<div id="visual">
 			<h1 class="hidden">visual</h1>
 				<div class="root-container">
-				
 				</div>
 		</div>
 		<main class="select-main">

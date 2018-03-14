@@ -3,7 +3,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
-
+<link type="text/css" href="${ctx}/CSS/header.css" rel="stylesheet" >
 	<header>
 		<div class="root-container">
 			<a id="logo" href="${ctx}/main"><img alt="로고" src="${ctx}/images/logo.png" height="60px;"></a>

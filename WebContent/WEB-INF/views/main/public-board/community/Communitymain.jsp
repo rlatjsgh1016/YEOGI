@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link type="text/css" href="${ctx}/CSS/communitymain.css" rel="stylesheet">
+<link type="text/css" href="../../../CSS/communitymain.css" rel="stylesheet">
 
- <!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
+
+<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -36,14 +37,11 @@
 			</ul>
 		</div>
 	</header>
-	
-	<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 
-<visual>
- 	
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
+<visual>		
 	<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
-				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
@@ -55,11 +53,10 @@
 					</select>
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
+				
 			</fieldset>
 		</form>
-</visual>
-</body>
-</html>
+</visual>	
 
 <!-- main 시작------------------------------------------------------------------------------------------------------------- --> 
 	<main>
@@ -70,44 +67,39 @@
 					<div>
 						<tr>
 							<td class="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
-								</a>
+							
+						<a href="#" class="btn btn-text default-btn">월간BEST</a>
+								
 							</td>
 						</tr>
 						<tr>
 							<td class ="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">공지게시판</a>	
-								</a>
+								
+							<a href="communtiyboard1.html" class="btn btn-text default-btn">공지게시판</a>
 							</td>
 						</tr>
 						<tr>
 							<td class ="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">질문게시판</a>	
-								</a>
+							
+							<a href="communtiyboard1.htm2" class="btn btn-text default-btn">정보게시판</a>
 							</td>
 						</tr>
 						<tr>
 							<td class ="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">정보게시판</a>	
-								</a>
+							
+								<a href="communtiyboard3.html" class="btn btn-text default-btn">질문게시판</a>
 							</td>
 						</tr>
 						<tr>
 							<td class ="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">동행게시판</a>	
-								</a>
+							
+								<a href="communtiyboard4.html" class="btn btn-text default-btn">동행게시판</a>
 							</td>
 						</tr>
 						<tr>
 							<td class ="sidemenu">
-								<a>
-									<a href="reg" class="btn btn-text default-btn">잡담게시판</a>	
-								</a>
+								
+							<a href="communtiyboard5.html" class="btn btn-text default-btn">잡담게시판</a>
 							</td>
 						</tr>
 					</div>	
@@ -117,8 +109,7 @@
 			<div class ="rightmain">
 				<p class="p1">월간BEST</p>
 				<p class="p2">
-				
-<a href="/Yeogi/WebContent/main/public-board/community/Communitymain" class="btn btn-text default-btn">글쓰기</a>
+				<a href="Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">글쓰기</a>
 				</p>
 					<div class ="clear">
 						<img alt="" src="">
@@ -231,7 +222,7 @@
 					</div>
 		</main>
 		
-		<!-- footer 시작------------------------------------------------------------------------------------------------------------- --> 
+		<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
 	<footer>
 		<div class="root-container">
 		
@@ -244,5 +235,5 @@
 		</div>
 	</footer>
 </body>
-</html>
+</html>			
 		
