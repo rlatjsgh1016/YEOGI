@@ -67,7 +67,7 @@
         
         
 			<div id="cost-option">
-			<div id="printer"><!-- <img src="../../../../images/printer.png" height="25px" align="right"/></div> -->
+			<div id="printer">
 			</div>
 				<div class="total-day">
 							<div class="b1"><b>DAY 1</b></div>
@@ -76,45 +76,20 @@
 							<div class="b2">
 							    <div class ="when">${tppsv.tourDateTime}</div>
 								<div class = "where"> ${tppsv.memoTitle} </div>
-								<div class = "count-place">${tppsv.id}</div>
+								<div class = "count-place"></div>
 								<div class = "picture"><img src="../../../../images/jeju.png"/></div>
 								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" />${tppsv.memoContent}</div>
 							</div>	
 						</c:forEach>
 				</div>
-                
-                
-				
-				<div class="total-day">
-							<div class="b1"><b>DAY 2</b></div>
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">도깨비 도로</div>
-								<div class = "count-place">4</div>
-								<div class = "picture"></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" /></div>
-							</div>	
-				</div>
-				
-				<div class="total-day">
-							
-							<div class="b2">
-							    <div class ="when">08:00</div>
-								<div class = "where">섭지코지</div>
-								<div class = "count-place">5</div>
-								<div class = "picture"></div>
-								<div class = "write"><img src="../../../../images/memo-pad.png" height="25px" align="left" margine="100px;"  alt="메모" /></div>
-							</div>	
-				</div>
 			</div>
 
-        
-        
-			<a href=""><div id="save-trip">
-					<b>Save</b>
-				</div></a>
-		</div>
+
+
+		<a href=""><div id="save-trip">
+				<b>Save</b>
+			</div></a>
+	</div>
 
 		<div id="main">
 
@@ -158,12 +133,11 @@
 				</div>
 
 
-				
 				<div id="schedule">
 					<table border="1">
 						<thead>
 							<tr>
-
+								
 								<td width="100px">06:00</td>
 								<td width="300px"></td>
 								
@@ -175,171 +149,194 @@
 
 						<tbody>
 							<tr>
-								<td>07:00</td>
-                                <td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">07:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
+
 
 							</tr>
 							<tr>
-								<td>08:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">08:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>09:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">09:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>10:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">10:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>11:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">11:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>12:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">12:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>13:00</td>
-								<td><a href=""><img src="../../../../images/plus.png" height="20px" alt="my장소" /> <span style="color: darksalmon">My장소</span></a></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">13:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>14:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">14:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>15:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">15:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>16:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">16:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>17:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">17:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>18:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">18:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>19:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">19:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>20:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">20:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>21:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">21:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>22:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">22:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>23:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">23:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>24:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">24:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>01:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">25:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>02:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">26:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>03:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">27:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>04:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">28:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 							<tr>
-								<td>05:00</td>
-								<td></td>
-								<td class="memo-pad"><a href=""></a></td>
-								<td></td>
+								<td width="100px">29:00</td>
+								<td width="300px"></td>
+								
+								<td class="memo-pad" width="100px"><a class="btn-memo" href="#"></a></td>
+								<td width="300px"></td>
 
 							</tr>
 						</tbody>
 					</table>
 
 				</div>
-
 
 
 
@@ -376,9 +373,13 @@
 	</div>
 <form method="post">
 	<div class="modal">
+	
+	<%-- <input id="tour-plan-id" type="hidden" name="tour-plan-id" value="${tp[0].id}">
+	<input id="tour-plan-loc-id" type="hidden" name="tour-plan-loc-id" value="${tpl[0].id}"> --%>
 		<div id="memoscreen">
 			<ul>
-				<li>06:00</li>
+				
+				<li><input type="hidden" name="time" value="06:00" />06:00</li>
 				<li><input id="memo-title" type="text" name="memo-title" 
 					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
 				<li><textarea name="memo-content" 
@@ -421,6 +422,1111 @@
 		</div>
 	</div>
 </form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="07:00" />07:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="08:00" />08:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="09:00" />09:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="10:00" />10:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="11:00" />11:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="12:00" />12:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="13:00" />13:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="14:00" />14:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="15:00" />15:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="16:00" />16:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="17:00" />17:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="18:00" />18:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="19:00" />19:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="20:00" />20:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="21:00" />21:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="22:00" />22:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="23:00" />23:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="24:00" />24:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="25:00" />25:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="26:00" />26:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="27:00" />27:00</li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="28:00" /></li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
+<form method="post">
+	<div class="modal">
+		<div id="memoscreen">
+			<ul>
+				<li><input type="hidden" name="time" value="29:00" /></li>
+				<li><input id="memo-title" type="text" name="memo-title" 
+					placeholder="메모 제목이 무엇이죠? :)" maxlength="50" required/></li>
+				<li><textarea name="memo-content" 
+						placeholder="여행지에 대해 간단한 메모를 해주세요! :)" maxlength="300" wrap="hard"></textarea></li>
+			</ul>
+			<div class="verysad">
+				<select name="type" class="select-place heiwh">
+					<option value="명소">명소</option>
+					<option value="맛집">맛집</option>
+					<option value="숙소">숙소</option>
+					<option value="교통">교통</option>
+					<option value="쇼핑">쇼핑</option>
+					<option value="기타">기타</option>
+				</select> 
+				<input class="heiwh" type="text" name="memo-cost-spd"
+					placeholder="예산사용 목적은 무엇이죠? :)" maxlength="50"
+					style="width: 260px;" /> 
+				<select name="unit" class="select-money heiwh"
+					style="width: 90px;">
+					<option value="KRW">원(KRW)</option>
+					<option value="USD">달러(USD)</option>
+					<option value="CNY">위안(CNY)</option>
+					<option value="EUR">유로(EUR)</option>
+					<option value="JPY">엔(JPY)</option>
+				</select> 
+				<input class="input-cost" type="text" name="input-cost"
+					placeholder="금액 입력칸 :)" maxlength="10" style="width: 100px;" />
+			</div>
+				<span class="cost-minus"><b>━</b></span>
+				<span class="cost-plus"><b>┼</b></span>
+			<div class=addedFormDiv></div><BR>
+
+
+			<div class="mok">
+				<input type="submit" class="check" value="저장" />
+				<div class="close">취소</div>
+			</div>
+
+
+		</div>
+	</div>
+</form>
+
 	<div class="modal-friend">
 		<form name="check-form" id="" method="post" action="">
 			<div id="add-friend-screen">
@@ -473,11 +1579,10 @@
 					</div>
 				</div>
 				<div class="last-box">
-					<div class="confirm btn-default">확인</div>
+					<div class="confirm btn-default">요청</div>
 					<div class="close1 btn-default">취소</div>
 				</div>
 			</div>
 		</form>
-	</div>
-</body>
+	</div></body>
 </html>

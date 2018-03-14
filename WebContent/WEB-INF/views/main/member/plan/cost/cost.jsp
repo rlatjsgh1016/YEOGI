@@ -63,7 +63,7 @@
 			<div id="cost-option">
 					<h1>상세선택옵션</h1>
 						<div class="total-cost">
-							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">1,556,000원</span><br>입니다. :)  즐거운 여행되세요!</p>
+							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">원</span><br>입니다. :)  즐거운 여행되세요!</p>
 						</div>
 						<select class="select-money">
                             <option value="서버로 넘길 값"> 대한민국 원(KRW) </option>
@@ -82,16 +82,16 @@
 							<div class="b2">
 								<div class ="when">06:00</div>
 								<div class = "where">${pp.memoTitle}</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
+								<div class = "why"></div>
+								<div class = "howmuch">원</div>
 								<div class = "comment">${pp.memoContent}</div>
 							</div>
 						</c:forEach>							
 							
-							<div class="plus-cost">
+							<!-- <div class="plus-cost">
 								<a href=""><img src="../../../../images/plus.png" height="50px" width="50px" style="margin-left: auto; margin-right: auto; display: block;" alt="예산 추가" /></a>
 							</div>
-							<div class="b1"><b>DAY 2</b></div>
+							<div class="b1"><b>DAY 2</b></div> -->
 						</div>
 				</nav>
 			</div>

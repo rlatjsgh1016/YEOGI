@@ -25,7 +25,7 @@ public class JdbcTourPlanDao implements TourPlanDao {
 				"    MID," +
 				"    PERIOD," +
 				"    T_THEME" + 
-				") VALUES (?,?,?,?,?,?,?,?)";
+				") VALUES ((SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM tour_plan WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),?,?,?,?,?,?,?)";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
 		int result = 0;
 		
@@ -37,14 +37,13 @@ public class JdbcTourPlanDao implements TourPlanDao {
 			PreparedStatement st = con.prepareStatement(sql);
 			
 			/*1은 물음표 개수?*/
-			st.setString(1, tourPlan.getId());
-			st.setString(2, tourPlan.getTitle());
-			st.setDate(3, tourPlan.getStartDate());
-			st.setDate(4, tourPlan.getEndDate());
-			st.setInt(5, tourPlan.getCompanion());
-			st.setString(6, tourPlan.getmId());
-			st.setInt(7, tourPlan.getPeriod());
-			st.setString(8, tourPlan.gettTheme());
+			st.setString(1, tourPlan.getTitle());
+			st.setDate(2, tourPlan.getStartDate());
+			st.setDate(3, tourPlan.getEndDate());
+			st.setInt(4, tourPlan.getCompanion());
+			st.setString(5, tourPlan.getmId());
+			st.setInt(6, tourPlan.getPeriod());
+			st.setString(7, tourPlan.gettTheme());
 				
 			result = st.executeUpdate();
 			st.close();
@@ -178,7 +177,7 @@ public class JdbcTourPlanDao implements TourPlanDao {
 	}
 
 	@Override
-	public List<TourPlan> getList(String id) {
+	public List<TourPlan> getList() {
 		String sql = "SELECT * FROM TOUR_PLAN ORDER BY REG_DATE";
 		//String sql2 = "SELECT PWD = '122' FROM MEMBER";
 		List<TourPlan> list = new ArrayList<>();

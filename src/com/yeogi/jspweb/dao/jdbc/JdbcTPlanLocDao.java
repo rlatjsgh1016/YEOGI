@@ -22,7 +22,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 							"    t_plan_id," + 
 							"    id," + 
 							"    loc_id" + 
-							") VALUES (?,?,?,?,?)"; 
+							") VALUES (?,?,?,(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM t_plan_loc WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),?)"; 
 		
 		int result = 0;
 		
@@ -36,8 +36,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 			st.setString(1, tplanloc.getMyLocId());
 			st.setDate(2, tplanloc.getRegDate()); 
 			st.setString(3, tplanloc.getTPlanId());
-			st.setString(4, tplanloc.getId());
-			st.setString(5, tplanloc.getLocId());
+			st.setString(4, tplanloc.getLocId());
 			
 			result = st.executeUpdate();
 			
