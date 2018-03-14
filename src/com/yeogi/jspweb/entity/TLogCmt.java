@@ -1,6 +1,6 @@
 package com.yeogi.jspweb.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class TLogCmt {
 	
@@ -10,12 +10,13 @@ public class TLogCmt {
 	private String pId;
 	private Date regDate;
 	private String content;
+	private String lockYN;
 	
 	public TLogCmt() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TLogCmt(String id, String tLogId, String mId, String pId, Date regDate, String content) {
+	public TLogCmt(String id, String tLogId, String mId, String pId, Date regDate, String content,String lockYN) {
 		super();
 		this.id = id;
 		this.tLogId = tLogId;
@@ -23,6 +24,22 @@ public class TLogCmt {
 		this.pId = pId;
 		this.regDate = regDate;
 		this.content = content;
+	}
+	
+	public TLogCmt(String tLogId, String mId, String pId, Date regDate, String content,String lockYN) {	
+		this.tLogId = tLogId;
+		this.mId = mId;
+		this.pId = pId;
+		this.regDate = regDate;
+		this.content = content;
+	}
+
+	public String getLockYN() {
+		return lockYN;
+	}
+
+	public void setLockYN(String lockYN) {
+		this.lockYN = lockYN;
 	}
 
 	public String getId() {

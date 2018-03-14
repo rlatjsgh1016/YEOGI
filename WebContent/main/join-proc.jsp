@@ -49,7 +49,7 @@
 		
 		member.insert(mem);
 		
-		response.sendRedirect("join-celeb");
+		response.sendRedirect("join.jsp");
 		break;
 		
 	case "ID 중복확인" : 
