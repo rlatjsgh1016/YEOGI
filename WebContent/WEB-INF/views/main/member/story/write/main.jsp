@@ -61,8 +61,9 @@ window.addEventListener("load", function(){
 				<div class="root-container">
 					<input id="tour-log-id" type="hidden" name="tour-log-id" value="${tourLog.id}">
 					<input id="mid" type="hidden" name="mid" value="${tourLog.mid}">
-					<input id="title" type="text" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)" value="${tourLog.title}">
-					<input id="btn-cover" type="submit" name="btn-main" value="커버교체">
+					<input id="hit" type="hidden" name="hit" value="${tourLog.hit}">
+					<input id="title" type="text" name="title" maxlength="40" placeholder="여행 타이틀을 작성하세요 :)" value="${tourLog.title}">
+					<input id="btn-cover" type="button" name="btn-main" value="커버교체">
 					<input type="hidden" name="cover-img" value="${tourLog.coverImg}">
 					<input id="attached-file" type="file" name="attached-file" class="hidden">
 				</div>
@@ -82,17 +83,17 @@ window.addEventListener("load", function(){
 						<div class="second-line-btn">
 							<div>
 								<c:if test="${tourLog.lockYN == 'Y'}">
-								<input class="btn-main-submit" type="submit" name="btn-main" value="공개 전환">
+								<input class="btn-main-submit" type="button" name="btn-main" value="공개 전환">
 								</c:if>
 								<c:if test="${tourLog.lockYN == 'N'}">
-								<input class="btn-main-submit" type="submit" name="btn-main" value="비공개 전환">
+								<input class="btn-main-submit" type="button" name="btn-main" value="비공개 전환">
 								</c:if>
 								<input id="lock-yn" type="hidden" name="lock-yn" value="${tourLog.lockYN}">
-								<input id="btn-companion" class="btn-main-submit" type="submit" name="btn-main" value="동행자 추가">
+								<input id="btn-companion" class="btn-main-submit" type="button" name="btn-main" value="동행자 추가">
 							</div>
 							<div>
 								<input id="btn-save" class="btn-main-submit" type="submit" name="btn-main" value="저장">
-								<input class="btn-main-submit" type="reset" name="btn-main" value="취소">
+								<input class="btn-main-submit" type="button" name="btn-cancel" value="취소">
 							</div>
 						</div>
 					</div>
@@ -187,8 +188,8 @@ window.addEventListener("load", function(){
 				</section>
 				<section class="right-main">
 	       			<div class="form-container">
-	        			<input id="sub-title" class="form-control" type="text" name="sub-title" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300">
-	       				<textarea id="memo" class="form-control" name="memo" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000"></textarea>
+	        			<input id="sub-title" class="form-control" type="text" name="sub-title" placeholder="어떤 여행인지 간단히 설명해 주세요 :)" maxlength="300" value="${tourLog.subTitle}">
+	       				<textarea id="memo" class="form-control" name="memo" placeholder="당신의 여행 스토리를 남겨보세요!" maxlength="10000">${tourLog.memo}</textarea>
 	       				<div class="tour-log-info">
 	           				<div class="tour-log-info-bottom">
 	            					<div class="days">
@@ -238,13 +239,14 @@ window.addEventListener("load", function(){
 								<div>${pl.content}</div>
 								<div class="view-info">
 									<ul id="view-ul-root">
-										<li class="loc-list">${pl.name}</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<!-- ========================================== -->
-						<li id="view-li-root view-spd-template" class="spd-list hidden">
+						<li id="view-loc-template" class="loc-list hidden">${pl.name}</li>
+						<!-- ========================================== -->
+						<li id="view-spd-template" class="spd-list hidden">
 							<span>${spd.type}</span>
 							<span>${spd.spdContent}</span>
 							<span>${spd.unit}</span>
@@ -290,10 +292,17 @@ window.addEventListener("load", function(){
 						<div class="detail-post-box">
 							<div class="detail-title-box">포스트작성</div>
 							<div class="detail-form-box">
-								<textarea id="post-memo" class="detail-textarea" name="post-memo" rows="15" required="required"></textarea>
+								<textarea id="post-memo" class="detail-textarea" name="post-memo" rows="15" ></textarea>
 								<div class="post-list post-spot">
-									<input id="loc-id" type="text" name="loc-id" value="2018030700001" placeholder="장소ID를 등록해주세요 :)" required="required"> <!-- api받아와서 입력 -->
-									<input id="loc-name" type="text" name="loc-name" value="경복궁" placeholder="장소를 등록해주세요 :)" required="required">	<!-- api받아와서 입력 -->
+									<select id="select-loc-id" name="select-loc-id">
+										<option value="">장소 선택</option>
+										<c:forEach var="loc" items="${locList}">
+										<option value="${loc.id}">"${loc.name}"</option>
+										</c:forEach>
+									</select>
+								
+									<!-- <input id="loc-id" type="text" name="loc-id" value="2018030700001" placeholder="장소ID를 등록해주세요 :)" > api받아와서 입력
+									<input id="loc-name" type="text" name="loc-name" value="경복궁" placeholder="장소를 등록해주세요 :)" >	api받아와서 입력 -->
 									<label for="vehicle" >이동수단</label>
 									<select id="vehicle" name="vehicle">
 										<option value="">선택</option>
@@ -308,7 +317,7 @@ window.addEventListener("load", function(){
 									</select>
 								</div>
 								<div class="post-list post-expense" >
-									<select id="spd-type" name="spd-type" required="required" >
+									<select id="spd-type" name="spd-type"  >
 										<option value="">지출유형 선택</option>
 										<option value="명소">명소</option>
 										<option value="맛집">맛집</option>
@@ -317,12 +326,12 @@ window.addEventListener("load", function(){
 										<option value="쇼핑">쇼핑</option>
 										<option value="기타">기타</option>
 									</select>
-									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료" required="required" >
-									<select id="spd-unit" name="spd-unit" required="required" >
+									<input id="spd-content" type="text" name="spd-content" placeholder="(예)에펠탑 입장료" >
+									<select id="spd-unit" name="spd-unit" >
 										<option value="">화폐단위 선택</option>
 										<option value="KRW">KRW(한국)</option>
 									</select>
-									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력" required="required" >
+									<input id="spd-amount" type="number" name="spd-amount" placeholder="지출금액 입력" >
 									<button class="btn btn-sm" type="button">추가</button>
 									<input id="spd-id" type="hidden" name="spd-id">
 									<button class="btn btn-sm" type="button">삭제</button>
@@ -332,7 +341,8 @@ window.addEventListener("load", function(){
 									<input id="tag" type="text" name="tag" placeholder="태그입력 (예)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">
-									<input id="btn-post" class="btn btn-focus" type="button" name="btn-post" value="저장">
+									<input id="btn-post" class="btn btn-focus" type="button" name="btn-add-post" value="저장">
+									<input id="btn-post" class="btn btn-focus" type="button" name="btn-edit-post" value="수정">
 									<input class="btn btn-default btn-detail-post-box-close" type="button" value="취소">
 								</div>
 							</div>

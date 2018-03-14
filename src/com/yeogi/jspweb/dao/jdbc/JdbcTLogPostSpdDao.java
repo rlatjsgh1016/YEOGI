@@ -11,7 +11,6 @@ import java.util.List;
 import com.yeogi.jspweb.dao.TLogPostSpdDao;
 import com.yeogi.jspweb.entity.TLogPostSpd;
 import com.yeogi.jspweb.entity.TLogPostSpdView;
-import com.yeogi.jspweb.entity.TLogPostView;
 
 public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 

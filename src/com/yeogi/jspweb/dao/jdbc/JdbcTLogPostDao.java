@@ -5,17 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-import javax.xml.ws.Response;
 
 import com.yeogi.jspweb.dao.TLogPostDao;
 import com.yeogi.jspweb.entity.TLogPost;
 import com.yeogi.jspweb.entity.TLogPostView;
-import com.yeogi.jspweb.entity.TourLog;
 
 public class JdbcTLogPostDao implements TLogPostDao {
 

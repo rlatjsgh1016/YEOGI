@@ -8,6 +8,8 @@ import com.yeogi.jspweb.entity.TourLog;
 public interface TLogNationDao {
 
 	List<TLogNation> getList(TourLog tourLog);
+	
+	TLogNation get(String id);
 
 	int insert(TLogNation tln);
 
