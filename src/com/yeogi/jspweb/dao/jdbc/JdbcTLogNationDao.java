@@ -96,7 +96,7 @@ public class JdbcTLogNationDao implements TLogNationDao {
 	@Override
 	public int update(TLogNation tln) {
 		
-		String sql = "UPDATE T_LOG_NATION SET NATION = ?, WHERE T_LOG_ID = ?";
+		String sql = "UPDATE T_LOG_NATION SET NATION = ? WHERE T_LOG_ID = ?";
 
 		int result = 0;
 
@@ -154,53 +154,6 @@ public class JdbcTLogNationDao implements TLogNationDao {
 		}
 
 		return result;
-	}
-
-	@Override
-	public TLogNation get(String id) {
-		
-		String sql = "SELECT * FROM T_LOG_NATION WHERE T_LOG_ID = ?";
-		
-		TLogNation tLogNation = null;
-		
-		try {
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			PreparedStatement st = con.prepareStatement(sql);
-			
-			st.setString(1, id);
-			
-			ResultSet rs = st.executeQuery();
-
-			if (rs.next()) {
-
-				 tLogNation = new TLogNation(		
-						
-						rs.getString("T_LOG_ID"),
-						rs.getString("NATION"));
-				
-				
-			}
-
-			rs.close();
-			st.close();
-			con.close();
-
-		}
-
-		catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return tLogNation;
-		
 	}
 
 }
