@@ -102,22 +102,93 @@ window.addEventListener("load", function(){
 						<div class="spending-box">
 							<span>KRW</span>
 							<span>
-							<!-- 합계 -->
+							<c:set var="test1" value="0"/>
+							<c:forEach var="test2" items="${postSum}">
+							<c:set var="test1" value="${test1+test2.sum}"/>
+							</c:forEach>
+							<c:out value="${test1}"/>
 							</span>
 						</div>
 						<div class="spending-detail">
 							<div class="table">
-								<c:forEach var="ps" items="${postSum}">
 								<div class="tr">
-									<div class="td width-sm">${ps.type}</div>
+									<div class="td width-sm">명소</div>
 									<div class="td width-md">
 										<span>KRW</span>
 										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '명소'}">
 										${ps.sum}
+										</c:if>
+										</c:forEach>
 										</span>
 									</div>
 								</div>
-								</c:forEach>
+								<div class="tr">
+									<div class="td width-sm">맛집</div>
+									<div class="td width-md">
+										<span>KRW</span>
+										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '맛집'}">
+										${ps.sum}
+										</c:if>
+										</c:forEach>
+										</span>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td width-sm">숙소</div>
+									<div class="td width-md">
+										<span>KRW</span>
+										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '숙소'}">
+										${ps.sum}
+										</c:if>
+										</c:forEach>
+										</span>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td width-sm">교통</div>
+									<div class="td width-md">
+										<span>KRW</span>
+										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '교통'}">
+										${ps.sum}
+										</c:if>
+										</c:forEach>
+										</span>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td width-sm">쇼핑</div>
+									<div class="td width-md">
+										<span>KRW</span>
+										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '쇼핑'}">
+										${ps.sum}
+										</c:if>
+										</c:forEach>
+										</span>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td width-sm">기타</div>
+									<div class="td width-md">
+										<span>KRW</span>
+										<span>
+										<c:forEach var="ps" items="${postSum}">
+										<c:if test="${ps.type == '기타'}">
+										${ps.sum}
+										</c:if>
+										</c:forEach>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -292,6 +363,7 @@ window.addEventListener("load", function(){
 						<div class="detail-post-box">
 							<div class="detail-title-box">포스트작성</div>
 							<div class="detail-form-box">
+								<input id="update-post-id" type="hidden" name="update-post-id"> 
 								<textarea id="post-memo" class="detail-textarea" name="post-memo" rows="15" ></textarea>
 								<div class="post-list post-spot">
 									<select id="select-loc-id" name="select-loc-id">

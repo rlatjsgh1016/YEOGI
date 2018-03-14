@@ -13,7 +13,7 @@
 <script src="${ctx}/js/story-write-select.js"></script>
 	<form id="form-select" action="main" method="post">
 		<input id="mid" type="hidden" name="mid" value="${sessionScope.mid.id }">
-		<div id="visual">
+		<div id="visual" class="visual-select">
 			<h1 class="hidden">visual</h1>
 				<div class="root-container">
 				</div>

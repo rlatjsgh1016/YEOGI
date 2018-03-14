@@ -26,6 +26,7 @@ window.addEventListener("load", function(){
 	var selectNation = document.querySelector("select[name='select-nation']");
 
 	//포스트 테이블 데이터 정의
+	var inputUpdatePostId = document.querySelector("#update-post-id");
 	var inputTourLogId = document.querySelector("input[name='tour-log-id']");
 	var inputPostMemo = document.querySelector("#post-memo");
 	var selectLocId = document.querySelector("select[name='select-loc-id']");
@@ -44,11 +45,8 @@ window.addEventListener("load", function(){
 	else
 		visual.style.background = "#1C1C1C";
 	
-	//포스트 삭제버튼(연습)
-
-
-	//포스트 저장버튼
-	addPostButton.onclick = function(){
+	//포스트 업데이트 버튼
+	editPostButton.onclick = function(){
 		inputPostMemo.value = nicEditors.findEditor('post-memo').getContent();
 
 		if(selectLocId.value == null || selectLocId.value == ""){
@@ -66,25 +64,22 @@ window.addEventListener("load", function(){
 
 		var request1 = new XMLHttpRequest();
 		var formData1 = new FormData(formElement);
-		request1.open("POST","addPost",true);
-		request1.send(formData1)
 
-		
 		request1.onload = function(){
 			result = JSON.parse(request1.responseText);
-
+			
 			var viewPostData = result.post;
 			var viewSpdData = result.spd;
 			var viewTagData = result.tag;
 			var viewSumData = result.sum;
-	
+			
 			var viewRootDiv = document.querySelector("#view-root");
 			viewRootDiv.innerHTML = "";
 			var tempRoot = document.querySelector("#view-template");
 			var tempLoc = document.querySelector("#view-loc-template");
 			var tempSpd = document.querySelector("#view-spd-template");
 			var tempTag = document.querySelector("#view-tag-template");
-	
+			
 			for(var i in viewPostData){
 				//루트 템플릿 복사 & id / class 삭제
 				var cloneRoot = document.importNode(tempRoot, true);
@@ -97,7 +92,7 @@ window.addEventListener("load", function(){
 				locationName1.textContent = viewPostData[i].name;
 				var postContent = cloneRoot.querySelector(".view-frame>div:first-child");
 				postContent.textContent = viewPostData[i].content;
-	
+				
 				//장소 템플릿 복사 & id / class 삭제
 				var cloneLoc = document.importNode(tempLoc, true);
 				cloneLoc.classList.remove("hidden");
@@ -106,7 +101,7 @@ window.addEventListener("load", function(){
 				cloneLoc.textContent = viewPostData[i].name;
 				//장소 템플릿 붙여넣기
 				viewRootUi.appendChild(cloneLoc);
-	
+				
 				for(var j in viewSpdData){
 					if(viewSpdData[j].tLogPostId == viewPostData[i].id){
 						//지출 템플릿 복사 & id / class 삭제
@@ -139,7 +134,7 @@ window.addEventListener("load", function(){
 				//루트 템플릿 붙여넣기
 				viewRootDiv.appendChild(cloneRoot);
 			}
-
+			
 			//장소 리스트 갱신
 			var currDayInput = document.querySelector("#curr-day");
 			var postRootDiv = document.querySelector("#post-root");
@@ -162,7 +157,7 @@ window.addEventListener("load", function(){
 			postAdd();
 			postEdit();
 			postDelete();
-
+			
 			//포스트창 닫기
 			var detailPostMadal = document.querySelector("#detail-post-modal");
 			detailPostMadal.style.display = "none";
@@ -172,32 +167,187 @@ window.addEventListener("load", function(){
 				vehicleOpts[i].selected = false;
 			}
 			vehicleOpts[0].selected = true;
-
+			
 			inputSpdContent.value ="";
 			inputSpdAmount.value = "";
-
+			
 			var locOpts = selectLocId.options;
 			for(var i=0; i<locOpts.length; i++){
 				locOpts[i].selected = false;
 			}
 			locOpts[0].selected = true;
-
+			
 			var spdTypeOpts = selectSpdType.options;
 			for(var i=0; i<spdTypeOpts.length; i++){
 				spdTypeOpts[i].selected = false;
 			}
 			spdTypeOpts[0].selected = true;
-
+			
 			var spdUnitOpts = selectSpdUnit.options;
 			for(var i=0; i<spdUnitOpts.length; i++){
 				spdUnitOpts[i].selected = false;
 			}
 			spdUnitOpts[0].selected = true;
-
+			
 			inputTag.value = "";
 		}
-	}
 
+		request1.open("POST","updatePost",true);
+		request1.send(formData1)
+	}
+	
+	
+	//포스트 저장버튼
+	addPostButton.onclick = function(){
+		inputPostMemo.value = nicEditors.findEditor('post-memo').getContent();
+		
+		if(selectLocId.value == null || selectLocId.value == ""){
+			alert("장소명을 선택해주세요.");
+			return;
+		}
+		if(selectSpdType.value == null || selectSpdType.value == ""
+			|| inputSpdContent.value == null || inputSpdContent.value == ""
+			|| selectSpdUnit.value == null || selectSpdUnit.value == ""
+			|| inputSpdAmount.value == null || inputSpdAmount.value == "")
+		{
+			alert("지출내역을 입력해주세요.");
+			return;
+		}
+
+		var request1 = new XMLHttpRequest();
+		var formData1 = new FormData(formElement);
+		
+		request1.onload = function(){
+			result = JSON.parse(request1.responseText);
+			
+			var viewPostData = result.post;
+			var viewSpdData = result.spd;
+			var viewTagData = result.tag;
+			var viewSumData = result.sum;
+			
+			var viewRootDiv = document.querySelector("#view-root");
+			viewRootDiv.innerHTML = "";
+			var tempRoot = document.querySelector("#view-template");
+			var tempLoc = document.querySelector("#view-loc-template");
+			var tempSpd = document.querySelector("#view-spd-template");
+			var tempTag = document.querySelector("#view-tag-template");
+			
+			for(var i in viewPostData){
+				//루트 템플릿 복사 & id / class 삭제
+				var cloneRoot = document.importNode(tempRoot, true);
+				cloneRoot.classList.remove("hidden");
+				cloneRoot.id = "";
+				var viewRootUi = cloneRoot.querySelector("#view-ul-root");
+				viewRootUi.id = "";
+				//루트 템플릿 데이터 삽입
+				var locationName1 = cloneRoot.querySelector("p:first-child");
+				locationName1.textContent = viewPostData[i].name;
+				var postContent = cloneRoot.querySelector(".view-frame>div:first-child");
+				postContent.textContent = viewPostData[i].content;
+				
+				//장소 템플릿 복사 & id / class 삭제
+				var cloneLoc = document.importNode(tempLoc, true);
+				cloneLoc.classList.remove("hidden");
+				cloneLoc.id = "";
+				//장소 템플릿 데이터 삽입
+				cloneLoc.textContent = viewPostData[i].name;
+				//장소 템플릿 붙여넣기
+				viewRootUi.appendChild(cloneLoc);
+				
+				for(var j in viewSpdData){
+					if(viewSpdData[j].tLogPostId == viewPostData[i].id){
+						//지출 템플릿 복사 & id / class 삭제
+						var cloneSpd = document.importNode(tempSpd, true);
+						cloneSpd.classList.remove("hidden");
+						cloneSpd.id = "";
+						//지출 템플릿 데이터 삽입
+						var spans = cloneSpd.querySelectorAll("span");
+						spans[0].textContent = viewSpdData[j].type;
+						spans[1].textContent = viewSpdData[j].spdContent;
+						spans[2].textContent = viewSpdData[j].unit;
+						spans[3].textContent = viewSpdData[j].amount;
+						//지출 템플릿 붙여넣기
+						viewRootUi.appendChild(cloneSpd);
+					}
+				}
+				
+				for(var k in viewTagData){
+					//태그 템플릿 복사 & id / class 삭제
+					var cloneTag = document.importNode(tempTag, true);
+					cloneTag.classList.remove("hidden");
+					cloneTag.id = "";
+					//태그 템플릿 데이터 삽입
+					if(viewTagData[k].tLogPostId == viewPostData[i].id){
+						cloneTag.textContent = "#" + viewTagData[k].tagContent;
+						//태그 템플릿 데이터 삽입
+						viewRootUi.appendChild(cloneTag);
+					}
+				}
+				//루트 템플릿 붙여넣기
+				viewRootDiv.appendChild(cloneRoot);
+			}
+			
+			//장소 리스트 갱신
+			var currDayInput = document.querySelector("#curr-day");
+			var postRootDiv = document.querySelector("#post-root");
+			postRootDiv.innerHTML = "";
+			for(var i=0; i<viewPostData.length; i++){
+				if(viewPostData[i].day == currDayInput.value){
+					var temp = document.querySelector("#template");
+					var placeImg = temp.querySelector(".image-frame>img");
+					var placeName = temp.querySelector(".place-frame>p");
+					var placeId = temp.querySelector("input[name='post-id']");
+					placeImg.src = viewPostData[i].img;
+					placeName.textContent = viewPostData[i].name;
+					placeId.value = viewPostData[i].id;
+					var clone = document.importNode(temp, true);
+					clone.classList.remove("hidden");
+					clone.id = "";
+					postRootDiv.appendChild(clone);
+				}
+			}
+			postAdd();
+			postEdit();
+			postDelete();
+			
+			//포스트창 닫기
+			var detailPostMadal = document.querySelector("#detail-post-modal");
+			detailPostMadal.style.display = "none";
+			inputPostMemo.value = nicEditors.findEditor('post-memo').setContent("");
+			var vehicleOpts = selectVehicle.options;
+			for(var i=0; i<vehicleOpts.length; i++){
+				vehicleOpts[i].selected = false;
+			}
+			vehicleOpts[0].selected = true;
+			
+			inputSpdContent.value ="";
+			inputSpdAmount.value = "";
+			
+			var locOpts = selectLocId.options;
+			for(var i=0; i<locOpts.length; i++){
+				locOpts[i].selected = false;
+			}
+			locOpts[0].selected = true;
+			
+			var spdTypeOpts = selectSpdType.options;
+			for(var i=0; i<spdTypeOpts.length; i++){
+				spdTypeOpts[i].selected = false;
+			}
+			spdTypeOpts[0].selected = true;
+			
+			var spdUnitOpts = selectSpdUnit.options;
+			for(var i=0; i<spdUnitOpts.length; i++){
+				spdUnitOpts[i].selected = false;
+			}
+			spdUnitOpts[0].selected = true;
+			
+			inputTag.value = "";
+		}
+
+		request1.open("POST","addPost",true);
+		request1.send(formData1)
+	}
+	
 
 	//포스트 추가버튼
 	postAdd();
@@ -259,7 +409,8 @@ window.addEventListener("load", function(){
 				addPostButton.style.display = "none";
 				editPostButton.style.display = "block";
 				var postIdInput = btnPlaceEdit[i].previousElementSibling;
-				
+				inputUpdatePostId.value = postIdInput.value;
+
 				var postId = new FormData();
 				postId.append("post-id", postIdInput.value);
 	

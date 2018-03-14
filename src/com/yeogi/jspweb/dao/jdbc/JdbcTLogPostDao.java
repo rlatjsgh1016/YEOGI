@@ -120,10 +120,10 @@ public class JdbcTLogPostDao implements TLogPostDao {
 		return result;
 	}
 
-	@Override
+	@Override 
 	public int update(TLogPost tlp) {
 
-		String sql = "UPDATE T_LOG_POST SET CONTENT = ?, T_LOG_ID = ?, T_LOG_LOC_ID = ?, TRANS = ?, DAY = ? WHERE ID = ?";
+		String sql = "UPDATE T_LOG_POST SET CONTENT = ?, T_LOG_ID = ?, LOC_ID = ?, TRANS = ?, DAY = ? WHERE ID = ?";
 
 		int result = 0;
 
