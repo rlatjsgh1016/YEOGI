@@ -17,7 +17,7 @@
 						<li><a href="${ctx }/main/member/story/write/select">기록하기</a></li>
 						<li><a href="${ctx }/main/public-board/travel-log/log-main/log-main">여행기</a></li>
 
-						<li><a href="">커뮤니티</a></li>
+						<li><a href="${ctx }/main/public-board/community/communitymain">커뮤니티</a></li>
 					</ul>
 				</nav>
 
