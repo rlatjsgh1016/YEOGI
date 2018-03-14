@@ -18,18 +18,27 @@ import org.apache.tiles.request.ApplicationContext;
 import org.apache.tiles.request.servlet.ServletRequest;
 import org.apache.tiles.request.servlet.ServletUtil;
 
+import com.yeogi.jspweb.dao.DayDao;
 import com.yeogi.jspweb.dao.MemberDao;
 import com.yeogi.jspweb.dao.TLogCmtDao;
 import com.yeogi.jspweb.dao.TLogNationDao;
+import com.yeogi.jspweb.dao.TLogPostDao;
+import com.yeogi.jspweb.dao.TLogPostSpdDao;
 import com.yeogi.jspweb.dao.TourLogDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcDayDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcMemberDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogCmtDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogNationDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostSpdDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao;
+import com.yeogi.jspweb.entity.Day;
 import com.yeogi.jspweb.entity.Member;
 import com.yeogi.jspweb.entity.TLogCmt;
 import com.yeogi.jspweb.entity.TLogCmtView;
 import com.yeogi.jspweb.entity.TLogNation;
+import com.yeogi.jspweb.entity.TLogPostSpdView;
+import com.yeogi.jspweb.entity.TLogPostView;
 import com.yeogi.jspweb.entity.TourLog;
 import com.yeogi.jspweb.entity.TourLogView;
 
@@ -44,10 +53,21 @@ public class ReadMainController extends HttpServlet {
 	    request.setCharacterEncoding("UTF-8");
 		
 		String id = null;
+		String postid = null;
+		String mid = null;
+		int index = 1;
 		
 		String id_ = request.getParameter("id");
 		if(id_!=null && !id_.equals(""))
 	    	id = id_;
+		
+		String mId_ = request.getParameter("mid");
+		if(mId_!=null && !mId_.equals(""))
+			mid = mId_;
+		
+		String postid_ = request.getParameter("postid");
+		if(postid_!=null && !postid_.equals(""))
+			postid = postid_;
 		
 
 		String tourLogId = null;
@@ -62,29 +82,49 @@ public class ReadMainController extends HttpServlet {
 		TLogNationDao tLogNationDao = new JdbcTLogNationDao();
 		TLogNation tLogNation = tLogNationDao.get(id);
 		
-		/*MemberDao memberDao = new JdbcMemberDao();
-		Member member;*/
+		TLogPostDao tLogPostDao = new JdbcTLogPostDao();
+		List<TLogPostView> tlpList =  tLogPostDao.getList(id);
+		TLogPostView tLogPostView = tLogPostDao.get(postid);
+		int tLogCount = tLogPostDao.getLocCount(id);
+		int maxDay = tLogPostDao.getMaxDay(id);
 		
-		TLogCmtDao tLogCmtDao = new JdbcTLogCmtDao();
-		List<TLogCmtView> list = tLogCmtDao.getList(tourLogId);
-		request.setAttribute("list", list);
+		TLogPostSpdDao tLogPostSpdDao = new JdbcTLogPostSpdDao();
+		TLogPostSpdView tLosPostSpdView = tLogPostSpdDao.get(postid);
 		
-		//if(commentList.size() > 0)    
-
-		/*try {
-			member = memberDao.getId("sgkim");
-			//tLogCmt = tLogCmtDao.get("2018031200005");
-
-			HttpSession session = request.getSession();
-			session.setAttribute("mid", member);
-			
-		} catch (ClassNotFoundException | SQLException e) {
+		int day = 0;
+		
+		
+		List<TLogPostView> locListDay =  tLogPostDao.getLocListByDay(id, day);			
+		
+		DayDao dayDao = new JdbcDayDao();
+		List<Day> dayList = dayDao.getList();
+		
+		MemberDao memberDao = new JdbcMemberDao();
+		Member member;
+		try {
+			member = memberDao.getId(mid);
+			request.setAttribute("mid", member);
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
-	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		TLogCmtDao tLogCmtDao = new JdbcTLogCmtDao();
+		List<TLogCmtView> list = tLogCmtDao.getList(id);
+		
+		request.setAttribute("tlpList", tlpList);
+		request.setAttribute("tLogPostView", tLogPostView);
+		request.setAttribute("tLosPostSpdView", tLosPostSpdView);
+		request.setAttribute("locListDay", locListDay);
+		request.setAttribute("maxDay", maxDay);
+		request.setAttribute("dayList", dayList);
+		request.setAttribute("list", list);
 		request.setAttribute("tourLog", tourLog);
 		request.setAttribute("tLogNation", tLogNation);
+		request.setAttribute("tLogCount", tLogCount);
 		
 		request.getContextPath();
 		
@@ -105,9 +145,16 @@ public class ReadMainController extends HttpServlet {
 		tlc.setmId("sgkim");
 		tlc.settLogId("2018031200005");
 		
+		
+		//request.getAttribute("day");
 		TLogCmtDao tLogCmtDao = new JdbcTLogCmtDao();
 		tLogCmtDao.insert(tlc);
+		/*int day= dao.getmaxDay(id);
 		
+		for()*/
+			
+			
+	
 		response.sendRedirect("main");
 		
 

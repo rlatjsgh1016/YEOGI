@@ -1,5 +1,4 @@
-window.addEventListener("load", function(){
-	
+window.addEventListener("load", function(){	
 	var totalSpotButton = document.getElementById("btn-total-spot");
 	var totalExpenseButton = document.getElementById("btn-total-expense");
 	var totalSpotBox = document.getElementById("total-spot-box");

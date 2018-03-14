@@ -82,12 +82,14 @@
 					<img id="user-img" alt="사진" src="${ctx}/images/user128.png">
 				</div>
 				<div class="user-name">
-					<span>${tourLog.mid}</span>
+					<a href="${ctx}/main/member/mypage/mypage?id=${tourLog.mid}">${tourLog.mid}</a>
 				</div>
 				<div class="user-info">
-					<span>계획</span> <span class="post-count">(3)</span> <span>기록</span>
-					<span class="post-count">(2)</span> <span>커뮤니티</span> <span
-						class="post-count">(5)</span>
+					<a href="${ctx}/main/member/mypage/mystory/mystory">계획</a> 
+					<a href="${ctx}/main/member/mypage/mystory/mystory" class="post-count">(3)</a> 
+					<a href="${ctx}/main/member/mypage/myplan/myplan">기록</a>
+					<a href="${ctx}/main/member/mypage/myplan/myplan" class="post-count">(2)</a> 
+					<a>커뮤니티</a> <a class="post-count">(5)</a>
 				</div>
 				<div class="scrap-box">
 					<img id="btn-scrap" alt="스크랩이미지" src="${ctx}/images/scrap.png">
@@ -100,8 +102,8 @@
 						data-target="#myModal"> <span class="summary-list">여행테마</span>
 							<span class="summary-info">${tourLog.tTheme}</span></a></li>
 					<li><a type="button" id="btn-total-spot"
-						class="summary-btn trv-spot"> <span class="summary-list">총
-								방문명소</span> <span class="summary-info">20</span></a></li>
+						class="summary-btn trv-spot"> <span class="summary-list">
+						총 방문명소</span> <span class="summary-info">${tLogCount}</span></a></li>
 					<li><a type="button" id="btn-total-expense"
 						class="summary-btn trv-budget"> <span class="summary-list">지출내역</span>
 							<span class="summary-info">KRW 600,000,000</span></a></li>
@@ -120,134 +122,146 @@
 		</div>
 		<div class="story-intro-box">
 			<div class="story-strapline">
-				<span>소제목</span>
+				<span>${tourLog.subTitle}</span>
 			</div>
 			<div class="story-intro">
-				<span>여행 기록 짧은 소개</span>
+				<span>${tourLog.memo}</span>
 			</div>
 		</div>
-		<div class="day-spot-box">
-			<div class="day">
-				<strong>DAY <span>1</span>
-				</strong>
-			</div>
-			<div class="spot-couse">
-				<div class="couse-start">
-					<span class="couse-spot">도쿄 나리타 국제 공항</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">다이버 시티 도쿄 플라자</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">비너스 포트 (ヴィーナスフォート, Venus Fort)</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">규카츠 모토무라 신주쿠점 (牛かつ もと村 新宿店)</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">응 도쿄야</span>
-				</div>
-				<!-- <div class="couse-end">
-						<span class="couse-spot">응 도쿄야</span>
-					</div> -->
-				<div class="couse-left-p">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right-b">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-right-q">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-left-d">
-					<span class="couse-spot">도교 어딘가</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-left">
-					<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
-				</div>
-				<div class="couse-end">
-					<span class="couse-spot">신주쿠 (新宿, Shinjuku)</span>
-				</div>
-			</div>
-		</div>
-		<div class="spot-box">
-			<div class="spot-bar"></div>
-			<div class="spot">
-				<span class="spot-name">도쿄 나리타 국제 공항 (成田国際空港, Tokyo Narita
-					International Airport)</span>
-			</div>
-		</div>
-		<div class="spot-post-box">
-			<span class="spot-post-content">미리 뽑아간 케이세이버스 티켓 예약 메일을 보여주고
-				티켓을 받았다. 날짜만 예약하고 티켓을 찾을 때 시간을 지정한다. 우리는 가장 빠른 시간을 주길래 받았는데 버스 타는 곳을
-				찾느라 시간을 많이 허비해서 제시간에는 타질 못했다. 버스 타는 곳을 물어보니 대충 알려줘서 찾아가는데 오래 걸렸고,
-				영어가 통하지 않아서 길찾기가 어려웠다. 원래 타려고 했던 시간은 놓쳤지만 바로 그 다음 버스를 탈 수 있어서 다행이었다.
-				버스타는 곳을 못 찾고 버스도 놓치고 하니 도착부터 너무 힘들었다. 그래도 드디어 도착했다.</span>
-			<div class="spot-img">
-				<img id="post-img" alt="여기" src="${ctx}/resources/main_img.png">
-			</div>
-			<div class="post-info-box">
-				<div class="post-info post-spot">
-					<span class="post-info-start">도쿄 나리타 국제 공항</span>
-				</div>
-				<div class="post-info post-expense">
-					<span class="post-info-start expense-type">교통</span><span
-						class="post-info-list">버스교통비</span><span class="post-info-list">KRW</span><span
-						class="post-info-list">190,000</span>
-				</div>
-				<div class="post-info post-tag">
-					<span class="post-info-start">공항</span>
-				</div>
-
-			</div>
-		</div>
+		
+	
+		<%-- <c:forEach var="index" begin="1" end="60"> --%>
+			<c:forEach var="tlpl" items="${tlpList}">
+				<%-- <c:if test="${index == tlpl.day}"> --%>
+						
+					<div class="day-spot-box">
+						<div class="day">
+							<strong>DAY <span>${tlpl.day}</span>
+							</strong>
+						</div>
+						
+						<%-- <div class="spot-couse">
+							<div class="couse-start">
+								<span class="couse-spot">${tlpl.name}</span>
+							</div>
+							<!-- <div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">다이버 시티 도쿄 플라자</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">비너스 포트 (ヴィーナスフォート, Venus Fort)</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">규카츠 모토무라 신주쿠점 (牛かつ もと村 新宿店)</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">응 도쿄야</span>
+							</div>
+							<div class="couse-end">
+									<span class="couse-spot">응 도쿄야</span>
+								</div>
+							<div class="couse-left-p">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right-b">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-right-q">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-left-d">
+								<span class="couse-spot">도교 어딘가</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-left">
+								<span class="couse-spot">캡슐 & 사우나 오리엔탈</span>
+							</div>
+							<div class="couse-end">
+								<span class="couse-spot">신주쿠 (新宿, Shinjuku)</span>
+							</div> -->
+						</div> --%>
+					</div>
+					<div class="spot-box">
+						<div class="spot-bar"></div>
+						<div class="spot">
+							<span class="spot-name">${tlpl.name}</span>
+						</div>
+					</div>
+					<div class="spot-post-box">
+						<span class="spot-post-content">${tlpl.content}</span>
+						<div class="spot-img">
+							<img id="post-img" alt="여기" src="${tlpl.img}">
+						</div>
+						<div class="post-info-box">
+							<div class="post-info post-spot">
+								<span class="post-info-start">${tLosPostSpdView.name}</span>
+							</div>
+							<div class="post-info post-expense">
+								<span class="post-info-start expense-type">${tLosPostSpdView.transe}</span><span
+									class="post-info-list">${tLosPostSpdView.content}</span><span class="post-info-list">KRW</span><span
+									class="post-info-list">${tLosPostSpdView.amount}</span>
+							</div>
+							<div class="post-info post-tag">
+								<span class="post-info-start">공항</span>
+							</div>
+			
+						</div>
+					</div>
+				<%-- </c:if> --%>
+			</c:forEach>
+	<%-- 	</c:forEach> --%>
+	
 
 		<div id="total-spot-box" class="modal">
 			<div class="modal-content">
 				<div class="day-total-title">
 					방문명소<span class="close">&times;</span>
 				</div>
+			<c:forEach var="index" begin="1" end="${maxDay}">
 				<div class="total-box">
 					<div class="day-total-box">
-						<div class="day-spot-title">
-							<span>DAY 1</span><span>일본</span>
-						</div>
+					
+						<%-- <c:forEach var="tlpl" items="${tlpList}"> --%>
+							<div class="day-spot-title">			
+								<span>DAY ${tlpl.day}</span><span>${tLogNation.nation}</span>
+							</div>
+						<%-- </c:forEach> --%>
+						
 						<div class="day-spot-list">
 							<p>어딘가sferereferffㄴㄴㄹㄷㄹㄴㄹㄴㄷㄹㄷㄹㄴㄹㄷㄹ</p>
 							<p>어딘가</p>
 						</div>
 					</div>
 				</div>
+					</c:forEach>
 			</div>
 		</div>
 

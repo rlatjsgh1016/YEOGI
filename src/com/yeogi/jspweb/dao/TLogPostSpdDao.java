@@ -14,5 +14,6 @@ public interface TLogPostSpdDao {
 	int insert(TLogPostSpd tlps);
 	int update(TLogPostSpd tlps);
 	int delete(String id);
+	TLogPostSpdView get(String tPostId);
 	
 }

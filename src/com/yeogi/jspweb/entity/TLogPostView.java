@@ -25,6 +25,17 @@ public class TLogPostView extends TLogPost {
 		this.img = img;
 	}
 	
+	public TLogPostView(
+			String content,		
+			String name, 
+			String img
+			) 
+	{
+		super(content);
+		this.name = name;
+		this.img = img;
+	}
+	
 	public String getName() {
 		return name;
 	}

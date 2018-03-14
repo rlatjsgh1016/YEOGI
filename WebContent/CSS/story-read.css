@@ -299,7 +299,7 @@ a{
 	align-items: center;
 	cursor: pointer;
 }
-.user-info span:hover{
+.user-info a:hover{
 	text-decoration: underline;
 }
 #aside>.user-box>#uer-img-box{
@@ -323,7 +323,7 @@ a{
 	display: block;
 	text-align: center;
 }
-#aside .user-name>span{	
+#aside .user-name>a{	
 	font-family:"맑은고딕","고딕",sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -337,7 +337,7 @@ a{
 	text-align: center;
 }
 
-#aside .user-info>span{
+#aside .user-info>a{
 	font-family:"맑은고딕","고딕",sans-serif;
     font-size: 13px;
     padding-left: 1px;

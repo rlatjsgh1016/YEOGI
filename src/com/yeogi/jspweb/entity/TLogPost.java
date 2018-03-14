@@ -28,6 +28,16 @@ public class TLogPost {
 		this.trans = trans;
 		this.day = day;
 	}
+	public TLogPost(String content) {
+		
+		this.content = content;
+		
+	}
+	public TLogPost(int day) {
+		
+		this.day = day;
+		
+	}
 	public String getContent() {
 		return content;
 	}

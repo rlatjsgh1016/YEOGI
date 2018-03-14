@@ -16,4 +16,9 @@ public interface TLogPostDao {
 	int update(TLogPost tlp);
 	int delete(String id);
 	
+	int getLocCount(String tLogId);
+	List<TLogPostView> getLocListByDay(String id,int day);
+	
+	int getMaxDay(String id);
+	
 }

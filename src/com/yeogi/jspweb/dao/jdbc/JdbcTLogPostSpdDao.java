@@ -11,6 +11,7 @@ import java.util.List;
 import com.yeogi.jspweb.dao.TLogPostSpdDao;
 import com.yeogi.jspweb.entity.TLogPostSpd;
 import com.yeogi.jspweb.entity.TLogPostSpdView;
+import com.yeogi.jspweb.entity.TLogPostView;
 
 public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 
@@ -272,6 +273,58 @@ public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public TLogPostSpdView get(String tPostId) {
+		
+			String sql = "SELECT * FROM T_LOG_POST_SPD_VIEW WHERE T_LOG_POST_ID = ? ORDER BY T_LOG_POST_ID";
+
+			TLogPostSpdView tLogPostSpdView = null;
+
+			try {
+
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+				Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+				PreparedStatement st = con.prepareStatement(sql);
+				
+				st.setString(1, tPostId);
+				
+				ResultSet rs = st.executeQuery();
+
+				while (rs.next()) {
+
+					tLogPostSpdView = new TLogPostSpdView(	
+							
+							rs.getString("TYPE"),
+							rs.getString("CONTENT"),
+							rs.getString("UNIT"),
+							rs.getInt("AMOUNT"),
+							rs.getString("ID"),
+							rs.getString("T_LOG_POST_ID"),
+							rs.getString("T_LOG_ID")
+							
+							);
+					
+				}
+
+				rs.close();
+				st.close();
+				con.close();
+
+			}
+
+			catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return tLogPostSpdView;
 	}
 
 }
