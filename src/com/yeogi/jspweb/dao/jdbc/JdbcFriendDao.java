@@ -21,7 +21,7 @@ public class JdbcFriendDao implements FriendDao {
 		// TODO Auto-generated method stub
 	 	Class.forName("oracle.jdbc.driver.OracleDriver");
         
-	 	String sql = "INSERT INTO FRIEND(ID,MY_ID,ACCEPT_YN,FRIEND_ID) VALUES('1',?,?,?)";
+	 	String sql = "INSERT INTO FRIEND(ID,MY_ID,ACCEPT_YN,FRIEND_ID) VALUES( SEQ_ID.NEXTVAL,?,?,?)";
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 		PreparedStatement st = con.prepareStatement(sql);
@@ -218,7 +218,142 @@ public class JdbcFriendDao implements FriendDao {
 	@Override
 	public List<Friend> getList(String mId) {
 		// TODO Auto-generated method stub
-		return null;
+
+		   String sql = "SELECT * FROM FRIEND WHERE MY_ID = ? AND ACCEPT_YN=?";
+		   List<Friend> list = new ArrayList<>();
+		      
+		      // 드라이버 로드
+		      try {
+		         Class.forName("oracle.jdbc.driver.OracleDriver");
+		         
+		         String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		         Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		         PreparedStatement st = con.prepareStatement(sql);
+		         st.setString(1, mId);
+			     st.setString(2, "N");
+		         ResultSet rs = st.executeQuery();
+		         
+		         String id;
+		     	 String myId;
+		     	 Date reqDate;
+		     	 String acceptYn;
+		     	 String friendId;
+		         
+		      
+		     	
+			    
+		         while(rs.next()) { 
+		        	id = rs.getString("ID");
+		     		myId = rs.getString("MY_ID");
+		     		reqDate = rs.getDate("REQ_DATE");
+		     		acceptYn = rs.getString("ACCEPT_YN");
+		     		friendId = rs.getString("FRIEND_ID");
+		            
+		            
+		            Friend friend = new Friend(
+		                  id,myId,reqDate,acceptYn,friendId         
+		                           );
+		            list.add(friend);
+		         }
+		         
+		         rs.close();
+		         st.close();
+		         con.close();
+		         
+		      } catch (ClassNotFoundException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      
+		      return list;
+	}
+
+	@Override
+	public List<Friend> getList2(String mId) {
+		// TODO Auto-generated method stub
+
+		   String sql = "SELECT * FROM FRIEND WHERE FRIEND_ID = ? AND ACCEPT_YN=?";
+		   List<Friend> list = new ArrayList<>();
+		      
+		      // 드라이버 로드
+		      try {
+		         Class.forName("oracle.jdbc.driver.OracleDriver");
+		         
+		         String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		         Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		         PreparedStatement st = con.prepareStatement(sql);
+		         st.setString(1, mId);
+			     st.setString(2, "N");
+		         
+		         ResultSet rs = st.executeQuery();
+		         
+		         String id;
+		     	 String myId;
+		     	 Date reqDate;
+		     	 String acceptYn;
+		     	 String friendId;
+		         
+		      
+		     	
+			   
+			    
+		         while(rs.next()) { 
+		        	id = rs.getString("ID");
+		     		myId = rs.getString("MY_ID");
+		     		reqDate = rs.getDate("REQ_DATE");
+		     		acceptYn = rs.getString("ACCEPT_YN");
+		     		friendId = rs.getString("FRIEND_ID");
+		            
+		            
+		            Friend friend = new Friend(
+		                  id,myId,reqDate,acceptYn,friendId         
+		                           );
+		            list.add(friend);
+		         }
+		         
+		         rs.close();
+		         st.close();
+		         con.close();
+		         
+		      } catch (ClassNotFoundException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      
+		      return list;
+	}
+
+	@Override
+	public int accept(String fid) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+        
+	 	String sql = "UPDATE FRIEND SET ACCEPT_YN='Y' WHERE ID=?";
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		Friend friend = new Friend();
+		
+		System.out.println(friend.getMyId());
+		System.out.println(friend.getAcceptYN());
+		System.out.println(friend.getFriendId());
+		
+		
+		st.setString(1, fid);
+	   
+		int result = st.executeUpdate();
+		System.out.println(result);
+		if(!con.isClosed())
+			System.out.println("Connected");
+		
+		return result;
 	}
 
 }

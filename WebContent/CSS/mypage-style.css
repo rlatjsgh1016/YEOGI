@@ -597,13 +597,14 @@ body{
 }
 
 .friends-answer{
-	width: 10px;
+	font-family: 맑은 고딕, HY견고딕, sans-serif;
+	width: 40px;
 	height: 20px;
 	background: #ffffff;
 	border-radius: 5px;
 	color: #000000;
 	padding: 1px 5px;
-
+	margin-left:5px;
 }
 
 .title-box{

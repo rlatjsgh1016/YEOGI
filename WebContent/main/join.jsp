@@ -17,9 +17,8 @@
 <script type="text/javascript">
 
 function idCheck(){
-	
 	window.name ="parentForm";
-	window.open("id-check-form.jsp","chkForm",'width=500, height=300,  resizable=no, scrollbars=no');
+	window.open("id-check-form.jsp","chkForm",'width=500, height=300, resizable=no, scrollbars=no');
 }
 
 function nameCheck(){

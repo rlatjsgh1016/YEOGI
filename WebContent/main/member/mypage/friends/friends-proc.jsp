@@ -40,13 +40,14 @@
 		if( mem != null)	
 		{
 
-			outt.println("<script type=\'text/javascript\'>"); 
+/* 			outt.println("<script type=\'text/javascript\'>"); 
 			outt.println("alert('해당 회원이 있습니다.');"); 
 			outt.println("location.href ='friends.jsp';");
-			outt.println("</script>"); 	
-			request.setAttribute("mem", mem);
+			outt.println("</script>"); 	 */
+			System.out.println("ddddd");
+			request.getSession().setAttribute("mem", mem);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("friends.jsp");
-			dispatcher.forward(request, response);
+			dispatcher.forward(request, response); 
 		}
 		else{
 			outt.println("<script type=\'text/javascript\'>"); 
@@ -56,7 +57,7 @@
 			
 		}
 				
-		member.getId(temp);
+		//member.getId(temp);
 		//response.sendRedirect("join.jsp");
 		break;
 	case "친구신청":
@@ -64,6 +65,16 @@
 		outtt.println("<script type=\'text/javascript\'>"); 
 		outtt.println("location.href ='friends.jsp';");
 		outtt.println("</script>"); 	
+		break;
+		
+	case "수락":
+		String fid= (String) request.getAttribute("fid");
+		friend.accept(fid);
+		
+		PrintWriter outttt = response.getWriter(); 
+		outttt.println("<script type=\'text/javascript\'>"); 
+		outttt.println("location.href ='friends.jsp';");
+		outttt.println("</script>"); 	
 		break;
 	
 	}
