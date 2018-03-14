@@ -18,7 +18,7 @@ public class JdbcTLogPostDao implements TLogPostDao {
 	@Override
 	public List<TLogPostView> getList(String id) {
 		
-		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ? ORDER BY DAY";
+		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ?";
 
 		List<TLogPostView> list = new ArrayList<>();
 
@@ -159,7 +159,7 @@ public class JdbcTLogPostDao implements TLogPostDao {
 
 	@Override
 	public int delete(String id) {
-		String sql = "DELETE T_LOG_POST WHERE ID = ?";
+		String sql = "DELETE T_LOG_POST WHERE ID = ? ";
 
 		int result = 0;
 

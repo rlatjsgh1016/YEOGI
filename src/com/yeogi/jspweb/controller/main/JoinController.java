@@ -32,17 +32,12 @@ public class JoinController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if(request.getSession().getAttribute("id") != null)
-	      {
-	         response.sendRedirect("already-join");
-	      }
-		else {
-			ApplicationContext applicationContext = ServletUtil
-					.getApplicationContext(request.getSession().getServletContext());
-			TilesContainer container = TilesAccess.getContainer(applicationContext);
-			ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
-			container.render("main.join", servletRequest);
-		}
+		
+		ApplicationContext applicationContext = ServletUtil
+				.getApplicationContext(request.getSession().getServletContext());
+		TilesContainer container = TilesAccess.getContainer(applicationContext);
+		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+		container.render("main.join", servletRequest);
 	}
 	
 	@Override
@@ -64,9 +59,7 @@ public class JoinController extends HttpServlet{
 		switch(btn) {
 		
 		case "회원가입":
-			
-			PrintWriter out = response.getWriter(); 
-			
+					
 			mem.setId(request.getParameter("id"));
 			mem.setName(request.getParameter("name"));
 			mem.setEmail(request.getParameter("email"));
@@ -90,7 +83,7 @@ public class JoinController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-			response.sendRedirect("main/join-celeb");
+			response.sendRedirect("join.jsp");
 			break;
 			
 		case "ID 중복확인" : 

@@ -38,23 +38,30 @@ public class EditPostController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String postId = request.getParameter("post-id");
+		String spdId = request.getParameter("spd-id");
+		String tagId = request.getParameter("tag-id");
 		
 		Gson gson = new Gson();
 		PrintWriter out = response.getWriter();
 		
-		TLogPostDao tlpDao = new JdbcTLogPostDao();
-		TLogPostView tlpv = tlpDao.get(postId);
-		String json1 = gson.toJson(tlpv);
-		
-		TLogPostSpdDao tlpsDao = new JdbcTLogPostSpdDao();
-		List<TLogPostSpdView> tlpsv = tlpsDao.getPostIdList(postId);
-		String json2 = gson.toJson(tlpsv);
-		
-		TagDao tagDao = new JdbcTagDao();
-		List<TagView> tag = tagDao.getPostIdList(postId);
-		String json3 = gson.toJson(tag);
-		
-		out.println("{\"post\":"+json1+",\"spd\":"+json2+",\"tag\":"+json3+"}");
+		if(postId != null && !postId.equals("")) {
+			TLogPostDao tlpDao = new JdbcTLogPostDao();
+			TLogPostView tlpv = tlpDao.get(postId);
+			String json = gson.toJson(tlpv);
+			out.println(json);
+		}
+		else if(spdId != null && !spdId.equals("")) {
+			TLogPostSpdDao tlpsDao = new JdbcTLogPostSpdDao();
+			List<TLogPostSpdView> tlpsv = tlpsDao.getPostIdList(spdId);
+			String json = gson.toJson(tlpsv);
+			out.println(json);
+		}
+		else if(tagId != null && !tagId.equals("")) {
+			TagDao tagDao = new JdbcTagDao();
+			List<TagView> tag = tagDao.getPostIdList(tagId);
+			String json = gson.toJson(tag);
+			out.println(json);
+		}
 		
 	}
 }

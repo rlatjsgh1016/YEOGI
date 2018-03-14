@@ -10,7 +10,7 @@ public interface TPlanPostDao {
 	int delete(String idtPlanId,String tPlanLocId);
 	
 	List<TPlanPost> getList();
-	TPlanPost get(String tourDateTime, String tPlanId,String tPlanLocId);
+	TPlanPost get(String idtPlanId,String tPlanLocId);
 	
 	//일정 카운트를 위한 
 	int getCount();

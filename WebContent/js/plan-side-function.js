@@ -14,13 +14,7 @@ window.addEventListener("load", function () {
     var modal = document.getElementsByClassName("modal");
     var close = document.getElementsByClassName("close");
     var save = document.querySelector(".save");
-    
-    var time = document.querySelector("#memoscreen>ul>li")
     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ+ - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-    var arrInput = new Array(0);
-    var arrInputValue = new Array(0);
-  
-  
     var verySad = document.querySelector(".verysad");
     var origin = verySad.querySelector(".select-place");
     
@@ -93,39 +87,20 @@ window.addEventListener("load", function () {
      /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 비용 + - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
     costPlus.onclick = function(e){
-    	arrInput.push(arrInput.length);
-    	arrInputValue.push("");
-    	display();
-    	/*clone = verySad.cloneNode(true);
+    	clone = verySad.cloneNode(true);
     	addedFormDiv.appendChild(clone);
-    	count++;*/
+    	count++;
     };
     
-    function display() {
-    	addedFormDiv.innerHTML="";
-    	  for (I=0;I<arrInput.length;I++) {
-    		  clone = verySad.cloneNode(true)
-    		  addedFormDiv.appendChild(clone);
-    	  }
-    }
-    
-    
     costMinus.onclick = function(e){
-    	if (arrInput.length > 0) { 
-    	     arrInput.pop(); 
-    	     arrInputValue.pop();
-    	  }
-    	  display(); 
-    	/*if(count==1){
+    	if(count==1){
     	addedFormDiv.removeChild(clone);
     	count = 1;
     	}else{
     		addedFormDiv.removeChild(clone);
     		count = 1;
-    	}*/
+    	}
     }
-    
-     
     
    
     
@@ -138,15 +113,14 @@ window.addEventListener("load", function () {
     	modal.style.display = "block";
     };*/
     
-  
-    //클로저 아...
-    for(var i=0;i<23;i++){
-    	(function(m) {
-    		memoButton[m].onclick = function(){
-    			modal[m].style.display = "block";
-    		}
-    	})(i);
-	}; 
+   
+    for(var i=0; i<memoButton.length; i++){
+    	memoButton[i].onclick = function(){
+			for(var i=0; i<modal.length; i++){
+				modal[i].style.display = "block";
+			}
+		};
+	};
     
     
     for(var i=0; i<close.length; i++){

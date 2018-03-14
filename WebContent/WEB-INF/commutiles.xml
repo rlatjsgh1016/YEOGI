@@ -5,7 +5,7 @@
 	
 	<tiles-definitions>
 	
-	 <definition name="maincommunitymain.*.*" template="/WEB-INF/views/main/public-board/community/inc/sub-layout.jsp">>
+	 <definition name="maincommunitymain.*.*" template="/WEB-INF/views/main/public-board/community/inc/sub-layout.jsp">
 	<put-attribute name="header" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/public-board/community/inc/{1}{2}.jsp" />
 	 </definition>

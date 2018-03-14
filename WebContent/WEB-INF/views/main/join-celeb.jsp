@@ -15,13 +15,9 @@
 								<div id = "footer_bar">
 								</div>
 							</div>
-							<div style="text-align: center; display: table-cell; vertical-align: middle;  padding-top: 20px;">
+							<div style="text-align: center; display: table-cell; vertical-align: middle; margin-top: 20px;">
 								여기의 회원이 되신 것을 축하드립니다!
 							</div>
-							
-							<a href="login" ><input type="button" class="btn btn-cancel" value="로그인" style="margin-top:15px; margin-left: 100px;"></a>
-		
-							</fieldset>
 						</div>
 					
 				</section>

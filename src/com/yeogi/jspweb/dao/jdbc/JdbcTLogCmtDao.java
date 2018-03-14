@@ -8,19 +8,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yeogi.jspweb.dao.TLogNationDao;
-import com.yeogi.jspweb.entity.TLogModAuth;
-import com.yeogi.jspweb.entity.TLogNation;
-import com.yeogi.jspweb.entity.TourLog;
+import com.yeogi.jspweb.dao.TLogCmtDao;
+import com.yeogi.jspweb.entity.TLogCmt;
+import com.yeogi.jspweb.entity.TLogCmtView;
+import com.yeogi.jspweb.entity.TourLogView;
 
-public class JdbcTLogNationDao implements TLogNationDao {
+
+public class JdbcTLogCmtDao implements TLogCmtDao {
 
 	@Override
-	public List<TLogNation> getList(TourLog tourLog) {
-		
-		String sql = "SELECT * FROM T_LOG_NATION WHERE T_LOG_ID = ?";
+	public List<TLogCmtView> getList(String tourLogId) {
+		String sql = "SELECT * FROM T_LOG_CMT_VIEW WHERE T_LOG_ID = ?";
 
-		List<TLogNation> list = new ArrayList<>();
+		List<TLogCmtView> list = new ArrayList<>();
 
 		try {
 
@@ -29,18 +29,24 @@ public class JdbcTLogNationDao implements TLogNationDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
-			st.setString(1, tourLog.getId());
+			st.setString(1, tourLogId);
 			
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {
 
-				TLogNation tlognation = new TLogNation(		
+				TLogCmtView tLogCmt = new TLogCmtView(		
 						
+						rs.getString("ID"),
 						rs.getString("T_LOG_ID"),
-						rs.getString("NATION"));
+						rs.getString("M_ID"),
+						rs.getString("P_ID"),
+						rs.getDate("REG_DATE"),
+						rs.getString("CONTENT"),
+						rs.getString("LOCK_YN"),
+						rs.getInt("COUNT"));
 				
-				list.add(tlognation);
+				list.add(tLogCmt);
 			}
 
 			rs.close();
@@ -62,9 +68,9 @@ public class JdbcTLogNationDao implements TLogNationDao {
 	}
 
 	@Override
-	public int insert(TLogNation tln) {
-		
-		String sql = "INSERT INTO T_LOG_NATION VALUES(?,?)";
+	public int insert(TLogCmt tlc) {
+
+		String sql = "INSERT INTO T_LOG_CMT(ID,T_LOG_ID,MID,PID,REG_DATE,CONTENT,LOCK_YN) VALUES((SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM T_LOG_CMT WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),?,?,?,?,?,?)";
 
 		int result = 0;
 
@@ -74,9 +80,14 @@ public class JdbcTLogNationDao implements TLogNationDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tln.gettLogId());
-			st.setString(2, tln.getNation());
-	
+			//st.setString(1, tlc.getId());
+			st.setString(1, tlc.gettLogId());
+			st.setString(2, tlc.getmId());
+			st.setString(3, tlc.getpId());
+			st.setDate(4, tlc.getRegDate());
+			st.setString(5, tlc.getContent());
+			st.setString(6, tlc.getLockYN());
+   
 			result = st.executeUpdate();
 
 			st.close();
@@ -94,10 +105,9 @@ public class JdbcTLogNationDao implements TLogNationDao {
 	}
 
 	@Override
-	public int update(TLogNation tln) {
+	public int update(TLogCmt tlc) {
+		String sql = "UPDATE T_LOG_CMT SET T_LOG_ID=?,M_ID=?,P_ID=?,REG_DATE=?,CONTENT=?,LOCK_YN=? WHERE ID=?";
 		
-		String sql = "UPDATE T_LOG_NATION SET NATION = ?, WHERE T_LOG_ID = ?";
-
 		int result = 0;
 
 		try {
@@ -106,9 +116,14 @@ public class JdbcTLogNationDao implements TLogNationDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tln.getNation());
-			st.setString(2, tln.gettLogId());
-	
+			st.setString(1, tlc.gettLogId());
+			st.setString(2, tlc.getmId());
+			st.setString(3, tlc.getpId());
+			st.setDate(4, tlc.getRegDate());
+			st.setString(5, tlc.getContent());
+			st.setString(6, tlc.getLockYN());
+			st.setString(7, tlc.getId());
+
 			result = st.executeUpdate();
 
 			st.close();
@@ -127,41 +142,43 @@ public class JdbcTLogNationDao implements TLogNationDao {
 
 	@Override
 	public int delete(String id) {
-
-		String sql = "DELETE T_LOG_NATION WHERE T_LOG_ID = ?";
-
+		String sql = "DELETE FROM T_LOG_CMT WHERE ID=?";
+		
 		int result = 0;
-
+		
 		try {
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
-
+			
 			st.setString(1, id);
-	
+			
 			result = st.executeUpdate();
-
+						
 			st.close();
 			con.close();
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
 		return result;
 	}
 
 	@Override
-	public TLogNation get(String id) {
+	public TLogCmtView get(String id) {
 		
-		String sql = "SELECT * FROM T_LOG_NATION WHERE T_LOG_ID = ?";
+		String sql = "SELECT * FROM T_LOG_CMT_VIEW WHERE ID=?";
 		
-		TLogNation tLogNation = null;
+		TLogCmtView tLogCmt = null;
 		
 		try {
 
@@ -173,34 +190,72 @@ public class JdbcTLogNationDao implements TLogNationDao {
 			st.setString(1, id);
 			
 			ResultSet rs = st.executeQuery();
-
-			if (rs.next()) {
-
-				 tLogNation = new TLogNation(		
-						
+			
+			if(rs.next()) {
+				tLogCmt = new TLogCmtView(
+						rs.getString("ID"),
 						rs.getString("T_LOG_ID"),
-						rs.getString("NATION"));
-				
-				
+						rs.getString("M_ID"),
+						rs.getString("P_ID"),
+						rs.getDate("REG_DATE"),
+						rs.getString("CONTENT"),
+						rs.getString("LOCK_YN"),
+						rs.getInt("COUNT"));
 			}
-
+			
 			rs.close();
 			st.close();
 			con.close();
-
 		}
+	    
+	    catch (ClassNotFoundException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    } 
+	    
+	    catch (SQLException e) {
+	       // TODO Auto-generated catch block
+	       e.printStackTrace();
+	    }
+		return tLogCmt;
 
+	}
+
+	@Override
+	public int updateLock(TLogCmt tlc) {
+		
+		String sql = "UPDATE T_LOG_CMT SET LOCK_YN=? WHERE ID=?";
+		
+		int result = 0;
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tlc.getLockYN());
+			st.setString(2, tlc.getId());
+			
+			result = st.executeUpdate();
+			
+			st.close();
+			con.close();
+		}
+		
 		catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
+		} 
+		
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return tLogNation;
+		return result;
 		
 	}
+
 
 }

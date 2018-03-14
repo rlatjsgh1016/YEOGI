@@ -238,14 +238,13 @@ window.addEventListener("load", function(){
 								<div>${pl.content}</div>
 								<div class="view-info">
 									<ul id="view-ul-root">
+										<li class="loc-list">${pl.name}</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<!-- ========================================== -->
-						<li id="view-loc-template" class="loc-list hidden">${pl.name}</li>
-						<!-- ========================================== -->
-						<li id="view-spd-template" class="spd-list hidden">
+						<li id="view-li-root view-spd-template" class="spd-list hidden">
 							<span>${spd.type}</span>
 							<span>${spd.spdContent}</span>
 							<span>${spd.unit}</span>
@@ -333,8 +332,7 @@ window.addEventListener("load", function(){
 									<input id="tag" type="text" name="tag" placeholder="태그입력 (예)한국,식당,맛집">
 								</div>
 								<div class="post-add-button">
-									<input id="btn-post" class="btn btn-focus" type="button" name="btn-add-post" value="저장">
-									<input id="btn-post" class="btn btn-focus" type="button" name="btn-edit-post" value="수정">
+									<input id="btn-post" class="btn btn-focus" type="button" name="btn-post" value="저장">
 									<input class="btn btn-default btn-detail-post-box-close" type="button" value="취소">
 								</div>
 							</div>

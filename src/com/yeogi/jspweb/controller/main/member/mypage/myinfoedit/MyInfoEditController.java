@@ -33,10 +33,8 @@ public class MyInfoEditController extends HttpServlet{
 		Member member = new Member();
 		MemberDao mem = new JdbcMemberDao();
 		
-		String id= (String) request.getSession().getAttribute("id");
-		
 		try {
-			member = mem.getId(id);
+			member = mem.getId("sist1218");
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

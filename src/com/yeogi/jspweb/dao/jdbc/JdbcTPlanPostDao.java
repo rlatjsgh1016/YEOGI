@@ -178,8 +178,8 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 	}
 
 	@Override
-	public TPlanPost get(String tourDateTime, String tPlanId, String tPlanLocId) {
-		String sql ="select * from t_plan_post WHERE tour_date_time=? and T_PLAN_ID=? AND T_PLAN_LOC_ID=?"; 
+	public TPlanPost get(String idtPlanId, String tPlanLocId) {
+		String sql ="DELETE t_plan_post WHERE T_PLAN_ID=? AND T_PLAN_LOC_ID=?"; 
 		TPlanPost tplanpost = null;
 		
 		try {
@@ -190,9 +190,8 @@ public class JdbcTPlanPostDao implements TPlanPostDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql); 
 			
-			st.setString(1, tourDateTime);
-			st.setString(2, tPlanId);
-			st.setString(3, tPlanLocId);
+			st.setString(1, idtPlanId);
+			st.setString(2, tPlanLocId);
 			
 			ResultSet rs = st.executeQuery(); 
 			

@@ -49,12 +49,17 @@
 			<img id="img" alt="img" src="${ctx}/images/japan2.png">
 		</div>
 		<div class="tit title-name">
-			<a>타이틀제목</a>
+			<a>${tourLog.title}</a>
 		</div>
 		<div class="tit title-desc">
-			<span>나라 /</span> <span>몇박몇일 /</span> <span>2018-01-05 /</span> <span>2018-01-09
-				/</span> <span>작성일 : </span> <span>2018-01-15 /</span> <span>최종 수정일
-				:</span> <span>2018-01-25</span>
+			<span>${tLogNation.nation} /</span> 
+			<span>${tourLog.period}박${tourLog.period+1}일  /</span> 
+			<span>${tourLog.startDate} /</span> 
+			<span>${tourLog.endDate} /</span> 
+				<span>작성일 : </span> 
+				<span>${tourLog.regDate} /</span> 
+				<span>최종 수정일  :</span> 
+				<span>2018-01-25</span>
 		</div>
 		<div class="tit post-cnt">
 			<ul>
@@ -77,7 +82,7 @@
 					<img id="user-img" alt="사진" src="${ctx}/images/user128.png">
 				</div>
 				<div class="user-name">
-					<span>글쓴이</span>
+					<span>${tourLog.mid}</span>
 				</div>
 				<div class="user-info">
 					<span>계획</span> <span class="post-count">(3)</span> <span>기록</span>
@@ -93,7 +98,7 @@
 				<ul>
 					<li><a class="summary-btn trv-theme" data-toggle="modal"
 						data-target="#myModal"> <span class="summary-list">여행테마</span>
-							<span class="summary-info">혼자여행</span></a></li>
+							<span class="summary-info">${tourLog.tTheme}</span></a></li>
 					<li><a type="button" id="btn-total-spot"
 						class="summary-btn trv-spot"> <span class="summary-list">총
 								방문명소</span> <span class="summary-info">20</span></a></li>
@@ -288,36 +293,60 @@
 		<div class="st-comment-box">
 
 			<div class="comment-cnt-box">
-				<span class="comment">댓글</span><span>0</span>
+				<a class="comment" type="button">댓글</a><a type="button">0</a>
 			</div>
 		</div>
-		<div id="un-lock" class="st-comment-write-box">
-			<div class="comment-write-box">
-				<img class="comment-writer-img" alt="" src="${ctx}/images/user36.png">
-				<textarea class="form-control new-comment" placeholder="댓글을 남겨주세요."></textarea>
-				<input class="comment-reg" value="등록"> <a type="button"
-					class="unlock"></a>
-			</div>
-			
-			<div class="comment-list-box">
-				<div class="comment-list">
-					<img class="comment-writer-img" alt="" src="${ctx}/images/user36.png">
-					<div class="comment-contents-box">
-						<div class="comment-writer-box">
-							<div class="id-date">
-								<a class="comment-writer-id">kimsg</a> <a class="comment-writer-date">2018-03-08</a>
-							</div>
-							<input class="reply-button" type="submit" value="" />
-						</div>
-						<div class="comment-content">댓글 테스트</div>
+		<div id="un-lock" class="st-comment-write-box" style=" visibility: hidden;">
+			<%-- <c:if test="${sessionScope.sessionId != null }"> --%>
+			<%-- <input type="hidden" id="comment_board" name="comment_board" value="${tourLog.id}">
+			<input type="hidden" id="comment_id" name="comment_id" value="${sessionScope.sessionId}"> --%>
+				<form id="comment-write-form" method="post">
+					<div class="comment-write-box">
+							<img class="comment-writer-img" alt="" src="${ctx}/images/user36.png">
+							<textarea name="content" class="form-control new-comment" placeholder="댓글을 남겨주세요."></textarea>
+							<input type = "submit" class="comment-reg" value="등록"> 
+							<a type="button" class="unlock"></a>
 					</div>
-				</div>
-			</div>
+				</form>
+			<%-- </c:if> --%>
+			
+			<%-- <c:if test="${requestScope.commentList != null}"> --%>
+				<%-- <c:forEach var="comment" items="$requestScope.commentList}"> --%>
+					
+					<c:forEach var="cl" items="${list}">
+					<div class="comment-list-box">
+						<div class="comment-list">
+							<img class="comment-writer-img" alt="" src="${ctx}/images/user36.png">
+							<div class="comment-contents-box">
+								<div class="comment-writer-box">
+									<div class="id-date">
+										<a class="comment-writer-id">${cl.mId}</a> <a class="comment-writer-date">2018-03-08</a>
+									</div>
+									<%-- <c:if test="${tLogCmt.mId == sessionScope.sessionId}"> --%>
+										<a href="" class="comment-button">삭제</a>			
+										<a href="" class="comment-button">수정</a>
+								<%-- 	</c:if> --%>
+									<input class="reply-button" type="submit" value="" />
+								</div>
+								<div class="comment-content">${cl.content}</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+				<%-- </c:forEach> --%>
+			<%-- </c:if> --%>
 		</div>
 		</main>
 	</div>
 
 </div>
+<!-- <script>
+	window.addEventListener("load",function(){
+		var form = document.getElementById("comment-write-form");
+		var board = form.
+	
+	});
+</script> -->
 <!------------footer 시작-------------------------------------------------------->
 	<!-- <footer id="footer">
 		<div class="root-container">

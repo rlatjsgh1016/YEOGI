@@ -12,6 +12,8 @@ public interface TagDao {
 
 	int insert(Tag tag);
 
+	int update(Tag tag);
+
 	int delete(String id);
 
 }
