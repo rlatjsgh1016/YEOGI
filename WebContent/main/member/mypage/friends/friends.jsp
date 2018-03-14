@@ -9,6 +9,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,19 +39,24 @@ MemberDao memberDao = new JdbcMemberDao();
 
 	member = memberDao.getId(id);
 
+
 request.setAttribute("member", member);
 
 
 FriendDao friendDao = new JdbcFriendDao(); 
 
 List<Friend> list = null;
+List<Friend> list2 = null;
+
 list= friendDao.getList2(id);
+list2 =friendDao.getList(id);
+
 
 System.out.println(id);
 //System.out.println(list.get(0).getMyId());
 
 request.setAttribute("list",list);
-
+request.setAttribute("list2",list2);
 
 
 %>
@@ -201,9 +207,10 @@ request.setAttribute("list",list);
 								<div class="friends-list-info">
 									${fri.myId }<br>
 									${fri.reqDate }
+									
+									<span class="hidden" name="fri" id ="fri" value="${fri.id }" >${fri.id }</span>
 								</div>
-								<%String fid = (String) pageContext.findAttribute("fri"); %>
-								<% request.setAttribute("fid",fid);%>;
+							
 								<form class="friends-req" action="friends-proc.jsp">
 									친구요청 <input type="button" name="btn" value="수락" class="friends-answer" /><input type="button" name="btn" value="거절" class="friends-answer" />
 								</form>
@@ -326,7 +333,7 @@ request.setAttribute("list",list);
 					
 				</section>
 				
-	 		</section> 
+	 		</section>  
 
 		</div>
 		

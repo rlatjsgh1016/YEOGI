@@ -67,15 +67,7 @@
 		outtt.println("</script>"); 	
 		break;
 		
-	case "수락":
-		String fid= (String) request.getAttribute("fid");
-		friend.accept(fid);
-		
-		PrintWriter outttt = response.getWriter(); 
-		outttt.println("<script type=\'text/javascript\'>"); 
-		outttt.println("location.href ='friends.jsp';");
-		outttt.println("</script>"); 	
-		break;
+	
 	
 	}
 
