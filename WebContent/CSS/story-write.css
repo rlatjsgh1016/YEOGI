@@ -624,6 +624,8 @@ main>.root-container{
 
 .place-container{
 	overflow: auto;
+	width: 300px;
+	height: 445px;
 }
 
 .card-frame{
@@ -683,10 +685,6 @@ main>.root-container{
 	float: right;
 	background-color: #FFFFFF;
 	padding: 20px;
-	overflow: hidden;
-}
-
-.right-main:hover{
 	overflow-x: hidden;
 	overflow-y: auto;
 }

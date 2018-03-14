@@ -42,9 +42,10 @@ public class TourLog {
 		this.tTheme = tTheme;
 		this.endDate = endDate;
 	}
-	public TourLog(String title, String memo, String subTitle, String coverImg, String lockYN, int period, Date startDate,
-			int companion, String mid, Timestamp lastModDate, String tTheme, Date endDate) {
+	public TourLog(String id, String title, String memo, String subTitle, String coverImg, String lockYN, int period, Date startDate,
+			int companion, Timestamp lastModDate, int hit, String tTheme, Date endDate) {
 		
+		this.id = id;
 		this.title = title;
 		this.memo = memo;
 		this.subTitle = subTitle;
@@ -53,8 +54,28 @@ public class TourLog {
 		this.period = period;
 		this.startDate = startDate;
 		this.companion = companion;
-		this.mid = mid;
 		this.lastModDate = lastModDate;
+		this.hit = hit;
+		this.tTheme = tTheme;
+		this.endDate = endDate;
+	}
+	public TourLog(
+			String title, 
+			String lockYN, 
+			int period, 
+			Date startDate, 
+			int companion, 
+			String mid, 
+			String tTheme,
+			Date endDate) 
+	{
+		
+		this.title = title;
+		this.lockYN = lockYN;
+		this.period = period;
+		this.startDate = startDate;
+		this.companion = companion;
+		this.mid = mid;
 		this.tTheme = tTheme;
 		this.endDate = endDate;
 	}
