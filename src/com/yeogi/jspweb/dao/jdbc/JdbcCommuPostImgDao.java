@@ -67,7 +67,8 @@ public class JdbcCommuPostImgDao implements Commu_Post_ImgDao {
 				"    commu_post_id," + 
 				"    id," +
  				"    img" +
-				") VALUES (?,?,?)"; 
+				
+				") VALUES (?,?,?,)"; 
 		
 		int result = 0;
 		return result;

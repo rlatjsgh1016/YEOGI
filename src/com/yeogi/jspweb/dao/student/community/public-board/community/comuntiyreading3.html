@@ -1,9 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<link type="text/css" href="../../../CSS/communitywritting.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list page</title>
+<link href="../../../CSS/comunityreading.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+</style>
+</head>
 
 
-<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
+<body>
+<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -37,11 +44,12 @@
 			</ul>
 		</div>
 	</header>
-<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
-<visual>		
-	<form class="form-control">
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- -->
+	<visual>
+		<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
+				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
@@ -53,11 +61,10 @@
 					</select>
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
-				
 			</fieldset>
 		</form>
-</visual>	
-<!-- !-- main 시작------------------------------------------------------------------------------------------------------------- -->  -->
+	</visual>
+<!-- main 시작------------------------------------------------------------------------------------------------------------- -->
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -67,7 +74,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-								<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
 								</a>
 							</td>
 						</tr>
@@ -102,49 +109,63 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-									<a href="reg" class="btn btn-text default-btn">잡담게시판</a>	
+								<a href="reg" class="btn btn-text default-btn">잡담게시판</a>	
 								</a>
 							</td>
 						</tr>
 					</div>	
 				</table>
 			</div>
-
 			<div class ="rightmain">
-			<p class="p1">
-			<div>
-				<form class="form-control" action="">
-					<fieldset>
-					<legend>포스트 작성</legend>
-					<label class="reg" for="class">분류</label>
+				<p class="p1">정보게시판</p>
+				<img alt="" src="">
+			
+			<p class="p2">조회수:10</p2>
+				<div>
+					<img alt="" src="">
+					<p>
+						<a>
+							대표사진 OR 기본사진
+						</a>
+					</p>
+					<p>
+						<a>
+							제목:여행시 챙겨야할 필수 아이템
+						</a>
+					</p>
+					<p>
+						<a>
+							작성자 아이디:qkrwpdnrsist@nate.com
+						</a>
+					</p>
+					<p class="p3">
+						<a>
+						해외 여행을 갈때 대학생 신분이시라면 국제 학생증 발급을
+						<br>꼭 받고 가시기를 추천 드립니다.
+					<br>할인 혜택이 꽤 좋아서 교통비 및 관람료를 절약 하는데 큰 도움이 됩니다.
+						</a>
+						
+						
+					
+					</div>	
+					
+					
+					<div class ="rightmain clear"></div>	
+					</div>
+					<form class="form-control">
+			<fieldset>
+				<legend class="c1">댓글창</legend>
+				
+				<label class="reg" for="class">내용</label>
 					<select id="class">
-						<option>공지</option>
-						<option>질문</option>
-						<option>정보</option>
-						<option>동행</option>
-						<option>잡담</option>
+						
 					</select>
-					<input type="text" class="input1">
-	
-					<textarea rows="50" cols="70"></textarea>
-					<div class ="clear"></div>
-					<form name="fileForm" id="fileForm" method="POST" action="fileUpload.jsp" enctype="multipart/form-data">
-    				<input type="text" name="title" id="title">
-    				<input type="file" name="uploadFile" id="uploadFile">
-					<input class="btn btn-image btn-search" type="submit" value="등록">
-					<input class="btn btn-image btn-search" type="submit" value="취소">
-					 
-					
-					
-					</fieldset>
-				</form>
-			</div>
-			</div>
-			<div class ="rightmain clear">
-		</div>
+				<input type="text"/>
+				<input class="btn btn-image btn-search" type="submit" value="입력" />
+			</fieldset>
+		</form>
 	</main>
-	
-	<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- -->
 	<footer>
 		<div class="root-container">
 		
@@ -158,4 +179,3 @@
 	</footer>
 </body>
 </html>			
-	

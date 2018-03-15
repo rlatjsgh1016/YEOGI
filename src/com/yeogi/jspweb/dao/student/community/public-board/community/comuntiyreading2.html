@@ -1,9 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<link type="text/css" href="../../../CSS/communitywritting.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list page</title>
+<link href="../../../CSS/comunityreading.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+</style>
+</head>
 
 
-<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
+<body>
+<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -37,11 +44,12 @@
 			</ul>
 		</div>
 	</header>
-<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
-<visual>		
-	<form class="form-control">
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- -->
+	<visual>
+		<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
+				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
@@ -53,11 +61,10 @@
 					</select>
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
-				
 			</fieldset>
 		</form>
-</visual>	
-<!-- !-- main 시작------------------------------------------------------------------------------------------------------------- -->  -->
+	</visual>
+<!-- main 시작------------------------------------------------------------------------------------------------------------- -->
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -67,7 +74,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-								<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
 								</a>
 							</td>
 						</tr>
@@ -109,42 +116,53 @@
 					</div>	
 				</table>
 			</div>
-
 			<div class ="rightmain">
-			<p class="p1">
-			<div>
-				<form class="form-control" action="">
-					<fieldset>
-					<legend>포스트 작성</legend>
-					<label class="reg" for="class">분류</label>
+				<p class="p1">질문게시판</p>
+				<img alt="" src="">
+			
+			<p class="p2">조회수:10</p2>
+				<div>
+					<img alt="" src="">
+					
+					
+					<p>
+						<a>
+							제목:여행 준비할때 옷은 몇개 준비해야하나요?
+						</a>
+					</p>
+					<p>
+						<a>
+							작성자 아이디:qkrwpdnrsist@nate.com
+						</a>
+					</p>
+						<a>
+						프랑스를 6월 25일부터 10일간 가려고 하는데요 마르세유 들리고 나서 파리
+						<br>갈려고 하고 일정은 대략 10일 정도 생각 하고 있습니다.
+					<br>한 10개 정도면 충분 할지 궁금합니다.
+					<br>또한 세탁 할수 있는 곳이 많고 가격은 어떤지 궁금합니다.
+						</a>
+						
+						
+					
+					</div>	
+					
+					
+					<div class ="rightmain clear"></div>	
+					</div>
+					<form class="form-control">
+			<fieldset>
+				<legend class="c1">댓글창</legend>
+				
+				<label class="reg" for="class">내용</label>
 					<select id="class">
-						<option>공지</option>
-						<option>질문</option>
-						<option>정보</option>
-						<option>동행</option>
-						<option>잡담</option>
+						
 					</select>
-					<input type="text" class="input1">
-	
-					<textarea rows="50" cols="70"></textarea>
-					<div class ="clear"></div>
-					<form name="fileForm" id="fileForm" method="POST" action="fileUpload.jsp" enctype="multipart/form-data">
-    				<input type="text" name="title" id="title">
-    				<input type="file" name="uploadFile" id="uploadFile">
-					<input class="btn btn-image btn-search" type="submit" value="등록">
-					<input class="btn btn-image btn-search" type="submit" value="취소">
-					 
-					
-					
-					</fieldset>
-				</form>
-			</div>
-			</div>
-			<div class ="rightmain clear">
-		</div>
+				<input type="text"/>
+				<input class="btn btn-image btn-search" type="submit" value="입력" />
+			</fieldset>
+		</form>
 	</main>
-	
-	<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- -->
 	<footer>
 		<div class="root-container">
 		
@@ -158,4 +176,3 @@
 	</footer>
 </body>
 </html>			
-	

@@ -352,6 +352,10 @@
 		</div>
 		</main>
 	</div>
+<<<<<<< HEAD
+	<!------------footer 시작-------------------------------------------------------->
+	<footer id="footer">
+=======
 
 </div>
 <!-- <script>
@@ -363,6 +367,7 @@
 </script> -->
 <!------------footer 시작-------------------------------------------------------->
 	<!-- <footer id="footer">
+>>>>>>> refs/remotes/origin/master
 		<div class="root-container">
 			<div id="footer_logo">
 			</div>
@@ -377,4 +382,4 @@
 		</div>
 	</footer>	
 </body>
-</html> -->
+</html>

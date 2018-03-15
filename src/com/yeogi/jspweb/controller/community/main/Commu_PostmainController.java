@@ -19,9 +19,8 @@ public class Commu_PostmainController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		String id =request.getParameter("id");
+			
+	String id =request.getParameter("id");
 		
 		
 		Commu_PostDao commu_postDao = new JdbcCommuPostDao();

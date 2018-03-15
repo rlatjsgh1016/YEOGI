@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<link type="text/css" href="../../../CSS/communitywritting.css" rel="stylesheet">
-
-
-<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -37,11 +39,12 @@
 			</ul>
 		</div>
 	</header>
-<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
-<visual>		
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 
+<visual>
 	<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
+				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
@@ -53,11 +56,10 @@
 					</select>
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
-				
 			</fieldset>
 		</form>
-</visual>	
-<!-- !-- main 시작------------------------------------------------------------------------------------------------------------- -->  -->
+</visual>
+<!-- main 시작------------------------------------------------------------------------------------------------------------- --> 
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -67,7 +69,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-								<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
 								</a>
 							</td>
 						</tr>
@@ -109,42 +111,88 @@
 					</div>	
 				</table>
 			</div>
-
 			<div class ="rightmain">
-			<p class="p1">
-			<div>
-				<form class="form-control" action="">
-					<fieldset>
-					<legend>포스트 작성</legend>
-					<label class="reg" for="class">분류</label>
-					<select id="class">
-						<option>공지</option>
-						<option>질문</option>
-						<option>정보</option>
-						<option>동행</option>
-						<option>잡담</option>
-					</select>
-					<input type="text" class="input1">
-	
-					<textarea rows="50" cols="70"></textarea>
-					<div class ="clear"></div>
-					<form name="fileForm" id="fileForm" method="POST" action="fileUpload.jsp" enctype="multipart/form-data">
-    				<input type="text" name="title" id="title">
-    				<input type="file" name="uploadFile" id="uploadFile">
-					<input class="btn btn-image btn-search" type="submit" value="등록">
-					<input class="btn btn-image btn-search" type="submit" value="취소">
-					 
-					
-					
-					</fieldset>
-				</form>
-			</div>
+				<p class="p1">공지게시판</p>
+				<p class="p2">
+				<a href="reg" class="btn btn-text default-btn">글쓰기</a>
+				<div>
+					<p>
+						<a>
+							제목:사이트 점검 시간 있습니다.
+						</a>
+					</p>
+					<p>
+						<a>
+							<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+						</a>	
+					</p>
+				</div>	
+				<div class="border-top">
+				<img alt="" src="">
+				<div>
+					<p>
+						<a>
+							제목:사이트 점검 시간 있습니다.
+						</a>
+					</p>
+					<p>
+						<a>
+							<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+						</a>	
+					</p>
+				</div>	
+				<div class="border-top">
+					<img alt="" src="">
+				<div>
+					<p>
+						<a>
+							제목:사이트 점검 시간 있습니다.
+						</a>
+					</p>
+					<p>
+						<a>
+							<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+						</a>	
+					</p>
+				</div>	
+				<div class="border-top">
+			<img alt="" src="">
+				<div>
+					<p>
+						<a>
+							제목:사이트 점검 시간 있습니다.
+						</a>
+					</p>
+					<p>
+						<a>
+							<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+						</a>	
+					</p>
+				</div>	
+				<div class="border-top">
+				<img alt="" src="">
+				<div>
+					<p>
+						<a>
+							제목:사이트 점검 시간 있습니다.
+						</a>
+					</p>
+					<p>
+						<a>
+							<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+						</a>	
+					</p>
+				</div>	
+				<div class="border-top">
+				<div class="border-top">
 			</div>
 			<div class ="rightmain clear">
 		</div>
+		</div>
+		<div>
+			<a href="reg" class="btn btn-text default-btn">1/100페이지 이전/다음</a>
+		</div>
 	</main>
-	
-	<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
 	<footer>
 		<div class="root-container">
 		
@@ -157,5 +205,4 @@
 		</div>
 	</footer>
 </body>
-</html>			
-	
+</html>

@@ -722,6 +722,12 @@ window.addEventListener("load", function(){
 		}.bind(this,i));
 	}
 	
+<<<<<<< HEAD
+	btnCover.onclick = function(e) {
+		e.preventDefault();
+		for(var i=0; i<modal.length; i++){
+			modal[i].style.display = "block";
+=======
 	//왼쪽 화살표 버튼
 	var leftButton = document.querySelector(".left-arrow");
 	var rightButton = document.querySelector(".right-arrow");
@@ -774,8 +780,25 @@ window.addEventListener("load", function(){
 
 			request.open("POST", "selectDay", true);
 			request.send(formData);
+>>>>>>> refs/remotes/origin/master
 		}
 	}
+<<<<<<< HEAD
+	
+<<<<<<< HEAD
+	btnLock.onclick = function() {
+		formMain.submit();
+	}
+	
+	btnUnlock.onclick = function(){
+		formMain.submit();
+	}
+	
+=======
+>>>>>>> refs/remotes/origin/master
+	btnCompanion.onclick = function(){
+		formMain.submit();
+=======
 
 	//오른쪽 화살표 버튼
 	rightButton.onclick = function(){
@@ -829,6 +852,7 @@ window.addEventListener("load", function(){
 			request.open("POST", "selectDay", true);
 			request.send(formData);
 		}
+>>>>>>> refs/remotes/origin/master
 	}
 
 	//메인 버튼

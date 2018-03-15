@@ -1,9 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<link type="text/css" href="../../../CSS/communitywritting.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list page</title>
+<link href="../../../CSS/communitywritting.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+</style>
+</head>
 
 
-<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
+<body>
+<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -36,28 +43,28 @@
 				</li>
 			</ul>
 		</div>
-	</header>
-<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
-<visual>		
-	<form class="form-control">
+		</header>
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 
+	<visual>
+		<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
+				
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
-						<option>공지</option>
-						<option>질문</option>
-						<option>정보</option>
-						<option>동행</option>
-						<option>잡담</option>
+						<option>공지게시판</option>
+						<option>질문게시판</option>
+						<option>정보게시판</option>
+						<option>동행게시판</option>
+						<option>잡담게시판</option>
 					</select>
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
-				
 			</fieldset>
 		</form>
-</visual>	
-<!-- !-- main 시작------------------------------------------------------------------------------------------------------------- -->  -->
+	</visual>
+<!-- main 시작------------------------------------------------------------------------------------------------------------- --> 
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -67,7 +74,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-								<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
 								</a>
 							</td>
 						</tr>
@@ -125,17 +132,10 @@
 						<option>잡담</option>
 					</select>
 					<input type="text" class="input1">
-	
-					<textarea rows="50" cols="70"></textarea>
+					<textarea rows="10" cols="" class="text-area"></textarea>
 					<div class ="clear"></div>
-					<form name="fileForm" id="fileForm" method="POST" action="fileUpload.jsp" enctype="multipart/form-data">
-    				<input type="text" name="title" id="title">
-    				<input type="file" name="uploadFile" id="uploadFile">
+					<input class="btn btn-image btn-search" type="submit" value="사진추가">
 					<input class="btn btn-image btn-search" type="submit" value="등록">
-					<input class="btn btn-image btn-search" type="submit" value="취소">
-					 
-					
-					
 					</fieldset>
 				</form>
 			</div>
@@ -143,8 +143,7 @@
 			<div class ="rightmain clear">
 		</div>
 	</main>
-	
-	<!-- footer 시작------------------------------------------------------------------------------------------------------------- -->
+<!-- <!-- footer 시작------------------------------------------------------------------------------------------------------------- -- -->
 	<footer>
 		<div class="root-container">
 		
@@ -158,4 +157,3 @@
 	</footer>
 </body>
 </html>			
-	
