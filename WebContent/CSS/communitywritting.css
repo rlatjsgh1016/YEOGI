@@ -33,13 +33,15 @@ header{
 	font-family: 맑은고딕 HY견고딕 sans-serif; 
 	font-size: 30px;
 	font-weight: bold; 
-	color: #333333;
+	img
 	background:#D8D8D8;
+	margin:20px 30px;
 }
 
 header>.root-container {
 	width:1320px;
 	margin: 0 auto;
+	background-image: url("../images/2.jpg");
 }
 
 header>div>ul>li{
@@ -72,11 +74,14 @@ header>div>img{
 	clear:both;
 	overflow: hidden;
 }
+
 /*---visual style--------------------------------------------------------------- */
+
+
 
 /*---main style--------------------------------------------------------------- */	 
 .leftmain{
-	background:#E64C3C;
+	background:#ffff00;
 	width: 300px;
 	float:left;
 	font-family: HY견고딕;
@@ -92,13 +97,14 @@ header>div>img{
 }
 
 .rightmain {
-	background:#D8D8D8;
+	background:#80ff80;
 	float:right;
 	width: 1020px;
 	font-family: HY견고딕;
 	font-size: 15px;
 	font-color: #333333;
 	display:inline-blockblock;
+	text-align: center;
 }
 
  
@@ -117,7 +123,8 @@ header>div>img{
 
 .fieldset{
 	float:left;
-	margin:100px 90px;
+	margin:50px;
+	text-align: center;
 }
 .input1{
 	width: 300px;
@@ -140,7 +147,7 @@ header>div>img{
 
 /*---footer style--------------------------------------------------------------- */
 footer{
-	background:#D8D8D8;
+	background-image: url("../images/1.jpg");
 	font-size:15px;
 	font-color:#B5342A;	
 	font-weight: bold; 
