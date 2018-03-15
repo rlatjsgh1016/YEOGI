@@ -77,6 +77,6 @@ public class NewplanController extends HttpServlet {
 		
 
 		
-		/*response.sendRedirect("../search-plan/search-plan.jsp");*/
+		response.sendRedirect("../searchplan/search-detail");
 	}
 }
