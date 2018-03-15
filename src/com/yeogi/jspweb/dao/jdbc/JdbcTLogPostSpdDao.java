@@ -11,7 +11,6 @@ import java.util.List;
 import com.yeogi.jspweb.dao.TLogPostSpdDao;
 import com.yeogi.jspweb.entity.TLogPostSpd;
 import com.yeogi.jspweb.entity.TLogPostSpdView;
-import com.yeogi.jspweb.entity.TLogPostView;
 
 public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 
@@ -164,7 +163,7 @@ public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 	@Override
 	public int update(TLogPostSpd tlps) {
 		
-		String sql = "UPDATE T_LOG_POST_SPD SET TYPE = ?, CONTENT = ?, UNIT = ?, AMOUNT = ? WHERE ID = ?";
+		String sql = "UPDATE T_LOG_POST_SPD SET TYPE = ?, CONTENT = ?, UNIT = ?, AMOUNT = ? WHERE T_LOG_POST_ID = ?";
 
 		int result = 0;
 
@@ -179,7 +178,6 @@ public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 			st.setString(3, tlps.getUnit());
 			st.setInt(4, tlps.getAmount());
 			st.setString(5, tlps.gettLogPostId());
-			st.setString(6, tlps.getId());
 			
 			result = st.executeUpdate();
 
@@ -200,7 +198,7 @@ public class JdbcTLogPostSpdDao implements TLogPostSpdDao {
 	@Override
 	public int delete(String id) {
 		
-		String sql = "DELETE T_LOG_POST_SPD WHERE ID = ?";
+		String sql = "DELETE T_LOG_POST_SPD WHERE T_LOG_POST_ID = ?";
 
 		int result = 0;
 

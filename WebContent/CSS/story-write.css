@@ -348,6 +348,10 @@ header nav{
 	align-items: center;
 }
 
+.visual-select{
+	background-image: url("../resources/small_visual.jpg");
+}
+
 #title{
 	width:1300px;
 	margin:8px;

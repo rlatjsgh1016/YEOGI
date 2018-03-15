@@ -357,5 +357,45 @@ public class JdbcTourLogDao implements TourLogDao {
 	    }
 		return result;
 	}
+	
+	@Override
+	public int tourLogCount(String id) {
+		
+		String sql = "SELECT COUNT(ID) COUNT FROM TOUR_LOG WHERE MID = ?";
+
+		int tourLogCount = 0;
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, id);
+			
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				tourLogCount = rs.getInt("count");
+				//System.out.printf("id: %s, name: %s\n",id,name);
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tourLogCount;
+	}
 
 }

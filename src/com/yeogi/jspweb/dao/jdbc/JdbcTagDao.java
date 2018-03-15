@@ -147,9 +147,9 @@ public class JdbcTagDao implements TagDao {
 	}
 
 	@Override
-	public int update(Tag tag) {
-		
-		String sql = "UPDATE TAG SET CONTENT = ?, T_LOG_POST_ID WHERE ID = ? ";
+	public int delete(String tLogPostId) {
+
+		String sql = "DELETE TAG WHERE T_LOG_POST_ID = ?";
 
 		int result = 0;
 
@@ -159,40 +159,7 @@ public class JdbcTagDao implements TagDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, tag.getTagContent());
-			st.setString(2, tag.gettLogPostId());
-			st.setString(3, tag.getId());
-
-			result = st.executeUpdate();
-
-			st.close();
-			con.close();
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return result;
-	}
-
-	@Override
-	public int delete(String id) {
-
-		String sql = "DELETE TAG WHERE ID = ?";
-
-		int result = 0;
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-			PreparedStatement st = con.prepareStatement(sql);
-
-			st.setString(1,id);
+			st.setString(1,tLogPostId);
 			
 			result = st.executeUpdate();
 

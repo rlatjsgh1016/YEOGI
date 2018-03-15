@@ -31,13 +31,13 @@ import com.yeogi.jspweb.entity.TLogPostView;
 import com.yeogi.jspweb.entity.Tag;
 import com.yeogi.jspweb.entity.TagView;
 
-@WebServlet("/main/member/story/write/addPost")
+@WebServlet("/main/member/story/write/updatePost")
 @MultipartConfig(
 		fileSizeThreshold = 1024*1024,
 		maxFileSize = 1024*1024*100,	//	100메가
 		maxRequestSize = 1024*1024*100*5	//	100메가
 		)
-public class AddPostController extends HttpServlet {
+public class UpdatePostController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -50,11 +50,9 @@ public class AddPostController extends HttpServlet {
 		String tourLogId = request.getParameter("tour-log-id");
 		String postLocId = request.getParameter("select-loc-id");
 		String postVehicle = request.getParameter("vehicle");
+		String postId = request.getParameter("update-post-id");
 		int currDay = Integer.parseInt(request.getParameter("curr-day"));
-		
-		// SPD, TAG 공통 INSERT DATA (L_LOG_POST INSERT 리턴값 적용)
-		String insertedPostId = null;
-		
+				
 		// T_LOG_POST_SPD INSERT DATA
 		String postSpdType = request.getParameter("spd-type");
 		String postSpdContent = request.getParameter("spd-content");
@@ -73,26 +71,31 @@ public class AddPostController extends HttpServlet {
 		Gson gson = new Gson();
 		PrintWriter out = response.getWriter();
 		
-		TLogPost tlp = new TLogPost(postContent, tourLogId, postLocId, postVehicle, currDay);
-		insertedPostId = tLogPostDao.insert(tlp);
+		TLogPost tlp = new TLogPost(postContent, tourLogId, postLocId, postVehicle, postId, currDay);
+		tLogPostDao.update(tlp);
 		
 		if(postSpdType != null && postSpdContent != null && postSpdUnit != null && postSpdAmount_ != null) {
 			
 			int postSpdAmount = Integer.parseInt(postSpdAmount_);
-			TLogPostSpd tlps = new TLogPostSpd(postSpdType, postSpdContent, postSpdUnit, postSpdAmount, insertedPostId);
-			tLogPostSpdDao.insert(tlps);
+			TLogPostSpd tlps = new TLogPostSpd(postSpdType, postSpdContent, postSpdUnit, postSpdAmount, postId);
+			tLogPostSpdDao.update(tlps);
 		}
 		
 		if(postTag != null && !postTag.equals("")) {
+			tagDao.delete(postId);
 			
 			//문자열 파싱
 			String[] postTags = postTag.split(",");
 			for(int i=0; i<postTags.length; i++) {
 				if(!postTags[i].trim().equals("")) {
-					Tag tag = new Tag(postTags[i], insertedPostId);
+					Tag tag = new Tag(postTags[i].trim(), postId);
 					tagDao.insert(tag);
 				}
 			}
+		}
+		else {
+			
+			tagDao.delete(postId);
 		}
 		
 		List<TLogPostView> tlpv = tLogPostDao.getList(tourLogId);

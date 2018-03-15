@@ -86,15 +86,15 @@
 				</div>
 				<div class="user-info">
 					<a href="${ctx}/main/member/mypage/mystory/mystory">계획</a> 
-					<a href="${ctx}/main/member/mypage/mystory/mystory" class="post-count">(3)</a> 
+					<a href="${ctx}/main/member/mypage/mystory/mystory" class="post-count">(0)</a> 
 					<a href="${ctx}/main/member/mypage/myplan/myplan">기록</a>
-					<a href="${ctx}/main/member/mypage/myplan/myplan" class="post-count">(2)</a> 
-					<a>커뮤니티</a> <a class="post-count">(5)</a>
+					<a href="${ctx}/main/member/mypage/myplan/myplan" class="post-count">(${tourLogCount})</a> 
+					<a>커뮤니티</a> <a class="post-count">(0)</a>
 				</div>
-				<div class="scrap-box">
+				<%-- <div class="scrap-box">
 					<img id="btn-scrap" alt="스크랩이미지" src="${ctx}/images/scrap.png">
 					<span>스크랩</span>
-				</div>
+				</div> --%>
 			</div>
 			<div class="summary-box">
 				<ul>
@@ -106,7 +106,12 @@
 						총 방문명소</span> <span class="summary-info">${tLogCount}</span></a></li>
 					<li><a type="button" id="btn-total-expense"
 						class="summary-btn trv-budget"> <span class="summary-list">지출내역</span>
-							<span class="summary-info">KRW 600,000,000</span></a></li>
+							<span class="summary-info">KRW 
+							<c:set var="test1" value="0"/>
+							<c:forEach var="test2" items="${spdSum}">
+							<c:set var="test1" value="${test1+test2.sum}"/>
+							</c:forEach>
+							<c:out value="${test1}"/></span></a></li>
 				</ul>
 
 			</div>
@@ -217,23 +222,33 @@
 					</div>
 					<div class="spot-post-box">
 						<span class="spot-post-content">${tlpl.content}</span>
-						<div class="spot-img">
+						<%-- <div class="spot-img">
 							<img id="post-img" alt="여기" src="${tlpl.img}">
-						</div>
-						<div class="post-info-box">
-							<div class="post-info post-spot">
-								<span class="post-info-start">${tLosPostSpdView.name}</span>
+						</div> --%>
+							<div class="post-info-box">
+								<div class="post-info post-spot">
+									<span class="post-info-start">${tlpl.name}</span>
+								</div>
+						<c:forEach var="spd" items="${tlpsvList}">
+							<c:if test="${tlpl.id == spd.tLogPostId}">
+								<div class="post-info post-expense">
+									<span class="post-info-start expense-type">${spd.type}</span><span
+										class="post-info-list">${spd.spdContent}</span><span class="post-info-list">KRW</span>
+										<span class="post-info-list">${spd.amount}</span>
+								</div>
+							</c:if>
+						</c:forEach>
+						<c:forEach var="tag" items="${tagList}">
+							<%-- <c:if test="${tlpl.tLogPostId == tag.tagContent}"> --%>
+							<c:if test="${!empty tagList && tlpl.id == tag.tLogPostId}">
+							
+								<div class="post-info post-tag">
+									<span class="post-info-start">${tag.tagContent}</span>
+								</div>
+							</c:if>
+						</c:forEach>
+				
 							</div>
-							<div class="post-info post-expense">
-								<span class="post-info-start expense-type">${tLosPostSpdView.transe}</span><span
-									class="post-info-list">${tLosPostSpdView.content}</span><span class="post-info-list">KRW</span><span
-									class="post-info-list">${tLosPostSpdView.amount}</span>
-							</div>
-							<div class="post-info post-tag">
-								<span class="post-info-start">공항</span>
-							</div>
-			
-						</div>
 					</div>
 				<%-- </c:if> --%>
 			</c:forEach>
@@ -245,23 +260,25 @@
 				<div class="day-total-title">
 					방문명소<span class="close">&times;</span>
 				</div>
-			<c:forEach var="index" begin="1" end="${maxDay}">
+			
 				<div class="total-box">
-					<div class="day-total-box">
-					
-						<%-- <c:forEach var="tlpl" items="${tlpList}"> --%>
-							<div class="day-spot-title">			
-								<span>DAY ${tlpl.day}</span><span>${tLogNation.nation}</span>
-							</div>
-						<%-- </c:forEach> --%>
-						
-						<div class="day-spot-list">
-							<p>어딘가sferereferffㄴㄴㄹㄷㄹㄴㄹㄴㄷㄹㄷㄹㄴㄹㄷㄹ</p>
-							<p>어딘가</p>
+					<c:forEach var="day" begin="1" end="${maxDay}" step="1">
+						<div class="day-total-box">
+								<div class="day-spot-title">			
+									<span>DAY ${day}</span>
+									<span>${tLogNation.nation}</span>
+								</div>
+							<c:forEach var="ta" items="${tlpList}">	
+							<c:if test="${ta.day == day}">
+								<div class="day-spot-list">
+									<p>${ta.name}</p>
+								</div>
+							</c:if>
+							</c:forEach>
 						</div>
-					</div>
-				</div>
 					</c:forEach>
+				</div>
+		
 			</div>
 		</div>
 
@@ -271,34 +288,17 @@
 					지출내역<span class="close">&times;</span>
 				</div>
 				<div class="total-box">
-
-					<table class="expense-list">
-						<tr>
-							<td>명소</td>
-							<td class="expense">KRW 190,000</td>
-						</tr>
-						<tr>
-							<td>맛집</td>
-							<td class="expense">KRW</td>
-						</tr>
-						<tr>
-							<td>숙소</td>
-							<td class="expense">KRW</td>
-						</tr>
-						<tr>
-							<td>교통</td>
-							<td class="expense">KRW</td>
-						</tr>
-						<tr>
-							<td>쇼핑</td>
-							<td class="expense">KRW</td>
-						</tr>
-						<tr>
-							<td>기타</td>
-							<td class="expense">KRW</td>
-						</tr>
-
-					</table>
+				
+						<c:forEach var="spd" items="${spdSum}">
+							<table class="expense-list">
+								<tr>
+									<td>${spd.type}</td>
+									<td class="expense">KRW ${spd.sum}</td>
+								</tr>
+			
+		
+							</table>
+						</c:forEach>
 
 				</div>
 			</div>
