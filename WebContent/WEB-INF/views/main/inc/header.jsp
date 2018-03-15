@@ -12,10 +12,12 @@
 				<nav class="hor-menu main-menu first-pad-none">
 					<h1>메인메뉴</h1>
 					<ul>
-						<li><a href="">계획하기</a></li>
-						<li><a href="${ctx}/member/story/write/select">기록하기</a></li>
-						<li><a href="${ctx}/public-board/travel-log/log-main/log-main">여행기</a></li>
-						<li><a href="">커뮤니티</a></li>
+
+						<li><a href="${ctx }/main/member/plan/newplan/newplan"">계획하기</a></li>
+						<li><a href="${ctx }/main/member/story/write/select">기록하기</a></li>
+						<li><a href="${ctx }/main/public-board/travel-log/log-main/log-main">여행기</a></li>
+
+						<li><a href="${ctx }/main/public-board/community/communitymain">커뮤니티</a></li>
 					</ul>
 				</nav>
 

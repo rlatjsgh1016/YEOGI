@@ -68,28 +68,36 @@
 						
 						<section class = "travel-cont">
 						
+						
 							<div class = "travel-log barcel">
+							<a href="member/story/read/main?id=2018031500001">
 								<div class = "travel-info">
 									<div class="travel-name">내 첫 유럽여행!</div>
 									<div class= "loca"><div class="small-loca"></div>바르셀로나, 스페인</div>
 									<div class ="date"><div class="small-cal"></div>2017.02 ~ 2017. 02 (1개월간)</div>
 								</div>
+								</a>
 							</div>
+						
 				
 							<div class = "travel-log  paris">
+							<a href="member/story/read/main?id=2018031500001">
 								<div class = "travel-info">
 									<div class="travel-name">프랑스 맛집 투어!</div>
 									<div class= "loca"><div class="small-loca"></div>파리, 프랑스</div>
 									<div class ="date"><div class="small-cal"></div>2016.08 ~ 2016. 12 (4개월간)</div>
 								</div>
+							</a>
 							</div>
 							
 							<div class = "travel-log moscbar">
+							<a href="member/story/read/main?id=2018031500001">
 								<div class = "travel-info">
 									<div class="travel-name">푸틴의 흔적을 찾아서</div>
 									<div class= "loca"><div class="small-loca"></div>모스크바, 러시아</div>
 									<div class ="date"><div class="small-cal"></div>2017.03 ~ 2017. 05 (3개월간)</div>
 								</div>
+							</a>
 							</div>
 							
 						</section>
