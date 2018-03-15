@@ -68,7 +68,7 @@
 						<tr>
 							<td class="sidemenu">
 							
-						<a href="#" class="btn btn-text default-btn">월간BEST</a>
+						<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
 								
 							</td>
 						</tr>
