@@ -15,5 +15,6 @@ public interface TourLogDao {
 	int updateLock(TourLog tl);
 	int updateCover(TourLog tl);
 	int delete(String id);
+	int tourLogCount(String id);
 
 }

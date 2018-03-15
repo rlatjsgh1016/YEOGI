@@ -288,7 +288,7 @@ a{
 	align-items: center;
 }
 #aside>.user-box{
-	height: 295px;
+	height: 260px;
 	width: 255px;
 	background-color: #ffffff;
 	margin-top: 10px;
@@ -607,7 +607,7 @@ a{
 
 .post-info-box{
 	width: 945px;
-	height: 70px;
+	min-height: 50px;
 	display: flex;
 	/* align-items: center; */
 	flex-direction: column;
@@ -615,7 +615,7 @@ a{
 }
 .post-info-box>.post-info{
 	width: 925px;
-	height: 17px;
+	min-height: 17px;
 	overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
