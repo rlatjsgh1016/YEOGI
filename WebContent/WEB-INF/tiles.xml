@@ -49,7 +49,7 @@
     <put-attribute name="main" value="/WEB-INF/views/main/{1}.jsp" />
     <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
   </definition>
-  
+ 
   
   
   
