@@ -1,7 +1,16 @@
+<%@page import="com.yeogi.jspweb.entity.Friend"%>
+<%@page import="java.util.List"%>
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcFriendDao"%>
+<%@page import="com.yeogi.jspweb.dao.FriendDao"%>
+<%@page import="com.yeogi.jspweb.dao.jdbc.JdbcMemberDao"%>
+<%@page import="com.yeogi.jspweb.dao.MemberDao"%>
 <%@page import="com.yeogi.jspweb.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+<c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -18,10 +27,43 @@ function request(){
 
 </head>
 <body>
+
+
+<% 
+String id = (String) request.getSession().getAttribute("id");
+
+Member member = new Member();
+MemberDao memberDao = new JdbcMemberDao();
+
+
+
+	member = memberDao.getId(id);
+
+
+request.setAttribute("member", member);
+
+
+FriendDao friendDao = new JdbcFriendDao(); 
+
+List<Friend> list = null;
+List<Friend> list2 = null;
+
+list= friendDao.getList2(id);
+list2 =friendDao.getList(id);
+
+
+System.out.println(id);
+//System.out.println(list.get(0).getMyId());
+
+request.setAttribute("list",list);
+request.setAttribute("list2",list2);
+
+
+%>
 <!-- 제목 목록 표 문장 폼 -->
 		<header id = "header">
 			<div class="root-container">
-			<a href= "../../../../main/main.html"><h1 id="logo"><img src ="../../../../resources/logo.png" height="65px" alt ="여기" /> </h1></a>
+			<a href= "${ctx }/main/main"><h1 id="logo"><img src ="${ctx}/resources/logo.png" height="65px" alt ="여기" /> </h1></a>
 	
 			<section>
 				<h1 class="hidden">헤더</h1>
@@ -29,26 +71,31 @@ function request(){
 				<nav class="hor-menu main-menu first-pad-none">
 					<h1>메인메뉴</h1>
 					<ul>
-						<li><a href="">계획하기</a></li>
-						<li><a href="../../../member/story/write/main.jsp">기록하기</a></li>
-						<li><a href="../../../public-board/travel-log/log-main/log-main.html">여행기</a></li>
+						<li><a href="${ctx }/main/member/plan/newplan/newplan"">계획하기</a></li>
+						<li><a href="${ctx }/main/member/story/write/select">기록하기</a></li>
+						<li><a href="${ctx }/main/public-board/travel-log/log-main/log-main">여행기</a></li>
 						<li><a href="">커뮤니티</a></li>
 					</ul>
 				</nav>
-				
 
-				<nav class ="hor-menu member-menu first-pad-none"  style ="margin-bottom:15px">
+				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
 					<h1>회원 메뉴</h1>
 					<ul>
-						<li><a href= "../../../log-in.html">로그인</a></li> 
-						<li><a href= "../../../join.html">회원가입</a></li>
-						<li><a href ="../mypage.html" class ="btn btn-mypage">마이페이지</a></li>
+					<c:if test="${empty sessionScope.id }">
+						<li><a href= "${ctx}/main/login">로그인</a></li>
+					</c:if> 
+					<c:if test="${not empty sessionScope.id }">
+						<li><a href= "${ctx}/main/logout">로그아웃</a></li>
+					</c:if> 
+						<li><a href= "${ctx}/main/join">회원가입</a></li>
+						<li><a href ="${ctx}/main/member/mypage/mypage" class ="btn btn-mypage">마이페이지</a></li>
 					</ul>
 				</nav>	
 				
-
 			</section> 
+			
 		</div>
+		
 	</header>
 	
 	<!-- Visual 부분 시작 -->
@@ -103,7 +150,7 @@ function request(){
 				
 					<input name="id" class="title-box" type="text" maxlength="40" placeholder=" 사용자 아이디를 검색하세요"> <input type="submit" class="btn btn-cancel" name="btn" value="검색" style="height: 30px;">
 				
-					<% Member m = ((Member)request.getAttribute("mem")); 
+					<% Member m = ((Member)request.getSession().getAttribute("mem")); 
 						if(m != null){
 					
 					%>
@@ -116,59 +163,76 @@ function request(){
 		
 				</form>
 						<section class = "title">
-							친구 목록
+							요청한 친구요청
 						</section>
 						
 						<section class = "travel-cont">
+					
+					<c:if test="${fn:length(list2) > 0 }">
+						<c:forEach var="fri2" items="${list2}">
+						
 							<div class="friends-list">
 								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
 								<div class="friends-list-info">
-									KIMSH<br>
-									도리토스
+									${fri2.friendId }<br>
+									${fri2.reqDate }
 								</div>
-								<div class="friends-req">
-									친구요청 <span class="friends-answer"><a href="">수락</a></span> <span class="friends-answer"><a href="">거절</a></span>
-								</div>
+								<form class="friends-req">
+									수락대기중
+								</form>
 							</div>
 							
-							<div class="friends-list">
-								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
-								<div class="friends-list-info">
-									KIMSH<br>
-									도리토스
-								</div>
-								<div class="friends-req">
-									친구요청 <span class="friends-answer"><a href="">수락</a></span> <span class="friends-answer"><a href="">거절</a></span>
-								</div>
-							</div>
-							
-							<div class="friends-list">
-								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
-								<div class="friends-list-info">
-									KIMSH<br>
-									도리토스
-								</div>
-							</div>
-							
-							<div class="friends-list">
-								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
-								<div class="friends-list-info">
-									KIMSH<br>
-									도리토스
-								</div>
-							</div>
-							
-								<div class="friends-list">
-								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
-								<div class="friends-list-info">
-									KIMSH<br>
-									도리토스
-								</div>
-							</div>
+						</c:forEach>
+					</c:if>					
+					<c:if test="${fn:length(list2) == 0 }">
+						<span style="padding-left: 50px; color: gray;">요청한 친구신청이 없습니다</span>
+					</c:if>
+					
 						</section>
 						
 						<div class="line"></div>
 						
+						
+						<section class = "title">
+							요청받은 친구요청
+						</section>
+						
+						<section class = "travel-cont">
+					
+					<c:if test="${fn:length(list) > 0 }">
+						<c:forEach var="fri" items="${list}">
+						
+							<div class="friends-list">
+								<img src="../../../../resources/unknown-person.png" width="150px" hspace="10px"/>
+								<div class="friends-list-info">
+									${fri.myId }<br>
+									${fri.reqDate }
+									
+									<span class="hidden" name="fri" id ="fri" value="${fri.id }" >${fri.id }</span>
+								</div>
+							
+								<form class="friends-req" action="friends-proc.jsp">
+									친구요청 <span class="friends-answer" />수락</span> <span class="friends-answer" />거절</span>
+								</form>
+							</div>
+							
+						</c:forEach>
+					</c:if>					
+					<c:if test="${fn:length(list) == 0 }">
+						<span style="padding-left: 50px; color: gray;">요청받은 친구신청이 없습니다</span>
+					</c:if>
+					
+						</section>
+						
+						<div class="line"></div>
+							
+						
+						
+						
+						
+						<section class = "title">
+							친구 목록
+						</section>
 						
 						<section class = "travel-cont">
 							<div class="friends-list">
@@ -269,7 +333,7 @@ function request(){
 					
 				</section>
 				
-	 		</section> 
+	 		</section>  
 
 		</div>
 		

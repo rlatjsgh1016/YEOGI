@@ -8,12 +8,15 @@
 						</section>
 						
 						<section class = "travel-cont">
+						
 							<div class = "travel-plan map">
+							<a href="/Yeogi/main/member/plan/schedule/schedule">
 								<div class = "travel-info">
 									<div class="travel-name">내 첫 유럽여행!</div>
 									<div class= "loca"><div class="small-loca"></div>스페인, 프랑스, 영국</div>
 									<div class ="date"><div class="small-cal"></div>1개월간</div>
 								</div>
+							</a>
 							</div>
 				
 							<div class = "travel-plan  map">

@@ -18,5 +18,7 @@ public interface FriendDao {
 	int delete(String id);
 	Friend get(String id);
 	List<Friend> getList();
+	List<Friend> getList2(String mId);
+	int accept(String fid) throws ClassNotFoundException, SQLException;
 
 }
