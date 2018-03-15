@@ -24,6 +24,7 @@ import com.yeogi.jspweb.dao.TLogCmtDao;
 import com.yeogi.jspweb.dao.TLogNationDao;
 import com.yeogi.jspweb.dao.TLogPostDao;
 import com.yeogi.jspweb.dao.TLogPostSpdDao;
+import com.yeogi.jspweb.dao.TagDao;
 import com.yeogi.jspweb.dao.TourLogDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcDayDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcMemberDao;
@@ -31,6 +32,7 @@ import com.yeogi.jspweb.dao.jdbc.JdbcTLogCmtDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogNationDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTLogPostSpdDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTagDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTourLogDao;
 import com.yeogi.jspweb.entity.Day;
 import com.yeogi.jspweb.entity.Member;
@@ -39,6 +41,7 @@ import com.yeogi.jspweb.entity.TLogCmtView;
 import com.yeogi.jspweb.entity.TLogNation;
 import com.yeogi.jspweb.entity.TLogPostSpdView;
 import com.yeogi.jspweb.entity.TLogPostView;
+import com.yeogi.jspweb.entity.TagView;
 import com.yeogi.jspweb.entity.TourLog;
 import com.yeogi.jspweb.entity.TourLogView;
 
@@ -78,23 +81,34 @@ public class ReadMainController extends HttpServlet {
 		
 		TourLogDao tourLogDao = new JdbcTourLogDao();
 		TourLogView tourLog = tourLogDao.get(id);
+		int tourLogCount = tourLogDao.tourLogCount(tourLog.getMid());
 		
 		TLogNationDao tLogNationDao = new JdbcTLogNationDao();
 		TLogNation tLogNation = tLogNationDao.get(id);
 		
 		TLogPostDao tLogPostDao = new JdbcTLogPostDao();
 		List<TLogPostView> tlpList =  tLogPostDao.getList(id);
+		
 		TLogPostView tLogPostView = tLogPostDao.get(postid);
 		int tLogCount = tLogPostDao.getLocCount(id);
 		int maxDay = tLogPostDao.getMaxDay(id);
 		
 		TLogPostSpdDao tLogPostSpdDao = new JdbcTLogPostSpdDao();
-		TLogPostSpdView tLosPostSpdView = tLogPostSpdDao.get(postid);
+		TLogPostSpdView tLosPostSpdView = tLogPostSpdDao.get(id);
+		List<TLogPostSpdView> tlpsvList = tLogPostSpdDao.getList(id);
+		//List<TLogPostSpdView> spdView = tLogPostSpdDao.getList(id);
+		List<TLogPostSpdView> spdSum = tLogPostSpdDao.getSum(id);
 		
-		int day = 0;
+		TagDao tagDao = new JdbcTagDao();
+		List<TagView> tagList = tagDao.getList(id);
 		
+		/*int day;
 		
-		List<TLogPostView> locListDay =  tLogPostDao.getLocListByDay(id, day);			
+		for(day=1; day < maxDay; day++) {			
+		   day++;
+		}
+		List<TLogPostView> locListDay =  tLogPostDao.getLocListByDay(id, day);	*/		
+		
 		
 		DayDao dayDao = new JdbcDayDao();
 		List<Day> dayList = dayDao.getList();
@@ -115,10 +129,15 @@ public class ReadMainController extends HttpServlet {
 		TLogCmtDao tLogCmtDao = new JdbcTLogCmtDao();
 		List<TLogCmtView> list = tLogCmtDao.getList(id);
 		
+		request.setAttribute("tourLogCount", tourLogCount);
+		request.setAttribute("tagList", tagList);
+		//request.setAttribute("spdView", spdView);
+		request.setAttribute("spdSum", spdSum);
 		request.setAttribute("tlpList", tlpList);
+		request.setAttribute("tlpsvList", tlpsvList);
 		request.setAttribute("tLogPostView", tLogPostView);
 		request.setAttribute("tLosPostSpdView", tLosPostSpdView);
-		request.setAttribute("locListDay", locListDay);
+		//request.setAttribute("locListDay", locListDay);
 		request.setAttribute("maxDay", maxDay);
 		request.setAttribute("dayList", dayList);
 		request.setAttribute("list", list);
