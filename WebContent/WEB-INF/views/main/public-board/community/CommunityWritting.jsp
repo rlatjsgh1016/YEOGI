@@ -1,16 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link type="text/css" href="../../../CSS/communitywritting.css" rel="stylesheet">
-<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-//<![CDATA[
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  //]]>
-        <script type="text/javascript">
-		
-        
 
-  </script>
-<!-- header 시작------------------------------------------------------------------------------------------------------------- --> 
+
+<!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
 	<header>
 		<div class="root-container">
 			<h1 id="logo"></h1>
@@ -43,28 +36,28 @@
 				</li>
 			</ul>
 		</div>
-		</header>
-<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 
-	<visual>
-		<form class="form-control">
+	</header>
+<!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
+<visual>		
+	<form class="form-control">
 			<fieldset>
 				<legend class="c1">검색창</legend>
 				<label class="reg" for="class">분류</label>
 					<select id="class">
 						<option>월간BEST</option>
-						<option>공지게시판</option>
-						<option>질문게시판</option>
-						<option>정보게시판</option>
-						<option>동행게시판</option>
-						<option>잡담게시판</option>
+						<option>공지</option>
+						<option>질문</option>
+						<option>정보</option>
+						<option>동행</option>
+						<option>잡담</option>
 					</select>
-					
 				<input type="text"/>
 				<input class="btn btn-image btn-search" type="submit" value="검색" />
+				
 			</fieldset>
 		</form>
-	</visual>
-<!-- main 시작------------------------------------------------------------------------------------------------------------- --> 
+</visual>	
+<!-- !-- main 시작------------------------------------------------------------------------------------------------------------- -->  -->
 	<main>
 		<div class ="allmain clear">
 			<div class ="leftmain">
@@ -74,7 +67,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
+									<a href="#" class="btn btn-text default-btn">월간BEST</a>
 								</a>
 							</td>
 						</tr>

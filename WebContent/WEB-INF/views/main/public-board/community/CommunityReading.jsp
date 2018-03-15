@@ -69,7 +69,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-									<a href="reg" class="btn btn-text default-btn">월간BEST</a>	
+									<a href="#" class="btn btn-text default-btn">월간BEST</a>
 								</a>
 							</td>
 						</tr>
@@ -114,8 +114,8 @@
 			<div class ="rightmain">
 				<p class="p1">공지게시판</p>
 				<img alt="" src="">
-			<a href="http://localhost:8080/Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">수정</a>
-			<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">목록</a>
+			<a href="" class="btn btn-text default-btn">수정</a>
+			<a href="Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">목록</a>
 			<p class="p2">조회수:10</p2>
 				<div>
 					<p>

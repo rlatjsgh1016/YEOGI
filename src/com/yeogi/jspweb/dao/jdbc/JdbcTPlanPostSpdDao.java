@@ -27,8 +27,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 						"    amount," + 
 						"    id" + 
 						") VALUES(?,?,?,?,?,?,?)";*/
-		
-		String sql = "insert into t_plan_post_spd(content, type, unit, t_plan_id, t_plan_loc_id, amount, id) VALUES(?,?,?,?,?,?,(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM T_PLAN_POST_SPD WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')))";
+		String sql = "insert into t_plan_post_spd(content, type, unit, t_plan_id, t_plan_loc_id, amount, id) VALUES(?,?,?,?,?,?,?)";
 		int result=0;
 		
 		try {
@@ -38,12 +37,15 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
 			PreparedStatement st = con.prepareStatement(sql);
 			
+			
+		
 			st.setString(1, tplanpostspd.getContent());
 			st.setString(2, tplanpostspd.getType());
 			st.setString(3, tplanpostspd.getUnit());
 			st.setString(4, tplanpostspd.getTPlanId());
 			st.setString(5, tplanpostspd.getTPlanLocId());
 			st.setString(6, tplanpostspd.getAmount());
+			st.setString(7, tplanpostspd.getId());
 			
 			result = st.executeUpdate();
 			
@@ -68,7 +70,8 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 							"    type=?," + 
 							"    unit=?," + 
 							"    amount=?," + 
-							" WHERE ID=? and t_plan_id=? and t_plan_loc_id=?"; 
+							"    id=?," + 
+							" WHERE ID=?"; 
 		int result = 0;
 
 		try {
@@ -84,8 +87,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 			st.setString(3, tplanpostspd.getUnit());
 			st.setString(4, tplanpostspd.getAmount());
 			st.setString(5, tplanpostspd.getId());
-			st.setString(6, tplanpostspd.getTPlanId());
-			st.setString(7, tplanpostspd.getTPlanLocId());
+			st.setString(6, tplanpostspd.getId());
 
 			result = st.executeUpdate();
 			
@@ -106,7 +108,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 
 	@Override
 	public int delete(String id) {
-		String sql = "delete t_plan_post_spd WHERE id=?"; 
+		String sql = "UPDATE t_plan_post_spd WHERE id=?"; 
 				int result = 0;
 				
 				try {
@@ -138,7 +140,7 @@ public class JdbcTPlanPostSpdDao implements TPlanPostSpdDao {
 
 	@Override
 	public List<TPlanPostSpdView> getList() {
-		String sql ="SELECT * FROM T_PLAN_POST_SPD_VIEW order by tour_date_time ASC"; 
+		String sql ="SELECT * FROM T_PLAN_POST_SPD_VIEW order by ID ASC"; 
 
 		List<TPlanPostSpdView> list = new ArrayList<>();
 		

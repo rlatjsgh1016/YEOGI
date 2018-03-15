@@ -30,7 +30,7 @@ public class Commu_PostwriteController extends HttpServlet {
 		
 		
 		Commu_Post_Img spi = new Commu_Post_Img(id2);
-		commu_post_imgDao.insert(cpi)
+		
 		
 		request.setAttribute("Commu_Post_Img", commu_post_img);
 		

@@ -130,33 +130,17 @@ public class JdbcTourLogDao implements TourLogDao {
 		String sql = "INSERT INTO TOUR_LOG("
 				+ "ID,"
 				+ "TITLE,"
-				+ "MEMO,"
-				+ "SUB_TITLE,"
-				+ "COVER_IMG,"
 				+ "LOCK_YN,"
 				+ "PERIOD,"
 				+ "START_DATE,"
 				+ "COMPANION,"
 				+ "MID,"
-				+ "LAST_MOD_DATE,"
 				+ "T_THEME,"
 				+ "END_DATE"
-				+ ") "
+				+ ")"
 				+ "VALUES ("
 				+ "(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?,"
-				+ "?"
-				+ ")";
+				+ "?,?,?,?,?,?,?,?)";
 		
 		String sql2 = "SELECT MAX(TO_NUMBER(ID)) ID FROM TOUR_LOG WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')";
 		
@@ -170,17 +154,13 @@ public class JdbcTourLogDao implements TourLogDao {
 			PreparedStatement st = con.prepareStatement(sql);
 			
 			st.setString(1, tl.getTitle());
-			st.setString(2, tl.getMemo());
-			st.setString(3, tl.getSubTitle());
-			st.setString(4, tl.getCoverImg());
-			st.setString(5, tl.getLockYN());
-			st.setInt(6, tl.getPeriod());
-			st.setDate(7, tl.getStartDate());
-			st.setInt(8, tl.getCompanion());
-			st.setString(9, tl.getMid());
-			st.setTimestamp(10, tl.getLastModDate());
-			st.setString(11, tl.gettTheme());
-			st.setDate(12, tl.getEndDate());
+			st.setString(2, tl.getLockYN());
+			st.setInt(3, tl.getPeriod());
+			st.setDate(4, tl.getStartDate());
+			st.setInt(5, tl.getCompanion());
+			st.setString(6, tl.getMid());
+			st.setString(7, tl.gettTheme());
+			st.setDate(8, tl.getEndDate());
 			
 			st.executeUpdate();
 			
@@ -221,7 +201,7 @@ public class JdbcTourLogDao implements TourLogDao {
 				"LOCK_YN=?, " + 
 				"PERIOD=?, " + 
 				"START_DATE=?, " + 
-				"COMPANION=?, " + 
+				"COMPANION=?, " +
 				"LAST_MOD_DATE=?, " + 
 				"HIT=?, " + 
 				"T_THEME=?, " + 

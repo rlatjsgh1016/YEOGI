@@ -5,8 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.xml.ws.Response;
 
 import com.yeogi.jspweb.dao.TLogPostDao;
 import com.yeogi.jspweb.entity.TLogPost;
@@ -18,7 +22,7 @@ public class JdbcTLogPostDao implements TLogPostDao {
 	@Override
 	public List<TLogPostView> getList(String id) {
 		
-		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ?";
+		String sql = "SELECT * FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ? ORDER BY DAY";
 
 		List<TLogPostView> list = new ArrayList<>();
 
@@ -238,5 +242,138 @@ public class JdbcTLogPostDao implements TLogPostDao {
 		}
 		return tLogPostView;
 	}
+
+
+	@Override
+	public int getLocCount(String tLogId) {
+		String sql = "SELECT COUNT(NAME) COUNT FROM T_LOG_POST_VIEW WHERE T_LOG_ID = ?";
+
+		int locCount = 0;
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, tLogId);
+			
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				locCount = rs.getInt("count");
+				//System.out.printf("id: %s, name: %s\n",id,name);
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return locCount;
+	}
+	
+	
+	public List<TLogPostView> getLocListByDay(String id,int day) {
+		
+		String sql = "select * from t_log_post_view WHERE T_LOG_ID=? AND DAY =?;";
+
+		
+		List<TLogPostView> locList = new ArrayList<>();
+
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, id);
+			st.setInt(2, day);
+			
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				TLogPostView tlogpost = new TLogPostView(	
+						
+						rs.getString("NAME"),
+						rs.getString("POST_CONTENT"),
+						rs.getString("IMG")						
+						);
+				
+				locList.add(tlogpost);
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return locList;
+	}
+
+	public int getMaxDay(String id){
+		String sql = "select max(day) maxDay from t_log_post WHERE T_LOG_ID=?";
+		
+		int maxDay = 0;
+		
+		try {
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, id);
+			
+			ResultSet rs = st.executeQuery();
+
+			if(rs.next()) {
+				maxDay = rs.getInt("maxDay");
+				//System.out.printf("id: %s, name: %s\n",id,name);
+			}
+
+		
+
+			rs.close();
+			st.close();
+			con.close();
+
+		}
+
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return maxDay;
+	}
+
+
 
 }

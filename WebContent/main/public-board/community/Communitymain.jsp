@@ -118,7 +118,7 @@
 				<p class="p1">월간BEST</p>
 				<p class="p2">
 				
-<a href="/Yeogi/WebContent/main/public-board/community/Communitymain" class="btn btn-text default-btn">글쓰기</a>
+<a href="CommunityWritting.jsp" class="btn btn-text default-btn">글쓰기</a>
 				</p>
 					<div class ="clear">
 						<img alt="" src="">

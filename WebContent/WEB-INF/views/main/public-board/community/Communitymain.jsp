@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <link type="text/css" href="../../../CSS/communitymain.css" rel="stylesheet">
 
-
 <!-- !-- header 시작------------------------------------------------------------------------------------------------------------- -->  -->
 	<header>
 		<div class="root-container">
@@ -37,6 +36,7 @@
 			</ul>
 		</div>
 	</header>
+
 <!-- visual 시작------------------------------------------------------------------------------------------------------------- --> 	
 <visual>		
 	<form class="form-control">
@@ -109,7 +109,7 @@
 			<div class ="rightmain">
 				<p class="p1">월간BEST</p>
 				<p class="p2">
-				<a href="Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">글쓰기</a>
+				<a href="http://localhost:8080/Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">글쓰기</a>
 				</p>
 					<div class ="clear">
 						<img alt="" src="">
@@ -128,7 +128,7 @@
 								</p>
 								<p>
 									<a>
-										<a href="reg" class="btn btn-text default-btn">2월 13일 00~22시까지..</a>
+									<a href="http://localhost:8080/Yeogi/main/public-board/community/communityreading1" class="btn btn-text default-btn">2월 13일부터</a>
 									</a>	
 								</p>
 						</div>	

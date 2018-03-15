@@ -7,7 +7,7 @@
 <!-- 중첩경로의 경우 더 상세한 경로를 위쪽에 작성해야 무한루프에 빠지지 않는다. -->
  
   <definition name="main.member.story.read.*" template="/WEB-INF/views/main/member/story/read/inc/sub-layout.jsp">
-    <put-attribute name="header" value="/WEB-INF/views/main/member/story/read/inc/header.jsp" />
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/member/story/read/{1}.jsp" />
     <put-attribute name="footer" value="/WEB-INF/views/main/member/story/read/inc/footer.jsp" />
   </definition>
@@ -49,6 +49,8 @@
     <put-attribute name="main" value="/WEB-INF/views/main/{1}.jsp" />
     <put-attribute name="footer" value="/WEB-INF/views/main/inc/footer.jsp" />
   </definition>
-
+  
+  
+  
   
 </tiles-definitions>

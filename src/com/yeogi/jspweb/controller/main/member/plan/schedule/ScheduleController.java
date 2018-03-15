@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.TilesContainer;
-import org.apache.tiles.access.TilesAccess;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.servlet.ServletRequest;
-import org.apache.tiles.request.servlet.ServletUtil;
-
 import com.yeogi.jspweb.dao.TPlanPostDao;
 import com.yeogi.jspweb.dao.TPlanPostSpdDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostDao;
@@ -35,18 +29,9 @@ public class ScheduleController extends HttpServlet {
 		List<TPlanPostSpdView> tppsv = tPlanPostSpdDao.getList();
 		
 		request.setAttribute("tppsv", tppsv);
-		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/schedule/schedule.jsp");
 		
-		dispatcher.forward(request, response);*/
-		
-		//타일 사용
-		ApplicationContext applicationContext = ServletUtil
-				.getApplicationContext(request.getSession().getServletContext());
-		TilesContainer container = TilesAccess.getContainer(applicationContext);
-		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
-		container.render("main.member.plan.schedule.schedule", servletRequest);
-		
-		
+		dispatcher.forward(request, response);
 		
 	}
 	
@@ -58,7 +43,8 @@ public class ScheduleController extends HttpServlet {
 	    
 	    TPlanPostSpd tplanpostspd = new TPlanPostSpd();
 	    
-	    tplanpostspd.setTPlanId(request.getParameter("t"));
+	    tplanpostspd.setId("2018031200001");
+	    tplanpostspd.setTPlanId("1");
 	    tplanpostspd.setTPlanLocId("2018031200001");
 	    tplanpostspd.setAmount(request.getParameter("input-cost"));
 	    tplanpostspd.setContent(request.getParameter("memo-cost-spd"));
@@ -69,16 +55,16 @@ public class ScheduleController extends HttpServlet {
 	    tPlanPostSpdDao.insert(tplanpostspd);
 	    
 	    
-	    TPlanPost tplanpost = new TPlanPost();
+	    /*TPlanPost tplanpost = new TPlanPost();
 	    
 	    tplanpost.setMemoTitle(request.getParameter("memo-title"));
 	    tplanpost.setMemoContent(request.getParameter("memo-content"));
-	    tplanpost.setTourDateTime("07:00");
-	    tplanpost.setTPlanId("2");
+	    tplanpost.setTourDateTime("06:00");
+	    tplanpost.setTPlanId("1");
 	    tplanpost.setTPlanLocId("2018031200001");
 	    
 	    TPlanPostDao tPlanPostDao = new JdbcTPlanPostDao();
-	    tPlanPostDao.insert(tplanpost);
+	    tPlanPostDao.insert(tplanpost);*/
 	    
 	    
 	    response.sendRedirect("schedule");

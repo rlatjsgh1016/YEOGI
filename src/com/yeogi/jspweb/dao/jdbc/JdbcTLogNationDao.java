@@ -96,7 +96,7 @@ public class JdbcTLogNationDao implements TLogNationDao {
 	@Override
 	public int update(TLogNation tln) {
 		
-		String sql = "UPDATE T_LOG_NATION SET NATION = ?, WHERE T_LOG_ID = ?";
+		String sql = "UPDATE T_LOG_NATION SET NATION = ? WHERE T_LOG_ID = ?";
 
 		int result = 0;
 

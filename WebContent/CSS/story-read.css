@@ -38,11 +38,36 @@ a{
 	float: left;
 	
 }
+.hor-menu.first-pad-none > ul > li:first-child
+{
+	padding-left: 0px;
+	background : none;
+}
+.hidden{
+	display : none;
+}
 
 /* ---------------------------------------------------------------- */
-
+.btn{
+	display : inline-block; /*display가 inline이 아니면 너비를 설정할 수 없음*/
+	min-width : 71px;
+	color : #ffffff;
+	text-align: center;
+	padding : 3px 8px;
+	border-radius: 5px;	
+	overflow : hidden;
+	/* overriding for input button*/
+	border: 0px; /* 원래 버튼 초기화 */
+}
+.btn-mypage{
+	background : #000000;
+	width: 70px;
+	margin-bottom: 5px !important;
+	height: 17px;
+	padding-top: 2px;
+}
 /* -----header------------------------------------------------------- */
-#header{
+/* #header{
 	height: 70px;
 	padding-top: 10px;
 }
@@ -81,8 +106,52 @@ a{
 #header>.root-container .member-menu li{
 	padding-left: 24px;
 	
+} */
+
+#header{
+	height : 70px;
+	padding-top : 10px;
 }
 
+#header .root-container {
+	height :70px;
+}
+
+#header #logo {
+	width : 200px;
+	float : left;
+}
+
+.main-menu{
+	font-family : "맑은 고딕","고딕","sans-serif";
+	font-size : 20px;
+	font-weight : bold;
+	color : #333333;
+	padding-bottom: 20px;
+}
+
+.main-menu > ul > li{
+	padding-left : 24px;
+	background: url("../resources/header_bar.png") no-repeat 13px center;
+	background-size: 1px;	
+	
+}
+
+/*----- member-menu ----------------------------------*/
+
+
+.member-menu{
+	font-family : "맑은 고딕","고딕","sans-serif";
+	font-size : 13px;
+	font-weight : bold;
+	color : #6E6E6E;
+	margin-left: 40%;
+}
+
+.member-menu > ul > li{
+	padding-left : 9px;
+	/*background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	*/
+}
 
 /* ---------------------------------------------------------------- */
 
@@ -230,7 +299,7 @@ a{
 	align-items: center;
 	cursor: pointer;
 }
-.user-info span:hover{
+.user-info a:hover{
 	text-decoration: underline;
 }
 #aside>.user-box>#uer-img-box{
@@ -254,7 +323,7 @@ a{
 	display: block;
 	text-align: center;
 }
-#aside .user-name>span{	
+#aside .user-name>a{	
 	font-family:"맑은고딕","고딕",sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -268,7 +337,7 @@ a{
 	text-align: center;
 }
 
-#aside .user-info>span{
+#aside .user-info>a{
 	font-family:"맑은고딕","고딕",sans-serif;
     font-size: 13px;
     padding-left: 1px;
@@ -715,7 +784,7 @@ a{
 	display: flex;
 	align-items: center;
 }
-.st-comment-box>.comment-cnt-box>span{
+.st-comment-box>.comment-cnt-box>a{
 	/* text-align: center; */
 	font-family: 맑은고딕,HY고딕,sans-serif;
 	color: #848484;
@@ -724,6 +793,7 @@ a{
 	width:30px;
 	/* height: 50px; */
 	padding-left: 3px;
+	cursor: pointer;
 }
 .st-comment-box>.comment-cnt-box .comment{
 	padding-left: 20px;
@@ -736,7 +806,7 @@ a{
 	flex-direction: column;
 }
 .comment-list-box,
-.st-comment-write-box>.comment-write-box{
+.st-comment-write-box .comment-write-box{
 	width: 930px;
 	min-height: 55px;
 	border-top: 1px solid #AFAFAF;
@@ -745,7 +815,7 @@ a{
 	/* position: relative; */
 	/* overflow: hidden; */
 }
-.st-comment-write-box>.comment-write-box>.new-comment{
+.st-comment-write-box .comment-write-box>.new-comment{
 	display: block;
 	width: 750px;
     resize: vertical;
@@ -755,7 +825,7 @@ a{
     border-radius: 3px;
     overflow: auto;
     margin: 10px 5px;
-    padding-top : 12px;
+    padding-top : 10px;
     font-family: 맑은고딕,HY고딕,sans-serif;
 	font-size: 13px;
 	
@@ -769,13 +839,13 @@ a{
 	margin-top: 10px;
 	border: 1px solid #D8D8D8;
 }
-.st-comment-write-box>.comment-write-box>.comment-reg{
+.st-comment-write-box .comment-write-box>.comment-reg{
 	width: 58px;
 	height:38px;
 	font-family: 맑은고딕,HY고딕,sans-serif;
 	font-size: 15px;
 	font-weight: bold;
-	/* background:#E64C3C; */
+	background:#ffffff;
 	color: #E64C3C;
 	border-radius: 5px;
 	border: 1px solid #E64C3C;
@@ -784,7 +854,7 @@ a{
 	/* padding-top: 10px; */
 	vertical-align: middle;
 }
-.st-comment-write-box>.comment-write-box>.unlock{
+.st-comment-write-box .comment-write-box>.unlock{
 	width: 40px;
 	height:40px;
 	background: url("../images/unlock24.png") no-repeat center;
@@ -827,7 +897,8 @@ a{
 .comment-writer-date{
 	font-size: 13px;
 	margin-left: 5px;
-	color: #333333;
+	color: #AFAFAF;
+	font-weight: bold;
 }
 .reply-button{
 	width: 50px;
@@ -839,8 +910,18 @@ a{
 .reply-button:hover{
 	background: url("../images/cmt-arrow-hover.png") no-repeat center;
 }
+.comment-button{
+	width:30px;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #212121;
+	float: right;
+}
+.comment-button:hover{
+	text-decoration: underline;	
+}
 .comment-content{
-	width: 800px;
+	width: 745px;
 	min-height: 30px;
 	font-size: 15px;
 	color: #333333;
