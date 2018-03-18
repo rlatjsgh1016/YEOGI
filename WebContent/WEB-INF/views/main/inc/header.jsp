@@ -28,7 +28,7 @@
 						<li><a href= "${ctx}/main/login">로그인</a></li>
 					</c:if> 
 					<c:if test="${not empty sessionScope.id }">
-						<li><a href= "${ctx}/main/login">로그아웃</a></li>
+						<li><a href= "${ctx}/main/logout">로그아웃</a></li>
 					</c:if> 
 						<li><a href= "${ctx}/main/join">회원가입</a></li>
 						<li><a href ="${ctx}/main/member/mypage/mypage" class ="btn btn-mypage">마이페이지</a></li>

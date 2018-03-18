@@ -11,7 +11,7 @@
 			<ul>
 				<li>
 					<a>
-						<a href="http://localhost/Yeogi/main/member/plan/schedule/schedule" class="btn btn-text default-btn">내계획</a>
+						<a href="reg" class="btn btn-text default-btn">내계획</a>
 					</a>
 				</li>
 				<li>
@@ -26,7 +26,7 @@
 				</li>
 				<li>
 					<a>
-						<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">커뮤니티</a>
+						<a href="reg" class="btn btn-text default-btn">커뮤니티</a>
 					</a>
 				</li>
 				<li>
@@ -67,7 +67,7 @@
 						<tr>
 							<td class ="sidemenu">
 								<a>
-								<a href="http://211.238.142.77:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+								<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
 								</a>
 							</td>
 						</tr>

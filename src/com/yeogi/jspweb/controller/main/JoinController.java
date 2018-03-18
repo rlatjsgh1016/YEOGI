@@ -32,12 +32,20 @@ public class JoinController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		if(request.getSession().getAttribute("id")!=null)
+		{
+			response.sendRedirect("/Yeogi/main/already-join");
+		}
 		
-		ApplicationContext applicationContext = ServletUtil
-				.getApplicationContext(request.getSession().getServletContext());
-		TilesContainer container = TilesAccess.getContainer(applicationContext);
-		ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
-		container.render("main.join", servletRequest);
+		else {
+		
+			ApplicationContext applicationContext = ServletUtil
+					.getApplicationContext(request.getSession().getServletContext());
+			TilesContainer container = TilesAccess.getContainer(applicationContext);
+			ServletRequest servletRequest = new ServletRequest(applicationContext, request, response);
+			container.render("main.join", servletRequest);
+		}
 	}
 	
 	@Override
@@ -83,7 +91,7 @@ public class JoinController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("join-celeb");
 			break;
 			
 		case "ID 중복확인" : 

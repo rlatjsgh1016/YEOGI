@@ -40,7 +40,6 @@ header{
 header>.root-container {
 	width:1320px;
 	margin: 0 auto;
-	background: url("../images/2.jpg") no-repeat;
 }
 
 header>div>ul>li{
@@ -76,7 +75,7 @@ header>div>img{
 
 /*---main style--------------------------------------------------------------- */	 
 .leftmain{
-	background:#ffff80;;
+	background:#E64C3C;;
 	width: 300px;
 	float:left;
 	font-family: HY견고딕;
@@ -92,7 +91,7 @@ header>div>img{
 }
 
 .rightmain {
-	background:#80ff80;
+	background:#AFAFAF;
 	float:right;
 	width: 1020px;
 	font-family: HY견고딕;
@@ -120,7 +119,7 @@ header>div>img{
 
 /*---footer style--------------------------------------------------------------- */
 footer{
-	background-image: url("../images/1.jpg");
+	background:#D8D8D8;
 	font-size:15px;
 	font-color:#333333;	
 	font-weight: bold; 

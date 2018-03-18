@@ -10,7 +10,7 @@
 			<ul>
 				<li>
 					<a>
-						<a href="http://localhost/Yeogi/main/member/plan/schedule/schedule" class="btn btn-text default-btn">내계획</a>
+						<a href="reg" class="btn btn-text default-btn">내계획</a>
 					</a>
 				</li>
 				<li>
@@ -25,7 +25,7 @@
 				</li>
 				<li>
 					<a>
-						<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">커뮤니티</a>
+						<a href="reg" class="btn btn-text default-btn">커뮤니티</a>
 					</a>
 				</li>
 				<li>
@@ -68,7 +68,7 @@
 						<tr>
 							<td class="sidemenu">
 							
-						<a href="http://211.238.142.77:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
+						<a href="http://localhost:8080/Yeogi/main/public-board/community/communitymain" class="btn btn-text default-btn">월간BEST</a>
 								
 							</td>
 						</tr>
@@ -109,7 +109,7 @@
 			<div class ="rightmain">
 				<p class="p1">월간BEST</p>
 				<p class="p2">
-				<a href="http://211.238.142.77:8080/Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">글쓰기</a>
+				<a href="http://localhost:8080/Yeogi/main/public-board/community/communitywritting" class="btn btn-text default-btn">글쓰기</a>
 				</p>
 					<div class ="clear">
 						<img alt="" src="">
@@ -128,7 +128,7 @@
 								</p>
 								<p>
 									<a>
-									<a href="http://211.238.142.77:8080/Yeogi/main/public-board/community/communityreading1" class="btn btn-text default-btn">2월 13일부터</a>
+									<a href="http://localhost:8080/Yeogi/main/public-board/community/communityreading1" class="btn btn-text default-btn">2월 13일부터</a>
 									</a>	
 								</p>
 						</div>	

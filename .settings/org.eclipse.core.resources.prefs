@@ -1,8 +1,2 @@
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/views/main/public-board/community/CommunityBoard.jsp=UTF-8
-encoding//WebContent/main/member/mypage/my-info-edit/my-info-edit.jsp=UTF-8
-encoding//WebContent/main/public-board/community/CommunityBoard.jsp=UTF-8
-encoding//WebContent/main/public-board/community/CommunityReading.jsp=UTF-8
-encoding//src/com/yeogi/jspweb/dao/jdbc/JdbcTPlanPostDao.java=UTF-8
-encoding//src/com/yeogi/jspweb/dao/student/community/answeris/list2.jsp=UTF-8
 encoding/<project>=UTF-8
