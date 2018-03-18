@@ -55,14 +55,12 @@ a {
     color: #333333;
 }
 
-change colours to suit your needs
 ins {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
 
-change colours to suit your needs
 mark {
     background-color:#ff9;
     color:#000; 
@@ -84,7 +82,6 @@ table {
     border-spacing:0;
 }
 
-change border colour to suit your needs
 hr {
     display:block;
     height:1px;
@@ -107,13 +104,22 @@ button{
 
 /*----------------------- abstract style ------------------------*/
 
-.root-container{
+/* .root-container{
 	width: 1320px;
 	height: inherit;
 	margin: 0 auto;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+} */
+
+.root-container{
+	height: 100%;
+	width: 1320px;
+	min-height: inherit;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
 .hidden{
@@ -257,6 +263,23 @@ button{
 	border: 0px; /* 원래 버튼 초기화 */
 }
 
+.btn-mypage{
+	display : inline-block; /*display가 inline이 아니면 너비를 설정할 수 없음*/
+	min-width : 71px;
+	color : #ffffff;
+	text-align: center;
+	padding : 3px 8px;
+	border-radius: 5px;	
+	overflow : hidden;
+	/* overriding for input button*/
+	border: 0px; /* 원래 버튼 초기화 */
+	background : #000000;
+	width: 70px;
+	margin-bottom: 5px !important;
+	height: 17px;
+	padding-top: 2px;
+}
+
 .small-loca{
 	background: url("../resources/location.png") no-repeat left ;
 	background-size: 20px;
@@ -292,8 +315,19 @@ p.pointer{
 	background: url(../resources/main_bar.png) no-repeat 10px center;
 }
 /*----------------------- header ------------------------*/
-header{
+header,
+#header{
 	height: 70px;
+	padding-top : 10px;
+}
+
+#header .root-container {
+	height :70px;
+}
+
+#header #logo {
+	width : 200px;
+	float : left;
 }
 
 header nav{
@@ -332,6 +366,57 @@ header nav{
 
 #logo{
 	width: 200px;
+}
+
+.main-menu{
+	font-family : "맑은 고딕","고딕","sans-serif";
+	font-size : 20px;
+	font-weight : bold;
+	color : #333333;
+	padding-bottom: 20px;
+}
+
+.main-menu > ul > li{
+	padding-left : 24px;
+	background: url("../resources/header_bar.png") no-repeat 13px center;
+	background-size: 1px;	
+	
+}
+
+.member-menu{
+	font-family : "맑은 고딕","고딕","sans-serif";
+	font-size : 13px;
+	font-weight : bold;
+	color : #6E6E6E;
+	margin-left: 40%;
+}
+
+.member-menu > ul > li{
+	padding-left : 9px;
+	/*background: url("../images/bg-member-menu-sp.png") no-repeat 4px center;	*/
+}
+
+.hor-menu{
+	display : inline-block;
+	padding-top : 15px; /* 메뉴 글씨 패딩*/
+}
+
+.hor-menu > h1{
+	display : none;
+}
+
+.hor-menu > ul{
+	
+}
+
+.hor-menu > ul > li{
+	float : left;
+}
+
+.hor-menu.first-pad-none > ul > li:first-child
+{
+	padding-left: 0px;
+	background : none;
 }
 
 /*----------------------- visual ------------------------*/

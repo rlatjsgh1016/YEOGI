@@ -21,55 +21,15 @@ public class JdbcMyLocDao implements MyLocDao{
 	}
 
 	@Override
-	public int insert(MyLoc mLoc) throws ClassNotFoundException, SQLException {
+	public int insert(MyLoc mLoc) {
 		// TODO Auto-generated method stub
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-        
-	 	String sql = "INSERT INTO FRIEND(ID,ADDRESS,NAME) VALUES(?,?,?,?,?)";
-		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-		PreparedStatement st = con.prepareStatement(sql);
-		
-		st.setString(1, mLoc.getId());
-		st.setString(2, mLoc.getAddr());
-	    st.setString(3, mLoc.getName());
-	       
-		
-		int result = st.executeUpdate(sql);
-		
-		if(!con.isClosed())
-			System.out.println("Connected");
-		
-		return result;
+		return 0;
 	}
 
 	@Override
-	public int update(MyLoc mLoc) throws ClassNotFoundException, SQLException {
+	public int update(MyLoc mLoc) {
 		// TODO Auto-generated method stub
-		String sql = "UPDATE member" + 
-				"    SET" + 
-				"    ADDRESS =?," +  
-				"    NAME =?," +  
-				"WHERE id =?;";
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-        
-	 	
-		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
-		Connection con = DriverManager.getConnection(url, "c##yeogi", "cclassyeogi");
-		PreparedStatement st = con.prepareStatement(sql);
-		
-
-        st.setString(1, mLoc.getAddr());
-        st.setString(2, mLoc.getName());
-        st.setString(3, mLoc.getId());
-        	
-		int result = st.executeUpdate(sql);
-		
-		if(!con.isClosed())
-			System.out.println("Connected");
-		        
-
-		return result;
+		return 0;
 	}
 
 	@Override

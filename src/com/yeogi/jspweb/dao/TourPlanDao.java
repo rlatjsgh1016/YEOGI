@@ -13,7 +13,8 @@ public interface TourPlanDao {
 	
 	/*Tourplan 관련된 내용을 쓸 수 있도록 준비, get, getList*/
 	TourPlan get(String id);
-	List<TourPlan> getList(String id);
+	List<TourPlan> getList();
+	String getLatestId();
 	
 	
 	

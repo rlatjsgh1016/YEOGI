@@ -11,6 +11,7 @@ public interface TPlanLocDao {
 	
 	public List<TPlanLoc> getList();
 	public TPlanLoc get(String id);
+	String getLatestId();
 	
 	
 }

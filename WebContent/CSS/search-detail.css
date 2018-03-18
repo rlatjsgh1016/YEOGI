@@ -32,6 +32,41 @@ p{
 	padding: 0;
 }
 
+/*-----------google-----------*/
+      /* #map {
+        height: 100%;
+      } */
+      /* Optional: Makes the sample page fill the window. */
+      .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 29px;
+        margin-left: 17px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      .controls:focus {
+        border-color: #4d90fe;
+      }
+      .title {
+        font-weight: bold;
+      }
+      #infowindow-content {
+        display: none;
+      }
+      #map #infowindow-content {
+        display: inline;
+      }
 /*-----------header-----------*/
 #header{
 	background: white;
@@ -187,12 +222,22 @@ p{
 }
 	/*----여행이름/기간---------------------------------*/
 #travel-dayname{
+	display: flex;
+	flex-direction : column;
+	justify-content : center;
+	align-items: center;
 	background: #c0c0c0;
 	width: 240px;
 	height: 90px;
+	font-family : Roboto;
+	font-size: 15px;
+	text-align: center;
 }
 	#travelName{
+		display: flex;
+		align-items : center;
 		height: 50px;
+		box-sizing:border-box;
 	}
 	
 	#travelDay{
@@ -217,42 +262,8 @@ p{
 		
 	}
 	
-		#search-form input{
-			height: 30px;
-			margin-top: 10px;
-		}
 		
-		#search-form .button{
-			width: 30px;
-			height: 30px;
-		}
 	
-	#sort{
-		width : 220px;
-		height : 65px;
-		box-sizing: border-box;
-		text-align: center;
-		margin: 0px 5px;
-	}
-	
-		#sort > ul{
-			overflow : auto;
-			display : inline-block;
-			width:220px;
-			margin-top: 10px;
-			display: flex;
-			justify-content: center;
-		}
-		
-		#sort > ul > li{
-			float: left;
-			width : 40px;
-			height : 40px;
-			margin-left: 5px;
-			border: 1px solid #000000;
-			box-sizing: content-box;
-			
-		}
 		
 	#searched-content{
 		background: #f1f1f1;
@@ -320,20 +331,26 @@ p{
 #map{
 	height: 650px;
 	/* overflow: auto; */
-	background:url("../images/google-map.png") no-repeat center;
+	/* background:url("../images/google-map.png") no-repeat center;
+	
+	display: flex; */
 	background-size:cover;
-	display: flex;
 }
 	/*--detail 추가부분--*/
 	#plan-detail{
 		width: 230px;
 		background: #EFEFEF;
 		overflow: hidden;
+		font-family : Roboto;
+		font-size: 15px;
 	}
 	
 		.detail-top{
 			display: flex;
-			height: 50px;
+			height: 80px;
+			justify-content: space-around;
+			align-items: center;
+			
 		}
 		
 			.detail-top > .back-btn{
@@ -346,10 +363,17 @@ p{
 				
 			}
 			
-			.detail-top > .wishbox-put{
-				margin: 5px 5px 5px 120px;
-				width: 80px;
-				height: 40px;
+			.detail-top > .put-wishbox-btn{
+				margin: 2px 2px 2px 6px;
+				width: 70px;
+				height: 30px;
+				/* border: 1px solid black; */
+			}
+			
+			.detail-top > .put-table-btn{
+				margin: 2px 2px 2px 2px;
+				width: 70px;
+				height: 30px;
 				/* border: 1px solid black; */
 			}
 			
@@ -371,15 +395,24 @@ p{
 			}
 			
 			.detail-name > .spot-name{
-				width:130px;
+				min-width:130px;
 				height: 40px;
 				margin-left: 5px;
 				border: 1px solid black;
+				text-align: center;
+				display: flex;
+ 			    align-items: center;
+ 			    justify-content: center;
 			}
 			
 			.detail-name > .detail-famous{
-				margin-left: 10px;
+				margin-left: 20px;
 				border: 1px solid black;
+				width: 60px;
+				text-align: center;
+				display: flex;
+ 			    align-items: center;
+ 			    justify-content: center;
 			}
 			
 			.detail-name > .timeline-put{
@@ -390,13 +423,14 @@ p{
 			
 			.detail-info{
 				margin: 5px;
+				padding: 8px;
 				overflow: scroll;
 				height: 240px;
 				border: 1px solid black;
 				border-radius: 5px;
 			}
 	
-	#map-friendadd{
+	/* #map-friendadd{
 		float: right;
 		background: url("../images/add-friends.png") no-repeat center;
 		background-size:cover;
@@ -444,9 +478,9 @@ p{
 		   display: block;
 		   text-align: center;
 		   background: #ffdd00;
-			/* width:inherit;
+			width:inherit;
 			height:50px;
-			line-height: 100px; */
+			line-height: 100px;
 		}
 
 	.down{
@@ -455,7 +489,7 @@ p{
 		background: url("../images/direction-down.png") no-repeat center;
 		background-size:50%;
 		opacity:0.5;
-	}
+	} */
 /*----table---------------------------------*/
 #table{
 	background: #c0c0c0;
@@ -572,6 +606,7 @@ p{
 			width: 800px;
 			float: left;	
 			overflow-y: scroll;
+			background: white;
 		}
 		
 			.table{
@@ -597,12 +632,11 @@ p{
 
 /*------table info---------*/
 #table-info{
-	border: 1px solid black;
-	float: left;
-	width: 330px;
-	min-height: 230px;
-	display: inline-block;
-	overflow: hidden;
+	width: 348px;
+    height: 230px;
+    float: left;
+    overflow-y: scroll;
+    background: rgb(255, 255, 255)
 }
 	#info-weather{
 		/* border: 1px solid black; */
@@ -623,3 +657,111 @@ p{
 	height : 0px;
 	overflow : hidden;
 } */
+#memo-img{
+	background: url("../images/memo-pad.png") no-repeat center;
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+
+.box1 {
+   border: 5px solid #ff7b7b;
+   box-sizing: border-box;
+   background: white;
+   width: 335px;
+   height: 50px;
+   font-weight: bold;
+   text-align: center;
+   line-height: 40px;
+   position: fixed;
+}
+
+.box2 {
+   margin-top:50px;
+   background: url("../images/weather.png") no-repeat center;
+   background-size: 70%;
+   width: 85px;
+   height: 90px;
+   text-align: center;
+   line-height: 160px;
+   background-position: 15px 10px;
+   float: left;
+   border-bottom: 5px solid #ff7b7b;
+}
+
+.box3 {
+   margin-top:50px;
+   width: 230px;
+   height: 90px;
+   float: right;
+   text-align: center;
+   line-height: 40px;
+   border-bottom: 5px solid #ff7b7b;
+}
+
+.box4 {
+   margin-top: 15px;
+   float: right;
+   background: url("../images/clothes.png") no-repeat center;
+   background-size: 70%;
+   width: 90px;
+   height: 90px;
+   text-align: center;
+   line-height: 160px;
+   background-position: 15px 10px;
+   clear: both;
+   border-bottom: 5px solid #ff7b7b;
+}
+
+.box5 {
+   width: auto;
+   height: auto;
+   line-height: 30px;
+   border-bottom: 5px solid #ff7b7b;
+   clear: both;
+}
+
+.box6 {
+   margin-top: 15px;
+   float: left;
+   background: url("../images/alert.png") no-repeat center;
+   background-size: 70%;
+   width: 90px;
+   height: 90px;
+   text-align: center;
+   line-height: 160px;
+   background-position: 15px 10px;
+   clear: both;
+   border-bottom: 5px solid #ff7b7b;;
+}
+
+.box7 {
+   width: auto;
+   height: auto;
+   line-height: 30px;
+   border-bottom: 5px solid #ff7b7b;
+   clear: both;
+}
+
+/* ---------------------------스크롤바-------------------------------------------- */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment
+	{
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: url() rgba(0, 0, 0, .05);
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, .05);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, .1);
+}

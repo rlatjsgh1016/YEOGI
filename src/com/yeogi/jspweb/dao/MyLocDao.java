@@ -1,6 +1,5 @@
 package com.yeogi.jspweb.dao;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import com.yeogi.jspweb.entity.MyLoc;

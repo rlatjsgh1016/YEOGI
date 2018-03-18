@@ -14,7 +14,13 @@ window.addEventListener("load", function () {
     var modal = document.getElementsByClassName("modal");
     var close = document.getElementsByClassName("close");
     var save = document.querySelector(".save");
+    
+    var time = document.querySelector("#memoscreen>ul>li")
     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ+ - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    var arrInput = new Array(0);
+    var arrInputValue = new Array(0);
+  
+  
     var verySad = document.querySelector(".verysad");
     var origin = verySad.querySelector(".select-place");
     
@@ -27,7 +33,7 @@ window.addEventListener("load", function () {
     var count = 0;
     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ친구 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     var size = document.getElementsByName("checked-friend").length;
-	var addFriend = document.querySelector(".add-friend");
+	var addtionFriend = document.querySelector(".addition-friend");
 	
 	
 	var checkedFriend = document.getElementsByName("checked-friend");
@@ -39,13 +45,6 @@ window.addEventListener("load", function () {
 	var modalFriend = document.querySelector(".modal-friend");
 	var close1 = document.querySelector(".close1");
 	/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -62,7 +61,7 @@ window.addEventListener("load", function () {
 	    
 	
 	
-	addFriend.onclick = function() {
+	addtionFriend.onclick = function() {
 		for (var i = 0; i < checkedFriend.length; i++) {
 			
 			if (checkedFriend[i].checked) {
@@ -87,20 +86,39 @@ window.addEventListener("load", function () {
      /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 비용 + - 버튼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
     
     costPlus.onclick = function(e){
-    	clone = verySad.cloneNode(true);
+    	arrInput.push(arrInput.length);
+    	arrInputValue.push("");
+    	display();
+    	/*clone = verySad.cloneNode(true);
     	addedFormDiv.appendChild(clone);
-    	count++;
+    	count++;*/
     };
     
+    function display() {
+    	addedFormDiv.innerHTML="";
+    	  for (I=0;I<arrInput.length;I++) {
+    		  clone = verySad.cloneNode(true)
+    		  addedFormDiv.appendChild(clone);
+    	  }
+    }
+    
+    
     costMinus.onclick = function(e){
-    	if(count==1){
+    	if (arrInput.length > 0) { 
+    	     arrInput.pop(); 
+    	     arrInputValue.pop();
+    	  }
+    	  display(); 
+    	/*if(count==1){
     	addedFormDiv.removeChild(clone);
     	count = 1;
     	}else{
     		addedFormDiv.removeChild(clone);
     		count = 1;
-    	}
+    	}*/
     }
+    
+     
     
    
     
@@ -113,14 +131,15 @@ window.addEventListener("load", function () {
     	modal.style.display = "block";
     };*/
     
-   
-    for(var i=0; i<memoButton.length; i++){
-    	memoButton[i].onclick = function(){
-			for(var i=0; i<modal.length; i++){
-				modal[i].style.display = "block";
-			}
-		};
-	};
+  
+    //클로저 아...
+    for(var i=0;i<memoButton.length;i++){
+    	(function(m) {
+    		memoButton[m].onclick = function(){
+    			modal[m].style.display = "block";
+    		}
+    	})(i);
+	}; 
     
     
     for(var i=0; i<close.length; i++){

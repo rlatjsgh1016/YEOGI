@@ -29,7 +29,15 @@ public class NewplanController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		//String tPlanId = request.getParameter("tPlanId");
 		
-		TourPlanDao tourPlanDao = new JdbcTourPlanDao();		
+		
+		
+		TourPlanDao tourPlanDao = new JdbcTourPlanDao();
+		/*TourPlan plan = new TourPlan();
+		
+		plan = tourPlanDao.get("4");
+		
+		request.setAttribute("plan", plan);*/
+		
 		RequestDispatcher dispatcher 
 			= request.getRequestDispatcher("/WEB-INF/views/main/member/plan/newplan/new-plan.jsp");
 		dispatcher.forward(request, response);
@@ -46,8 +54,8 @@ public class NewplanController extends HttpServlet {
 		//System.out.println(request.getParameter("theme"));
 		
 		TourPlan tourPlan = new TourPlan();
-		tourPlan.setId("1");
-		tourPlan.setmId("sist1218");
+		//tourPlan.setId("2018031400001");
+		tourPlan.setmId("jaho");
 		tourPlan.setTitle(request.getParameter("title"));
 		
 		

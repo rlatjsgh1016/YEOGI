@@ -12,7 +12,7 @@
     <put-attribute name="footer" value="/WEB-INF/views/main/member/story/read/inc/footer.jsp" />
   </definition>
   <definition name="main.member.story.*.*" template="/WEB-INF/views/main/member/story/write/inc/sub-layout.jsp">
-    <put-attribute name="header" value="/WEB-INF/views/main/member/story/write/inc/header.jsp" />
+    <put-attribute name="header" value="/WEB-INF/views/main/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/main/member/story/{1}/{2}.jsp" />
   </definition>
    <definition name="main.member.mypage.mypage" template="/WEB-INF/views/main/member/mypage/inc/sub-layout.jsp">

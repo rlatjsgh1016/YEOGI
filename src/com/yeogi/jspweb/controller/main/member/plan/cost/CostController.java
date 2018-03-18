@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yeogi.jspweb.dao.TPlanPostDao;
+import com.yeogi.jspweb.dao.TPlanPostSpdDao;
 import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostDao;
+import com.yeogi.jspweb.dao.jdbc.JdbcTPlanPostSpdDao;
 import com.yeogi.jspweb.entity.TPlanPost;
+import com.yeogi.jspweb.entity.TPlanPostSpdView;
 
 @WebServlet("/main/member/plan/cost/cost")
 public class CostController extends HttpServlet {
@@ -24,6 +27,17 @@ public class CostController extends HttpServlet {
 		List<TPlanPost> pp = tPlanPostDao.getList();
 		
 		request.setAttribute("pp", pp);
+		
+		
+		TPlanPostSpdDao tPlanPostSpdDao = new JdbcTPlanPostSpdDao();
+		List<TPlanPostSpdView> tppsv = tPlanPostSpdDao.getList();
+		
+		request.setAttribute("tppsv", tppsv);
+		
+		
+		
+		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/main/member/plan/cost/cost.jsp");
 		
 		dispatcher.forward(request, response);

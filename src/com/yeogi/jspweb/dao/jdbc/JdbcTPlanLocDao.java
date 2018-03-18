@@ -22,7 +22,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 							"    t_plan_id," + 
 							"    id," + 
 							"    loc_id" + 
-							") VALUES (?,?,?,?,?)"; 
+							") VALUES (?,?,?,(SELECT NVL(MAX(TO_NUMBER(ID)),TO_CHAR(SYSDATE,'YYYYMMDD')||'00000')+1 ID FROM t_plan_loc WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')),?)"; 
 		
 		int result = 0;
 		
@@ -36,8 +36,7 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 			st.setString(1, tplanloc.getMyLocId());
 			st.setDate(2, tplanloc.getRegDate()); 
 			st.setString(3, tplanloc.getTPlanId());
-			st.setString(4, tplanloc.getId());
-			st.setString(5, tplanloc.getLocId());
+			st.setString(4, tplanloc.getLocId());
 			
 			result = st.executeUpdate();
 			
@@ -224,6 +223,41 @@ public class JdbcTPlanLocDao implements TPlanLocDao {
 			e.printStackTrace();
 		}
 		return tplanloc;
+	}
+	
+	@Override
+	public String getLatestId() {
+		String sql2 = "SELECT MAX(TO_NUMBER(ID)) ID FROM T_PLAN_LOC WHERE SUBSTR(ID,1,8) = TO_CHAR(SYSDATE, 'YYYYMMDD')";
+		String result = null;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+			Connection con = DriverManager.getConnection(url, "c##yeogi","cclassyeogi");
+			PreparedStatement st; 
+			
+			st = con.prepareStatement(sql2);
+			
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString("ID");
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }

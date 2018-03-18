@@ -31,9 +31,9 @@
 							<option>나홀로 여행</option>
 							<option>친구와 함께</option>
 							<option>가족과 함께</option>
-							<option>단체여행</option>
+							<option>단체 여행</option>
 							<option>패키지 여행</option>
-							<option>커플</option>
+							<option>커플 여행</option>
 							
 					</select>
 				</p>

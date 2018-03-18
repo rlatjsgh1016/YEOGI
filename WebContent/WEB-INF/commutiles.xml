@@ -4,20 +4,11 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 	
 	<tiles-definitions>
-	
-<<<<<<< HEAD
-	 <definition name="main.public-board.community.*" template="/WEB-INF/views/main/public-board/community/inc/sub-layout.jsp">
-=======
-	 <definition name="maincommunitymain.*.*" template="/WEB-INF/views/main/public-board/community/inc/sub-layout.jsp">
->>>>>>> refs/remotes/origin/master
-	<put-attribute name="header" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
-	<put-attribute name="visual" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
-    <put-attribute name="main" value="/WEB-INF/views/main/public-board/community/{1}.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
-    
-	 </definition>
-	 
-	 
-
+		<definition name="main.public-board.community.*" template="/WEB-INF/views/main/public-board/community/inc/sub-layout.jsp">
+			<put-attribute name="header" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
+			<put-attribute name="visual" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
+		    <put-attribute name="main" value="/WEB-INF/views/main/public-board/community/{1}.jsp" />
+		    <put-attribute name="footer" value="/WEB-INF/views/main/public-board/community/inc/header.jsp" />
+	    </definition>
 	</tiles-definitions>
  

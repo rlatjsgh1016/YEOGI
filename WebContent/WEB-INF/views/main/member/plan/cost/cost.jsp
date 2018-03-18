@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+    <c:set var="ctx" value="${pageContext.request.servletContext.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 <HEAD>
@@ -10,35 +10,47 @@
 <link href="../../../../CSS/plan-cost.css" type=text/css
 	rel="stylesheet" />
 </HEAD>
-	<header id="header">
-		<div class="root-container">
-			<a href="../../../main.html"><div id="logo">
-					<img src="../../../../resources/logo.png" height="65px" alt="여기" />
-				</div></a>
+	<header id = "header">
+			<div class="root-container">
+			<a href= "${ctx }/main/main"><h1 id="logo"><img src ="${ctx}/resources/logo.png" height="65px" alt ="여기" /> </h1></a>
+	
 			<section>
-				<h1>헤더</h1>
+				<h1 class="hidden">헤더</h1>
+				
 				<nav class="hor-menu main-menu first-pad-none">
 					<h1>메인메뉴</h1>
 					<ul>
-						<li><a href="">계획하기</a></li>
-						<li><a href="">기록하기</a></li>
-						<li><a href="../../story/read/main.html">여행기</a></li>
-						<li><a href="../../../public-board/community/community.html">커뮤니티</a></li>
+
+						<li><a href="${ctx }/main/member/plan/newplan/newplan"">계획하기</a></li>
+						<li><a href="${ctx }/main/member/story/write/select">기록하기</a></li>
+						<li><a href="${ctx }/main/public-board/travel-log/log-main/log-main">여행기</a></li>
+
+						<li><a href="${ctx }/main/public-board/community/communitymain">커뮤니티</a></li>
 					</ul>
 				</nav>
 
-				<nav class="hor-menu member-menu first-pad-none"
-					style="margin-bottom: 15px">
+				<nav class ="hor-menu member-menu first-pad-none" style ="margin-bottom:15px">
 					<h1>회원 메뉴</h1>
 					<ul>
-						<li><a href="../../../log-in.html">로그인</a></li>
-						<li><a href="../../../join.html">회원가입</a></li>
-						<li><a href="../../mypage/mypage.html" class="btn btn-mypage">마이페이지</a></li>
+					<c:if test="${empty sessionScope.id }">
+						<li><a href= "${ctx}/main/login">로그인</a></li>
+					</c:if> 
+					<c:if test="${not empty sessionScope.id }">
+						<li><a href= "${ctx}/main/logout">로그아웃</a></li>
+					</c:if> 
+						<li><a href= "${ctx}/main/join">회원가입</a></li>
+						<li><a href ="${ctx}/main/member/mypage/mypage" class ="btn btn-mypage">마이페이지</a></li>
 					</ul>
-				</nav>
-			</section>
+				</nav>	
+				
+			</section> 
+			
 		</div>
+		
 	</header>
+	
+	<form id="form-select" action="main" method="post">
+		<input id="mid" type="hidden" name="mid" value="${sessionScope.mid.id }">
 
 
 	<div id="fullscreen">
@@ -46,7 +58,7 @@
 			<div id="tab">
 				<nav>
 					<h1>선택옵션</h1>
-					<a href=""><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="../cost/cost"><div class="cost">Cost</div></a> <a href="../schedule/schedule"><div class="calendar">Calendar</div></a>
+					<a href="${ctx}/main/member/plan/searchplan/search-detail"><div class="search">Search</div></a> <a href=""><div class="basket">Basket</div></a> <a href="${ctx}/main/member/plan/cost/cost"><div class="cost">Cost</div></a> <a href="${ctx}/main/member/plan/schedule/schedule"><div class="calendar">Calendar</div></a><a href="" id="add-friend"></a>
 				</nav>
 			</div>
 
@@ -63,7 +75,12 @@
 			<div id="cost-option">
 					<h1>상세선택옵션</h1>
 						<div class="total-cost">
-							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">1,556,000원</span><br>입니다. :)  즐거운 여행되세요!</p>
+							<p>회원님의 총 여행 예상금액은<br><span style="color: yellowgreen">
+							${tppsv[0].amount+tppsv[1].amount+tppsv[2].amount+tppsv[3].amount+tppsv[4].amount+tppsv[5].amount+tppsv[6].amount+tppsv[7].amount+tppsv[8].amount+tppsv[9].amount+tppsv[11].amount+tppsv[12].amount+tppsv[13].amount+tppsv[14].amount+tppsv[15].amount+tppsv[16].amount}
+							
+
+							원
+							</span><br>입니다. :)  즐거운 여행되세요!</p>
 						</div>
 						<select class="select-money">
                             <option value="서버로 넘길 값"> 대한민국 원(KRW) </option>
@@ -78,20 +95,20 @@
 
 							<div class="b1"><b>DAY 1</b></div>
 							
-						<c:forEach var="pp" items="${pp}">
+						<c:forEach var="tppsv" items="${tppsv}">
 							<div class="b2">
-								<div class ="when">06:00</div>
-								<div class = "where">${pp.memoTitle}</div>
-								<div class = "why">식사비</div>
-								<div class = "howmuch">25000원</div>
-								<div class = "comment">${pp.memoContent}</div>
+								<div class ="when">${tppsv.tourDateTime}</div>
+								<div class = "where">${tppsv.memoTitle}</div>
+								<div class = "why">${tppsv.type}</div>
+								<div class = "howmuch">${tppsv.amount} ${tppsv.unit}</div>
+								<div class = "comment">${tppsv.memoContent}</div>
 							</div>
 						</c:forEach>							
 							
-							<div class="plus-cost">
+							<!-- <div class="plus-cost">
 								<a href=""><img src="../../../../images/plus.png" height="50px" width="50px" style="margin-left: auto; margin-right: auto; display: block;" alt="예산 추가" /></a>
 							</div>
-							<div class="b1"><b>DAY 2</b></div>
+							<div class="b1"><b>DAY 2</b></div> -->
 						</div>
 				</nav>
 			</div>
@@ -104,7 +121,7 @@
 		<div id="main">
 
 			<div id="map">
-					<a href="" id="add-friend"><!--<div id="add-friend">-->
+					
 						<h1>친구추가</h1>
 						   <!-- <ul>
 						        <li><img src="../../../../images/now-friends.png" height="40px"/>
@@ -149,9 +166,9 @@
 							<tr>
 
 								<td width="100px">[AM]06:00</td>
-								<td width="300px">김포공항</td>
+								<td width="300px"></td>
 								<td class="memo-pad" width="100px"><a href=""></a></td>
-								<td width="300px">일찍일어나서 공항에서 밥먹으러가자</td>
+								<td width="300px"></td>
 
 							</tr>
 						</thead>
@@ -355,5 +372,17 @@
 			</div>
 		</div>
 	</div>
+	<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbdcRTYQHPv9vVwlE2dQMohUzxAGrf0gM&callback=initMap"
+    async defer></script> -->
+	</body>
 </body>
 </html>
